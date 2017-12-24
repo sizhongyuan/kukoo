@@ -1,0 +1,17 @@
+#footer样式 start
+
+#footer样式 end
+#底部备案号说明条 start
+.copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555;
+    padding-top: 14px;
+    padding-bottom: 20px;
+    border-top: 1px solid #303030;
+}
+.copyright a {
+    color: #555;
+}
+#底部备案号说明条 end
