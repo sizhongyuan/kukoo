@@ -7,9 +7,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.math.BigInteger;
 import java.net.URL;
+import java.security.MessageDigest;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -22,9 +25,13 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.converters.DateConverter;
+import org.springframework.util.StringUtils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.kukoo.base.tool.LogOutTool;
@@ -769,4 +776,122 @@ public class StaticMethod {
     	return num;
     }
     
-}
+    /**
+     * 返回字符串,删除了首尾空格,如果不存在则返回null
+     * 
+     * @param request
+     * @param key
+     * @return
+     */
+    public static String getString(HttpServletRequest request, String key) {
+        String value = request.getParameter(key);
+        if (StringUtils.isEmpty(value)) {
+            return StringUtils.trimWhitespace(value);
+        }
+        return value;
+    }
+    
+    /**
+     * 发送json格式数据到页面
+     * 
+     * @param response
+     * @param content
+     */
+    public static void send(HttpServletResponse response, String content) {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        PrintWriter out = null;
+        try {
+            out = response.getWriter();
+            //若发送数据为null 则默认为""
+            if(content == null){
+                content = "";
+            }
+            out.write(content);
+        }
+        catch (IOException e) {
+        		LogOutTool.error(e.getStackTrace(), e.getLocalizedMessage(), e);
+        }
+        finally {
+            if (out != null){
+                out.close();
+            }
+        }
+    }
+    
+    /**
+     * md5加密字符串
+     * @param str
+     * @return
+     */
+    public static String EncoderByMd5(String str) {
+    		String encoderStr = "";
+    		try {
+    			//确定计算方法
+        		MessageDigest md5=MessageDigest.getInstance("MD5");
+        		// 计算md5函数
+        		md5.update(str.getBytes());
+        		// digest()最后确定返回md5 hash值，返回值为8为字符串。因为md5 hash值是16位的hex值，实际上就是8位的字符
+            // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
+        		encoderStr = new BigInteger(1, md5.digest()).toString(32);
+			} catch (Exception e) {
+				// TODO: handle exception
+				LogOutTool.error(e.getStackTrace(), e.getLocalizedMessage(), e);
+			}
+    		return encoderStr;
+    		}
+    
+    
+    /*** 
+     * MD5加码 生成32位md5码 
+     */  
+    public static String string2MD5(String inStr){  
+        MessageDigest md5 = null;  
+        try{  
+            md5 = MessageDigest.getInstance("MD5");  
+        }catch (Exception e){  
+            System.out.println(e.toString());  
+            e.printStackTrace();  
+            return "";  
+        }  
+        char[] charArray = inStr.toCharArray();  
+        byte[] byteArray = new byte[charArray.length];  
+  
+        for (int i = 0; i < charArray.length; i++)  
+            byteArray[i] = (byte) charArray[i];  
+        byte[] md5Bytes = md5.digest(byteArray);  
+        StringBuffer hexValue = new StringBuffer();  
+        for (int i = 0; i < md5Bytes.length; i++){  
+            int val = ((int) md5Bytes[i]) & 0xff;  
+            if (val < 16)  
+                hexValue.append("0");  
+            hexValue.append(Integer.toHexString(val));  
+        }  
+        return hexValue.toString();  
+  
+    }  
+  
+    /** 
+     * 加密解密算法 执行一次加密，两次解密 
+     */   
+    public static String convertMD5(String inStr){  
+  
+        char[] a = inStr.toCharArray();  
+        for (int i = 0; i < a.length; i++){  
+            a[i] = (char) (a[i] ^ 't');  
+        }  
+        String s = new String(a);  
+        return s;  
+  
+    }  
+  
+    // 测试主函数  
+    public static void main(String args[]) {  
+        String s = "woni2013";  
+        System.out.println("原始：" + s);  
+        System.out.println("MD5后：" + string2MD5(s));  
+        //System.out.println("加密的：" + convertMD5(s));  
+        System.out.println("解密的：" + convertMD5(convertMD5(s)));  
+  
+    }
+    }

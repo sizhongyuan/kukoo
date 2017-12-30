@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 用户mybatis mapper 文件配置 -->
+<mapper namespace="com.kukoo.base.mapper.UserMapper">
+	<!-- 根据手机号查询用户对象 -->
+	<select id="queryUserByMobile" parameterType="string" resultType="com.kukoo.base.model.User">
+		SELECT
+			ID,
+			USERID,
+			USERNAME,
+			MOBILE,
+			PASSWORD,
+			EMAIL,
+			STATUS,
+			DELETED,
+			UPDATETIME,
+			COUNT,
+			CAPTCHA,
+			CAPTCHATIME,
+			SAVETIME
+		FROM
+			USER
+		WHERE
+			MOBILE=#{mobile}
+	</select>
+	
+	<insert id="saveUser" parameterType="com.kukoo.base.model.User">
+		<selectKey keyProperty="id" resultType="string" order="BEFORE">
+			select REPLACE(UUID(),'-','')
+		</selectKey>
+		insert into USER
+		(
+			ID,
+			USERID,
+			USERNAME,
+			MOBILE,
+			PASSWORD,
+			EMAIL,
+			STATUS,
+			DELETED,
+			SAVETIME,
+			UPDATETIME,
+			COUNT,
+			CAPTCHA,
+			CAPTCHATIME
+		)
+		values
+		(
+			#{id,jdbcType=VARCHAR},
+			#{userId,jdbcType=VARCHAR},
+			#{userName,jdbcType=VARCHAR},
+			#{mobile,jdbcType=VARCHAR},
+			#{password,jdbcType=VARCHAR},
+			#{email,jdbcType=VARCHAR},
+			#{status,jdbcType=VARCHAR},
+			#{deleted,jdbcType=VARCHAR},
+			#{saveTime,jdbcType=DATE},
+			#{updateTime,jdbcType=DATE},
+			#{count,jdbcType=VARCHAR},
+			#{captcha,jdbcType=VARCHAR},
+			#{captchaTime,jdbcType=DATE}
+		)
+	</insert>
+</mapper>

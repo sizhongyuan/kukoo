@@ -65,7 +65,17 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-sm">
-					<li class="">
+					<li id="signUp" class="">
+						<a href="#" onclick="changeframsrc('/kukoo/menu/showSignUp')">注册</a>
+					</li>
+				</ul>/
+				<ul class="nav navbar-nav navbar-right hidden-sm">
+					<li id="signIn" class="">
+						<a href="#" onclick="changeframsrc('/kukoo/menu/showSignIn')">登录</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right hidden-sm hidden">
+					<li id="userCenter" class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showUserCenter')">用户中心</a>
 					</li>
 				</ul>

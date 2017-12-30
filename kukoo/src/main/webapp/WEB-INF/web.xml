@@ -50,16 +50,16 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- ember跨域请求filter -->
-	<!-- <filter>
+	<!-- 跨域请求filter -->
+	<filter>
 		<filter-name>corsFilter</filter-name>
-		<description>ember跨域请求filter</description>
-		<filter-class>com.boco.eoms.sheet.centralfault.filter.CorsFilter</filter-class>
+		<description>跨域请求filter</description>
+		<filter-class>com.kukoo.base.filter.CorsFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>corsFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	</filter-mapping>
 	
 	<!-- spring 请求put delete方法 filter -->
 	<filter>
@@ -71,6 +71,16 @@
 		<filter-name>HiddenHttpMethodFilter</filter-name>
 		<servlet-name>springmvc</servlet-name>
 	</filter-mapping>
+	
+	<!-- 登录filter -->
+	<filter>
+    		<filter-name>LoginFilter</filter-name>
+    		<filter-class>com.kukoo.base.filter.LoginFilter</filter-class>
+  	</filter>
+  	<filter-mapping>
+    		<filter-name>LoginFilter</filter-name>
+    		<url-pattern>*.jsp</url-pattern>
+  	</filter-mapping>
 	
 	<listener>
 		<!-- Spring监听器,服务器一启动就加载spring的配置文件--> 
@@ -140,7 +150,22 @@
     <servlet-mapping>  
         <servlet-name>default</servlet-name>  
         <url-pattern>*.js</url-pattern>  
+    </servlet-mapping> 
+
+	<servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.svg</url-pattern>  
+    </servlet-mapping>
+
+	<servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.woff</url-pattern>  
     </servlet-mapping>  
+
+	<servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.woff2</url-pattern>  
+    </servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>DruidStatView</servlet-name>
