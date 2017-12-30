@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,6 +24,8 @@
 	
 	<!-- 引用JS -->
 	<script src="<%=basePath %>javascript/jquery/1.12.4/jquery.min.js"></script>
+	<script src="<%=basePath %>javascript/jquery/cookie/jquery.cookie.js"></script>
+	<script src="<%=basePath %>javascript/jquery/form/jquery.form.js"></script>
 	<script src="<%=basePath %>javascript/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	
 </head>

@@ -1,11 +1,18 @@
 package com.kukoo.menu.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.kukoo.base.model.User;
+import com.kukoo.base.util.RedisUtil;
+
+import redis.clients.jedis.Jedis;
 
 /**
  * @see 首页body页面
@@ -27,9 +34,12 @@ public class menuController {
 	 */
 	@RequestMapping(value = "/showIndex", method = RequestMethod.GET)
 	public ModelAndView showIndex(HttpServletRequest request) {
-		
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showIndex");
+		model.addObject("userId", userId);
 		return model;
 	}
 	
@@ -42,9 +52,12 @@ public class menuController {
 	 */
 	@RequestMapping(value = "/showProjectInfo", method = RequestMethod.GET)
 	public ModelAndView showProject(HttpServletRequest request) {
-		
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showProjectInfo");
+		model.addObject("userId", userId);
 		return model;
 	}
 	
@@ -57,9 +70,12 @@ public class menuController {
 	 */
 	@RequestMapping(value = "/showArticle", method = RequestMethod.GET)
 	public ModelAndView showArticle(HttpServletRequest request) {
-		
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showArticle");
+		model.addObject("userId", userId);
 		return model;
 	}
 	
@@ -72,9 +88,12 @@ public class menuController {
 	 */
 	@RequestMapping(value = "/showMarkingOL", method = RequestMethod.GET)
 	public ModelAndView showMarkingOL(HttpServletRequest request) {
-		
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showMarkingOL");
+		model.addObject("userId", userId);
 		return model;
 	}
 	
@@ -87,9 +106,12 @@ public class menuController {
 	 */
 	@RequestMapping(value = "/showTimeAxis", method = RequestMethod.GET)
 	public ModelAndView showTimeAxis(HttpServletRequest request) {
-		
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showTimeAxis");
+		model.addObject("userId", userId);
 		return model;
 	}
 	
@@ -102,9 +124,12 @@ public class menuController {
 	 */
 	@RequestMapping(value = "/showUserCenter", method = RequestMethod.GET)
 	public ModelAndView showUserCenter(HttpServletRequest request) {
-		
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showUserCenter");
+		model.addObject("userId", userId);
 		return model;
 	}
 	

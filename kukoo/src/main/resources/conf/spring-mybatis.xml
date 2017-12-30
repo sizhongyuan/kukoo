@@ -70,7 +70,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 
 	<!-- spring与mybatis整合配置，扫描所有dao -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.**.dao" />
+		<property name="basePackage" value="com.**.dao,com.**.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 

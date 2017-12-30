@@ -17,3 +17,4 @@ npm-debug.log*
 testem.log
 /kukoo/src/main/java/com/kukoo/.DS_Store
 /kukoo/target/classes
+.DS_Store
