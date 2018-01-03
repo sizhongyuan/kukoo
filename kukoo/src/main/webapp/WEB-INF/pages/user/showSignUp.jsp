@@ -9,7 +9,7 @@
 	<div class="container" id="regist">
 	    <div class="row" >
 	        <div class="col-md-offset-3 col-md-6">
-	            <form id="registForm" class="form-horizontal" action="/kukoo/user/regist" method="post">
+	            <form id="registForm" class="form-horizontal" action="/kukoo/user/SignUp" method="post">
 	            	<span class="heading">用户注册</span>
 	            		<div class="form-group">
 		            		<label for="phone" class="col-sm-3 control-label">手机号:</label>
@@ -117,7 +117,7 @@
 			}
 			/* 提交注册 */
 			$("#registForm").ajaxSubmit(function (data) {
-				parent.changeframsrc("/kukoo/menu/showSignIn");
+				parent.changeframsrc("/kukoo/user/showSignIn");
         		});
 		})
 		/*注册按钮事件 end*/
@@ -126,7 +126,7 @@
       		var checkObject = new Object();
       		checkObject.mobile = $("#mobile").val();
       		var checkJson = JSON.stringify(checkObject); 
-      		var url = "/kukoo/user/validateRegist";
+      		var url = "/kukoo/user/validateSignUp";
       		$.post(url,
       			  {"checkObj":checkJson},
       			  function(e){

@@ -9,7 +9,7 @@
 	<div class="container" id="login">
 	    <div class="row" >
 	        <div class="col-md-offset-3 col-md-6">
-	            <form id="loginForm" class="form-horizontal" action="/kukoo/user/successLogin" method="post">
+	            <form id="loginForm" class="form-horizontal" action="/kukoo/user/successSignIn" method="post">
 	                <span class="heading">用户登录</span>
 	                <div class="form-group" id="mobileDiv">
 	                		<label for="phone" class="col-sm-2 control-label">手机号:</label>
@@ -87,7 +87,7 @@
       		var checkObject = new Object();
       		checkObject.mobile = $("#mobile").val();
       		var checkJson = JSON.stringify(checkObject); 
-      		var url = "/kukoo/user/validateRegist";
+      		var url = "/kukoo/user/validateSignUp";
       		$.post(url,
       			  {"checkObj":checkJson},
       			  function(e){
@@ -163,7 +163,7 @@
         	  loginObj.pwd= $("#password").val();
         	  loginObj.loginType = loginType;
         	  var loginJson = JSON.stringify(loginObj); //将JSON对象转化为JSON字符  
-        	  var url = "/kukoo/user/validateLogin";
+        	  var url = "/kukoo/user/validateSignIn";
         	  $.post(url,
         	      {"loginObj":loginJson},
         	      function(e){
@@ -186,7 +186,7 @@
         	        			$('#userCenter',parent.document).removeClass("active");
         	        			$("#signUp",parent.document).parent().addClass("hidden");
         	        			$("#signIn",parent.document).parent().addClass("hidden");
-        	        			parent.changeframsrc("/kukoo/menu/showProjectInfo");
+        	        			parent.changeframsrc("/kukoo/user/showProjectInfo");
         	        	 		  /* 调用保存cookie方法 */
         	              	  saveUserInfo();
         	            });
@@ -240,7 +240,7 @@
 		/* 登录方式事件 end*/
 		/*点我注册事件 start*/
 		$("#clickMeRegist").click(function(){
-			parent.changeframsrc("/kukoo/menu/showSignUp");
+			parent.changeframsrc("/kukoo/user/showSignUp");
 			$("#signUp",parent.document).addClass("active");
 			$("#signIn",parent.document).removeClass("active");
 		});

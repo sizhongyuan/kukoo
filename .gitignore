@@ -18,3 +18,8 @@ testem.log
 /kukoo/src/main/java/com/kukoo/.DS_Store
 /kukoo/target/classes
 .DS_Store
+/kukoo/.classpath
+/kukoo/.project
+/kukoo/target/m2e-wtp/web-resources/META-INF/maven/com.kukoo/kukoo/pom.xml
+/kukoo/target/m2e-wtp/web-resources/META-INF/maven/com.kukoo/kukoo/pom.properties
+/kukoo/.settings/org.eclipse.wst.common.component

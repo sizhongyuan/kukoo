@@ -1,5 +1,6 @@
 package com.kukoo.user.controller;
 
+import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.Cookie;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.kukoo.base.model.User;
@@ -36,13 +38,62 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 	
+	static final String modelPath = "WEB-INF/pages/user/";
+	
+	/**
+	 * @see 展示用户中心
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showUserCenter", method = RequestMethod.GET)
+	public ModelAndView showUserCenter(HttpServletRequest request) {
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showUserCenter");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 展示注册
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showSignUp", method = RequestMethod.GET)
+	public ModelAndView showSignUp(HttpServletRequest request) {
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showSignUp");
+		return model;
+	}
+	
+	/**
+	 * @see 展示登陆
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showSignIn", method = RequestMethod.GET)
+	public ModelAndView showSignIn(HttpServletRequest request) {
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showSignIn");
+		return model;
+	}
 	
 	/**
 	   * 手机号校验（是否注册）
 	   * @param request
 	   * @param response
 	   */
-	  @RequestMapping(value = "/validateRegist", method = RequestMethod.POST)
+	  @RequestMapping(value = "/validateSignUp", method = RequestMethod.POST)
 	  public void validateRegist(HttpServletRequest request, HttpServletResponse response){
 	    //获取form表单数据
 	    String checkObj = StaticMethod.getString(request, "checkObj");
@@ -66,7 +117,7 @@ public class UserController {
 	   * @param request
 	   * @param response
 	   */
-	  @RequestMapping(value = "/validateLogin", method = RequestMethod.POST)
+	  @RequestMapping(value = "/validateSignIn", method = RequestMethod.POST)
 	  public void validateLogin(HttpServletRequest request, HttpServletResponse response){
 	    //获取form表单数据
 	    String loginObj = StaticMethod.getString(request, "loginObj");
@@ -97,7 +148,7 @@ public class UserController {
 	   * @param request
 	   * @param response
 	   */
-	  @RequestMapping(value = "/successLogin", method = RequestMethod.POST)
+	  @RequestMapping(value = "/successSignIn", method = RequestMethod.POST)
 	  public void successLogin(HttpServletRequest request,HttpServletResponse response){
 	      /*获取form表单数据*/
 		  String accountNo = StaticMethod.getString(request, "inputAccount");
@@ -124,7 +175,7 @@ public class UserController {
 	   * @param request
 	   * @param response
 	   */
-	  @RequestMapping(value = "/regist", method = RequestMethod.POST)
+	  @RequestMapping(value = "/signUp", method = RequestMethod.POST)
 	  public void regist(HttpServletRequest request,HttpServletResponse response){
 		  /*获取form表单数据*/
 	      String mobile = StaticMethod.getString(request, "mobile");

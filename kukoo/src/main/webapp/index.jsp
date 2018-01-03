@@ -58,7 +58,7 @@
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showArticle')">文章精选</a>
 					</li>
 					<li class="">
-						<a href="#" onclick="changeframsrc('/kukoo/menu/showMarkingOL')">在线答题</a>
+						<a href="#" onclick="changeframsrc('/kukoo/markingol/showMarkingOL')">在线答题</a>
 					</li>
 					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showTimeAxis')">时间轴</a>
@@ -66,17 +66,17 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-sm">
 					<li id="signUp" class="">
-						<a href="#" onclick="changeframsrc('/kukoo/menu/showSignUp')">注册</a>
+						<a href="#" onclick="changeframsrc('/kukoo/user/showSignUp')">注册</a>
 					</li>
 				</ul>/
 				<ul class="nav navbar-nav navbar-right hidden-sm">
 					<li id="signIn" class="">
-						<a href="#" onclick="changeframsrc('/kukoo/menu/showSignIn')">登录</a>
+						<a href="#" onclick="changeframsrc('/kukoo/user/showSignIn')">登录</a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-sm hidden">
 					<li id="userCenter" class="">
-						<a href="#" onclick="changeframsrc('/kukoo/menu/showUserCenter')">用户中心</a>
+						<a href="#" onclick="changeframsrc('/kukoo/user/showUserCenter')">用户中心</a>
 					</li>
 				</ul>
 			</div>
@@ -85,7 +85,7 @@
 	<!-- 导航栏end -->
 	
 	<!-- 页面中部 -->
-	<iframe id="iframeid" src="/kukoo/menu/showIndex/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
+	<iframe id="iframeid" src="/kukoo/homepage/showHomePage/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
 	
 	<!-- 网站底部start -->
 	<footer>
