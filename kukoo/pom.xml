@@ -400,7 +400,7 @@
 	
   </dependencies>
   <build>
-    <finalName>eoms-fault-board</finalName>
+    <finalName>kukoo</finalName>
     <plugins>  
         <plugin>  
             <groupId>org.apache.maven.plugins</groupId>  

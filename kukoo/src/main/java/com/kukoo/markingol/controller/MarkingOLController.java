@@ -1,5 +1,6 @@
 package com.kukoo.markingol.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,18 +18,38 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.kukoo.base.util.RedisUtil;
 import com.kukoo.base.util.StaticMethod;
 import com.kukoo.markingol.service.MarkingOLService;
+
+import redis.clients.jedis.Jedis;
 
 @Controller
 @RequestMapping("/markingOLController")
 public class MarkingOLController {
 	
+	static final String modelPath = "WEB-INF/pages/markingol/";
 	
 	@Autowired
 	public MarkingOLService markingOLService;
 	
-
+	/**
+	 * @see 展示在线答题
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showMarkingOL", method = RequestMethod.GET)
+	public ModelAndView showMarkingOL(HttpServletRequest request) {
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showMarkingOL");
+		model.addObject("userId", userId);
+		return model;
+	}
 	
 	/**
 	 * 根据答题信息返回得分等信息
