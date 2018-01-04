@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.kukoo.markingol.dao.MarkingOLMapper;
 import com.kukoo.markingol.model.MarkingOL;
@@ -17,6 +18,7 @@ import com.kukoo.markingol.service.MarkingOLService;
  * @author Boco
  *
  */
+@Service("markingOLService")
 public class MarkingOLServiceImpl implements MarkingOLService{
 
 	
