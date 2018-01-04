@@ -20,7 +20,7 @@ import redis.clients.jedis.Jedis;
  */
 @Controller
 @RequestMapping("/homePage")
-public class homePageController {
+public class HomePageController {
 	
 	static final String modelPath = "WEB-INF/pages/homepage/";
 	
@@ -31,13 +31,13 @@ public class homePageController {
 	 * @author 张世杰
 	 * @throws IOException
 	 */
-	@RequestMapping(value = "/showIndex", method = RequestMethod.GET)
+	@RequestMapping(value = "/showHomePage", method = RequestMethod.GET)
 	public ModelAndView showIndex(HttpServletRequest request) {
 		//读取session
 		Jedis jedis = RedisUtil.getJedis();
 		String userId = jedis.get(request.getSession().getId());
 		ModelAndView model = new ModelAndView();
-		model.setViewName(modelPath+"showIndex");
+		model.setViewName(modelPath+"showHomePage");
 		model.addObject("userId", userId);
 		return model;
 	}

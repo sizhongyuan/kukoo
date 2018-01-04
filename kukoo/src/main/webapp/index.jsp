@@ -58,7 +58,7 @@
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showArticle')">文章精选</a>
 					</li>
 					<li class="">
-						<a href="#" onclick="changeframsrc('/kukoo/markingol/showMarkingOL')">在线答题</a>
+						<a href="#" onclick="changeframsrc('/kukoo/markingOL/showMarkingOL')">在线答题</a>
 					</li>
 					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showTimeAxis')">时间轴</a>
@@ -85,7 +85,7 @@
 	<!-- 导航栏end -->
 	
 	<!-- 页面中部 -->
-	<iframe id="iframeid" src="/kukoo/homepage/showHomePage/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
+	<iframe id="iframeid" src="/kukoo/homePage/showHomePage/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
 	
 	<!-- 网站底部start -->
 	<footer>
