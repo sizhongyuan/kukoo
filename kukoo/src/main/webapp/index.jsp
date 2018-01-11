@@ -36,7 +36,7 @@
 
 <body>
   	<!-- 导航栏start -->
-	<header class="navbar navbar-inverse navbar-fixed-top">
+	<header class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<!-- 定义折叠后的菜单 -->
@@ -50,7 +50,7 @@
 			</div>
 			<!-- 导航条切换 -->
 			<div class="navbar-collapse collapse" role="navigation">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-right hidden-sm">
 					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showProjectInfo/')">项目介绍</a>
 					</li>
@@ -63,19 +63,13 @@
 					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showTimeAxis')">时间轴</a>
 					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right hidden-sm">
-					<li id="signUp" class="">
-						<a href="#" onclick="changeframsrc('/kukoo/user/showSignUp')">注册</a>
-					</li>
-				</ul>/
-				<ul class="nav navbar-nav navbar-right hidden-sm">
 					<li id="signIn" class="">
 						<a href="#" onclick="changeframsrc('/kukoo/user/showSignIn')">登录</a>
 					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right hidden-sm hidden">
-					<li id="userCenter" class="">
+					<li id="signUp" class="">
+						<a href="#" onclick="changeframsrc('/kukoo/user/showSignUp')">注册</a>
+					</li>
+					<li id="userCenter" class="hidden">
 						<a href="#" onclick="changeframsrc('/kukoo/user/showUserCenter')">用户中心</a>
 					</li>
 				</ul>
@@ -85,7 +79,9 @@
 	<!-- 导航栏end -->
 	
 	<!-- 页面中部 -->
-	<iframe id="iframeid" src="/kukoo/homePage/showHomePage/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
+	<div class="iframe-top">
+		<iframe id="iframeid" src="/kukoo/homePage/showHomePage/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
+	</div>
 	
 	<!-- 网站底部start -->
 	<footer>
