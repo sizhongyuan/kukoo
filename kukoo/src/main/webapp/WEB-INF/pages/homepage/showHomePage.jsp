@@ -24,15 +24,16 @@
 		<div class="input-size">
 			<input type="text" class="form-control" style="border-radius:4px 0px 0px 4px;" id="inputPassword2" placeholder="想移民的国家"/>
 		</div>
-		<div class="input-size input-bottom">
+		<div class="input-size">
 			<input type="text" class="form-control" style="border-radius:0px;" id="inputPassword2" placeholder="感兴趣的项目"/>
 		</div>
-		<div class="input-size input-bottom">
+		<div class="input-size">
 			<input type="text" class="form-control" style="border-radius:0px;" id="inputPassword2" placeholder="其他"/>
 		</div>
-		<div class="button-size input-bottom">
-			<img class="search-icon" src="<%=basePath %>img/homepage/search.png">
-			<input type="button" class="form-control botton-item" id="inputPassword2" value="搜索">
+		<div class="button-size">
+			<button type="button" class="form-control botton-item" id="inputPassword2">
+				<img src="<%=basePath %>img/homepage/search.png">搜索
+			</button>
 		</div>
 	</div>
 </div>
