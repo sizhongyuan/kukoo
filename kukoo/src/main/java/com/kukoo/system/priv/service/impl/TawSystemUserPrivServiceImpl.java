@@ -29,7 +29,7 @@ public class TawSystemUserPrivServiceImpl implements TawSystemUserPrivService{
 	}
 
 	@Override
-	public void deleteTawSystemUserPriv(String id) {
+	public void deleteTawSystemUserPriv(int id) {
 		tawSystemUserPrivMapper.deleteTawSystemUserPriv(id);
 	}
 

@@ -23,7 +23,7 @@ public interface TawSystemUserPrivMapper {
 	 * 删除用户权限关联对象
 	 * @param tawSystemUserPriv 用户权限关联对象
 	 */
-	public void deleteTawSystemUserPriv(String id);
+	public void deleteTawSystemUserPriv(int id);
 	
 	
 }
