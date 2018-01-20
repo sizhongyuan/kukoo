@@ -151,11 +151,11 @@ public class UserController {
 	  @RequestMapping(value = "/successSignIn", method = RequestMethod.POST)
 	  public void successLogin(HttpServletRequest request,HttpServletResponse response){
 	      /*获取form表单数据*/
-		  String accountNo = StaticMethod.getString(request, "inputAccount");
+		  String mobile = StaticMethod.getString(request, "mobile");
 	      String pwd = StaticMethod.getString(request, "pwd");
 	      JSONObject result = new JSONObject();
 	      result.put("loginMsg", "登录成功");
-	      User user = userService.queryUserByMobile(accountNo);
+	      User user = userService.queryUserByMobile(mobile);
 	      request.getSession().setAttribute("user", user);
 	      try {
 	    	  	String sessionId = request.getSession().getId();
@@ -179,13 +179,13 @@ public class UserController {
 	  public void regist(HttpServletRequest request,HttpServletResponse response){
 		  /*获取form表单数据*/
 	      String mobile = StaticMethod.getString(request, "mobile");
-	      String password = StaticMethod.getString(request, "password");
-	      String userName = StaticMethod.getString(request, "userName");
+	      //String password = StaticMethod.getString(request, "password");
+	      //String userName = StaticMethod.getString(request, "userName");
 	      /*创建user对象并赋值*/
 	      User user = new User();
 	      user.setMobile(mobile);
-	      user.setPassword(StaticMethod.string2MD5(password));
-	      user.setUserName(userName);
+	      //user.setPassword(StaticMethod.string2MD5(password));
+	      //user.setUserName(userName);
 	      user.setSaveTime(new Date());
 	      /*调用userService保存方法*/
 	      userService.saveUser(user);

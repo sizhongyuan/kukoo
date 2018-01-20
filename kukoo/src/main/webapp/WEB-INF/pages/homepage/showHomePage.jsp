@@ -8,9 +8,9 @@
 	$("document").ready(function() {
 		/* 判断session用户是否登录 start*/
 		if("${userId}" !== ""){
-			$('#userCenter',parent.document).parent().removeClass("hidden");
-			$("#signUp",parent.document).parent().addClass("hidden");
-			$("#signIn",parent.document).parent().addClass("hidden");
+			$('#userCenter',parent.document).removeClass("hidden");
+			$("#signUp",parent.document).addClass("hidden");
+			$("#signIn",parent.document).addClass("hidden");
 		}
 		/* 判断session用户是否登录 end*/
 	});
