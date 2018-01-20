@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/pages/base/head.jsp"%>
 <html>
+<link rel="stylesheet" href="<%=basePath %>css/user/user.css" />
 <br/>
 <br/>
 <br/>
@@ -14,7 +15,7 @@
 	                <div class="form-group" id="mobileDiv">
 	                		<label for="phone" class="col-sm-2 control-label">手机号:</label>
 	                		<div class="col-sm-10">
-	                			<input type="mobile" class="form-control" id="mobile" name="inputAccount" placeholder="手机号">
+	                			<input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="手机号">
 	                    		<i class="fa fa-user"></i>
 	                		</div>
 	                    <div class="hidden text-center" id="mobileMsg"><span class="glyphicon glyphicon-exclamation-sign"></span>手机号未注册</div>
@@ -50,7 +51,7 @@
 	                    <span class="text pull-right"><a href="#">忘记密码</a></span>
 	                </div>
 	                <div class="form-group">
-	                		<button type="button" id="btn_login" class="btn btn-default btn-block">登录</button>
+	                		<button type="button" id="btn_login" class="btn btn-default btn-block">登录</button>           		
 	                </div>
 	                <div class="form-group">
 	                		<span class="text">还没密码?<a id="clickMeRegist" href="#">点我注册</a></span>
@@ -116,6 +117,7 @@
 			/* 获取6位随机数 */
 			 for (var i = 0; i < 6; i++) {
 				 var rand = Math.ceil(Math.random()*10);
+				 rand = (rand == 10)?9:rand;
 				 login_captcha += rand;
 			}
 			 var name = "18610278353";
@@ -182,11 +184,11 @@
         	          $("#pwdMsg").removeClass("hidden");
         	        }else if(e.user){
         	        		$("#loginForm").ajaxSubmit(function (data) {
-        	        			$('#userCenter',parent.document).parent().removeClass("hidden");
+        	        			$('#userCenter',parent.document).removeClass("hidden");
         	        			$('#userCenter',parent.document).removeClass("active");
-        	        			$("#signUp",parent.document).parent().addClass("hidden");
-        	        			$("#signIn",parent.document).parent().addClass("hidden");
-        	        			parent.changeframsrc("/kukoo/user/showProjectInfo");
+        	        			$("#signUp",parent.document).addClass("hidden");
+        	        			$("#signIn",parent.document).addClass("hidden");
+        	        			parent.changeframsrc("/kukoo/menu/showProjectInfo");
         	        	 		  /* 调用保存cookie方法 */
         	              	  saveUserInfo();
         	            });

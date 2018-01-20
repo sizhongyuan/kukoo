@@ -9,20 +9,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="queryUserByMobile" parameterType="string" resultType="com.kukoo.base.model.User">
 		SELECT
 			ID,
-			USERID,
-			USERNAME,
+			USER_ID,
+			USER_NAME,
 			MOBILE,
 			PASSWORD,
 			EMAIL,
 			STATUS,
 			DELETED,
-			UPDATETIME,
+			UPDATE_TIME,
 			COUNT,
 			CAPTCHA,
-			CAPTCHATIME,
-			SAVETIME
+			CAPTCHA_TIME,
+			SAVE_TIME
 		FROM
-			USER
+			tt_user
 		WHERE
 			MOBILE=#{mobile}
 	</select>
@@ -31,21 +31,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<selectKey keyProperty="id" resultType="string" order="BEFORE">
 			select REPLACE(UUID(),'-','')
 		</selectKey>
-		insert into USER
+		insert into tt_user
 		(
 			ID,
-			USERID,
-			USERNAME,
+			USER_ID,
+			USER_NAME,
 			MOBILE,
 			PASSWORD,
 			EMAIL,
 			STATUS,
 			DELETED,
-			SAVETIME,
-			UPDATETIME,
+			SAVE_TIME,
+			UPDATE_TIME,
 			COUNT,
 			CAPTCHA,
-			CAPTCHATIME
+			CAPTCHA_TIME
 		)
 		values
 		(
@@ -65,3 +65,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		)
 	</insert>
 </mapper>
+
+
+<!-- 建表语句 -->
+<!-- create table tt_user(
+	id varchar(32) PRIMARY KEY COMMENT "主键id", 
+  user_id varchar(64) COMMENT "用户id",
+  user_name varchar(64) COMMENT "用户名",
+  mobile varchar(11) COMMENT "手机号",
+  password varchar(32) COMMENT "密码",
+  email varchar(256) COMMENT "邮箱",
+  status varchar(10) COMMENT "账号状态 0正常 1锁定",
+  deleted varchar(10) COMMENT "删除标识 0未删除 1已删除",
+  update_time datetime COMMENT "更新时间",
+  count varchar(10) COMMENT "失败次数",
+  captcha varchar(10) COMMENT "验证码",
+  captcha_time datetime COMMENT "验证码有效时间",
+  save_time datetime COMMENT "注册时间"
+)
+
+ALTER TABLE tt_user ADD INDEX index_mobile (mobile) -->
