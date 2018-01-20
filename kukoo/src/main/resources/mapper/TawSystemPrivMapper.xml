@@ -51,3 +51,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         delete from TAW_SYSTEM_PRIV where OPEARTIONID = #{operationId,jdbcType=VARCHAR}
     </delete>
 </mapper>
+<!-- 建表语句 -->
+<!-- create table TAW_SYSTEM_USER_PRIV(
+ id int primary key auto_increment COMMENT '主键',
+ USERID varchar(255) COMMENT '用户id',
+ TYPE VARCHAR(10) COMMENT '权限类型',
+ OPERATIONID varchar(255) COMMENT '权限id'
+); -->
