@@ -29,7 +29,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
      
 	<plugins>
 	    <plugin interceptor="com.github.pagehelper.PageHelper">
-	        <property name="dialect" value="oracle"/>
+	        <property name="dialect" value="mysql"/>
 	        <property name="offsetAsPageNum" value="false"/>
 	        <property name="rowBoundsWithCount" value="false"/>
 	        <property name="pageSizeZero" value="true"/>
