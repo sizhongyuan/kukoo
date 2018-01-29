@@ -23,9 +23,19 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
 	</context:component-scan>
+	
+	<!-- 开启@Controller 注解扫描 -->
+	<context:component-scan base-package="com.kukoo.*"/>	
+	
+	<!-- 开启@RequestMapping 注解扫描 spring 3.2后使用) 请求到处理器的映射-->
+	<mvc:annotation-driven />
+	
+	<!-- 启动对@AspectJ注解的支持 -->  
+	<aop:aspectj-autoproxy/> 
+	
 	<!--静态 资源访问处理器 -->
 	<mvc:resources mapping="/css/**" location="/css/" cache-period="31556926" />
-	<mvc:resources mapping="/img/**" location="/img/" cache-period="31556926" />
+	<mvc:resources mapping="/images/**" location="/images/" cache-period="31556926" />
 	<mvc:resources mapping="/js/**" location="/js/" cache-period="31556926" />
 	<mvc:resources mapping="/views/**" location="/views/" cache-period="31556926" />
 	<mvc:resources mapping="/fonts/**" location="/fonts/" cache-period="31556926" />

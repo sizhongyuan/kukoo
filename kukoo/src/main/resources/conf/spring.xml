@@ -7,6 +7,18 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 ">
 	<!-- 自动扫描(自动注入) -->
 	<context:component-scan base-package="com.**.service,com.**.adapter,com.**.model" />
+	
+	<bean id="taskExecutor"   
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">  
+		<property name="corePoolSize" value="5" />  
+		<property name="maxPoolSize" value="10" />  
+		<!-- <property name="WaitForTasksToCompleteOnShutdown" value="true" />   -->
+	</bean>
+	<!-- 扫描切点类组件 -->
+	<context:component-scan base-package="com.kukoo.logsystem.aop" />
+	<context:component-scan base-package="com.kukoo.logsystem.service" />
+	<context:component-scan base-package="com.kukoo.logsystem.dao"/>
+	
 	<!-- 自动扫描(jdbc查询数据库) 
 	<bean id="userJdbc" class="com.springmvc.jdbc.UserJdbc"></bean>
 	-->

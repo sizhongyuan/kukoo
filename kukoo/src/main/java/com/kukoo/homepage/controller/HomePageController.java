@@ -41,4 +41,40 @@ public class HomePageController {
 		model.addObject("userId", userId);
 		return model;
 	}
+	
+	/**
+	 * @see 列表页面
+	 * @param request
+	 * @return
+	 * @author WG
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showListPage", method = RequestMethod.GET)
+	public ModelAndView showListPage(HttpServletRequest request) {
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
+		ModelAndView model = new ModelAndView();
+		model.setViewName("WEB-INF/pages/list/list");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 列表页面
+	 * @param request
+	 * @return
+	 * @author WG
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showListPage2", method = RequestMethod.GET)
+	public ModelAndView showListPage2(HttpServletRequest request) {
+		//读取session
+		Jedis jedis = RedisUtil.getJedis();
+		String userId = jedis.get(request.getSession().getId());
+		ModelAndView model = new ModelAndView();
+		model.setViewName("WEB-INF/pages/list/list2");
+		model.addObject("userId", userId);
+		return model;
+	}
 }
