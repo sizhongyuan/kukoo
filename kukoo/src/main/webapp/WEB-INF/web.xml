@@ -126,6 +126,11 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>  
         <servlet-name>default</servlet-name>  
         <url-pattern>*.css</url-pattern>  
@@ -146,6 +151,11 @@
         <servlet-name>default</servlet-name>  
         <url-pattern>*.jpg</url-pattern>  
     </servlet-mapping>  
+
+	<servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.png</url-pattern>  
+    </servlet-mapping>
 
 	<servlet-mapping>  
         <servlet-name>default</servlet-name>  
@@ -195,16 +205,16 @@
 	<error-page>
 		<!-- 路径不正确 -->
 		<error-code>404</error-code>
-		<location>/WEB-INF/errorpage/404.jsp</location>
+		<location>/WEB-INF/backstage/error-page/404.jsp</location>
 	</error-page>
 	<error-page>
 		<!-- 没有访问权限，访问被禁止 -->
 		<error-code>405</error-code>
-		<location>/WEB-INF/errorpage/405.jsp</location>
+		<location>/WEB-INF/backstage/error-page/405.jsp</location>
 	</error-page>
 	<error-page>
 		<!-- 内部错误 -->
 		<error-code>500</error-code>
-		<location>/WEB-INF/errorpage/500.jsp</location>
+		<location>/WEB-INF/backstage/error-page/500.jsp</location>
 	</error-page>
 </web-app>
