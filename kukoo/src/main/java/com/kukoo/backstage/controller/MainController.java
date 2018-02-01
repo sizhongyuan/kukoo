@@ -64,4 +64,11 @@ public class MainController {
 		System.out.println("==list日志数据=="+list.toString());
 		return model;
 	}
+	
+	@RequestMapping("/showTest")
+	public ModelAndView showTest(HttpServletRequest request) { 
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"Food");
+		return model;
+	}
 }
