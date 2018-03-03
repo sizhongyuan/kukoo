@@ -186,7 +186,7 @@ public class UserController {
 	      user.setMobile(mobile);
 	      //user.setPassword(StaticMethod.string2MD5(password));
 	      //user.setUserName(userName);
-	      user.setSaveTime(new Date());
+	      user.setRegist_time(new Date());
 	      /*调用userService保存方法*/
 	      userService.saveUser(user);
 	  }
