@@ -55,6 +55,12 @@
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showProjectInfo/')">项目介绍</a>
 					</li>
 					<li class="">
+						<a href="#" onclick="changeframsrc('/kukoo/homePage/showListPage/')">项目列表1</a>
+					</li>
+					<li class="">
+						<a href="#" onclick="changeframsrc('/kukoo/homePage/showListPage2/')">项目列表2</a>
+					</li>
+					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showArticle')">文章精选</a>
 					</li>
 					<li class="">

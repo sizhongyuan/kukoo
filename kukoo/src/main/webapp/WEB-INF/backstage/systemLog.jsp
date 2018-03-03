@@ -179,5 +179,11 @@
 
         <jsp:include page="Footer.jsp"/>
 		<jsp:include page="Js.jsp"/>
+		<script>
+		$(document).ready(function() {
+			$(".table tr").sortable();
+		});
+		
+		</script>
     </body>
 </html>
