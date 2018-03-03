@@ -24,7 +24,7 @@ $(function() {
 </script>
 
 <html>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid"> 
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -45,7 +45,7 @@ $(function() {
 			</ul>
 		</div>
 		</div>
-	</nav>
+	</nav> -->
 	<div style="margin-top:30px;border:0;border-top:1px solid #eee"></div>
     <div class="container" style="margin-top:20px;">
     		<div class="panel panel-default">
@@ -196,7 +196,7 @@ $(function() {
 									    <div class="panel-body">
 									        <div class="row">
 												<div class="col-xs-12">
-													<a href="#" class="thumbnail">
+													<a href="/kukoo/detail/showDetail/" class="thumbnail">
 											            <img src="<%=basePath %>img/homepage/homePage.jpeg"
 											                 alt="通用的占位符缩略图">
 											        </a>
@@ -229,7 +229,7 @@ $(function() {
 									    <div class="panel-body">
 									        <div class="row">
 												<div class="col-xs-12">
-													<a href="#" class="thumbnail">
+													<a href="/kukoo/detail/showDetail/" class="thumbnail">
 											            <img src="<%=basePath %>img/homepage/homePage.jpeg"
 											                 alt="通用的占位符缩略图">
 											        </a>
@@ -387,7 +387,7 @@ $(function() {
 								    </div>
 							</div>
 							
-							<div class="copyright">
+							<!-- <div class="copyright">
 								<div class="container">
 									<div class="row">
 										<div class="col-sm-12">
@@ -396,7 +396,7 @@ $(function() {
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

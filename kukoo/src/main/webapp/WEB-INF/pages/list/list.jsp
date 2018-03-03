@@ -24,7 +24,7 @@
 </script>
 
 <html>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid"> 
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -45,7 +45,7 @@
 			</ul>
 		</div>
 		</div>
-	</nav>
+	</nav> -->
 	<div style="margin-top:30px;border:0;border-top:1px solid #eee"></div>
 	
 	
@@ -196,7 +196,7 @@
 							    <li class="list-group-item p-body box">
 								    	<div class="row">
 										<div class="col-xs-2">
-											<a href="#" class="thumbnail">
+											<a href="/kukoo/detail/showDetail/" class="thumbnail">
 									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
 									                 alt="">
 									        </a>
@@ -220,7 +220,7 @@
 							    <li class="list-group-item p-body box">
 								    	<div class="row">
 										<div class="col-xs-2">
-											<a href="#" class="thumbnail">
+											<a href="/kukoo/detail/showDetail/" class="thumbnail">
 									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
 									                 alt="">
 									        </a>
@@ -339,7 +339,7 @@
 								    </div>
 							</div>
 							
-							<div class="copyright">
+							<!-- <div class="copyright">
 								<div class="container">
 									<div class="row">
 										<div class="col-sm-12">
@@ -348,7 +348,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
