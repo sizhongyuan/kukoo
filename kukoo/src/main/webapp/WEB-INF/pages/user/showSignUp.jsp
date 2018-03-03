@@ -253,6 +253,7 @@
 			$("#registForm").ajaxSubmit(function (data) {
 				$("#regist").addClass("hidden");
 				$("#success").removeClass("hidden");
+				console.log("adas");
 				var sec = 5;
 				setInterval(function(){
 					sec--;

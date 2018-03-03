@@ -17,8 +17,8 @@ body {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
-.leaderboard h1 {
-  font-size: 40px;
+.leaderboard h3 {
+  font-size: 25px;
   margin-bottom: 5px;
   line-height: 1;
   letter-spacing: -1px;
@@ -54,4 +54,13 @@ background-image: url('/twitter-bootstrap/images/gridbg.gif');
 		padding:0px 150px 0px 150px;
 	}
 }
+
+.charts{//给DIV定义宽高
+
+
+        width: 300px;
+
+        height: 500px;
+
+        }
 

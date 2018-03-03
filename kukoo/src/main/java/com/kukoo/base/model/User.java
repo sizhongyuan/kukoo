@@ -15,19 +15,14 @@ public class User {
 	private String id;
 	
 	/**
-	 * 用户id
+	 * 用户头像
 	 */
-	private String userId;
+	private String user_photo;
 	
 	/**
-	 * 用户名
+	 * 邮箱
 	 */
-	private String userName;
-	
-	/**
-	 * 手机号
-	 */
-	private String mobile;
+	private String email;
 	
 	/**
 	 * 密码
@@ -35,9 +30,9 @@ public class User {
 	private String password;
 	
 	/**
-	 * 邮箱地址
+	 * 用户名
 	 */
-	private String email;
+	private String user_name;
 	
 	/**
 	 * 账号状态 0正常 1锁定
@@ -45,34 +40,29 @@ public class User {
 	private String status;
 	
 	/**
+	 * 注册时间
+	 */
+	private Date regist_time;
+	
+	/**
+	 * 手机号
+	 */
+	private String mobile;
+	
+	/**
+	 * 更新时间
+	 */
+	private Date update_time;
+	
+	/**
 	 * 删除标识 0未删除 1已删除
 	 */
 	private String deleted;
 	
 	/**
-	 * 注册时间
+	 * 删除时间
 	 */
-	private Date saveTime;
-	
-	/**
-	 * 更新时间
-	 */
-	private Date updateTime;
-	
-	/**
-	 * 失败次数
-	 */
-	private String count;
-	
-	/**
-	 * 验证码
-	 */
-	private String captcha;
-	
-	/**
-	 * 验证码有效时间
-	 */
-	private Date captchaTime;
+	private Date deleted_time;
 
 	public String getId() {
 		return id;
@@ -82,28 +72,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUser_photo() {
+		return user_photo;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
+	public void setUser_photo(String user_photo) {
+		this.user_photo = user_photo;
 	}
 
 	public String getEmail() {
@@ -114,12 +88,52 @@ public class User {
 		this.email = email;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
 	public String getStatus() {
 		return status;
 	}
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Date getRegist_time() {
+		return regist_time;
+	}
+
+	public void setRegist_time(Date regist_time) {
+		this.regist_time = regist_time;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public Date getUpdate_time() {
+		return update_time;
+	}
+
+	public void setUpdate_time(Date update_time) {
+		this.update_time = update_time;
 	}
 
 	public String getDeleted() {
@@ -130,52 +144,12 @@ public class User {
 		this.deleted = deleted;
 	}
 
-	public Date getSaveTime() {
-		return saveTime;
+	public Date getDeleted_time() {
+		return deleted_time;
 	}
 
-	public void setSaveTime(Date saveTime) {
-		this.saveTime = saveTime;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public String getCount() {
-		return count;
-	}
-
-	public void setCount(String count) {
-		this.count = count;
-	}
-
-	public String getCaptcha() {
-		return captcha;
-	}
-
-	public void setCaptcha(String captcha) {
-		this.captcha = captcha;
-	}
-
-	public Date getCaptchaTime() {
-		return captchaTime;
-	}
-
-	public void setCaptchaTime(Date captchaTime) {
-		this.captchaTime = captchaTime;
+	public void setDeleted_time(Date deleted_time) {
+		this.deleted_time = deleted_time;
 	}
 	
 	
