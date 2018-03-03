@@ -9,18 +9,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="queryUserByMobile" parameterType="string" resultType="com.kukoo.base.model.User">
 		SELECT
 			ID,
-			USER_ID,
-			USER_NAME,
-			MOBILE,
-			PASSWORD,
+			USER_PHOTO,
 			EMAIL,
+			PASSWORD,
+			USER_NAME,
 			STATUS,
-			DELETED,
+			REGIST_TIME,
+			MOBILE,
 			UPDATE_TIME,
-			COUNT,
-			CAPTCHA,
-			CAPTCHA_TIME,
-			SAVE_TIME
+			DELETED,
+			DELETED_TIME
 		FROM
 			tt_user
 		WHERE
@@ -34,34 +32,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into tt_user
 		(
 			ID,
-			USER_ID,
-			USER_NAME,
-			MOBILE,
-			PASSWORD,
+			USER_PHOTO,
 			EMAIL,
+			PASSWORD,
+			USER_NAME,
 			STATUS,
-			DELETED,
-			SAVE_TIME,
+			REGIST_TIME,
+			MOBILE,
 			UPDATE_TIME,
-			COUNT,
-			CAPTCHA,
-			CAPTCHA_TIME
+			DELETED,
+			DELETED_TIME
 		)
 		values
 		(
 			#{id,jdbcType=VARCHAR},
-			#{userId,jdbcType=VARCHAR},
-			#{userName,jdbcType=VARCHAR},
-			#{mobile,jdbcType=VARCHAR},
-			#{password,jdbcType=VARCHAR},
+			#{user_photo,jdbcType=VARCHAR},
 			#{email,jdbcType=VARCHAR},
+			#{password,jdbcType=VARCHAR},
+			#{user_name,jdbcType=VARCHAR},
 			#{status,jdbcType=VARCHAR},
-			#{deleted,jdbcType=VARCHAR},
-			#{saveTime,jdbcType=DATE},
-			#{updateTime,jdbcType=DATE},
-			#{count,jdbcType=VARCHAR},
-			#{captcha,jdbcType=VARCHAR},
-			#{captchaTime,jdbcType=DATE}
+			#{regist_time,jdbcType=DATE},
+			#{mobile,jdbcType=VARCHAR},
+			#{update_time,jdbcType=DATE},
+			#{deleted,jdbcType=DATE},
+			#{deleted_time,jdbcType=DATE}
 		)
 	</insert>
 </mapper>
@@ -69,19 +63,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 建表语句 -->
 <!-- create table tt_user(
-	id varchar(32) PRIMARY KEY COMMENT "主键id", 
-  user_id varchar(64) COMMENT "用户id",
-  user_name varchar(64) COMMENT "用户名",
-  mobile varchar(11) COMMENT "手机号",
-  password varchar(32) COMMENT "密码",
-  email varchar(256) COMMENT "邮箱",
-  status varchar(10) COMMENT "账号状态 0正常 1锁定",
-  deleted varchar(10) COMMENT "删除标识 0未删除 1已删除",
-  update_time datetime COMMENT "更新时间",
-  count varchar(10) COMMENT "失败次数",
-  captcha varchar(10) COMMENT "验证码",
-  captcha_time datetime COMMENT "验证码有效时间",
-  save_time datetime COMMENT "注册时间"
+	  id varchar(32) PRIMARY KEY COMMENT "主键id", 
+	  user_photo varchar(100) COMMENT "用户头像",
+	  email varchar(256) COMMENT "邮箱",
+	  password varchar(32) COMMENT "密码",
+	  user_name varchar(100) COMMENT "用户名",
+	  status varchar(10) COMMENT "账号状态 0正常 1锁定",
+	  regist_time datetime COMMENT "注册时间",
+	  mobile varchar(11) COMMENT "更新时间",
+	  update_time date COMMENT "更新时间",
+	  deleted varchar(10) COMMENT "删除标识 0未删除 1已删除",
+	  deleted_time datetime COMMENT "删除时间"
 )
 
 ALTER TABLE tt_user ADD INDEX index_mobile (mobile) -->
