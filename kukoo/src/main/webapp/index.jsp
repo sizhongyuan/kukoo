@@ -67,7 +67,7 @@
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showArticle')">文章精选</a>
 					</li>
 					<li class="">
-						<a href="#" onclick="changeframsrc('/kukoo/markingOL/showMarkingOL')">在线答题</a>
+						<a href="#" onclick="changeframsrc('/kukoo/markingOLController/showMarkingOL')">在线答题</a>
 					</li>
 					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showTimeAxis')">时间轴</a>
