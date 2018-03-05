@@ -43,8 +43,10 @@ public class MarkingOLController {
 	@RequestMapping(value = "/showMarkingOL", method = RequestMethod.GET)
 	public ModelAndView showMarkingOL(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showMarkingOL");
 		model.addObject("userId", userId);
