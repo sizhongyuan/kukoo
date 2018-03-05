@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kukoo.base.util.RedisUtil;
-
-import redis.clients.jedis.Jedis;
+import com.kukoo.base.model.User;
+import com.kukoo.base.util.StaticMethod;
 
 /**
  * @see 首页body页面
@@ -34,8 +33,10 @@ public class HomePageController {
 	@RequestMapping(value = "/showHomePage", method = RequestMethod.GET)
 	public ModelAndView showIndex(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showHomePage");
 		model.addObject("userId", userId);
@@ -52,8 +53,10 @@ public class HomePageController {
 	@RequestMapping(value = "/showListPage", method = RequestMethod.GET)
 	public ModelAndView showListPage(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName("WEB-INF/pages/list/list");
 		model.addObject("userId", userId);
@@ -70,8 +73,10 @@ public class HomePageController {
 	@RequestMapping(value = "/showListPage2", method = RequestMethod.GET)
 	public ModelAndView showListPage2(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName("WEB-INF/pages/list/list2");
 		model.addObject("userId", userId);

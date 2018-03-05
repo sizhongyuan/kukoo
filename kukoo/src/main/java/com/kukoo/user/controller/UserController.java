@@ -50,8 +50,10 @@ public class UserController {
 	@RequestMapping(value = "/showUserCenter", method = RequestMethod.GET)
 	public ModelAndView showUserCenter(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showUserCenter");
 		model.addObject("userId", userId);
@@ -156,16 +158,17 @@ public class UserController {
 	      JSONObject result = new JSONObject();
 	      result.put("loginMsg", "登录成功");
 	      User user = userService.queryUserByMobile(mobile);
-	      request.getSession().setAttribute("user", user);
-	      try {
-	    	  	String sessionId = request.getSession().getId();
-	    	  	Jedis jedis = RedisUtil.getJedis();
-	    	  	jedis.append(sessionId, user.getMobile());
-	    	  	jedis.expire(sessionId, 60*60*24);//redis session时限
-		  } catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		  }
+	      String sessionId = request.getSession().getId();
+	      request.getSession().setAttribute(sessionId, user.getMobile());
+//	      try {
+//	    	  	String sessionId = request.getSession().getId();
+//	    	  	Jedis jedis = RedisUtil.getJedis();
+//	    	  	jedis.append(sessionId, user.getMobile());
+//	    	  	jedis.expire(sessionId, 60*60*24);//redis session时限
+//		  } catch (Exception e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		  }
 	      String resultStr = result.toJSONString();
 	      StaticMethod.send(response, resultStr);
 	  }

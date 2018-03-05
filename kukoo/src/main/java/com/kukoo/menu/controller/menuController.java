@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kukoo.base.util.RedisUtil;
+import com.kukoo.base.util.StaticMethod;
 
 import redis.clients.jedis.Jedis;
 
@@ -34,8 +35,10 @@ public class menuController {
 	@RequestMapping(value = "/showProjectInfo", method = RequestMethod.GET)
 	public ModelAndView showProject(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showProjectInfo");
 		model.addObject("userId", userId);
@@ -52,8 +55,10 @@ public class menuController {
 	@RequestMapping(value = "/showArticle", method = RequestMethod.GET)
 	public ModelAndView showArticle(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showArticle");
 		model.addObject("userId", userId);
@@ -70,8 +75,10 @@ public class menuController {
 	@RequestMapping(value = "/showTimeAxis", method = RequestMethod.GET)
 	public ModelAndView showTimeAxis(HttpServletRequest request) {
 		//读取session
-		Jedis jedis = RedisUtil.getJedis();
-		String userId = jedis.get(request.getSession().getId());
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
 		ModelAndView model = new ModelAndView();
 		model.setViewName(modelPath+"showTimeAxis");
 		model.addObject("userId", userId);
