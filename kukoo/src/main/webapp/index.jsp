@@ -84,7 +84,9 @@
 				</ul>
 			</div>
 		</div>
+		<hr style="background-color:#666666;margin-top:0px;">
 	</header>
+	
 	<!-- 导航栏end -->
 	
 	<!-- 页面中部 -->
@@ -94,7 +96,7 @@
 	
 	<!-- 网站底部start -->
 	<footer>
-	111
+	
 	</footer>
 	<div class="copyright">
 		<div class="container">
