@@ -21,6 +21,8 @@
 	    });
 	    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
 	  });
+	 
+	 //$('select').children('option').eq(1).attr("color", "#eee");
 </script>
 
 <html>
@@ -46,41 +48,41 @@
 		</div>
 		</div>
 	</nav> -->
-	<div style="margin-top:30px;border:0;border-top:1px solid #eee"></div>
+	<!-- <div style="margin-top:30px;border:0;border-top:1px solid #eee"></div> -->
 	
 	
-    <div class="container" style="margin-top:20px;">
-    		<div class="panel panel-default">
+    <div class="container" style="margin-top:0px;max-width: 1000px;">
+    		<div class="panel panel-default" style="border-radius: 0px;">
 		    <div class="panel-body">
 		        <div class="row">
 					<div class="col-xs-12">
 						<form class="form-horizontal" role="form">
-							<div class="form-group">
-								<label class="col-sm-2 control-label">国家地区</label>
+							<div class="form-group" style="margin-left: 24px;">
+								<div class="col-sm-2 font14_c6">国家地区</div>
 								<div class="col-sm-4">
-									<select class="form-control">
+									<select class="form-control" style="border-radius: 0px;color: #999999">
 										<option>请选择国家</option>
-										<option>选择A</option>
-										<option>选择B</option>
-										<option>选择C</option>
+										<option style="color: #333;">加拿大</option>
+										<option style="color: #333;">英国</option>
+										<option style="color: #333;">澳大利达</option>
 									</select>
 								</div>
 								<div class="col-sm-4">
-									<input class="form-control" type="text"  value="该选择地区">
+									<input style="border-radius: 0px;" class="form-control" type="text"  value="" placeholder="该选择地区">
 								</div>
 								<label class="col-sm-2 control-label"></label>
 							</div>
 							<div style="margin-bottom:10px;margin-top:-5px;border:0;border-top:1px solid #eee"></div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">项目</label>
+							<div class="form-group" style="margin-left: 24px;">
+								<div class="col-sm-2 font14_c6">项目</div>
 								<div class="col-sm-4">
-									<input class="form-control" type="text"  value="该选择项目">
+									<input style="border-radius: 0px;" class="form-control" type="text"  value="" placeholder="该选择项目">
 								</div>
 								<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-4"></div>
 							</div>
 							<div style="margin-bottom:10px;margin-top:-5px;border:0;border-top:1px solid #eee"></div>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="col-sm-2 control-label">申请周期</label>
 								<div class="col-sm-4">
 									<input class="form-control" type="text"  value="该选择申请周期">
@@ -88,14 +90,6 @@
 								<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-4"></div>
 							</div>
-							<!-- <div style="margin-bottom:10px;margin-top:-5px;border:0;border-top:1px solid #eee"></div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">费用范围</label>
-								<div class="col-sm-8">
-									<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-								</div>
-								<label class="col-sm-2 control-label"></label>
-							</div> -->
 							<div style="margin-bottom:10px;margin-top:-5px;border:0;border-top:1px solid #eee"></div>
 							<div class="form-group">
 								<label class="col-sm-2 control-label">费用范围</label>
@@ -141,14 +135,14 @@
 									</div>
 									<label class="col-sm-2 control-label"></label>
 								</div>
-							</div>
-							<div class="form-group">
+							</div> -->
+							<div class="form-group" style="margin-left: 24px;">
 								<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-2">
-									<button type="button" style="width:120px;height:30px;" class="btn btn-info" data-toggle="button">重置</button>
+									<button type="button" style="width:120px;height:28px;background-color:#16a2d3;color: #FFF" data-toggle="button">重置</button>
 								</div>
 								<div class="col-sm-2">
-									<button type="button" style="width:120px;height:30px;" class="btn btn-info" data-toggle="button">搜索</button>
+									<button type="button" style="width:120px;height:28px;background-color:#16a2d3;color: #FFF" data-toggle="button">搜索</button>
 								</div>
 								<div class="col-sm-6"></div>
 							</div>
@@ -182,143 +176,90 @@
 		    </div>
 		</div>
 		
-         <div class="panel panel-default">
+         <div class="panel panel-default" style="border-radius: 0px;margin-top: 32px;">
 		    <div class="panel-body p-body">
 		        <div class="row">
 					<div class="col-xs-12">
 						<div class="row">
-							<ol class="breadcrumb p-body">
+							<!-- <ol class="breadcrumb p-body">
 							    <li><a href="#">Home</a></li>
 							    <li><a href="#">一级</a></li>
 							    <li class="active">二级</li>
-							</ol>
-							<ul class="list-group">
-							    <li class="list-group-item p-body box">
+							</ol> -->
+							<ul class="list-group" style="margin-top: -15px;margin-bottom: -15px;">
+							    <li class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
-											<a href="/kukoo/detail/showDetail/" class="thumbnail">
-									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
-									                 alt="">
+											<a href="/kukoo/detail/showDetail/">
+									            <img style="margin-left: 24px;" class="img-circle" src="<%=basePath %>img/list/Canada.png" alt="">
 									        </a>
 										</div>
-										<div class="col-xs-8">
-										蒹葭苍苍，白露为霜。所谓伊人，在水一方。
-										溯洄从之，道阻且长。溯游从之，宛在水中央。
-										蒹葭萋萋，白露未晞。所谓伊人，在水之湄。
-										溯洄从之，道阻且跻。溯游从之，宛在水中坻。
-										蒹葭采采，白露未已。所谓伊人，在水之涘。
-										溯洄从之，道阻且右。溯游从之，宛在水中沚。
+										<div class="col-xs-10" style="max-height: 92px;">
+											<div style="margin-left: -44px;">
+												<span class="font14_c3">加拿大联邦技术移民-快速通道项目</span>
+											    <p class="font12_c6" style="text-indent:25px;margin:10px 0;">加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无......</p>
+											</div>
 										</div>
-										<div class="col-xs-1">
+										<!-- <div class="col-xs-1">
 										<button type="button" class="btn btn-primary" data-toggle="button">标签1</button>
 										</div>
 										<div class="col-xs-1">
 										<button type="button" class="btn btn-primary" data-toggle="button"> 标签2</button>
-										</div>
+										</div> -->
 									</div>
 							    </li>
-							    <li class="list-group-item p-body box">
+							    <li class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
-											<a href="/kukoo/detail/showDetail/" class="thumbnail">
-									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
+											<a href="/kukoo/detail/showDetail/">
+									            <img style="margin-left: 24px;" class="img-circle" src="<%=basePath %>img/list/Australia.png"
 									                 alt="">
 									        </a>
 										</div>
-										<div class="col-xs-8">
-										蒹葭苍苍，白露为霜。所谓伊人，在水一方。
-										溯洄从之，道阻且长。溯游从之，宛在水中央。
-										蒹葭萋萋，白露未晞。所谓伊人，在水之湄。
-										溯洄从之，道阻且跻。溯游从之，宛在水中坻。
-										蒹葭采采，白露未已。所谓伊人，在水之涘。
-										溯洄从之，道阻且右。溯游从之，宛在水中沚。
+										<div class="col-xs-10" style="max-height: 92px;">
+											<div style="margin-left: -44px;">
+												<span class="font14_c3">加拿大联邦技术移民-快速通道项目</span>
+											    <p class="font12_c6" style="text-indent:25px;margin:10px 0;">加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无......</p>
+											</div>
 										</div>
-										<div class="col-xs-1">
+										<!-- <div class="col-xs-1">
 											<button type="button" class="btn btn-primary" data-toggle="button">标签1</button>
 										</div>
 										<div class="col-xs-1">
 											<button type="button" class="btn btn-primary" data-toggle="button"> 标签2</button>
-										</div>
+										</div> -->
 									</div>
 							    </li>
-							    <li class="list-group-item p-body box">
+							    <li class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
-											<a href="#" class="thumbnail">
-									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
+											<a href="#">
+									            <img style="margin-left: 24px;" class="img-circle" src="<%=basePath %>img/list/US.png"
 									                 alt="">
 									        </a>
 										</div>
-										<div class="col-xs-8">
-										蒹葭苍苍，白露为霜。所谓伊人，在水一方。
-										溯洄从之，道阻且长。溯游从之，宛在水中央。
-										蒹葭萋萋，白露未晞。所谓伊人，在水之湄。
-										溯洄从之，道阻且跻。溯游从之，宛在水中坻。
-										蒹葭采采，白露未已。所谓伊人，在水之涘。
-										溯洄从之，道阻且右。溯游从之，宛在水中沚。
+										<div class="col-xs-10" style="max-height: 92px;">
+											<div style="margin-left: -44px;">
+												<span class="font14_c3">加拿大联邦技术移民-快速通道项目</span>
+											    <p class="font12_c6" style="text-indent:25px;margin:10px 0;">加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无......</p>
+											</div>
 										</div>
-										<div class="col-xs-1">
+										<!-- <div class="col-xs-1">
 										<button type="button" class="btn btn-primary" data-toggle="button">标签1</button>
 										</div>
 										<div class="col-xs-1">
 										<button type="button" class="btn btn-primary" data-toggle="button"> 标签2</button>
-										</div>
+										</div> -->
 									</div>
 							    </li>
-							    <li class="list-group-item p-body box">
-								    	<div class="row">
-										<div class="col-xs-2">
-											<a href="#" class="thumbnail">
-									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
-									                 alt="">
-									        </a>
-										</div>
-										<div class="col-xs-8">
-										蒹葭苍苍，白露为霜。所谓伊人，在水一方。
-										溯洄从之，道阻且长。溯游从之，宛在水中央。
-										蒹葭萋萋，白露未晞。所谓伊人，在水之湄。
-										溯洄从之，道阻且跻。溯游从之，宛在水中坻。
-										蒹葭采采，白露未已。所谓伊人，在水之涘。
-										溯洄从之，道阻且右。溯游从之，宛在水中沚。
-										</div>
-										<div class="col-xs-1">
-										<button type="button" class="btn btn-primary" data-toggle="button">标签1</button>
-										</div>
-										<div class="col-xs-1">
-										<button type="button" class="btn btn-primary" data-toggle="button"> 标签2</button>
-										</div>
-									</div>
-							    </li>
-							    <li class="list-group-item p-body box">
-								    	<div class="row">
-										<div class="col-xs-2">
-											<a href="#" class="thumbnail">
-									            <img src="<%=basePath %>img/homepage/homePage.jpeg"
-									                 alt="">
-									        </a>
-										</div>
-										<div class="col-xs-8">
-										蒹葭苍苍，白露为霜。所谓伊人，在水一方。
-										溯洄从之，道阻且长。溯游从之，宛在水中央。
-										蒹葭萋萋，白露未晞。所谓伊人，在水之湄。
-										溯洄从之，道阻且跻。溯游从之，宛在水中坻。
-										蒹葭采采，白露未已。所谓伊人，在水之涘。
-										溯洄从之，道阻且右。溯游从之，宛在水中沚。
-										</div>
-										<div class="col-xs-1">
-										<button type="button" class="btn btn-primary" data-toggle="button">标签1</button>
-										</div>
-										<div class="col-xs-1">
-										<button type="button" class="btn btn-primary" data-toggle="button"> 标签2</button>
-										</div>
-									</div>
-							    </li>
+							   
+							    
 							    <!-- <li class="list-group-item">
 							        <span class="badge">新</span>
 							        折扣优惠
 							    </li> -->
 							</ul>
-							<div style="text-align: center;">
+							<!-- <div style="text-align: center;">
 								<ul class=" pagination pagination-sm">
 								    <li><a href="#">&laquo;</a></li>&nbsp;
 								    <li><a href="#">1</a></li>&nbsp;
@@ -337,7 +278,7 @@
 								        </h3>
 								        加拿大项目 | 加拿大项目 | 加拿大项目  | 加拿大项目  | 加拿大项目  | 加拿大项目  | 加拿大项目  | 加拿大项目  | 加拿大项目 
 								    </div>
-							</div>
+							</div> -->
 							
 							<!-- <div class="copyright">
 								<div class="container">
