@@ -36,7 +36,7 @@
 
 <body>
   	<!-- 导航栏start -->
-	<header class="navbar navbar-default navbar-fixed-top">
+	<header class="navbar navbar-default navbar-fixed-top" style="border-bottom: 1px solid rgba(102, 102, 102, .4);">
 		<div class="container">
 			<div class="navbar-header">
 				<!-- 定义折叠后的菜单 -->
@@ -46,33 +46,33 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand hidden-sm" href="/kukoo/index.jsp">布谷移民</a>
+				<a class="navbar-brand hidden-sm" href="/kukoo/">布谷移民</a>
 			</div>
 			<!-- 导航条切换 -->
 			<div class="navbar-collapse collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right hidden-sm">
-					<li class="">
+					<!-- <li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showProjectInfo/')">项目介绍</a>
-					</li>
+					</li> -->
 					<li class="">
-						<a href="#" onclick="changeframsrc('/kukoo/homePage/showListPage/')">项目列表1</a>
+						<a href="#" onclick="changeframsrc('/kukoo/homePage/showListPage/')">项目介绍</a>
 					</li>
-					<li class="">
+					<!-- <li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/homePage/showListPage2/')">项目列表2</a>
-					</li>
-					<li class="">
+					</li> -->
+					<!-- <li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/detail/showDetail/')">项目详情</a>
-					</li>
-					<li class="">
+					</li> -->
+					<!-- <li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/menu/showArticle')">文章精选</a>
-					</li>
+					</li> -->
 					<li class="">
 						<a href="#" onclick="changeframsrc('/kukoo/markingOLController/showMarkingOL')">在线答题</a>
 					</li>
 					<li class="">
-						<a href="#" onclick="changeframsrc('/kukoo/menu/showTimeAxis')">时间轴</a>
+						<a href="#" onclick="changeframsrc('/kukoo/timeAxis/showTimeAxis')">时间轴</a>
 					</li>
-					<li id="signIn" class="">
+					<!-- <li id="signIn" class="">
 						<a href="#" onclick="changeframsrc('/kukoo/user/showSignIn')">登录</a>
 					</li>
 					<li id="signUp" class="">
@@ -80,11 +80,11 @@
 					</li>
 					<li id="userCenter" class="hidden">
 						<a href="#" onclick="changeframsrc('/kukoo/user/showUserCenter')">用户中心</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
-		<hr style="background-color:#666666;margin-top:0px;">
+		<!-- <hr style="background-color:#666666;margin-top:0px;"> -->
 	</header>
 	
 	<!-- 导航栏end -->
@@ -93,21 +93,20 @@
 	<div class="iframe-top">
 		<iframe id="iframeid" src="/kukoo/homePage/showHomePage/" onload="Javascript:SetCwinHeight()" frameborder="0" width="100%" height="1"></iframe>
 	</div>
-	
 	<!-- 网站底部start -->
 	<footer>
-	
-	</footer>
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<span>Copyright © <a href="http://www.youzhan.org">优站精选</a></span>
-					| <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<span>Copyright © <a href="http://www.youzhan.org">优站精选</a></span>
+						| <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</footer>
+	
 	<!-- 网站底部end -->
 </body>
 </html>

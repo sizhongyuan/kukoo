@@ -21,8 +21,11 @@
 	padding-top: 20px;
 }
 /* 导航条样式 end */
-body {
+/* body {
 	padding-top: 30px;
+} */
+.iframe-top{
+	padding-top: 60px;
 }
 /* 底部备案号说明条 start */
 .copyright {
