@@ -10,10 +10,14 @@
 } */
 .row {
     /* margin-bottom: 200px; */
-    position: relative;
+    /* position: relative;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: -120px;
+    margin-top: -140px; */
+    position:absolute;
+    left: 20%;
+    right: 20%;
+    top: 70%;
     background: rgba(102,102,102,.6);
     padding: 12px;
     border-radius: 4px;
@@ -32,7 +36,8 @@
 	}
 } */
 .input-size {
-	width: 28%;
+	/* width: 28%; */
+	width: 42%;
     float: left;
 }
 @media (max-width: 992px){
@@ -55,7 +60,7 @@
 }
 .botton-item {
 	border-radius: 0px 4px 4px 0px;
-	background-color: #ff5a5f;
+	background-color: #16a2d3;
 	border-style: none;
 	color: #ffffff;
 }
