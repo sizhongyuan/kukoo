@@ -27,7 +27,11 @@
 			$(".navbar-collapse li").removeClass("active");//首先移除全部的active
 			$(this).addClass("active");//选中的添加acrive
 		});
+		
 	});
+	function setiframeSrc(country,project){
+		document.getElementById("iframeid").src = "/kukoo/homePage/showListPage?project="+project+"&country="+country;
+	}
 </script>
 <head>
 <!-- <link rel="icon" href="../../favicon.ico"> -->
