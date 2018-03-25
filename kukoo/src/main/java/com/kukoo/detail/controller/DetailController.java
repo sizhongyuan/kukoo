@@ -44,5 +44,65 @@ public class DetailController {
 		model.addObject("userId", userId);
 		return model;
 	}
+	
+	/**
+	 * @see 展示详情页面
+	 * @param request
+	 * @return
+	 * @author chenjianghe
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showDetail_Canada_SINP", method = RequestMethod.GET)
+	public ModelAndView showDetail_Canada_SINP(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showDetail_Canada_SINP");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 展示详情页面
+	 * @param request
+	 * @return
+	 * @author chenjianghe
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showDetail_Canada_QSW", method = RequestMethod.GET)
+	public ModelAndView showDetail_Canada_QSW(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showDetail_Canada_QSW");
+		model.addObject("userId", userId);
+		return model;
+	}
+
+	/**
+	 * @see 展示详情页面
+	 * @param request
+	 * @return
+	 * @author chenjianghe
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/showDetail_Canada_NS", method = RequestMethod.GET)
+	public ModelAndView showDetail_Canada_NS(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"showDetail_Canada_NS");
+		model.addObject("userId", userId);
+		return model;
+	}
 
 }
