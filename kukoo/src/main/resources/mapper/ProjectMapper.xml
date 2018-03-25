@@ -57,7 +57,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{period,jdbcType=VARCHAR},
 			#{livingCondition,jdbcType=VARCHAR},
 			#{cost,jdbcType=VARCHAR},
-			#{createTime,jdbcType=DATETIME},
+			#{createTime,jdbcType=DATE},
 			#{createUserId,jdbcType=VARCHAR},
 			#{deleted,jdbcType=VARCHAR},
 		)
