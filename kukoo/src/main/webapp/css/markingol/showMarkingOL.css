@@ -1,0 +1,209 @@
+@CHARSET "UTF-8";
+
+*{
+	background-repeat: no-repeat;
+}
+.title {
+    padding-bottom: 10px;
+}
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 710px;
+}
+p {
+    padding: 0;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+}
+div dd {
+    background: #F8F8F8;
+    cursor: pointer;
+    padding: 8px 8px 8px 30px;
+    border: 1px #F8F8F8 solid;
+    margin-top: 12px;
+}
+
+.container dd :hover {
+  z-index: 99;
+  background-color: #fff;
+  -webkit-transform: scale(0.98, 1.05);
+  transform: scale(0.98, 1.05);
+  -webkit-box-shadow: 3px 3px 3px#d3c998;  
+  -moz-box-shadow: 3px 3px 3px#d3c998;  
+  box-shadow: 3px 3px 3px#d3c998;
+}
+.title_index {
+    float: left;
+	font-size: 24px;
+	
+}
+.title_text{
+    font-weight: normal;
+    margin: 0;
+    vertical-align: top;
+}
+.question {
+    padding: 15px 0;
+}
+.title_text{
+    color: #333333;
+    vertical-align: middle;
+}
+.inputs {
+    font-size: 0;
+}
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+.survey_form_checkbox {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+    float: left;
+}
+.option_item {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    position: relative;
+    margin-left: -10px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+.survey_wrap {
+    width: 100%;
+    max-width: 1000px;
+    min-width: 730px;
+    border: 1px solid #dadada;
+    position: relative;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 1.8em;
+    margin: auto;
+}
+.option_item label {
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+    min-height: 40px;
+    display: block;
+    padding-left: 10px;
+}
+.inputs label {
+    cursor: pointer;
+}
+.stat {
+    display: none;
+    text-align: right;
+    position: absolute;
+    top: 7px;
+    left: 30px;
+    right: 0;
+    height: 25px;
+    font-size: 14px;
+}
+
+.survey_form_ui {
+    background-image: url(../../img/markingol/quan.png);
+}
+
+.survey_form_checkbox[type="radio"] + label .survey_form_ui{
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.survey_form_ui {
+    float: left;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+.survey_form_ui {
+    display: inline-block;
+    zoom: 1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin-top: 6px;
+    margin-right: 5px;
+    border: 1px solid #b8b8b8;
+    background-color: #fafafa;
+    vertical-align: top;
+}
+.survey_form_checkbox:checked + label .survey_form_ui{
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-color: #479de6;
+    border: none;
+}
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+.option_item .option_text {
+    display: block;
+    z-index: 1;
+    position: relative;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+.question .option_text {
+    font-size: 14px;
+    color: #333333;
+    vertical-align: middle;
+}
+.question .option_text {
+    display: inline-block;
+    zoom: 1;
+}
+
+.option_text p{
+	margin:0px;
+}	
+
+.description {
+    font-size: 12px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
+.survey_control {
+    overflow: hidden;
+    text-align: center;
+    padding: 30px 0;
+}
+.survey_btn {
+    cursor: pointer;
+    display: inline-block;
+    zoom: 1;
+    background-color: #479de6;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 85px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.survey_form_checkbox + label:hover,.survey_form_checkbox + label:active {
+  background-color: #f5f5f5;
+}
