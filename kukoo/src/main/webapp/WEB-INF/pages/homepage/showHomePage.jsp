@@ -14,23 +14,29 @@
 		}
 		/* 判断session用户是否登录 end*/
 	});
+	function mainQuery(){
+		var country = $("#country").val().trim();
+		var project = $("#project").val().trim();
+		//alert("submit"+country+"---"+project);
+		window.parent.setiframeSrc(country,project);
+	}
 </script>
 <body>
 	<div style="position:relative;">
 		<%-- <img class="first-slide" src="<%=basePath %>img/homepage/homePage.jpeg" width="1344" height="613"> --%>
-		<img src="<%=basePath %>img/homepage/homePage.jpeg" width="100%" height="100%">
+		<img src="<%=basePath %>img/homepage/homePage.jpeg" width="100%" height="100%" >
 		<div class="row">
 			<div class="input-size">
-				<input type="text" class="form-control" style="border-radius:4px 0px 0px 4px;" id="inputPassword2" placeholder="想移民的国家"/>
+				<input type="text" class="form-control" style="border-radius:4px 0px 0px 4px;" id="country" placeholder="想移民的国家"/>
 			</div>
 			<div class="input-size">
-				<input type="text" class="form-control" style="border-radius:0px;" id="inputPassword2" placeholder="感兴趣的项目"/>
+				<input type="text" class="form-control" style="border-radius:0px;" id="project" placeholder="感兴趣的项目"/>
 			</div>
 			<!-- <div class="input-size">
 				<input type="text" class="form-control" style="border-radius:0px;" id="inputPassword2" placeholder="其他"/>
 			</div> -->
 			<div class="button-size">
-				<button type="button" class="form-control botton-item" id="inputPassword2">
+				<button onclick="mainQuery()" type="button" class="form-control botton-item" id="inputPassword2">
 					<img src="<%=basePath %>img/homepage/search.png">搜索
 				</button>
 			</div>
