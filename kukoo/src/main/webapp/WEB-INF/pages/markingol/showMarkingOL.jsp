@@ -19,6 +19,7 @@ System.out.println(basePath+"....."+path);
 	<link rel="stylesheet" href="<%=basePath %>javascript/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 	<!-- 网站公共部分样式 -->
 	<link rel="stylesheet" href="<%=basePath %>css/base/base.css" />
+	<link rel="stylesheet" href="<%=basePath %>css/markingol/showMarkingOL.css" />
 	
 	<!-- 引用JS -->
 	<script src="<%=basePath %>javascript/jquery/1.12.4/jquery.min.js"></script>
@@ -29,27 +30,59 @@ System.out.println(basePath+"....."+path);
     
     <style>
     
-    body{ text-align:center} 
-	#markingOL{margin:0 auto;width:50%;height:50%}
+    /* body{ text-align:center}  
+	#markingOL{margin:0 auto;width:70%}*/
     </style>
 	
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			document.getElementById("question2").style.display="none";
-			document.getElementById("question3").style.display="none";
-			document.getElementById("question4").style.display="none";
-			document.getElementById("question5").style.display="none";
-			document.getElementById("question6").style.display="none";
-			document.getElementById("question7").style.display="none";
-			document.getElementById("question8").style.display="none";
-			document.getElementById("question9").style.display="none";
-			document.getElementById("question10").style.display="none";
-			document.getElementById("question11").style.display="none";
-			document.getElementById("question12").style.display="none";
+			//document.getElementById("question2").style.display="none";
+			//document.getElementById("question3").style.display="none";
+			//document.getElementById("question4").style.display="none";
+			//document.getElementById("question5").style.display="none";
+			//document.getElementById("question6").style.display="none";
+			//document.getElementById("question7").style.display="none";
+			//document.getElementById("question8").style.display="none";
+			//document.getElementById("question9").style.display="none";
+			//document.getElementById("question10").style.display="none";
+			//document.getElementById("question11").style.display="none";
+			//document.getElementById("question12").style.display="none";
+			document.getElementById("sheet2").style.display="none";
 			document.getElementById("result").style.display="none";
 		});
-		
+		//点击下一页
+		function changeNextPage(){
+			var checked1 = $('input[name="answer_q-1"]:checked').val();
+			var checked2 = $('input[name="answer_q-2"]:checked').val();
+			var checked3 = $('input[name="answer_q-3"]:checked').val();
+			var checked4 = $('input[name="answer_q-4"]:checked').val();
+			if(checked1!=undefined&&checked2!=undefined&&checked3!=undefined&&checked4!=undefined){
+				document.getElementById("sheet1").style.display="none";
+				document.getElementById("sheet2").style.display="block";
+				document.getElementById("nextPage").style.display="none";
+				document.getElementById("warning").style.display="none";
+				document.getElementById("toSubmit").style.display="inline-block";
+				document.getElementById("previousPage").style.display="inline-block";
+				document.documentElement.scrollTop=0;
+				window.pageYOffset=0;
+				document.body.scrollTop=0
+			}else{
+				document.getElementById("warning").style.display="block";
+			}
+			
+		}
+		//点击上一页
+		function changeUpPage(){
+			document.getElementById("sheet2").style.display="none";
+			document.getElementById("sheet1").style.display="block";
+			document.getElementById("nextPage").style.display="inline-block";
+			document.getElementById("previousPage").style.display="none";
+			document.getElementById("toSubmit").style.display="none";
+			document.documentElement.scrollTop=0;
+			window.pageYOffset=0;
+			document.body.scrollTop=0
+		}
 		//题目页变更
 		function changeQuestion(obj){
 		
@@ -75,17 +108,24 @@ System.out.println(basePath+"....."+path);
 			var saskatchewanscore = 0;
 			var scotiascore = 0;
 			var quebecscore = 0;
-			var checked1 = $('input[name="question1"]:checked').val();
-			var checked2 = $('input[name="question2"]:checked').val();
-			var checked3 = $('input[name="question3"]:checked').val();
-			var checked4 = $('input[name="question4"]:checked').val();
+			var checked1 = $('input[name="answer_q-1"]:checked').val();
+			var checked2 = $('input[name="answer_q-2"]:checked').val();
+			var checked3 = $('input[name="answer_q-3"]:checked').val();
+			var checked4 = $('input[name="answer_q-4"]:checked').val();
 			//var checked5 = $('input[name="question5"]:checked').val();
-			var checked7 = $('input[name="question7"]:checked').val();
-			var checked8 = $('input[name="question8"]:checked').val();
-			var checked9 = $('input[name="question9"]:checked').val();
-			var checked10 = $('input[name="question10"]:checked').val();
-			var checked11 = $('input[name="question11"]:checked').val();
-			var checked12 = $('input[name="question12"]:checked').val();
+			var checked7 = $('input[name="answer_q-7"]:checked').val();
+			var checked8 = $('input[name="answer_q-8"]:checked').val();
+			var checked9 = $('input[name="answer_q-9"]:checked').val();
+			var checked10 = $('input[name="answer_q-10"]:checked').val();
+			var checked11 = $('input[name="answer_q-11"]:checked').val();
+			var checked12 = $('input[name="answer_q-12"]:checked').val();
+			
+			if(checked7==undefined||checked8==undefined||checked9==undefined||checked10==undefined||checked11==undefined||checked12==undefined){
+
+				document.getElementById("warning").style.display="block";
+				return;
+			}
+			
 			if("1"==checked1){
 				federalscore += 0;
 				saskatchewanscore += 0;
@@ -288,12 +328,17 @@ System.out.println(basePath+"....."+path);
 				scotiascore += 0;
 				quebecscore += 16;
 			}
-			$("#resulttext1").text("联邦："+federalscore+"分");
-			$("#resulttext2").text("萨省："+saskatchewanscore+"分");
-			$("#resulttext3").text("新斯科特："+scotiascore+"分");
-			$("#resulttext4").text("魁北克："+quebecscore+"分");
-			document.getElementById("question12").style.display="none";
+			$("#federalscore").text("联邦："+federalscore+"分");
+			$("#saskatchewanscore").text("萨省："+saskatchewanscore+"分");
+			$("#scotiascore").text("新斯科特："+scotiascore+"分");
+			$("#quebecscore").text("魁北克："+quebecscore+"分");
+			//document.getElementById("question12").style.display="none";
 			document.getElementById("result").style.display="block";
+			document.getElementById("sheet2").style.display="none";
+			document.getElementById("nextPage").style.display="none";
+			document.getElementById("previousPage").style.display="none";
+			document.getElementById("toSubmit").style.display="none";
+			document.getElementById("warning").style.display="none";
 			/* 
 			var checked1 = "";
 			var question2 = document.getElementsByTagName("question2");
@@ -391,36 +436,938 @@ System.out.println(basePath+"....."+path);
 			}); */
 		
 		}
-	
+	function aaas(){
+		var checked1 = $('input[name="answer_q-1"]:checked').val();
+		alert(checked1);
+	}
 	</script>
   </head>
   
   <body>
-  	<br>
 
+	<div id="markingOl" class="container" style="margin-top:20px;overflow:hidden;">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h1 class="survey_title" style="display: block;"> 
+					<div class="inner"> 
+					<div class="title_content">
+					<p>布谷移民在线评估问卷</p>
+					</div> 
+					</div> 
+				</h1>
+		
+				<div class="survey_container" id="sheet1">
+					<div class="survey_page">
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question1">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >1</span>.</span>您的年龄？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-1" id="option_q-1-1" value="1">
+									 <label for="option_q-1-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p style="margin:0px;">低于20岁</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-1" id="option_q-1-2" value="2"> 
+									<label for="option_q-1-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>20到35岁之间</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-1" id="option_q-1-3" value="3"> 
+									<label for="option_q-1-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>36到40岁</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-1" id="option_q-1-4" value="4"> 
+									<label for="option_q-1-4"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>40岁以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								
+							</div>
+							<div  id="old20">
+					  			Tips：建议客户考虑去加拿大读书或者先选择可以移民的专业在国内读书。
+					  		</div>
+					  		<div  id="old40">
+					  			Tips：由于技术移民倾向年轻化，超过35岁开始减分，建议年龄高于40岁的申请人考虑其他移民项目。
+					  		</div>
+						</div>
+					</div>
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					<!-- 2 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question2" style="display: block;">
+								<div>
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >2</span>.</span>您的学历？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-2" id="option_q-2-1" value="1">
+									 <label for="option_q-2-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p >低于大专</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-2" id="option_q-2-2" value="2"> 
+									<label for="option_q-2-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>大专</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-2" id="option_q-2-3" value="3"> 
+									<label for="option_q-2-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>本科</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-2" id="option_q-2-4" value="4"> 
+									<label for="option_q-2-4"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>双本科</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-2" id="option_q-2-5" value="5"> 
+									<label for="option_q-2-5"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>研究生</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-2" id="option_q-2-6" value="6"> 
+									<label for="option_q-2-6"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>博士及以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 3 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question3" style="display: block;">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >3</span>.</span>您高等教育的专业？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-3" id="option_q-3-1" value="1">
+									 <label for="option_q-3-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p >12分专业</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-3" id="option_q-3-2" value="2"> 
+									<label for="option_q-3-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>9分专业</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-3" id="option_q-3-3" value="3"> 
+									<label for="option_q-3-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>其他专业</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div >
+	  							Tips：本题只影响魁北克省申请。如果不考虑魁北克省，可以跳过。
+	  						</div>
+						</div>
+					</div>
+					
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 4 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question4" style="display: block;">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >4</span>.</span>您的工作年限？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-1" value="1">
+									 <label for="option_q-4-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p >1年</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-2" value="2"> 
+									<label for="option_q-4-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>2年</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-3" value="3"> 
+									<label for="option_q-4-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>3年</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-4" value="4"> 
+									<label for="option_q-4-4"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>4年</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-5" value="5"> 
+									<label for="option_q-4-5"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>5年</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-6" value="6"> 
+									<label for="option_q-4-6"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>6年</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-4" id="option_q-4-7" value="7"> 
+									<label for="option_q-4-7"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>7年及以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 5 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question5" style="display: block;">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >5</span>.</span>您的工作职位？</p>
+									</h3>
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div >
+	  						<span>Tips：只针对萨省申请，使用不需要认证的职位，如果不在列表里，提示需要先做职业认证再申请萨省。</span>
+	  						</div>
+						</div>
+					</div>
+					
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 6 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question6" style="display: block;">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >6</span>.</span>婚姻状况？</p>
+									</h3>
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div >
+	  						<span>Tips：如有配偶，请考虑配偶也许评分更高更适合做主申请人。</span>
+	  						</div>
+						</div>
+					</div>
+					
+					
+					
+					
+					</div>
+				</div>
+				<div class="survey_page" id="sheet2">
+					<!-- 7 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question7" style="display: block;">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >7</span>.</span>子女？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-7" id="option_q-7-1" value="1">
+									 <label for="option_q-7-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p >0</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-7" id="option_q-7-2" value="2"> 
+									<label for="option_q-7-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>1</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-7" id="option_q-7-3" value="3"> 
+									<label for="option_q-7-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>2个以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div >
+	  							Tips：本题只对魁省申请有影响。
+	  						</div>
+						</div>
+					</div>
+					
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 8 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question8">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >8</span>.</span>是否有在加拿大工作或学习超过一年以上？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-8" id="option_q-8-1" value="1">
+									 <label for="option_q-8-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p style="margin:0px;">有在萨省工作或者学习一年以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-8" id="option_q-8-2" value="2"> 
+									<label for="option_q-8-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>有在新斯科舍工作或者学习一年以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-8" id="option_q-8-3" value="3"> 
+									<label for="option_q-8-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>有在魁北克工作或者学习6个月以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-8" id="option_q-8-4" value="4"> 
+									<label for="option_q-8-4"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>有在其他加拿大地区工作学习一年以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-8" id="option_q-8-5" value="5"> 
+									<label for="option_q-8-5"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>没有在加拿大任何地区工作学习一年以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					
+					<!-- 9 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question9">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >9</span>.</span>是否有加拿大亲属？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-9" id="option_q-9-1" value="1">
+									 <label for="option_q-9-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p style="margin:0px;">有</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-9" id="option_q-9-2" value="2"> 
+									<label for="option_q-9-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>没有</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 10 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question10">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >10</span>.</span>现在或未来是否有魁北克省的工作offer？<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-10" id="option_q-10-1" value="1">
+									 <label for="option_q-10-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p style="margin:0px;">有</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-10" id="option_q-10-2" value="2"> 
+									<label for="option_q-10-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>没有</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					
+					<!-- 11 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question11">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >11</span>.</span>英语成绩<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-11" id="option_q-11-1" value="1">
+									 <label for="option_q-11-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p style="margin:0px;">雅思5</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-11" id="option_q-11-2" value="2"> 
+									<label for="option_q-11-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>雅思5.5</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-11" id="option_q-11-3" value="3"> 
+									<label for="option_q-11-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>雅思6</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-11" id="option_q-11-4" value="4"> 
+									<label for="option_q-11-4"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>雅思6.5</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-11" id="option_q-11-5" value="5"> 
+									<label for="option_q-11-5"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>雅思7以上</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
+					
+					<!-- 12 -->
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title" id="question12">
+								<div>
+									
+									<h3 class="title_text" >
+										<p style="margin:0px;"><span class="title_index"><span class="question_index" >12</span>.</span>法语成绩<span style="font-weight: 700;color: #f00;">*</span></p>
+									</h3>
+									
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;"  tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-12" id="option_q-12-1" value="1">
+									 <label for="option_q-12-1"> 
+									 <i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p style="margin:0px;">B2</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-12" id="option_q-12-2" value="2"> 
+									<label for="option_q-12-2"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>C1</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-12" id="option_q-12-3" value="3"> 
+									<label for="option_q-12-3"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>C2</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;" role="radio"
+									tabindex="-1" aria-checked="false">
+									<input class="survey_form_checkbox" type="radio" name="answer_q-12" id="option_q-12-4" value="4"> 
+									<label for="option_q-12-4"> 
+									<i class="survey_form_ui"></i>
+										<div class="option_text">
+											<p>无法语成绩</p>
+										</div>
+										<div class="stat">
+											<div class="bar"></div>
+											<span class="rate"></span> <span class="count"></span>
+										</div>
+									</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					
+				
+				</div>
+				
+				<div class="survey_page" id="result">
+					<div class="question question_radio required" style="display: block;">
+						<div class="inner">
+							<div class="title"  style="display: block;">
+								<div>
+									<h3 class="title_text" >
+										<p style="margin:0px;">评估结果：</p>
+									</h3>
+								</div>
+							</div>
+							<div class="description">
+								<div class="description_text"></div>
+							</div>
+							<div class="inputs">
+								<div class="option_item" style="width: 100%;" >
+									 <label > 
+										<div class="option_text" >
+											<p id="federalscore">0</p>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  >
+									<label > 
+										<div class="option_text" >
+											<p id="saskatchewanscore">1</p>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  >
+									<label > 
+										<div class="option_text" >
+											<p id="scotiascore">1</p>
+										</div>
+									</label>
+								</div>
+								<div class="option_item" style="width: 100%;"  >
+									<label > 
+										<div class="option_text" >
+											<p id="quebecscore">1</p>
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>	
+				<div class="survey_control" id="warning" style="display: none;">
+					<p style="color: #f00;">至少有一项没有选择！</p>
+				</div>
+				<div class="survey_control">
+					<div class="inner">
+						<a href="javascript:;" title="上一页" id="previousPage" aria-label="上一页" role="button" 
+							class="survey_btn survey_prevpage" onclick="changeUpPage()" style="display: none;">上一页</a> 
+						<a href="javascript:;" title="提交" id="toSubmit" aria-label="提交" role="button"
+							class="survey_btn survey_submit" onclick="completeQuestion()"  style="display: none;">提交</a> 
+						<a href="javascript:;" title="下一页" id="nextPage" aria-label="下一页" role="button"
+							class="survey_btn survey_nextpage" onclick="changeNextPage()" style="display: inline-block;">下一页</a>
+					</div>
+				</div>
 
-	<div id="markingOl">
-		<div class="panel panel panel-primary" id="question1">
-	  		<div class="panel-heading">
-	    		<h3 class="panel-title">1.您的年龄</h3>
-	  		</div>
-	  		<div class="panel-body">
-	    		<label class="radio-inline">
-       	 			<input type="radio" name="question1" id="question1Option1" value="1" > 低于20岁
-    			</label>
-    			</br>
-    			<label class="radio-inline">
-       	 			<input type="radio" name="question1" id="question1Option2" value="2" > 20到35岁之间
-    			</label>
-    			</br>
-    			<label class="radio-inline">
-       	 			<input type="radio" name="question1" id="question1Option3" value="3" > 36到40岁
-    			</label>
-    			</br>
-    			<label class="radio-inline">
-       	 			<input type="radio" name="question1" id="question1Option4" value="4" > 40岁以上
-    			</label>
-	  		</div>
+			</div> 
+		</div>
+		
+		 
+		<!-- <div class="panel panel panel-primary" id="question1" style="border-radius:0px;" >
+			<dl>
+				<dt><h3 class="panel-title" style="color: #333;font-size: 100%;">1.您的年龄</h3></dt>
+				<dd><input type="radio" name="question1" id="question1Option1" value="1" > 低于20岁</dd>
+				<dd><input type="radio" name="question1" id="question1Option2" value="2" > 20到35岁之间</dd>
+				<dd><input type="radio" name="question1" id="question1Option3" value="3" > 36到40岁</dd>
+				<dd><input type="radio" name="question1" id="question1Option4" value="4" > 40岁以上</dd>
+			</dl>
+		
+		
+	  		
 	  		<div  id="old20">
 	  			Tips：建议客户考虑去加拿大读书或者先选择可以移民的专业在国内读书。
 	  		</div>
@@ -433,9 +1380,9 @@ System.out.println(basePath+"....."+path);
 			    <li class="next"><a href="javascript:void(0);" onclick="changeQuestion('question2')">下一题 <span aria-hidden="true">&rarr;</span></a></li>
 			  </ul>
 			</nav>
-		</div>
+		</div> -->
 		
-		<div class="panel panel panel-primary" id="question2" style="dispaly:none">
+		<!-- <div class="panel panel panel-primary" id="question2" style="dispaly:none">
 	  		<div class="panel-heading">
 	    		<h3 class="panel-title">2.您的学历</h3>
 	  		</div>
@@ -470,9 +1417,9 @@ System.out.println(basePath+"....."+path);
 			    <li class="next"><a href="javascript:void(0);" onclick="changeQuestion('question3')">下一题 <span aria-hidden="true">&rarr;</span></a></li>
 			  </ul>
 			</nav>
-		</div>
+		</div> -->
 		
-		<div class="panel panel panel-primary" id="question3" style="dispaly:none">
+		<!-- <div class="panel panel panel-primary" id="question3" style="dispaly:none">
 	  		<div class="panel-heading">
 	    		<h3 class="panel-title">3.您高等教育的专业</h3>
 	  		</div>
@@ -548,13 +1495,13 @@ System.out.println(basePath+"....."+path);
 	    		<h3 class="panel-title">5.您的工作职位</h3>
 	  		</div>
 	  		<div class="panel-body">
-	    		<!-- <label class="radio-inline">
+	    		<label class="radio-inline">
        	 			<input type="radio" name="question5" id="question4Option1" value="option1" > 1年
     			</label>
     			</br>
     			<label class="radio-inline">
        	 			<input type="radio" name="question5" id="question4Option2" value="option1" > 2年
-    			</label> -->
+    			</label>
 	  		</div>
 	  		<div >
 	  			<span>Tips：只针对萨省申请，使用不需要认证的职位，如果不在列表里，提示需要先做职业认证再申请萨省。</span>
@@ -571,7 +1518,7 @@ System.out.println(basePath+"....."+path);
 	  		<div class="panel-heading">
 	    		<h3 class="panel-title">6.婚姻状况</h3>
 	  		</div>
-	  		<!-- <div class="panel-body">
+	  		<div class="panel-body">
 	    		<label class="radio-inline">
        	 			<input type="radio" name="question4" id="question4Option1" value="option1" > 1年
     			</label>
@@ -579,7 +1526,7 @@ System.out.println(basePath+"....."+path);
     			<label class="radio-inline">
        	 			<input type="radio" name="question4" id="question4Option2" value="option1" > 2年
     			</label>
-	  		</div> -->
+	  		</div>
 	  		
 	  		<div >
 	  			Tips：如有配偶，请考虑配偶也许评分更高更适合做主申请人。
@@ -735,9 +1682,9 @@ System.out.println(basePath+"....."+path);
 			    <li class="next"><a href="javascript:void(0);" onclick="changeQuestion('question12')">下一题 <span aria-hidden="true">&rarr;</span></a></li>
 			  </ul>
 			</nav>
-		</div>
+		</div> -->
 	
-		<div class="panel panel panel-primary" id="question12" style="dispaly:none">
+		<!-- <div class="panel panel panel-primary" id="question12" style="dispaly:none">
 	  		<div class="panel-heading">
 	    		<h3 class="panel-title">12.法语成绩</h3>
 	  		</div>
@@ -765,8 +1712,8 @@ System.out.println(basePath+"....."+path);
 			    <li class="next"><a href="javascript:void(0);" onclick="completeQuestion()">完成 <span aria-hidden="true">&rarr;</span></a></li>
 			  </ul>
 			</nav>
-		</div>
-		<div class="panel panel panel-primary" id="result" style="dispaly:none">
+		</div> -->
+		<!-- <div class="panel panel panel-primary" id="result" style="dispaly:none">
 	  		<div class="panel-heading">
 	    		<p class="text-left">测试得分：</p>
 	  		</div>
@@ -778,7 +1725,7 @@ System.out.println(basePath+"....."+path);
 	  		</div>
 	  		
 	  		
-		</div>
+		</div> -->
 	
 	
 	
