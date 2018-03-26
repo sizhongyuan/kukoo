@@ -8,7 +8,7 @@ System.out.println(basePath+"....."+path);
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<html id="markingOlhtml">
   <head>
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,24 +64,47 @@ System.out.println(basePath+"....."+path);
 				document.getElementById("warning").style.display="none";
 				document.getElementById("toSubmit").style.display="inline-block";
 				document.getElementById("previousPage").style.display="inline-block";
-				document.documentElement.scrollTop=0;
-				window.pageYOffset=0;
-				document.body.scrollTop=0
+				
+				$(function(){location.href="#markingOlhtml";});
 			}else{
-				document.getElementById("warning").style.display="block";
+				//document.getElementById("warning").style.display="block";
+				if(checked1==undefined){
+					$(function(){location.href="#markingOlhtml";});
+					document.getElementById("warning1").style.display="block";
+				}else if(checked2==undefined){
+					$(function(){location.href="#herf1";});
+					document.getElementById("warning1").style.display="none";
+					document.getElementById("warning2").style.display="block";
+				}else if(checked3==undefined){
+					$(function(){location.href="#herf2";});
+					document.getElementById("warning2").style.display="none";
+					document.getElementById("warning1").style.display="none";
+					document.getElementById("warning3").style.display="block";
+				}else if(checked4==undefined){
+					$(function(){location.href="#herf3";});
+					document.getElementById("warning1").style.display="none";
+					document.getElementById("warning2").style.display="none";
+					document.getElementById("warning3").style.display="none";
+					document.getElementById("warning4").style.display="block";
+				}
 			}
 			
 		}
 		//点击上一页
 		function changeUpPage(){
+			document.getElementById("warning1").style.display="none";
+			document.getElementById("warning2").style.display="none";
+			document.getElementById("warning3").style.display="none";
+			document.getElementById("warning4").style.display="none";
 			document.getElementById("sheet2").style.display="none";
 			document.getElementById("sheet1").style.display="block";
 			document.getElementById("nextPage").style.display="inline-block";
 			document.getElementById("previousPage").style.display="none";
 			document.getElementById("toSubmit").style.display="none";
-			document.documentElement.scrollTop=0;
-			window.pageYOffset=0;
-			document.body.scrollTop=0
+			$(function(){location.href="#markingOlhtml";});
+			//document.documentElement.scrollTop=0;
+			//window.pageYOffset=0;
+			//document.body.scrollTop=0
 		}
 		//题目页变更
 		function changeQuestion(obj){
@@ -120,9 +143,45 @@ System.out.println(basePath+"....."+path);
 			var checked11 = $('input[name="answer_q-11"]:checked').val();
 			var checked12 = $('input[name="answer_q-12"]:checked').val();
 			
-			if(checked7==undefined||checked8==undefined||checked9==undefined||checked10==undefined||checked11==undefined||checked12==undefined){
-
-				document.getElementById("warning").style.display="block";
+			if(checked7==undefined){
+				$(function(){location.href="#markingOlhtml";});
+				document.getElementById("warning7").style.display="block";
+				//document.getElementById("warning").style.display="block";
+				return;
+			}else if(checked8==undefined){
+				$(function(){location.href="#herf7";});
+				document.getElementById("warning7").style.display="none";
+				document.getElementById("warning8").style.display="block";
+				return;
+			}else if(checked9==undefined){
+				$(function(){location.href="#herf8";});
+				document.getElementById("warning7").style.display="none";
+				document.getElementById("warning8").style.display="none";
+				document.getElementById("warning9").style.display="block";
+				return;
+			}else if(checked10==undefined){
+				$(function(){location.href="#herf9";});
+				document.getElementById("warning7").style.display="none";
+				document.getElementById("warning8").style.display="none";
+				document.getElementById("warning9").style.display="none";
+				document.getElementById("warning10").style.display="block";
+				return;
+			}else if(checked11==undefined){
+				$(function(){location.href="#herf10";});
+				document.getElementById("warning7").style.display="none";
+				document.getElementById("warning8").style.display="none";
+				document.getElementById("warning9").style.display="none";
+				document.getElementById("warning10").style.display="none";
+				document.getElementById("warning11").style.display="block";
+				return;
+			}else if(checked12==undefined){
+				$(function(){location.href="#herf11";});
+				document.getElementById("warning7").style.display="none";
+				document.getElementById("warning8").style.display="none";
+				document.getElementById("warning9").style.display="none";
+				document.getElementById("warning10").style.display="none";
+				document.getElementById("warning11").style.display="none";
+				document.getElementById("warning12").style.display="block";
 				return;
 			}
 			
@@ -443,7 +502,7 @@ System.out.println(basePath+"....."+path);
 	</script>
   </head>
   
-  <body>
+  <body  style="overflow: hidden;">
 
 	<div id="markingOl" class="container" style="margin-top:20px;overflow:hidden;">
 		<div class="panel panel-default">
@@ -529,10 +588,11 @@ System.out.println(basePath+"....."+path);
 								</div>
 								
 							</div>
-							<div  id="old20">
+							<div id="warning1" style="color: #f00;display: none;">此题为必填项！</div>
+							<div  id="herf1">
 					  			Tips：建议客户考虑去加拿大读书或者先选择可以移民的专业在国内读书。
 					  		</div>
-					  		<div  id="old40">
+					  		<div >
 					  			Tips：由于技术移民倾向年轻化，超过35岁开始减分，建议年龄高于40岁的申请人考虑其他移民项目。
 					  		</div>
 						</div>
@@ -629,6 +689,7 @@ System.out.println(basePath+"....."+path);
 										<div class="option_text">
 											<p>博士及以上</p>
 										</div>
+										<div  id="herf2"></div>
 										<div class="stat">
 											<div class="bar"></div>
 											<span class="rate"></span> <span class="count"></span>
@@ -636,6 +697,8 @@ System.out.println(basePath+"....."+path);
 									</label>
 								</div>
 							</div>
+							
+							<div id="warning2" style="color: #f00;display: none;">此题为必填项！</div>
 						</div>
 					</div>
 					
@@ -697,7 +760,8 @@ System.out.println(basePath+"....."+path);
 									</label>
 								</div>
 							</div>
-							<div >
+							<div id="warning3" style="color: #f00;display: none;">此题为必填项！</div>
+							<div id="herf3">
 	  							Tips：本题只影响魁北克省申请。如果不考虑魁北克省，可以跳过。
 	  						</div>
 						</div>
@@ -818,6 +882,9 @@ System.out.println(basePath+"....."+path);
 									</label>
 								</div>
 							</div>
+							<div id="warning4" style="color: #f00;display: none;">此题为必填项！</div>
+							<div id="herf4">
+							</div>
 						</div>
 					</div>
 					
@@ -927,7 +994,8 @@ System.out.println(basePath+"....."+path);
 									</label>
 								</div>
 							</div>
-							<div >
+							<div id="warning7" style="color: #f00;display: none;">此题为必填项！</div>
+							<div id="herf7">
 	  							Tips：本题只对魁省申请有影响。
 	  						</div>
 						</div>
@@ -1013,6 +1081,7 @@ System.out.println(basePath+"....."+path);
 										<div class="option_text">
 											<p>没有在加拿大任何地区工作学习一年以上</p>
 										</div>
+										<div id="herf8"></div>
 										<div class="stat">
 											<div class="bar"></div>
 											<span class="rate"></span> <span class="count"></span>
@@ -1021,6 +1090,7 @@ System.out.println(basePath+"....."+path);
 								</div>
 								
 							</div>
+							<div id="warning8" style="color: #f00;display: none;">此题为必填项！</div>
 						</div>
 					</div>
 					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
@@ -1062,6 +1132,7 @@ System.out.println(basePath+"....."+path);
 										<div class="option_text">
 											<p>没有</p>
 										</div>
+										<div id="herf9"></div>
 										<div class="stat">
 											<div class="bar"></div>
 											<span class="rate"></span> <span class="count"></span>
@@ -1070,6 +1141,7 @@ System.out.println(basePath+"....."+path);
 								</div>
 								
 							</div>
+							<div id="warning9" style="color: #f00;display: none;">此题为必填项！</div>
 						</div>
 					</div>
 					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
@@ -1110,6 +1182,7 @@ System.out.println(basePath+"....."+path);
 										<div class="option_text">
 											<p>没有</p>
 										</div>
+										<div id="herf10"></div>
 										<div class="stat">
 											<div class="bar"></div>
 											<span class="rate"></span> <span class="count"></span>
@@ -1118,6 +1191,7 @@ System.out.println(basePath+"....."+path);
 								</div>
 								
 							</div>
+							<div id="warning10" style="color: #f00;display: none;">此题为必填项！</div>
 						</div>
 					</div>
 					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
@@ -1201,6 +1275,7 @@ System.out.println(basePath+"....."+path);
 										<div class="option_text">
 											<p>雅思7以上</p>
 										</div>
+										<div id="herf11"></div>
 										<div class="stat">
 											<div class="bar"></div>
 											<span class="rate"></span> <span class="count"></span>
@@ -1209,6 +1284,8 @@ System.out.println(basePath+"....."+path);
 								</div>
 								
 							</div>
+							<div id="warning11" style="color: #f00;display: none;">此题为必填项！</div>
+							
 						</div>
 					</div>
 					<div style="margin-bottom:10px;margin-top:5px;border:0;border-top:1px solid #eee"></div>
@@ -1285,6 +1362,7 @@ System.out.println(basePath+"....."+path);
 								</div>
 								
 							</div>
+							<div id="warning12" style="color: #f00;display: none;">此题为必填项！</div>
 						</div>
 					</div>
 					
@@ -1339,9 +1417,9 @@ System.out.println(basePath+"....."+path);
 					</div>
 					
 				</div>	
-				<div class="survey_control" id="warning" style="display: none;">
+				<!-- <div class="survey_control" id="warning" style="display: none;">
 					<p style="color: #f00;">至少有一项没有选择！</p>
-				</div>
+				</div> -->
 				<div class="survey_control">
 					<div class="inner">
 						<a href="javascript:;" title="上一页" id="previousPage" aria-label="上一页" role="button" 
