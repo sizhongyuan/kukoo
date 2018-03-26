@@ -30,7 +30,7 @@
 		
 	});
 	function setiframeSrc(country,project){
-		document.getElementById("iframeid").src = "/kukoo/homePage/showListPage?project="+project+"&country="+country;
+		document.getElementById("iframeid").src = "/kukoo/homePage/showListPage?project="+project+"&country="+country+"&mainFlag=1";
 	}
 </script>
 <head>

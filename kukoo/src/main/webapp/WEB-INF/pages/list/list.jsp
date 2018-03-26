@@ -12,7 +12,13 @@
         //project  
         String project=request.getParameter("project");
         String country=request.getParameter("country");
+        String mainFlag=request.getParameter("mainFlag");
      %>  
+<style> 
+.blue { 
+	background:#FFF; 
+} 
+</style> 
 <script>
 	$(function() {
 	    $( "#slider-range-min" ).slider({
@@ -25,35 +31,53 @@
 	      }
 	    });
 	    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
+	    
 	    var project ="<%=project %>";
 	    var country ="<%=country %>";
-	    //alert(country+"==="+project);
-	    $("#project1").hide();
-		 $("#project2").hide();
-		 $("#project3").hide();
-		 $("#project4").hide();
-		 //alert("submit"+country+"---"+project);
-		 if(country.trim()=="" && project.trim()==""){
-			 $("#project1").show();
-			 $("#project2").show();
-			 $("#project3").show();
-			 $("#project4").show();
-		 }
-		 if(country.trim()=="加拿大" || country.trim()==""){
-			 //alert(country);
-			 if("加拿大联邦技术移民-快速通道项目".indexOf(project.trim())!=-1){
-			    $("#project1").show();
+	    var mainFlag ="<%=mainFlag %>";
+	    //alert(country+"==="+project+"==list=="+mainFlag);
+	    if(mainFlag=="1"){
+		    	if(country.trim()!="加拿大"){
+		    		$("#project1").hide();
+				$("#project2").hide();
+				$("#project3").hide();
+				$("#project4").hide();
+		    	}
+	    		if(country.trim()=="" && project.trim()==""){
+				 $("#project1").show();
+				 $("#project2").show();
+				 $("#project3").show();
+				 $("#project4").show();
+			 }else if(country.trim()=="加拿大" || country.trim()==""){
+				 //alert(project);
+				 if("加拿大联邦技术移民-快速通道项目".indexOf(project.trim())!=-1){
+				    $("#project1").show();
+				 }else{
+					 $("#project1").hide();
+				 }
+				 if("加拿大萨省省提名移民提名项目".indexOf(project.trim())!=-1){
+				    $("#project2").show();
+				 }else{
+					 $("#project2").hide();
+				 }
+				 if("魁北克技术移民项目".indexOf(project.trim())!=-1){
+				    $("#project3").show();
+				 }else{
+					 $("#project3").hide();
+				 }
+				 if("加拿大新斯科舍省移民提名项目".indexOf(project.trim())!=-1){
+				    $("#project4").show();
+				 }else{
+					 $("#project4").hide();
+				 }
 			 }
-			 if("加拿大萨省省提名移民提名项目".indexOf(project.trim())!=-1){
-			    $("#project2").show();
-			 }
-			 if("魁北克技术移民项目".indexOf(project.trim())!=-1){
-			    $("#project3").show();
-			 }
-			 if("加拿大新斯科舍省移民提名项目".indexOf(project.trim())!=-1){
-			    $("#project4").show();
-			 }
-		 }
+	    }
+		 
+	    	$("#projectUl li").hover(function() { 
+		    	$(this).addClass("blue"); 
+		}, function() { 
+		    	$(this).removeClass("blue"); 
+	    	}); 
 	  });
 	 
 	 //$('select').children('option').eq(1).attr("color", "#eee");
@@ -65,28 +89,37 @@
 		 $("#project3").hide();
 		 $("#project4").hide();
 		 //alert("submit"+country+"---"+project);
-		 if(country=="" && project==""){
+		 if(country=="请选择国家" && project==""){
+			 //alert('不选条件全部查询');
 			 $("#project1").show();
 			 $("#project2").show();
 			 $("#project3").show();
 			 $("#project4").show();
-		 }
-		 if(country=="加拿大" || country=="请选择国家"){
-			 //alert(country);
+		 }else if(country=="加拿大" || country=="请选择国家"){
+			 //alert(project);
 			 if("加拿大联邦技术移民-快速通道项目".indexOf(project)!=-1){
+				 //alert('1');
 			    $("#project1").show();
+			 }else{
+				 $("#project1").hide();
 			 }
 			 if("加拿大萨省省提名移民提名项目".indexOf(project)!=-1){
 			    //alert('2');
 			    $("#project2").show();
+			 }else{
+				 $("#project2").hide();
 			 }
 			 if("魁北克技术移民项目".indexOf(project)!=-1){
-			    　　//alert('3');
+			    //alert('3');
 			    $("#project3").show();
+			 }else{
+				 $("#project3").hide();
 			 }
 			 if("加拿大新斯科舍省移民提名项目".indexOf(project)!=-1){
-			    　　//alert('4');
+			    //alert('4');
 			    $("#project4").show();
+			 }else{
+				 $("#project4").hide();
 			 }
 		 }
 		 
@@ -137,7 +170,7 @@
 										<option>请选择国家</option>
 										<option style="color: #333;">加拿大</option>
 										<option style="color: #333;">英国</option>
-										<option style="color: #333;">澳大利亚</option>
+										<option style="color: #333;">澳大利达</option>
 									</select>
 								</div>
 								<div class="col-sm-4">
@@ -213,10 +246,12 @@
 							<div class="form-group" style="margin-left: 24px;">
 								<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-2">
-									<button type="button" onclick="resetBtn()" style="width:120px;height:28px;background-color:#16a2d3;color: #FFF" data-toggle="button">重置</button>
+									<button onclick="submitBtn()" class="btn btn-default" data-toggle="button" style="width:120px;height:28px;color:#FFFFFF;font-size:8px;background-color:#16a2d3;border-radius:0;">搜索</button>
+									<!-- <button type="button" onclick="resetBtn()" style="width:120px;height:28px;background-color:#16a2d3;color: #FFF" data-toggle="button">重置</button> -->
 								</div>
 								<div class="col-sm-2">
-									<button type="button" onclick="submitBtn()" style="width:120px;height:28px;background-color:#16a2d3;color: #FFF" data-toggle="button">搜索</button>
+									<button onclick="resetBtn()" class="btn btn-default" data-toggle="button" style="width:120px;height:28px;color:#FFFFFF;font-size:8px;background-color:#16a2d3;border-radius:0;">重置</button>
+									<!-- <button type="button" onclick="submitBtn()" style="width:120px;height:28px;background-color:#16a2d3;color: #FFF" data-toggle="button">搜索</button> -->
 								</div>
 								<div class="col-sm-6"></div>
 							</div>
@@ -260,8 +295,8 @@
 							    <li><a href="#">一级</a></li>
 							    <li class="active">二级</li>
 							</ol> -->
-							<ul class="list-group" style="margin-top: -15px;margin-bottom: -15px;">
-							    <li style="display:none" id="project1" class="list-group-item p-body">
+							<ul id="projectUl" class="list-group" style="margin-top: -15px;margin-bottom: -15px;">
+							    <li style="display: " id="project1" class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
 											<a href="/kukoo/detail/showDetail/">
@@ -282,7 +317,7 @@
 										</div> -->
 									</div>
 							    </li>
-							    <li style="display:none" id="project2" class="list-group-item p-body">
+							    <li style="display: " id="project2" class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
 											<a href="/kukoo/detail/showDetail_Canada_SINP/">
@@ -303,7 +338,7 @@
 										</div> -->
 									</div>
 							    </li>
-							    <li style="display:none" id="project3" class="list-group-item p-body">
+							    <li style="display: " id="project3" class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
 											<a href="/kukoo/detail/showDetail_Canada_QSW/">
@@ -325,7 +360,7 @@
 										</div> -->
 									</div>
 							    </li>
-							    <li style="display:none" id="project4" class="list-group-item p-body">
+							    <li style="display: " id="project4" class="list-group-item p-body">
 								    	<div class="row">
 										<div class="col-xs-2">
 											<a href="/kukoo/detail/showDetail_Canada_NS">
