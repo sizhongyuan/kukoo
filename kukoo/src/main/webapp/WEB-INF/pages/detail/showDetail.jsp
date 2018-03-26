@@ -24,17 +24,18 @@
 					<div class="row more-style">
 						<a id="more" class="more-click-style" onClick="showMore()">更多详情</a>
 					</div>
-					<div class="row">
+					<div class="row row-full">
 						<div class="col-xs-3 padding-clear name-width">状态</div>
 						<div class="col-xs-9 padding-clear">开放</div>
 					</div>
-					<div class="row">
+					<div class="row row-full">
 						<div class="col-xs-3 padding-clear name-width">移民局官网</div>
 						<div class="col-xs-3 padding-clear">
 							<a
 								href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/federal-skilled-workers.html">https://www.canada.ca/</a>
 						</div>
-						<div class="col-xs-2 padding-clear">
+						<!-- 先屏蔽按钮 start -->
+						<!-- <div class="col-xs-2 padding-clear">
 							<i class="glyphicon glyphicon-star star-style"></i>
 							<p
 								style="font-size: 12px; color: #333333; float: right; margin-right: 5px; cursor: pointer;">收藏</p>
@@ -44,7 +45,8 @@
 								<button class="btn btn-default left-left-button">咨询顾问</button>
 								<button class="btn btn-default left-right-button">在线评分</button>
 							</div>
-						</div>
+						</div> -->
+						<!-- 先屏蔽按钮 end -->
 					</div>
 				</div>
 			</div>
@@ -71,7 +73,8 @@
 					<td>5年2年</td>
 				</tr>
 			</table>
-			<button class="btn btn-default right-button">FAQ</button>
+			<!-- 先屏蔽按钮 start -->
+			<%-- <button class="btn btn-default right-button">FAQ</button>
 			<button class="btn btn-default right-button">名词解释</button>
 			<div class="share-img">
 				<img src="<%=basePath%>img/detail/share.png" width="16px"
@@ -79,7 +82,8 @@
 			</div>
 			<div class="share">
 				<a>分享</a>
-			</div>
+			</div> --%>
+			<!-- 先屏蔽按钮 end -->
 		</div>
 		<!-- 右上div end -->
 	</div>
@@ -108,7 +112,7 @@
 						<p>联邦技术移民快速通道（EE）自实施以来，已经进行过71次邀请。最近一次邀请分数为435分，最低邀请分数为413分。历次邀请的CRS分数以及人数统计如下。申请人CRS分数超过430分的被邀请的概率较大。</p>
 					</div>
 					<div class="charts" id="charts"></div>
-					<table class="table table-striped table-bordered">
+					<!-- <table class="table table-striped table-bordered">
 						<thead class="tab-table-thead">
 							<th>EE邀请日期</th>
 							<th>EE邀请人数</th>
@@ -608,7 +612,7 @@
 								<td>413</td>
 							</tr>
 						</tbody>
-					</table>
+					</table> -->
 				</div>
 				<!-- 政策解读tab end-->
 
@@ -1470,7 +1474,7 @@
 						
 						<div class="charts" id="chartsCopy"></div>
 
-						<table class="table table-striped table-bordered">
+						<!-- <table class="table table-striped table-bordered">
 						<thead class="tab-table-thead">
 							<th>EE邀请日期</th>
 							<th>EE邀请人数</th>
@@ -1970,7 +1974,7 @@
 								<td>413</td>
 							</tr>
 						</tbody>
-					</table>
+					</table> -->
 						
 					</div>
 				</div>
