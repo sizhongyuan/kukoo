@@ -186,7 +186,7 @@
 											</li>
 											
 											<!-- MENU ITEM -->
-											<li class="parent megamenu"><a href="/kukoo/homePage/timeLine" class=""><div
+											<li class="parent megamenu"><a href="/kukoo/timeline" class=""><div
 														class="main-menu-title">时间轴</div></a>
 											</li>
 											
