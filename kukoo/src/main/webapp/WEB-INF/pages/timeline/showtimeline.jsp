@@ -6,6 +6,15 @@
 <head>
 <!-- <link rel="icon" href="../../favicon.ico"> -->
 <title>布谷移民——项目列表</title>
+
+<style type="text/css">
+#color {
+background-color: #dfdfdf;
+}
+#icon-color {
+background-color: #f3f3f3;
+}
+</style>
 </head>
 <script type="text/javascript">
 	$("document").ready(function() {
@@ -112,8 +121,8 @@
 
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a
-												href="/kukoo/homePage/timeLine" class=""><div
-														class="main-menu-title">时间轴</div></a></li>
+												href="/kukoo/timeline" class=""><div
+														class="main-menu-title">申报移民流程</div></a></li>
 
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/homePage/dati" class=""><div
@@ -150,18 +159,19 @@
 
 			</header>
 			<!-- PAGE TITLE LARGE 2 GRAY -->
-			<div class="page-title-cont page-title-large2-cont bg-gray">
+			<div class="page-title-cont page-title-large2-cont bg-gray" style="padding-top: 10px;">
 				<div class="relative container align-left">
 					<div class="row">
 
 						<div class="col-md-8">
-							<h1 class="page-title2">Typography</h1>
+							<h1 class="local-page-title">申报移民流程</h1>
 						</div>
 
 						<div class="col-md-4">
 							<div class="breadcrumbs2 font-poppins">
-								<a class="a-inv" href="index.html">home</a><span
-									class="slash-divider">/</span><span class="bread-current">typography</span>
+								<!-- <a class="a-inv" href="index.html">home</a>
+								<span class="slash-divider">/</span> -->
+								<span class="bread-current">共10步</span>
 							</div>
 						</div>
 
@@ -169,29 +179,30 @@
 				</div>
 			</div>
 
-			<div class="container bs-docs-container p-140-cont">
+			<div class="container bs-docs-container p-140-cont" style="padding-top: 30px;">
 				<div class="row">
 			<!-- TIMELINE -->
 			<div class="heading-underline h3-line">
-				<h3 class="mb-40">Timeline</h3>
+				<h3 class="mb-40">时间轴</h3>
 			</div>
 			<section id="cd-timeline" class="cd-container mb-100">
 				<div class="cd-timeline-start">
-					<div class="cd-timeline-start-caption">START COMPANY</div>
-					<div class="cd-timeline-start-date">NOVEMBER 2011</div>
+					<div class="cd-timeline-start-caption">申请移民流程</div>
+					<div class="cd-timeline-start-date">步骤简介</div>
 				</div>
 				<div class="cd-timeline-block">
-					<div class="cd-timeline-img cd-picture">
+					<div class="cd-timeline-img cd-picture" id="icon-color">
 						<span aria-hidden="true" class="icon_house_alt"></span>
 					</div>
 					<!-- cd-timeline-img -->
 
 					<div class="cd-timeline-content">
-						<h2>LOREM IPSUM DOLOR SIT AMET</h2>
-						<div>Iste voluptatibus minus veritatis, consectetur
-							adipisicing elit. Iusto, optio, dolorum provident rerum aut</div>
-						<span class="cd-date"><span class="cd-date-year">2011</span><span
-							class="cd-date-month">NOV 11</span></span>
+						<h2>省提名材料准备</h2>
+						<div>涉及文件大概20个</div>
+						<span class="cd-date">
+							<span class="cd-date-year">2-4周</span>
+							<!-- <span class="cd-date-month">涉及文件大概20个</span> -->
+						</span>
 					</div>
 					<!-- cd-timeline-content -->
 				</div>
@@ -203,80 +214,164 @@
 					</div>
 					<!-- cd-timeline-img -->
 
-					<div class="cd-timeline-content">
-						<h2>HIC QUASI PLACEAT IURE TEMPORA</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Iusto, optio, dolorum provident rerum aut hic quasi placeat iure
-							tempora laudantium ipsa ad debitis unde?</p>
-						<span class="cd-date"><span class="cd-date-year">2012</span><span
-							class="cd-date-month">DEC 31</span></span>
+					<div class="cd-timeline-content" id="color">
+						<h2>在线递交省提名申请</h2>
+						<p>涉及文件大概20个</p>
+						<span class="cd-date">
+							<span class="cd-date-year">等待放名额不定</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
 					</div>
 					<!-- cd-timeline-content -->
 				</div>
 				<!-- cd-timeline-block -->
-
+				
 				<div class="cd-timeline-block">
-					<div class="cd-timeline-img cd-picture">
+					<div class="cd-timeline-img cd-picture" id="icon-color">
 						<span aria-hidden="true" class="icon_heart_alt"></span>
 					</div>
 					<!-- cd-timeline-img -->
 
 					<div class="cd-timeline-content">
-						<h2>DOLOREM IPSAM QUAE RERUM QUIS</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Excepturi, obcaecati, quisquam id molestias eaque asperiores
-							voluptatibus cupiditate error assumenda delectus odit similique
-							earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit,
-							itaque, deserunt corporis vero ipsum nisi eius odio natus ullam
-							provident pariatur temporibus quia eos repellat consequuntur
-							perferendis enim amet quae quasi repudiandae sed quod veniam
-							dolore possimus rem voluptatum eveniet eligendi quis fugiat
-							aliquam sunt similique aut adipisci.</p>
-						<span class="cd-date"><span class="cd-date-year">2013</span><span
-							class="cd-date-month">JUL 21</span></span>
+						<h2>补料</h2>
+						<p>文件3个左右</p>
+						<span class="cd-date">
+							<span class="cd-date-year">1-2个月</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
 					</div>
 					<!-- cd-timeline-content -->
 				</div>
 				<!-- cd-timeline-block -->
-
+				
 				<div class="cd-timeline-block">
 					<div class="cd-timeline-img cd-picture">
 						<span aria-hidden="true" class="icon_gift_alt"></span>
 					</div>
 					<!-- cd-timeline-img -->
 
+					<div class="cd-timeline-content" id="color">
+						<h2>获得省提名</h2>
+						<p>无需文件</p>
+						<span class="cd-date">
+							<span class="cd-date-year">3个月左右</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
+					</div>
+					<!-- cd-timeline-content -->
+				</div>
+				<!-- cd-timeline-block -->
+				
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture" id="icon-color">
+						<span aria-hidden="true" class="icon_archive_alt"></span>
+					</div>
+					<!-- cd-timeline-img -->
+
 					<div class="cd-timeline-content">
-						<h2>ISTE VOLUPTATIBUS MINUS VERITATIS</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Iusto, optio, dolorum provident rerum aut hic quasi placeat iure
-							tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus
-							veritatis qui ut.</p>
-						<span class="cd-date"><span class="cd-date-year">2014</span><span
-							class="cd-date-month">OCT 15</span></span>
+						<h2>递交联邦阶段签证申请</h2>
+						<p>涉及文件大概20个</p>
+						<span class="cd-date">
+							<span class="cd-date-year">2-4周递交全套签证申请材料</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
+					</div>
+					<!-- cd-timeline-content -->
+				</div>
+				<!-- cd-timeline-block -->
+				
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<span aria-hidden="true" class="icon_house_alt"></span>
+					</div>
+					<!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content"  id="color">
+						<h2>档案号</h2>
+						<div>无需文件</div>
+						<span class="cd-date">
+							<span class="cd-date-year">2个月左右</span>
+							<!-- <span class="cd-date-month">涉及文件大概20个</span> -->
+						</span>
 					</div>
 					<!-- cd-timeline-content -->
 				</div>
 				<!-- cd-timeline-block -->
 
 				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture" id="icon-color">
+						<span aria-hidden="true" class="icon_cloud_alt"></span>
+					</div>
+					<!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>第二次补料</h2>
+						<p>涉及文件3个左右</p>
+						<span class="cd-date">
+							<span class="cd-date-year">1-2个月</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
+					</div>
+					<!-- cd-timeline-content -->
+				</div>
+				<!-- cd-timeline-block -->
+				
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture">
+						<span aria-hidden="true" class="icon_heart_alt"></span>
+					</div>
+					<!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content" id="color">
+						<h2>体检信</h2>
+						<p>无需文件</p>
+						<span class="cd-date">
+							<span class="cd-date-year">3个月左右</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
+					</div>
+					<!-- cd-timeline-content -->
+				</div>
+				<!-- cd-timeline-block -->
+				
+				<div class="cd-timeline-block">
+					<div class="cd-timeline-img cd-picture" id="icon-color">
+						<span aria-hidden="true" class="icon_gift_alt"></span>
+					</div>
+					<!-- cd-timeline-img -->
+
+					<div class="cd-timeline-content">
+						<h2>取签信</h2>
+						<p>无需文件</p>
+						<span class="cd-date">
+							<span class="cd-date-year">3-6个月</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
+					</div>
+					<!-- cd-timeline-content -->
+				</div>
+				<!-- cd-timeline-block -->
+				
+				<div class="cd-timeline-block">
 					<div class="cd-timeline-img cd-picture">
 						<span aria-hidden="true" class="icon_archive_alt"></span>
 					</div>
 					<!-- cd-timeline-img -->
 
-					<div class="cd-timeline-content">
-						<h2>CONSECTETUR ADIPISICING ELIT</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Iusto, optio, dolorum provident rerum.</p>
-						<span class="cd-date"><span class="cd-date-year">2015</span><span
-							class="cd-date-month">MAY 10</span></span>
+					<div class="cd-timeline-content" id="color">
+						<h2>贴签证</h2>
+						<p>涉及文件3个</p>
+						<span class="cd-date">
+							<span class="cd-date-year">2-6周</span>
+							<!-- <span class="cd-date-month">DEC 31</span> -->
+						</span>
 					</div>
 					<!-- cd-timeline-content -->
 				</div>
 				<!-- cd-timeline-block -->
-
+				
 				<div class="cd-timeline-start cd-final">
-					<div class="cd-timeline-start-caption">RECENT DAY</div>
+					<div class="cd-timeline-start-caption">祝移民成功</div>
 				</div>
 			</section>
 			<!-- cd-timeline -->

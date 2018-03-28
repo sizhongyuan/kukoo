@@ -28,7 +28,7 @@
 	padding-top: 60px;
 }
 /* 底部备案号说明条 start */
-.copyright {
+/* .copyright {
     background: #111;
     font-size: 13px;
     text-align: center;
@@ -39,5 +39,11 @@
 }
 .copyright a {
     color: #555;
-}
+} */
 /* 底部备案号说明条 end */
+/* 导航条宽度 */
+.local-page-title {
+	margin: 100px 0 0 0;
+    font-size: 36px;
+    line-height: 38px;
+}
