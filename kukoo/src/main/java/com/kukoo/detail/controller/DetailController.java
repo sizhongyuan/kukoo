@@ -26,6 +26,26 @@ public class DetailController {
 	static final String modelPath = "WEB-INF/pages/detail/";
 	
 	/**
+	 * @see 展示新详情页面
+	 * @param request
+	 * @return
+	 * @author chenjianghe
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public ModelAndView detail(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"detail");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
 	 * @see 展示详情页面
 	 * @param request
 	 * @return
