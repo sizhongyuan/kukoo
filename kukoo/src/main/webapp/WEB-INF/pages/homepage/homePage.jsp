@@ -6,6 +6,10 @@
 <head>
 <!-- <link rel="icon" href="../../favicon.ico"> -->
 <title>布谷移民——移民解决方案专家</title>
+<link href="<%=basePath %>css/homepage/homepage-querybar.css" rel="stylesheet" type="text/css">
+<link href="<%=basePath %>javascript/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+<script src="<%=basePath %>javascript/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="<%=basePath %>javascript/bootstrap-select/js/i18n/defaults-zh_CN.min.js"></script>
 </head>
 <script type="text/javascript">
 	$("document").ready(function() {
@@ -16,6 +20,8 @@
 			$("#signIn",parent.document).addClass("hidden");
 		}
 		/* 判断session用户是否登录 end*/
+		/* 个性化动画新增查询栏 */
+		$("#querybar").delay(1000).fadeIn(1000);
 	});
 	function mainQuery(){
 		var country = $("#country").val().trim();
@@ -24,6 +30,11 @@
 		window.parent.setiframeSrc(country,project);
 	}
 </script>
+<style>
+/*去除选择框的outline*/
+#countryDiv button:focus{outline:none !important;}
+#projectDiv button:focus{outline:none !important;}
+</style>
 <body class="font-raleway">
 
 	<!-- LOADER -->
@@ -228,7 +239,7 @@
 
 			<!-- SLIDER Revo Hero 1 FONT MONTSERRAT -->
 			<div class="relative">
-
+			<div id="header">
 				<div class="rev_slider_wrapper fullscreen-container"
 					id="rev_slider_280_1_wrapper"
 					style="background-color: #fff; padding: 0px;">
@@ -297,18 +308,54 @@
 					</div>
 				</div>
 				<!-- END REVOLUTION SLIDER -->
-
+				<!-- querybar add by szy start -->
+			<div id="querybar" class="booking-row content-padding-xs" style="display:none">
+				<div class="container">
+					<div class="row">
+						<form id="booking-form" role="form">
+							<div class="col-md-2 col-sm-6">
+							</div>
+							
+							<div id="countryDiv" class="col-md-3 col-sm-4 icon-arrow">
+								<!-- <label class="sr-only" for="country">country</label>  -->
+								<select id="country" class="selectpicker form-control">
+								    <option value="">请选择国家</option>
+								    <option value="加拿大">加拿大</option>
+								    <option value="美国">美国</option>
+								    <option value="澳大利亚">澳大利亚</option>
+								</select>
+							</div>
+							<div id="projectDiv" class="col-md-3 col-sm-4 icon-arrow">
+								<!-- <label class="sr-only" for="project">project</label>  -->
+								<select id="project" class="selectpicker form-control">
+								    <option value="">请选择项目</option>
+								    <option value="加拿大">加拿大</option>
+								    <option value="美国">美国</option>
+								    <option value="澳大利亚">澳大利亚</option>
+								</select>
+							</div>
+							<div class="col-md-2 col-sm-4">
+								<input type="submit" class="btn btn-primary btn-block"
+									name="Book a Room" value="Book a Room">
+							</div>
+							<div class="col-md-2 col-sm-6">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- querybar add by szy end -->
 				<!-- SCROLL ICON -->
 				<div class="local-scroll-cont font-white">
 					<a href="#about" class="scroll-down smooth-scroll">
 						<div class="icon icon-arrows-down"></div>
 					</a>
 				</div>
-
+			</div>
 			</div>
 
 			<!-- FEATURES 13 OUR SERVICES FONT RALEWAY -->
-			<div class="page-section pt-160-b-120-cont">
+			<div id="about" class="page-section pt-160-b-120-cont">
 				<div class="container">
 					<div class="row">
 
