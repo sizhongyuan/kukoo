@@ -24,6 +24,106 @@ public class HomePageController {
 	static final String modelPath = "WEB-INF/pages/homepage/";
 	
 	/**
+	 * @see 新版展示首页
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public ModelAndView showIndex2(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"homePage");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 新版项目列表
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public ModelAndView list(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"list");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 新版项目详情
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public ModelAndView detail(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"detail");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 新版时间轴
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/timeLine", method = RequestMethod.GET)
+	public ModelAndView timeLine(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"timeline");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
+	 * @see 新版答题
+	 * @param request
+	 * @return
+	 * @author 张世杰
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/dati", method = RequestMethod.GET)
+	public ModelAndView dati(HttpServletRequest request) {
+		//读取session
+//		Jedis jedis = RedisUtil.getJedis();
+//		String userId = jedis.get(request.getSession().getId());
+		String sessionId = request.getSession().getId();
+		String userId = StaticMethod.nullObject2String(request.getSession().getAttribute(sessionId));
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"dati");
+		model.addObject("userId", userId);
+		return model;
+	}
+	
+	/**
 	 * @see 展示首页
 	 * @param request
 	 * @return
