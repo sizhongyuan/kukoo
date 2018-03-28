@@ -88,10 +88,11 @@
 	<script src="<%=basePath %>elementy/js/main.js"></script>
 
 	<!-- REVOSLIDER SCRIPTS  -->
-	<script src="<%=basePath %>elementy/revo-slider/js/jquery.themepunch.tools.min.js">
-    </script>
-	<script src="<%=basePath %>elementy/revo-slider/js/jquery.themepunch.revolution.min.js">
-    </script>
+	<script src="<%=basePath %>elementy/revo-slider/js/jquery.themepunch.tools.min.js"></script>
+	<script src="<%=basePath %>elementy/revo-slider/js/jquery.themepunch.revolution.min.js"></script>
+	
+	<!-- NAV SIDEBAR -->
+	<script src="<%=basePath %>elementy/js/jquery.nav.js"></script>
 
 	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
       (Load Extensions only on Local File Systems ! 
