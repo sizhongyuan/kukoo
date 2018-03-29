@@ -49,6 +49,7 @@
     border-color: #e0e3e4;
     border-radius: 2px;
     -webkit-appearance: none;
+	margin-bottom: 10px;
 }
 .btn.btn-block {
     padding-left: inherit;
