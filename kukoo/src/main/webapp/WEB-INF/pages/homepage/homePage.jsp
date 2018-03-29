@@ -22,6 +22,7 @@
 		/* 判断session用户是否登录 end*/
 		/* 个性化动画新增查询栏 */
 		$("#querybar").delay(1000).fadeIn(1000);
+		checkProject();
 	});
 	function mainQuery(){
 		var country = $("#country").val().trim();
@@ -29,6 +30,48 @@
 		//alert("submit"+country+"---"+project);
 		window.parent.setiframeSrc(country,project);
 	}
+	function checkProject(){
+		var country = $("#country").val().trim();
+		var CanadaArray = ['加拿大联邦EE快速通道',
+			'萨省提名技术移民SINP',
+			'新斯科舍省提名技术移民NSNP',
+			'魁北克省技术移民QSW',
+			'安省提名技术移民OINP',
+			'新不伦瑞克省提名技术移民NBPNP',
+			];
+		var AustralianArray = ['189独立技术移民',
+			'190州担保技术移民',
+			];
+		if(country == '加拿大'){
+			$("#project").empty();
+			
+			$("#project").prepend("<option value=''>请选择项目</option>");
+			for(var i = 0;i<CanadaArray.length;i++ ){
+				$("#project").append("<option value='"+CanadaArray[i]+"'>"+CanadaArray[i]+"</option>");
+			}
+			
+		}else if(country == '澳大利亚'){
+			$("#project").empty();
+			$("#project").prepend("<option value=''>请选择项目</option>");
+			for(var i = 0;i<AustralianArray.length;i++ ){
+				$("#project").append("<option value='"+AustralianArray[i]+"'>"+AustralianArray[i]+"</option>");
+			}
+		}else if(country == ''){
+			$("#project").empty();
+			$("#project").prepend("<option value=''>请选择项目</option>");
+			for(var i = 0;i<CanadaArray.length;i++ ){
+				$("#project").append("<option value='"+CanadaArray[i]+"'>"+CanadaArray[i]+"</option>");
+			}
+			for(var i = 0;i<AustralianArray.length;i++ ){
+				$("#project").append("<option value='"+AustralianArray[i]+"'>"+AustralianArray[i]+"</option>");
+			}
+		}else if(country == '美国'){
+			$("#project").empty();
+			$("#project").prepend("<option value=''>暂无可选项目</option>");
+		}
+		
+	}
+		
 </script>
 <style>
 /*去除选择框的outline*/
@@ -192,7 +235,7 @@
 											</li>
 											
 											<!-- MENU ITEM -->
-											<li class="parent megamenu"><a href="/kukoo/homePage/list" class=""><div
+											<li class="parent megamenu"><a href="/kukoo/list/lists" class=""><div
 														class="main-menu-title">项目列表</div></a>
 											</li>
 											
@@ -202,7 +245,7 @@
 											</li>
 											
 											<!-- MENU ITEM -->
-											<li class="parent megamenu"><a href="/kukoo/homePage/dati" class=""><div
+											<li class="parent megamenu"><a href="/kukoo/markingOLController/showMarkingOL" class=""><div
 														class="main-menu-title">答题</div></a>
 											</li>
 										</ul>
@@ -312,31 +355,27 @@
 			<div id="querybar" class="booking-row content-padding-xs" style="display:none">
 				<div class="container">
 					<div class="row">
-						<form id="booking-form" role="form">
+						<form id="booking-form" role="form" action="/kukoo/list/lists" method="POST">
 							<div class="col-md-4 col-sm-6">
 							</div>
 							
 							<div id="countryDiv" class="col-md-3 col-sm-4 icon-arrow">
 								<!-- <label class="sr-only" for="country">country</label>  -->
-								<select id="country" class="form-control">
+								<select id="country" name="country" class="form-control" onchange="checkProject()">
 								    <option value="">请选择国家</option>
 								    <option value="加拿大">加拿大</option>
-								    <option value="美国">美国</option>
 								    <option value="澳大利亚">澳大利亚</option>
+								    <option value="美国">美国</option>
 								</select>
 							</div>
 							<div id="projectDiv" class="col-md-3 col-sm-4 icon-arrow">
 								<!-- <label class="sr-only" for="project">project</label>  -->
-								<select id="project" class="form-control">
+								<select id="project" name="project" class="form-control">
 								    <option value="">请选择项目</option>
-								    <option value="加拿大">加拿大</option>
-								    <option value="美国">美国</option>
-								    <option value="澳大利亚">澳大利亚</option>
 								</select>
 							</div>
 							<div class="col-md-2 col-sm-4">
-								<input type="submit" class="btn btn-primary btn-block" 
-									name="query" value="查询">
+								<input type="submit" class="btn btn-primary btn-block" value="查询">
 							</div>
 							
 						</form>
