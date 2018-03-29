@@ -219,11 +219,11 @@
 					</div>
 					<!-- END main-menu-container -->
 
-					<!-- SEARCH READ DOCUMENTATION -->
+					<!-- SEARCH READ DOCUMENTATION 首页搜索功能 注释掉
 					<ul class="cd-header-buttons">
 						<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
-					</ul>
-					<!-- cd-header-buttons -->
+					</ul>-->
+					<!-- cd-header-buttons 首页搜索功能 注释掉
 					<div id="cd-search" class="cd-search">
 						<form class="form-search" id="searchForm"
 							action="page-search-results.html" method="get">
@@ -231,7 +231,7 @@
 								placeholder="Search...">
 						</form>
 					</div>
-
+					-->
 				</div>
 				<!-- END header-wrapper -->
 
@@ -313,12 +313,12 @@
 				<div class="container">
 					<div class="row">
 						<form id="booking-form" role="form">
-							<div class="col-md-2 col-sm-6">
+							<div class="col-md-4 col-sm-6">
 							</div>
 							
 							<div id="countryDiv" class="col-md-3 col-sm-4 icon-arrow">
 								<!-- <label class="sr-only" for="country">country</label>  -->
-								<select id="country" class="selectpicker form-control">
+								<select id="country" class="form-control">
 								    <option value="">请选择国家</option>
 								    <option value="加拿大">加拿大</option>
 								    <option value="美国">美国</option>
@@ -327,7 +327,7 @@
 							</div>
 							<div id="projectDiv" class="col-md-3 col-sm-4 icon-arrow">
 								<!-- <label class="sr-only" for="project">project</label>  -->
-								<select id="project" class="selectpicker form-control">
+								<select id="project" class="form-control">
 								    <option value="">请选择项目</option>
 								    <option value="加拿大">加拿大</option>
 								    <option value="美国">美国</option>
@@ -335,11 +335,10 @@
 								</select>
 							</div>
 							<div class="col-md-2 col-sm-4">
-								<input type="submit" class="btn btn-primary btn-block"
-									name="Book a Room" value="Book a Room">
+								<input type="submit" class="btn btn-primary btn-block" 
+									name="query" value="查询">
 							</div>
-							<div class="col-md-2 col-sm-6">
-							</div>
+							
 						</form>
 					</div>
 				</div>
