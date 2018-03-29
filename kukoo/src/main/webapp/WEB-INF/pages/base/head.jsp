@@ -45,6 +45,8 @@
 		<link rel="stylesheet" href="<%=basePath %>elementy/css/bootstrap.min.css"> 
     <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->		
 		<link rel="stylesheet" href="<%=basePath %>elementy/css/icons-fonts.css" >	
+	<!-- 这是我加的图标库，和上面那个目前没有发现冲突，可以使用 -->
+		<link rel="stylesheet" href="<%=basePath %>font-awesome-4.7.0/css/font.awesome.css"> 
     <!--  CSS THEME -->		
 		<link rel="stylesheet" href="<%=basePath %>elementy/css/style.css" >
     <!-- ANIMATE -->	
