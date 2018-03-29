@@ -202,7 +202,7 @@
 											</li>
 											
 											<!-- MENU ITEM -->
-											<li class="parent megamenu"><a href="/kukoo/homePage/dati" class=""><div
+											<li class="parent megamenu"><a href="/kukoo/markingOLController/showMarkingOL" class=""><div
 														class="main-menu-title">答题</div></a>
 											</li>
 										</ul>
