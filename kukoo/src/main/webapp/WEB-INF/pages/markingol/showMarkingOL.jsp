@@ -104,17 +104,17 @@
 										<ul class="nav navbar-nav">
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/homePage"
-												class=""><div class="main-menu-title">家</div></a></li>
+												class=""><div class="main-menu-title">首页</div></a></li>
 
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a
-												href="/kukoo/homePage/list" class=""><div
+												href="/kukoo/list/lists" class=""><div
 														class="main-menu-title">项目列表</div></a></li>
 
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a
 												href="/kukoo/timeline" class=""><div
-														class="main-menu-title">时间轴</div></a></li>
+														class="main-menu-title">申报移民流程</div></a></li>
 
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/markingOLController/showMarkingOL" class=""><div

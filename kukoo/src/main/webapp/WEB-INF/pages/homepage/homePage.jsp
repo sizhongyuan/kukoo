@@ -231,7 +231,7 @@
 
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/homePage" class=""><div
-														class="main-menu-title">家</div></a>
+														class="main-menu-title">首页</div></a>
 											</li>
 											
 											<!-- MENU ITEM -->
@@ -241,7 +241,7 @@
 											
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/timeline" class=""><div
-														class="main-menu-title">时间轴</div></a>
+														class="main-menu-title">申报移民流程</div></a>
 											</li>
 											
 											<!-- MENU ITEM -->
