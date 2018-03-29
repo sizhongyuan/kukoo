@@ -6,6 +6,55 @@
 
 <head>
 <!-- <link rel="icon" href="../../favicon.ico"> -->
+<style>
+/* padding去除 start*/
+.padding-clear{
+	padding:0;
+}
+/* padding去除 end*/
+.row-margin{
+	margin-left:-40px;
+}
+@media (max-width: 1024px){
+	.row-margin{
+		margin-left:-30px;
+	}
+}
+tbody{
+	font-size:12px;
+}
+.table{
+	max-width:750px;
+	margin-left:50px;
+}
+@media (max-width: 1024px){
+	.table{
+		margin-left:0px;
+	}
+}
+p {
+    margin: 0 0 -2px;
+}
+.font-bold{
+	font-weight:bold;
+}
+th{
+	font-weight:bold;
+}
+.charts{
+	width:750px;
+	height:500px;
+	margin-left:40px
+}
+@media (max-width: 1024px){
+	.charts{
+		width:300px;
+		height:500px;
+		margin-left:0px
+	}
+}
+
+</style>
 
 <title>布谷移民——项目列表</title>
 </head>
@@ -172,37 +221,37 @@
 			<!-- PAGE TITLE LARGE 2 GRAY -->
 			<div class="page-title-cont page-title-large2-cont bg-gray" style="padding-top:120px">
 				<div class="relative container align-left">
-					<div class="row">
+					<div class="row" style="font-size: 13px;">
 
-						<div class="col-md-6">
-								<div class="row">
-									<div class="col-xs-3">签证类型</div>
-									<div class="col-xs-3" style="margin-left:-40px">PR/工签+PR</div>
-									<div class="col-xs-3">办理周期</div>
-									<div class="col-xs-3" style="margin-left:-40px">2年</div>
+						<div class="col-md-6 ">
+							<h1 class="local-page-title" style="margin:0 0 0 0">加拿大联邦快速通道</h1>
+								<div class="row" style="margin-top:30px">
+									<div class="col-xs-3 font-bold">签证类型</div>
+									<div class="col-xs-3 row-margin">PR/工签+PR</div>
+									<div class="col-xs-3 font-bold">办理周期</div>
+									<div class="col-xs-3 row-margin">2年</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-3">总费用</div>
-									<div class="col-xs-3" style="margin-left:-40px">XXX</div>
-									<div class="col-xs-3">居住要求</div>
-									<div class="col-xs-3" style="margin-left:-40px">5年2年</div>
+									<div class="col-xs-3 font-bold">总费用</div>
+									<div class="col-xs-3 row-margin">XXX</div>
+									<div class="col-xs-3 font-bold">居住要求</div>
+									<div class="col-xs-3 row-margin">5年2年</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-3">状态</div>
-									<div class="col-xs-3" style="margin-left:-40px">开放</div>
-									<div class="col-xs-3">移民局官网</div>
-									<div class="col-xs-3" style="margin-left:-40px">
+									<div class="col-xs-3 font-bold">状态</div>
+									<div class="col-xs-3 row-margin">开放</div>
+									<div class="col-xs-3 font-bold">移民局官网</div>
+									<div class="col-xs-3 row-margin">
 										<a
 											href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/federal-skilled-workers.html">https://www.canada.ca/</a>
 									</div>
 								</div>
-							<h1 class="local-page-title">加拿大联邦技术移民-快速通道项目</h1>
 						</div>
 
 						<div class="col-md-6">
-								<div class="row">
-									<div class="col-xs-3">项目简介</div>
-									<div class="col-xs-9" style="margin-left:-40px"><p>加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周期最快8个月登陆加拿大。
+								<div class="row" style="margin-top:60px">
+									<div class="col-xs-3 font-bold">项目简介</div>
+									<div class="col-xs-9 row-margin"><p>加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周期最快8个月登陆加拿大。
 									  		本项目具有办理周期短，对语言等条件要求高等特点；适合学历高，年龄轻，英语好的申请人。</p></div>
 								</div>
 						</div>
@@ -213,7 +262,7 @@
 
 
 			<!-- COTENT CONTAINER -->
-			<div class="container bs-docs-container p-140-cont">
+			<div class="container bs-docs-container p-140-cont" style="padding-top:90px">
 				<div class="row">
 
 					<!-- SIDENAV HIDE -->
@@ -221,7 +270,7 @@
 						<div id="sidebar-stiky"
 							class="bs-sidebar hidden-xs hidden-sm clearfix"
 							role="complementary">
-							<!-- <h4 class="font-20 mt-0">Typography</h4> -->
+							<h3 class="font-20 mt-0">加拿大联邦快速通道</h3>
 							<ul id="nav-sidebar"
 								class="nav bs-sidenav2 blog-categories2 font-poppins">
 								<li class="current"><a href="#heading">政策解读</a></li>
@@ -235,10 +284,10 @@
 					</div>
 
 					<!-- COTENT  -->
-					<div class="col-md-9">
+					<div class="col-md-9" style="font-size: 13px;">
 
 						<!-- HEADINGS  -->
-						<div id="heading" class="bs-docs-section mb-100">
+						<div id="heading" class="bs-docs-section mb-100" style="margin-top: 25px;">
 							<div class="heading-underline h3-line">
 								<h3 class="mt-0 mb-50">政策解读</h3>
 							</div>
@@ -249,7 +298,7 @@
 								Entry,“EE”）申请。即在满足FSW申请条件基础上，申请者还需统一按照的EE的综合排名系统（CRS）规则重新打分；最终根据分数排名情况受理移民申请，并在受理后的6个月内获得移民签证。</p>
 							<p>联邦技术移民快速通道（EE）自实施以来，已经进行过71次邀请。最近一次邀请分数为435分，最低邀请分数为413分。历次邀请的CRS分数以及人数统计如下。申请人CRS分数超过430分的被邀请的概率较大。</p>
 							
-							<div class="charts" id="charts" style="width:846px;height:500px"></div>
+							<div class="charts" id="charts"></div>
 						</div>
 
 						<!-- DROPCAPS  -->
@@ -258,24 +307,24 @@
 								<h3 class="mb-40">申请流程</h3>
 							</div>
 							
-							<p>1.确认满足联邦技术移民项目（FSW）评分标准</p>
+									<p class="font-bold">1.确认满足联邦技术移民项目（FSW）评分标准</p>
 									<p>申请者应首先满足联邦技术移民项目（FSW）评分标准。</p>
 									<p>FSW具体评分标准参见“申请条件”页。您也可使用布谷的在线评分系统进行自测。</p>
-									<p>2.录入EE系统的MyCIC账户并进行（CRS）打分</p>
+									<p class="font-bold">2.录入EE系统的MyCIC账户并进行（CRS）打分</p>
 									<p>确认满足联邦技术移民项目（FSW）要求后，申请者可将自己的信息录入EE系统的MyCIC账户。填写完毕后，EE系统的综合排名体系（Comprehensive
 										Ranking System,
 										CRS）会根据CRS的评分标准重新计算分数，并根据分数排名等待获得移民申请邀请（Invitation to Apply，
 										“ITA”）;我们把这个过程叫做“入池”。</p>
 									<p>CRS的具体评分标准参见“申请条件”页。您也可使用布谷的在线评分系统进行自测。</p>
-									<p>3.根据EE系统CRS打分获得移民邀请</p>
+									<p class="font-bold">3.根据EE系统CRS打分获得移民邀请</p>
 									<p>移民局会不定期根据CRS评分情况，对高于特定分数的申请者发出移民申请邀请（ITA）。当申请人的CRS分数高于移民局邀请的分数时，申请人可以获得移民局的移民邀请（ITA），并开始正式的移民申请。</p>
 									<p>EE历次邀请人数及CRS分数线统计参见“政策解读”页。</p>
-									<p>4.申请人递交正式的移民申请</p>
+									<p class="font-bold">4.申请人递交正式的移民申请</p>
 									<p>申请人获得移民邀请ITA后，递交正式的移民申请，此时移民部承诺大部分申请6个月以内审理完毕（从递交之日算起）。</p>
 									
 									
 					<table class="table table-striped mb-40">
-						<thead>
+						<thead class="font-bold">
 							<th></th>
 							<th>事项</th>
 							<th>周期</th>
@@ -333,22 +382,22 @@
 							<div class="heading-underline h3-line">
 								<h3 class="mb-50">申请条件</h3>
 							</div>
-						<p>申请加拿大联邦技术移民-快速通道项目需满足如下条件：</p>
+						<p class="font-bold">申请加拿大联邦技术移民-快速通道项目需满足如下条件：</p>
 						<p>1 满足联邦技术移民项目（FSW）评分标准</p>
 						<p>2 按照CRS评分标准打分，并根据分数高低获得联邦邀请（通常要求430分以上）</p>
 						<p>FSW及CRS具体评分标准如下。您也可使用布谷的在线评分系统进行自测。</p>
-						<p>* FSW评分标准</p>
-						<p>一 工作经验</p>
+						<p class="font-bold">* FSW评分标准</p>
+						<p class="font-bold">一 工作经验</p>
 						<p>1 至少有一年的工作经验，可以是连续的全职或者等同的兼职；</p>
 						<p>2 有偿的工作（志愿者、无偿的不算）；</p>
 						<p>3 工作年限按照同一个NOC职业代码（in the same NOC skill type (0, A or
 							B)）计算；</p>
 						<p>4 近10年的职业属于2011年版NOC的 level 0、A或B；</p>
-						<p>二 语言能力</p>
+						<p class="font-bold">二 语言能力</p>
 						<p>雅思达到CLB7的水平（雅思4个6），2年有效期。</p>
-						<p>三 学历要求</p>
+						<p class="font-bold">三 学历要求</p>
 						<p>完成加拿大ECA学历认证；</p>
-						<p>四 FSW打分超过67分（满分100分）</p>
+						<p class="font-bold">四 FSW打分超过67分（满分100分）</p>
 						<p>FSW评分标准如下所示：</p>
 						
 						<table class="table table-striped mb-40">
@@ -358,7 +407,7 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td rowspan="2" style="line-height:74px">语言加分</td>
+									<td rowspan="2" style="line-height:74px" class="font-bold">语言加分</td>
 									<td>第一语言CLB 7</td>
 									<td>第一语言CLB 8</td>
 									<td>第一语言CLB 9</td>
@@ -371,7 +420,7 @@
 									<td>1分/项</td>
 								</tr>
 								<tr>
-									<td rowspan="6" style="line-height:222px">年龄加分</td>
+									<td rowspan="6" style="line-height:222px" class="font-bold">年龄加分</td>
 									<td><=35岁</td>
 									<td>36岁</td>
 									<td>37岁</td>
@@ -408,7 +457,7 @@
 									<td>1分</td>
 								</tr>
 								<tr>
-									<td rowspan="2" style="line-height:74px">工作加分</td>
+									<td rowspan="2" style="line-height:74px" class="font-bold">工作加分</td>
 									<td>1年</td>
 									<td>2-3年</td>
 									<td>4-5年</td>
@@ -421,7 +470,7 @@
 									<td>15分</td>
 								</tr>
 								<tr>
-									<td rowspan="4" style="line-height:148px">教育加分</td>
+									<td rowspan="4" style="line-height:148px" class="font-bold">教育加分</td>
 									<td>博士</td>
 									<td>硕士</td>
 									<td>双学历</td>
@@ -449,7 +498,7 @@
 									<td colspan="4">10分</td>
 								</tr>
 								<tr>
-									<td rowspan="4" style="line-height:148px">适应能力</td>
+									<td rowspan="4" style="line-height:148px" class="font-bold">适应能力</td>
 									<td>主申加拿大工作</td>
 									<td>主申加拿大学习</td>
 									<td>主副申加拿大直系亲属</td>
@@ -473,21 +522,21 @@
 							</tbody>
 						</table>
 						
-						<p>* CRS评分标准</p>
+						<p class="font-bold">* CRS评分标准</p>
 						<p>EE评分系统的CRS综合排名体系 (Comprehensive Ranking
 							System)，满分1200分，主要涉及4个方面：核心要素（年龄、教育、语言和加拿大工作经验）；配偶加分（教育、语言和加拿大工作经验）；适应能力（教育、工作经验和加拿大资格证书）；雇主offer和省提名。总分
 							1200=核心分数+配偶加分+适应分数+其他分数。</p>
-						<p>下面标准适用于2016-11-19后新的 EE 评分标准。</p>
+						<p class="font-bold">下面标准适用于2016-11-19后新的 EE 评分标准。</p>
 						
 					
 						<table class="table table-striped mb-40">
 							<tbody>
-							<tr>
-								<td>I. 核心评分要素</td>
+							<tr class="font-bold">
+								<td >I. 核心评分要素</td>
 								<td colspan=2 >有配偶，最高460 分</td>
 								<td colspan=2 >单身，最高500 分</td>
 							</tr>
-							<tr>
+							<tr class="font-bold">
 								<td>年龄加分</td>
 								<td colspan=2 >已婚最高100分</td>
 								<td colspan=2 >单身最高110分</td>
@@ -612,8 +661,8 @@
 								<td colspan=2 >0</td>
 								<td colspan=2 >0</td>
 							</tr>
-							<tr>
-								<td height=21 
+							<tr class="font-bold">
+								<td 
 									>教育加分</td>
 								<td colspan=2 >已婚最高140分</td>
 								<td colspan=2 >单身最高150分</td>
@@ -666,8 +715,8 @@
 								<td colspan=2 >140</td>
 								<td colspan=2 >150</td>
 							</tr>
-							<tr>
-								<td
+							<tr class="font-bold">
+								<td 
 									>第一语言，单项</td>
 								<td colspan=2 >已婚最高128分</td>
 								<td colspan=2 >单身最高136分</td>
@@ -714,8 +763,8 @@
 								<td colspan=2 >32分/项</td>
 								<td colspan=2 >34分/项</td>
 							</tr>
-							<tr>
-								<td height=21 
+							<tr class="font-bold">
+								<td  
 									>第二语言，单项</td>
 								<td colspan=2 >已婚最高22分</td>
 								<td colspan=2 >单身最高24分</td>
@@ -745,7 +794,7 @@
 								<td colspan=2 >6分/项</td>
 							</tr>
 							<tr>
-								<td height=21 
+								<td 
 									>加拿大工作经验加分</td>
 								<td colspan=2 >已婚最高70分</td>
 								<td colspan=2 >单身最高80分</td>
@@ -786,14 +835,14 @@
 								<td colspan=2 >70</td>
 								<td colspan=2 >80</td>
 							</tr>
-							<tr>
-								<td height=21
+							<tr class="font-bold">
+								<td 
 									>II. 配偶加分</td>
 								<td colspan=2 >有配偶，最高40分</td>
 								<td colspan=2 >单身不适用</td>
 							</tr>
-							<tr>
-								<td height=21 
+							<tr class="font-bold">
+								<td 
 									>配偶教育加分</td>
 								<td colspan=2 >最高10分</td>
 								<td colspan=2 >0</td>
@@ -847,7 +896,7 @@
 								<td colspan=2 ></td>
 							</tr>
 							<tr>
-								<td height=21 
+								<td  
 									>配偶第一语言加分</td>
 								<td colspan=2>最高20分</td>
 								<td colspan=2 >0</td>
@@ -918,15 +967,15 @@
 								<td colspan=2 >10</td>
 								<td colspan=2 ></td>
 							</tr>
-							<tr>
+							<tr class="font-bold">
 								<td colspan=5>III.
 									加拿大技术移民适应分，最高100，对加拿大工作，学历，语言及海外学历综合评分</td>
 							</tr>
-							<tr>
+							<tr class="font-bold">
 								<td colspan=5>备注：以下五项评分中，一和二总分最高为50分，三和四总分最高为50分，所有项总分最高100分！</td>
 							</tr>
-							<tr>
-								<td>一、学历奖励分，基于语言,50</td>
+							<tr class="font-bold">
+								<td >一、学历奖励分，基于语言,50</td>
 								<td colspan=2 >第一语言单项都达到CLB
 									7的学历奖励分</td>
 								<td colspan=2 >第一语言单项都达到CLB
@@ -953,8 +1002,8 @@
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
-							<tr>
-								<td height=21 
+							<tr class="font-bold">
+								<td 
 									>二、学历奖励分，基于加拿大工作，50</td>
 								<td colspan=2 >有一年以上加拿大工作经验的学历奖励分</td>
 								<td colspan=2 >有二年以上加拿大工作经验的学历奖励分</td>
@@ -980,8 +1029,8 @@
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
-							<tr>
-								<td height=21 
+							<tr class="font-bold">
+								<td 
 									>三、工作分，基于语言，50</td>
 								<td colspan=2 >第一语言单项都达到
 									CLB 7 的海外工作经验加分</td>
@@ -1006,8 +1055,8 @@
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
-							<tr>
-								<td height=21 
+							<tr class="font-bold">
+								<td 
 									>四、工作分，有加拿大工作，50</td>
 								<td colspan=2>有1年加拿大工作经验的海外工作奖励加分</td>
 								<td colspan=2 >有2年加拿大工作经验的海外工作奖励加分</td>
@@ -1028,8 +1077,8 @@
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
-							<tr>
-								<td>五、加拿大技工职业证书及官方语言，50</td>
+							<tr class="font-bold">
+								<td >五、加拿大技工职业证书及官方语言，50</td>
 								<td colspan=2>语言单项不低于
 									CLB 5 且有一项达到 7</td>
 								<td colspan=2>语言单项都达到
@@ -1042,8 +1091,8 @@
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
-							<tr>
-								<td>IV. 其他加分
+							<tr class="font-bold">
+								<td >IV. 其他加分
 									Additional points</td>
 								<td colspan=4 >Maximum
 									600 points</td>
@@ -1096,10 +1145,10 @@
 							</tbody>
 						</table>
 						
-						<p>* CRS评分标准</p>
+						<p class="font-bold">* CRS评分标准</p>
 						<p>联邦技术移民快速通道（EE）自实施以来，已经进行过71次邀请。最近一次邀请分数为435分，最低邀请分数为413分。历次邀请的CRS分数以及人数统计如下：</p>
 						
-						<div class="charts" id="chartsCopy" style="width:846px;height:500px"></div>
+						<div class="charts" id="chartsCopy"></div>
 
 						</div>
 						<!-- end section  -->
@@ -1201,10 +1250,10 @@
 								<h3 class="mb-40">费用详情</h3>
 							</div>
 							
-							<p>总共涉及的资金：一人办理约5.2万 人民币 三口之家办理约6万人民币，其中：</p>
-							<p>* 布谷服务费：4万人民币</p>
-							<p>* 官方及第三方费用：1.2-2万人民币</p>
-							<p>（备注：汇率按照1:5计算）</p>
+							<p class="font-bold">总共涉及的资金：一人办理约5.2万 人民币 三口之家办理约6万人民币，其中：</p>
+							<p class="font-bold">* 布谷服务费：4万人民币</p>
+							<p class="font-bold">* 官方及第三方费用：1.2-2万人民币</p>
+							<p class="font-bold">（备注：汇率按照1:5计算）</p>
 							
 							<table class="table table-striped mb-40">
 						<thead>
@@ -1275,7 +1324,7 @@
 							</tr>
 						</tbody>
 					</table>
-						<p>备注：</p>
+						<p class="font-bold">备注：</p>
 						<p>1. 以上涉及的翻译、公证、认证可委托布谷办理或自行办理</p>
 						<p>2. 因移民局或第三方代办机构调整费用，以及客户文件的数量不同，以上费用以实际发生为准</p>
 
@@ -1343,7 +1392,7 @@
 			    tooltip: {
 			        trigger: 'axis'
 			    },
-			    color:['blue','red'], 
+			    color:['#DDBF5C','rgb(234,234,234)'], 
 			    legend: {
 			        data:['EE分数','EE人数']
 			    },
@@ -1359,6 +1408,7 @@
 			        }
 			    },
 			    xAxis: {
+			    		splitLine:{show: false},
 			        type: 'category',
 			        boundaryGap: false,
 			        data: ['	2015/1/31','2015/2/7	','2015/2/20','2015/2/27','2015/3/20','2015/3/27','2015/4/10',
@@ -1373,6 +1423,7 @@
 			        		   '	2017/6/28','	2017/7/12','2017/8/2','2017/8/9','2017/8/23','2017/9/6']
 			    },
 			    yAxis: {
+			    		splitLine:{show: false},
 			        type: 'value'
 			    },
 			    series: [
@@ -1383,7 +1434,7 @@
 			            itemStyle:{  
                             normal : {  
                                 lineStyle:{  
-                                    color:'red'  
+                                    color:'rgb(234,234,234)'  
                                 }  
                             }  
                         },
@@ -1399,7 +1450,7 @@
 			            itemStyle:{  
                             normal : {  
                                 lineStyle:{  
-                                    color:'blue'  
+                                    color:'#DDBF5C'  
                                 }  
                             }  
                         },
