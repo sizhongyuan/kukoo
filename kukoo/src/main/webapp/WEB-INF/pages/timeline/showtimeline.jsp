@@ -14,6 +14,13 @@ background-color: #dfdfdf;
 #icon-color {
 background-color: #f3f3f3;
 }
+.cd-timeline-img.cd-picture {
+    background: #dfdfdf;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 16px;
+    color: #ffea00;
+}
 </style>
 </head>
 <script type="text/javascript">
@@ -203,8 +210,9 @@ background-color: #f3f3f3;
 						档案。同时准备全套的省提名申请材料如：身份文件，学历文件，工作文件，资金证明，定居计
 						划等。</div>
 						<span class="cd-date">
-							<span class="cd-date-year">2-4周</span>
-							<span class="cd-date-month">涉及文件大概20个</span>
+							<span class="cd-date-year">1个月</span>
+							<span class="cd-date-month">20个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -223,8 +231,9 @@ background-color: #f3f3f3;
 						不同省份，提交方式不同：萨省可以提前将申请资料上传系统；NS省要开放名额时候才能上传相关
 						申请文件提交申请；安省和NB省需要等待邀请，然后提交申请文件。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">等待放名额不定</span>
-							<span class="cd-date-month">涉及文件大概20个</span>
+							<span class="cd-date-year">发放名额时间不定</span>
+							<span class="cd-date-month">20个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -243,8 +252,9 @@ background-color: #f3f3f3;
 						到30天左右，常见的补料文件有更新资金文件或者资金解释，进一步补充工作相关文件，更新
 						定居计划。补料文件准备好通过email发送给省移民部。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">1-2个月</span>
-							<span class="cd-date-month">文件3个左右</span>
+							<span class="cd-date-year">2个月</span>
+							<span class="cd-date-month">3个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -262,8 +272,9 @@ background-color: #f3f3f3;
 						<p>资料齐全的话，审理周期三个月左右，审理期间可能有背景调查，比如联系推荐人
 						核实工作背景，也可能电话询问申请人核实情况。调查结束一般很快发提名信。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">3个月左右</span>
-							<span class="cd-date-month">无需文件</span>
+							<span class="cd-date-year">3个月</span>
+							<span class="cd-date-month">0个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -284,8 +295,9 @@ background-color: #f3f3f3;
 						费可以一起提交（每个成人490加币），费用可以在线信用卡支付，也可以办
 						理汇票支付。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">2-4周递交全套签证申请材料</span>
-							<span class="cd-date-month">涉及文件大概20个</span>
+							<span class="cd-date-year">1个月</span>
+							<span class="cd-date-month">20个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -305,8 +317,9 @@ background-color: #f3f3f3;
 						过在线系统查看申请状态；或者通过CIC网站查询申请状态。以后询问申请进度都需要备注
 						档案号。</div>
 						<span class="cd-date">
-							<span class="cd-date-year">2个月左右</span>
-							<span class="cd-date-month">无需文件</span>
+							<span class="cd-date-year">2个月</span>
+							<span class="cd-date-month">0个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -326,8 +339,9 @@ background-color: #f3f3f3;
 						交户口公证、出生公证、无犯罪公证、登录费等，基本上文件之前都递交CIO了，
 						需要申请人再次确认哪些没有递交。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">1-2个月</span>
-							<span class="cd-date-month">涉及文件3个左右</span>
+							<span class="cd-date-year">2个月</span>
+							<span class="cd-date-month">3个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -348,8 +362,9 @@ background-color: #f3f3f3;
 						医院直接上传到加拿大移民系统。如果体检异常的话，医院会单独通知申请人，体检正常的话
 						，不会通知申请人。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">3个月左右</span>
-							<span class="cd-date-month">无需文件</span>
+							<span class="cd-date-year">3个月</span>
+							<span class="cd-date-month">0个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -368,8 +383,9 @@ background-color: #f3f3f3;
 						交到加拿大北京签证中心，港澳台申请人需要把护照递交到香港签证中心，加拿大境内申请
 						人需要递交护照到渥太华使馆。递交不同签证中心处理速度不同，最快一周，最慢8周。</p>
 						<span class="cd-date">
-							<span class="cd-date-year">3-6个月</span>
-							<span class="cd-date-month">无需文件</span>
+							<span class="cd-date-year">6个月</span>
+							<span class="cd-date-month">0个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -388,8 +404,9 @@ background-color: #f3f3f3;
 						状态，如果状态显示in process，那就是还没有贴签完成，如果状态显示dispatched，说明
 						护照已经寄送出来，一般两天就能收到大信封（里面包括贴签护照，移民纸和移民说明）</p>
 						<span class="cd-date">
-							<span class="cd-date-year">2-6周</span>
-							<span class="cd-date-month">涉及文件3个</span>
+							<span class="cd-date-year">1.5个月</span>
+							<span class="cd-date-month">3个<i aria-hidden="true" class="fa fa-file-o"></i>
+							</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
