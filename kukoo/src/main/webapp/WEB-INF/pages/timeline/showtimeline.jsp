@@ -198,10 +198,13 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content">
 						<h2>省提名材料准备</h2>
-						<div>涉及文件大概20个</div>
+						<div>省提名EE项目需要先注册EE账号， EE申请只需要填写申请人个人身份信息，学历信息，
+						工作信息，语言成绩，不需要上传相关文件。提交后有EE号码，用于申请省提名时候省政府匹配
+						档案。同时准备全套的省提名申请材料如：身份文件，学历文件，工作文件，资金证明，定居计
+						划等。</div>
 						<span class="cd-date">
 							<span class="cd-date-year">2-4周</span>
-							<!-- <span class="cd-date-month">涉及文件大概20个</span> -->
+							<span class="cd-date-month">涉及文件大概20个</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -216,10 +219,12 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content" id="color">
 						<h2>在线递交省提名申请</h2>
-						<p>涉及文件大概20个</p>
+						<p>加拿大萨省、NS省都有名额限制，并且是抢名额制度，都是不定期开放，需要随时关注动态，
+						不同省份，提交方式不同：萨省可以提前将申请资料上传系统；NS省要开放名额时候才能上传相关
+						申请文件提交申请；安省和NB省需要等待邀请，然后提交申请文件。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">等待放名额不定</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">涉及文件大概20个</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -234,10 +239,12 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content">
 						<h2>补料</h2>
-						<p>文件3个左右</p>
+						<p>递交省提名资料后，中途可能需要补料，补料信通过发email给申请人，一般补料期限2周
+						到30天左右，常见的补料文件有更新资金文件或者资金解释，进一步补充工作相关文件，更新
+						定居计划。补料文件准备好通过email发送给省移民部。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">1-2个月</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">文件3个左右</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -252,10 +259,11 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content" id="color">
 						<h2>获得省提名</h2>
-						<p>无需文件</p>
+						<p>资料齐全的话，审理周期三个月左右，审理期间可能有背景调查，比如联系推荐人
+						核实工作背景，也可能电话询问申请人核实情况。调查结束一般很快发提名信。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">3个月左右</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">无需文件</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -270,10 +278,14 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content">
 						<h2>递交联邦阶段签证申请</h2>
-						<p>涉及文件大概20个</p>
+						<p>非EE省提名项目后期联邦签证阶段是递交纸质材料到加拿大境内CIO，
+						全套纸质资料包括身份文件，学历文件，工作文件，资金证明等，提交申请
+						时候需要支付申请费（主副申请各自550加币，每个子女150加币），登录
+						费可以一起提交（每个成人490加币），费用可以在线信用卡支付，也可以办
+						理汇票支付。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">2-4周递交全套签证申请材料</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">涉及文件大概20个</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -288,10 +300,13 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content"  id="color">
 						<h2>档案号</h2>
-						<div>无需文件</div>
+						<div>一般签证申请资料递交CIO后2个月左右，CIO审核资料完整性，然后会通过email
+						给申请人发UCI档案号码，收到档案号后可以关联在线My Link Application，这样通
+						过在线系统查看申请状态；或者通过CIC网站查询申请状态。以后询问申请进度都需要备注
+						档案号。</div>
 						<span class="cd-date">
 							<span class="cd-date-year">2个月左右</span>
-							<!-- <span class="cd-date-month">涉及文件大概20个</span> -->
+							<span class="cd-date-month">无需文件</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -306,10 +321,13 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content">
 						<h2>第二次补料</h2>
-						<p>涉及文件3个左右</p>
+						<p>CIO给申请人发UCI号码后，会把案子转到申请人所在国家使馆进一步处理，
+						中国申请人转到加拿大香港使馆，香港使馆一般有个通用的补料信，比如是否递
+						交户口公证、出生公证、无犯罪公证、登录费等，基本上文件之前都递交CIO了，
+						需要申请人再次确认哪些没有递交。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">1-2个月</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">涉及文件3个左右</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -324,10 +342,14 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content" id="color">
 						<h2>体检信</h2>
-						<p>无需文件</p>
+						<p>申请人收到体检通知后，需要在30天内完成体检。必须到加拿大移民局指定的体检医院去
+						体检，世界各地任何一家指定的体检医院都可以。主要是检查重大传染性疾病，如：性病、艾
+						滋病、肺结核、还有恶性肿瘤等，子女根据年龄不同检查项目不同，费用也不同。体检结果由
+						医院直接上传到加拿大移民系统。如果体检异常的话，医院会单独通知申请人，体检正常的话
+						，不会通知申请人。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">3个月左右</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">无需文件</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -342,10 +364,12 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content">
 						<h2>取签信</h2>
-						<p>无需文件</p>
+						<p>收到取签信后，需要在30天内把所有申请人的护照递交到签证中心，中国大陆申请人递
+						交到加拿大北京签证中心，港澳台申请人需要把护照递交到香港签证中心，加拿大境内申请
+						人需要递交护照到渥太华使馆。递交不同签证中心处理速度不同，最快一周，最慢8周。</p>
 						<span class="cd-date">
 							<span class="cd-date-year">3-6个月</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">无需文件</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->
@@ -360,10 +384,12 @@ background-color: #f3f3f3;
 
 					<div class="cd-timeline-content" id="color">
 						<h2>贴签证</h2>
-						<p>涉及文件3个</p>
+						<p>护照递交签证中心后，会给一个tracking no，根据这个跟踪号码可以登录网站查询护照
+						状态，如果状态显示in process，那就是还没有贴签完成，如果状态显示dispatched，说明
+						护照已经寄送出来，一般两天就能收到大信封（里面包括贴签护照，移民纸和移民说明）</p>
 						<span class="cd-date">
 							<span class="cd-date-year">2-6周</span>
-							<!-- <span class="cd-date-month">DEC 31</span> -->
+							<span class="cd-date-month">涉及文件3个</span>
 						</span>
 					</div>
 					<!-- cd-timeline-content -->

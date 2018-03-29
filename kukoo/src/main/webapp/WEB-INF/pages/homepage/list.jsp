@@ -159,13 +159,14 @@
 					<div class="row">
 
 						<div class="col-md-8">
-							<h1 class="page-title2">Animations</h1>
+							<h1 class="local-page-title">项目列表</h1>
 						</div>
 
 						<div class="col-md-4">
 							<div class="breadcrumbs2 font-poppins">
-								<a class="a-inv" href="index.html">home</a><span
-									class="slash-divider">/</span><span class="bread-current">animations</span>
+								<!-- <a class="a-inv" href="index.html">home</a> -->
+								<!-- <span class="slash-divider">/</span> -->
+								<span class="bread-current">共2条</span>
 							</div>
 						</div>
 
@@ -176,196 +177,42 @@
 			<!-- COTENT CONTAINER -->
 			<div class="container p-140-cont over-hide" style="padding-top: 30px;">
 				<!-- BOUNCE -->
-				<div class="heading-underline h4-line">
-					<h4>BOUNCE</h4>
-				</div>
 				<div class="row mt-50 mb-60">
 					<div class="col-md-3">
-						<a href="/kukoo/homePage/detail">
+						<a href="/kukoo/detail/detail">
 							<img class="wow"
-								src="<%=basePath %>elementy/images/content/demo-animate.png"
-								alt="img">
+								src="<%=basePath %>/img/list/Canada-logo.png" alt="img">
 						</a>
 					</div>
 					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
-					</div>
-				</div>
-
-				<!-- FLASH -->
-				<div class="heading-underline h4-line">
-					<h4>FLASH</h4>
-				</div>
-				<div class="row mt-50 mb-60">
-					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
-					</div>
-					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
-					</div>
-				</div>
-
-				<!-- PULSE -->
-				<div class="heading-underline h4-line">
-					<h4>PULSE</h4>
-				</div>
-				<div class="row mt-50 mb-60">
-					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
-					</div>
-					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
-					</div>
-				</div>
-
-				<!-- SHAKE -->
-				<div class="heading-underline h4-line">
-					<h4>SHAKE</h4>
-				</div>
-				<div class="row mt-50 mb-60">
-					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
-					</div>
-					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
-					</div>
-				</div>
-
-				<!-- SWING -->
-				<div class="heading-underline h4-line">
-					<h4>SWING</h4>
-				</div>
-				<div class="row mt-50 mb-60">
-					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
-					</div>
-					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
-					</div>
-				</div>
-
-				<!-- TADA -->
-				<div class="heading-underline h4-line">
-					<h4>TADA</h4>
-				</div>
-				<div class="row mt-50 mb-60">
-					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
-					</div>
-					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
-					</div>
-				</div>
-
-				<!-- WOBBLE -->
-				<div class="heading-underline h4-line">
-					<h4>WOBBLE</h4>
-				</div>
-				<div class="row mt-50 mb-80">
-					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
-					</div>
-					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
+						<p class="demo-anim-text">
+						<h4>加拿大联邦技术移民-快速通道项目</h4>
+						加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。
+						获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周
+						期最快8个月登陆加拿大。 本项目具有办理周期短，对语言等条件要求高等特点；适合学历高，年
+						龄轻，英语好的申请人。
+						</p>
 					</div>
 				</div>
 
 				<!-- bounceIn -->
 				<div class="heading-underline h4-line">
-					<h4>BOUNCE IN</h4>
+					<h4></h4>
 				</div>
 				<div class="row mt-50 mb-80">
 					<div class="col-md-3">
-						<img class="wow"
-							src="<%=basePath %>elementy/images/content/demo-animate.png"
-							alt="img">
+						<a href="/kukoo/detail/detail">
+							<img class="wow" src="<%=basePath %>/img/list/Australia-logo.png" alt="img">
+						</a>
 					</div>
 					<div class="col-md-9">
-						<p class="demo-anim-text">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Curabitur pellentesque neque eget
-							diam posuere porta. Quisque ut nulla at nunc lacinia. Proin
-							adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In
-							eu justo a felis faucibus ornare vel id metus. Vestibulum ante
-							ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-							Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra
-							leo. Nullam convallis, arcu vel pellentesque sodales, nisi est
-							varius diam, ac ultrices sem. Proin ultricies volutpat sapien,
-							nec scelerisque ligula mollis lobortis.</p>
+						<p class="demo-anim-text">
+						<h4>澳大利亚技术移民-快速通道项目</h4>
+						加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。
+						获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周
+						期最快8个月登陆加拿大。 本项目具有办理周期短，对语言等条件要求高等特点；适合学历高，年
+						龄轻，英语好的申请人。
+						</p>
 					</div>
 				</div>
 			</div>
