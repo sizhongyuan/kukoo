@@ -196,7 +196,7 @@
 											href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/federal-skilled-workers.html">https://www.canada.ca/</a>
 									</div>
 								</div>
-							<h1 class="page-title2">加拿大联邦技术移民-快速通道项目</h1>
+							<h1 class="local-page-title">加拿大联邦技术移民-快速通道项目</h1>
 						</div>
 
 						<div class="col-md-6">

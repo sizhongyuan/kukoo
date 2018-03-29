@@ -151,12 +151,12 @@
 
 			</header>
 			<!-- PAGE TITLE LARGE 2 GRAY -->
-			<div class="page-title-cont page-title-large2-cont bg-gray">
+			<div class="page-title-cont page-title-large2-cont bg-gray" style="padding-top: 10px;">
 				<div class="relative container align-left">
 					<div class="row">
 
 						<div class="col-md-8">
-							<h1 class="page-title2">布谷移民在线评估问卷</h1>
+							<h1 class="local-page-title">布谷移民在线评估问卷</h1>
 						</div>
 
 						<div class="col-md-4">
