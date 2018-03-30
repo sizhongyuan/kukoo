@@ -49,7 +49,6 @@
 				var countryAttr = $(this).attr("country");
 				var projectAttr = $(this).attr("project");
 				if(countryAttr.indexOf(search)!=-1||projectAttr.indexOf(search)!=-1){
-					alert($("#"+$(this).attr("id")));
 					$("#"+$(this).attr("id")).show();
 				}else{
 					$("#"+$(this).attr("id")).hide();
@@ -198,7 +197,7 @@
 						<form class="form-search" id="searchForm"
 							action="/kukoo/list/lists" method="post">
 							<input type="text" value="" name="search" id="search"
-								placeholder="Search...">
+								placeholder="国家名/项目名...">
 						</form>
 						<!-- <div class="row" style="margin-top: 20px;">
 						  <div class="col-sm-4 mb-30"></div>
@@ -274,7 +273,7 @@
 				<div id="project1" country="加拿大" project="加拿大联邦EE快速通道" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
-							<a href="/kukoo/homePage/detail">
+							<a href="/kukoo/detail/detail">
 								<img class="wow"
 									src="<%=basePath %>elementy/images/list/Canada.png"
 									alt="img">
@@ -282,7 +281,7 @@
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>加拿大联邦EE快速通道</h4>
+								<h4><a href="/kukoo/detail/detail">加拿大联邦EE快速通道</a></h4>
 							</div>
 							<p class="demo-anim-text">加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。
 							获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周期最快8个月登陆加拿大。
