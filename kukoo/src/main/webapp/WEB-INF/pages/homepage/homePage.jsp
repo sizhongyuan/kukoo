@@ -77,6 +77,7 @@
 /*去除选择框的outline*/
 #countryDiv button:focus{outline:none !important;}
 #projectDiv button:focus{outline:none !important;}
+option {color:#333333}
 </style>
 <body class="font-raleway">
 
