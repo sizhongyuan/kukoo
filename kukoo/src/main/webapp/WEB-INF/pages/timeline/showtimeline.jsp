@@ -148,18 +148,18 @@ background-color: #f3f3f3;
 					</div>
 					<!-- END main-menu-container -->
 
-					<!-- SEARCH READ DOCUMENTATION -->
+					<!-- SEARCH READ DOCUMENTATION 搜索功能 注释掉
 					<ul class="cd-header-buttons">
 						<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
-					</ul>
-					<!-- cd-header-buttons -->
+					</ul>-->
+					<!-- cd-header-buttons 搜索功能 注释掉
 					<div id="cd-search" class="cd-search">
 						<form class="form-search" id="searchForm"
 							action="page-search-results.html" method="get">
 							<input type="text" value="" name="q" id="q"
 								placeholder="Search...">
 						</form>
-					</div>
+					</div>-->
 
 				</div>
 				<!-- END header-wrapper -->
