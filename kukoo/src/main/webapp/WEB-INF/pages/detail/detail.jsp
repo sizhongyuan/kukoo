@@ -51,10 +51,10 @@
 </script>
 <body>
 <div class="side-bar"> 
-	<a href="#" class="icon-qq"></a> 
-	<a href="" class="icon-chat"></a> 
-	<a target="_blank" href="" class="icon-blog"></a> 
-	<a href="mailto:admin@admin.com" class="icon-mail"></a> 
+	<a href="#" class="icon-qq" style="background-position:-14px -76px;"></a> 
+	<a href="" class="icon-chat" style="background-position:-14px -144px"></a> 
+	<a target="_blank" href="" class="icon-blog" style="background-position:-14px -212px"></a> 
+	<a href="mailto:admin@admin.com" class="icon-mail" style="background-position:-14px -280px"></a> 
 </div>
 
 <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
@@ -230,8 +230,11 @@
 					height="40px">
 			</div> --%>
 			
-			<div id="pordAttr" class="small-tab">
-				<ul id="nav-sidebar-small">
+			<!-- <div id="pordAttr" class="small-tab"> -->
+			<div id="pordAttr"
+							class="bs-sidebar clearfix small-tab"
+							role="complementary">
+				<ul id="nav-sidebar-small" class="nav bs-sidenav2 blog-categories2 font-poppins" style="margin-top:5px">
 								<li class="current li-style-long-margin"><a href="#heading">政策解读</a></li>
 								<li class="li-style-margin"><a href="#dropcaps" >申请流程</a></li>
 								<li class="li-style-margin"><a href="#blockquotes" >申请条件</a></li>
@@ -241,7 +244,7 @@
 			</div>
 
 			<!-- COTENT CONTAINER -->
-			<div class="container bs-docs-container p-140-cont" style="padding-top:70px">
+			<div class="container bs-docs-container p-140-cont" style="padding-top:35px">
 				<div class="row">
 
 					<!-- SIDENAV HIDE -->
@@ -271,7 +274,7 @@
 								<h3 class="mt-0 mb-50">政策解读</h3>
 							</div>
 							
-							<p>加同管辖。加拿大联邦技术移民项目（the Federal Skilled Worker
+							<p style="margin-top:-20px;">加同管辖。加拿大联邦技术移民项目（the Federal Skilled Worker
 								Program，“FSW”）即为申请者向加拿大联邦政府递交技术移民申请，由联邦政府发放移民签证并最终成为加拿大永久居民的移民申请项目。</p>
 							<p>自2015年开始，加拿大联邦技术移民（FSW）必须通过快速通道方式（Express
 								Entry,“EE”）申请。即在满足FSW申请条件基础上，申请者还需统一按照的EE的综合排名系统（CRS）规则重新打分；最终根据分数排名情况受理移民申请，并在受理后的6个月内获得移民签证。</p>
@@ -286,7 +289,7 @@
 								<h3 class="mb-40">申请流程</h3>
 							</div>
 							
-									<p class="font-bold">1.确认满足联邦技术移民项目（FSW）评分标准</p>
+									<p class="font-bold" style="margin-top:-20px;">1.确认满足联邦技术移民项目（FSW）评分标准</p>
 									<p>申请者应首先满足联邦技术移民项目（FSW）评分标准。</p>
 									<p>FSW具体评分标准参见“申请条件”页。您也可使用布谷的在线评分系统进行自测。</p>
 									<p class="font-bold">2.录入EE系统的MyCIC账户并进行（CRS）打分</p>
@@ -361,7 +364,7 @@
 							<div class="heading-underline h3-line">
 								<h3 class="mb-50">申请条件</h3>
 							</div>
-						<p class="font-bold">申请加拿大联邦技术移民-快速通道项目需满足如下条件：</p>
+						<p class="font-bold" style="margin-top:-20px;">申请加拿大联邦技术移民-快速通道项目需满足如下条件：</p>
 						<p>1 满足联邦技术移民项目（FSW）评分标准</p>
 						<p>2 按照CRS评分标准打分，并根据分数高低获得联邦邀请（通常要求430分以上）</p>
 						<p>FSW及CRS具体评分标准如下。您也可使用布谷的在线评分系统进行自测。</p>
@@ -478,7 +481,7 @@
 									<td colspan="4">10分</td>
 								</tr>
 								<tr>
-									<td rowspan="4" style="line-height:80px" class="font-bold">适应能力</td>
+									<td rowspan="4" style="line-height:80px;background-color:rgb(247,247,247);" class="font-bold">适应能力</td>
 									<td>主申加拿大工作</td>
 									<td>主申加拿大学习</td>
 									<td>主副申加拿大直系亲属</td>
@@ -1139,7 +1142,7 @@
 							<div class="heading-underline h3-line">
 								<h3 class="mb-40">材料清单</h3>
 							</div>
-							<table class="table table-striped mb-40">
+							<table class="table table-striped mb-40" style="margin-top:-20px;" cellspacing="0">
 						<thead>
 							<th>材料</th>
 							<th>主申/副申/子女</th>
@@ -1213,7 +1216,7 @@
 								<td>是</td>
 								<!-- <td>--</td> -->
 							</tr>
-							<tr>
+							<tr style="border-bottom: 1px solid #ddd;">
 								<td>近十年所有个税税单复印件</td>
 								<td></td>
 								<td>是</td>
@@ -1231,12 +1234,12 @@
 								<h3 class="mb-40">费用详情</h3>
 							</div>
 							
-							<p class="font-bold">总共涉及的资金：一人办理约5.2万 人民币 三口之家办理约6万人民币，其中：</p>
+							<p class="font-bold" style="margin-top:-20px;">总共涉及的资金：一人办理约5.2万 人民币 三口之家办理约6万人民币，其中：</p>
 							<p class="font-bold">* 布谷服务费：4万人民币</p>
 							<p class="font-bold">* 官方及第三方费用：1.2-2万人民币</p>
 							<p class="font-bold">（备注：汇率按照1:5计算）</p>
 							
-							<table class="table table-striped mb-40">
+							<table class="table table-striped mb-40" cellspacing="0">
 						<thead>
 							<th>费用详情</th>
 							<th>费用项</th>
@@ -1279,7 +1282,7 @@
 								<td rowspan="3" style="line-height:60px">不退</td>
 							</tr>
 							<tr>
-								<td>随行配偶：550加币/人</td>
+								<td style="background-color:#fff">随行配偶：550加币/人</td>
 							</tr>
 							<tr>
 								<td>随行未满22周岁子女：150加币/人</td>
@@ -1292,23 +1295,23 @@
 								<td>获批登陆前</td>
 								<td>不退</td>
 							</tr>
-							<tr>
+							<tr style="border-bottom: 1px solid #ddd;">
 								<td rowspan="2" style="line-height:40px">第三方费用</td>
 								<td rowspan="2" style="line-height:40px">体检费</td>
 								<td rowspan="2" style="line-height:40px">指定体检医院</td>
-								<td>15周岁以上：1700人民币/人</td>
+								<td >15周岁以上：1700人民币/人</td>
 								<td rowspan="2" style="line-height:40px">申请签证前</td>
-								<td rowspan="2" style="line-height:40px">不退</td>
+								<td rowspan="2" style="line-height:40px;">不退</td>
 							</tr>
-							<tr>
-								<td>15周岁以下：500-1250人民币/人</td>
+							<tr style="border-bottom: 1px solid #ddd;">
+								<td style="background-color:#fff">15周岁以下：500-1250人民币/人</td>
 							</tr>
 						</tbody>
 					</table>
 						<p class="font-bold">备注：</p>
 						<p>1. 以上涉及的翻译、公证、认证可委托布谷办理或自行办理</p>
 						<p>2. 因移民局或第三方代办机构调整费用，以及客户文件的数量不同，以上费用以实际发生为准</p>
-
+						<p>3. 汇率按照1:5计算</p>
 						</div>
 					</div>
 
@@ -1388,6 +1391,12 @@
 					bottom : offsetFooter
 				}
 			});
+			jQuery('#pordAttr').affix({
+				offset : {
+					top : 390, //top offset for header 1 for others headers it will have other value
+					bottom : offsetFooter
+				}
+			});
 
 		});
 		var myChart = echarts.init(document.getElementById("charts"));
@@ -1412,7 +1421,8 @@
 			    toolbox: {
 			        feature: {
 			            saveAsImage: {}
-			        }
+			        },
+			        x:'320'
 			    },
 			    xAxis: {
 			    		splitLine:{show: false},
