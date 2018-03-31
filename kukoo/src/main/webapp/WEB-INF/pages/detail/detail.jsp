@@ -6,53 +6,9 @@
 
 <head>
 <!-- <link rel="icon" href="../../favicon.ico"> -->
+<link rel="stylesheet" href="<%=basePath%>css/detail/detail-templete.css" />
 <style>
-/* padding去除 start*/
-.padding-clear{
-	padding:0;
-}
-/* padding去除 end*/
-.row-margin{
-	margin-left:-40px;
-}
-@media (max-width: 1024px){
-	.row-margin{
-		margin-left:-30px;
-	}
-}
-tbody{
-	font-size:12px;
-}
-.table{
-	max-width:750px;
-	margin-left:50px;
-}
-@media (max-width: 1024px){
-	.table{
-		margin-left:0px;
-	}
-}
-p {
-    margin: 0 0 -2px;
-}
-.font-bold{
-	font-weight:bold;
-}
-th{
-	font-weight:bold;
-}
-.charts{
-	width:750px;
-	height:500px;
-	margin-left:40px
-}
-@media (max-width: 1024px){
-	.charts{
-		width:300px;
-		height:500px;
-		margin-left:0px
-	}
-}
+
 
 </style>
 
@@ -94,6 +50,13 @@ th{
 	//显示更多end
 </script>
 <body>
+<div class="side-bar"> 
+	<a href="#" class="icon-qq"></a> 
+	<a href="" class="icon-chat"></a> 
+	<a target="_blank" href="" class="icon-blog"></a> 
+	<a href="mailto:admin@admin.com" class="icon-mail"></a> 
+</div>
+
 <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
 	<!-- LOADER -->
 	<div id="loader-overflow">
@@ -222,25 +185,34 @@ th{
 			<div class="page-title-cont page-title-large2-cont bg-gray" style="padding-top:120px">
 				<div class="relative container align-left">
 					<div class="row" style="font-size: 13px;">
+					
+					<div class="col-md-6">
+						<h1 class="local-page-title" style="margin:0 0 0 0">加拿大联邦快速通道</h1>
+								<div class="row" style="margin-top:30px">
+									<div class="col-xs-3 font-bold">项目简介</div>
+									<div class="col-xs-9 row-margin detail-width"><p style="margin: 0 0 -2px;">加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周期最快8个月登陆加拿大。
+									  		本项目具有办理周期短，对语言等条件要求高等特点；适合学历高，年龄轻，英语好的申请人。</p></div>
+								</div>
+						</div>
 
 						<div class="col-md-6 ">
-							<h1 class="local-page-title" style="margin:0 0 0 0">加拿大联邦快速通道</h1>
-								<div class="row" style="margin-top:30px">
+							
+								<div class="row" style="margin-top:67px">
 									<div class="col-xs-3 font-bold">签证类型</div>
 									<div class="col-xs-3 row-margin">PR/工签+PR</div>
-									<div class="col-xs-3 font-bold">办理周期</div>
+									<div class="col-xs-3 font-bold row-margin-label">办理周期</div>
 									<div class="col-xs-3 row-margin">2年</div>
 								</div>
 								<div class="row">
 									<div class="col-xs-3 font-bold">总费用</div>
 									<div class="col-xs-3 row-margin">XXX</div>
-									<div class="col-xs-3 font-bold">居住要求</div>
+									<div class="col-xs-3 font-bold row-margin-label">居住要求</div>
 									<div class="col-xs-3 row-margin">5年2年</div>
 								</div>
 								<div class="row">
 									<div class="col-xs-3 font-bold">状态</div>
 									<div class="col-xs-3 row-margin">开放</div>
-									<div class="col-xs-3 font-bold">移民局官网</div>
+									<div class="col-xs-3 font-bold row-margin-label">政策来源</div>
 									<div class="col-xs-3 row-margin">
 										<a
 											href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/federal-skilled-workers.html">https://www.canada.ca/</a>
@@ -248,18 +220,25 @@ th{
 								</div>
 						</div>
 
-						<div class="col-md-6">
-								<div class="row" style="margin-top:60px">
-									<div class="col-xs-3 font-bold">项目简介</div>
-									<div class="col-xs-9 row-margin"><p>加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周期最快8个月登陆加拿大。
-									  		本项目具有办理周期短，对语言等条件要求高等特点；适合学历高，年龄轻，英语好的申请人。</p></div>
-								</div>
-						</div>
 					</div>
 					</div>
 				</div>
 			</div>
-
+			
+			<%-- <div style="position:fixed;right:0px;height:40px;width:40px;border:1px solid rgb(234,234,234);">
+				<img src="<%=basePath%>img/detail/share.png" width="40px"
+					height="40px">
+			</div> --%>
+			
+			<div id="pordAttr" class="small-tab">
+				<ul id="nav-sidebar-small">
+								<li class="current li-style-long-margin"><a href="#heading">政策解读</a></li>
+								<li class="li-style-margin"><a href="#dropcaps" >申请流程</a></li>
+								<li class="li-style-margin"><a href="#blockquotes" >申请条件</a></li>
+								<li class="li-style-margin"><a href="#testimonials" >材料清单</a></li>
+								<li class="li-style-margin"><a href="#pricing-tables">费用详情</a></li>
+				</ul>
+			</div>
 
 			<!-- COTENT CONTAINER -->
 			<div class="container bs-docs-container p-140-cont" style="padding-top:70px">
@@ -407,7 +386,7 @@ th{
 							</thead>
 							<tbody>
 								<tr>
-									<td rowspan="2" style="line-height:74px" class="font-bold">语言加分</td>
+									<td rowspan="2" style="line-height:40px" class="font-bold">语言加分</td>
 									<td>第一语言CLB 7</td>
 									<td>第一语言CLB 8</td>
 									<td>第一语言CLB 9</td>
@@ -420,7 +399,7 @@ th{
 									<td>1分/项</td>
 								</tr>
 								<tr>
-									<td rowspan="6" style="line-height:222px" class="font-bold">年龄加分</td>
+									<td rowspan="6" style="line-height:120px" class="font-bold">年龄加分</td>
 									<td><=35岁</td>
 									<td>36岁</td>
 									<td>37岁</td>
@@ -457,7 +436,7 @@ th{
 									<td>1分</td>
 								</tr>
 								<tr>
-									<td rowspan="2" style="line-height:74px" class="font-bold">工作加分</td>
+									<td rowspan="2" style="line-height:40px" class="font-bold">工作加分</td>
 									<td>1年</td>
 									<td>2-3年</td>
 									<td>4-5年</td>
@@ -470,7 +449,7 @@ th{
 									<td>15分</td>
 								</tr>
 								<tr>
-									<td rowspan="4" style="line-height:148px" class="font-bold">教育加分</td>
+									<td rowspan="4" style="line-height:80px" class="font-bold">教育加分</td>
 									<td>博士</td>
 									<td>硕士</td>
 									<td>双学历</td>
@@ -486,19 +465,20 @@ th{
 									<td>2年文凭</td>
 									<td>一年文凭</td>
 									<td>高中</td>
-									<td rowspan="2" style="line-height:74px"></td>
+									<td></td>
 								</tr>
 								<tr>
 									<td>19分</td>
 									<td>15分</td>
 									<td>5分</td>
+									<td></td>
 								</tr>
 								<tr>
-									<td>LMO加分</td>
+									<td class="font-bold">LMO加分</td>
 									<td colspan="4">10分</td>
 								</tr>
 								<tr>
-									<td rowspan="4" style="line-height:148px" class="font-bold">适应能力</td>
+									<td rowspan="4" style="line-height:80px" class="font-bold">适应能力</td>
 									<td>主申加拿大工作</td>
 									<td>主申加拿大学习</td>
 									<td>主副申加拿大直系亲属</td>
@@ -513,11 +493,14 @@ th{
 								<tr>
 									<td>配偶加拿大工作</td>
 									<td>配偶雅思（CLB 4）</td>
-									<td rowspan="2" style="line-height:74px" colspan="2" ></td>
+									<td></td>
+									<td></td>
 								</tr>
 								<tr>
 									<td>5分</td>
 									<td>5分</td>
+									<td></td>
+									<td></td>
 								</tr>
 							</tbody>
 						</table>
@@ -997,8 +980,7 @@ th{
 							</tr>
 							<tr>
 								<td
-									>两个及以上高等学历且一个学历年制超过3年(levels
-									6,7 &amp; 8)</td>
+									>两个及以上高等学历且一个学历年制超过3年</td>
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
@@ -1024,8 +1006,7 @@ th{
 							</tr>
 							<tr>
 								<td
-									>两个及以上高等学历且一个学历年制超过3年(levels
-									6,7 &amp; 8)</td>
+									>两个及以上高等学历且一个学历年制超过3年</td>
 								<td colspan=2 >25</td>
 								<td colspan=2 >50</td>
 							</tr>
@@ -1033,9 +1014,9 @@ th{
 								<td 
 									>三、工作分，基于语言，50</td>
 								<td colspan=2 >第一语言单项都达到
-									CLB 7 的海外工作经验加分</td>
+									CLB 7 的海外工作</td>
 								<td colspan=2 >第一语言单项都达到
-									CLB 9 的海外工作经验加分</td>
+									CLB 9 的海外工作</td>
 							</tr>
 							<tr>
 								<td
@@ -1163,80 +1144,80 @@ th{
 							<th>材料</th>
 							<th>主申/副申/子女</th>
 							<th>是否必须</th>
-							<th>样例及说明</th>
+							<!-- <th>样例及说明</th> -->
 						</thead>
 						<tbody>
 							<tr>
 								<td>移民信息表</td>
 								<td></td>
 								<td>是</td>
-								<td></td>
+								<!-- <td></td> -->
 							</tr>
 							<tr>
 								<td>护照复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>护照</td>
+								<!-- <td>护照</td> -->
 							</tr>
 							<tr>
 								<td>身份证复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>身份证</td>
+								<!-- <td>身份证</td> -->
 							</tr>
 							<tr>
 								<td>出生医学证明复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>子女出生医学证明</td>
+								<!-- <td>子女出生医学证明</td> -->
 							</tr>
 							<tr>
 								<td>户口本复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>户口本</td>
+								<!-- <td>户口本</td> -->
 							</tr>
 							<tr>
 								<td>照片</td>
 								<td></td>
 								<td>是</td>
-								<td>照片指引</td>
+								<!-- <td>照片指引</td> -->
 							</tr>
 							<tr>
 								<td>最高全日制学历的毕业证/学位证复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>学历学位证</td>
+								<!-- <td>学历学位证</td> -->
 							</tr>
 							<tr>
 								<td>最高全日制学历的毕业成绩单复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>--</td>
+								<!-- <td>--</td> -->
 							</tr>
 							<tr>
 								<td>雅思或TEF成绩原件</td>
 								<td></td>
 								<td>是</td>
-								<td>雅思成绩单</td>
+								<!-- <td>雅思成绩单</td> -->
 							</tr>
 							<tr>
 								<td>近十年所有工作证明信复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>--</td>
+								<!-- <td>--</td> -->
 							</tr>
 							<tr>
 								<td>聘用合同复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>--</td>
+								<!-- <td>--</td> -->
 							</tr>
 							<tr>
 								<td>近十年所有个税税单复印件</td>
 								<td></td>
 								<td>是</td>
-								<td>个人所得税完税证明</td>
+								<!-- <td>个人所得税完税证明</td> -->
 							</tr>
 						</tbody>
 					</table>
@@ -1290,12 +1271,12 @@ th{
 								<td>不退</td>
 							</tr>
 							<tr>
-								<td rowspan="3" style="line-height:111px">官方费用</td>
-								<td rowspan="3" style="line-height:111px">申请费</td>
-								<td rowspan="3" style="line-height:111px">加拿大联邦移民局</td>
+								<td rowspan="3" style="line-height:60px">官方费用</td>
+								<td rowspan="3" style="line-height:60px">申请费</td>
+								<td rowspan="3" style="line-height:60px">加拿大联邦移民局</td>
 								<td>主申请人：550加币/人</td>
-								<td rowspan="3" style="line-height:111px">递交申请前支付</td>
-								<td rowspan="3" style="line-height:111px">不退</td>
+								<td rowspan="3" style="line-height:60px">递交申请前支付</td>
+								<td rowspan="3" style="line-height:60px">不退</td>
 							</tr>
 							<tr>
 								<td>随行配偶：550加币/人</td>
@@ -1312,12 +1293,12 @@ th{
 								<td>不退</td>
 							</tr>
 							<tr>
-								<td rowspan="2" style="line-height:74px">第三方费用</td>
-								<td rowspan="2" style="line-height:74px">体检费</td>
-								<td rowspan="2" style="line-height:74px">指定体检医院</td>
+								<td rowspan="2" style="line-height:40px">第三方费用</td>
+								<td rowspan="2" style="line-height:40px">体检费</td>
+								<td rowspan="2" style="line-height:40px">指定体检医院</td>
 								<td>15周岁以上：1700人民币/人</td>
-								<td rowspan="2" style="line-height:74px">申请签证前</td>
-								<td rowspan="2" style="line-height:74px">不退</td>
+								<td rowspan="2" style="line-height:40px">申请签证前</td>
+								<td rowspan="2" style="line-height:40px">不退</td>
 							</tr>
 							<tr>
 								<td>15周岁以下：500-1250人民币/人</td>
@@ -1349,10 +1330,36 @@ th{
 	<script>
 		$(document).ready(function() {
 
+			var elm = $('#pordAttr');   
+		    var startPos = $(elm).offset().top;   
+		    $.event.add(window, "scroll", function() {   
+		        var p = $(window).scrollTop();   
+		        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static');   
+		        $(elm).css('top',((p) > startPos) ? '0px' : '');   
+		    }); 
+		    
 			//NAV SIDEBAR------------------------------------------------------------------
 			var top_offset = $('header').height() - 1; // get height of fixed navbar
 
 			$('#nav-sidebar').onePageNav({
+				currentClass : 'current',
+				changeHash : false,
+				scrollSpeed : 700,
+				scrollOffset : top_offset,
+				scrollThreshold : 0.5,
+				filter : '',
+				easing : 'swing',
+				begin : function() {
+					//I get fired when the animation is starting
+				},
+				end : function() {
+					//I get fired when the animation is ending
+				},
+				scrollChange : function($currentListItem) {
+					//I get fired when you enter a section and I pass the list item of the section
+				}
+			});
+			$('#nav-sidebar-small').onePageNav({
 				currentClass : 'current',
 				changeHash : false,
 				scrollSpeed : 700,
@@ -1430,7 +1437,6 @@ th{
 			        {
 			            name:'EE人数',
 			            type:'line',
-			            stack: '总量',
 			            itemStyle:{  
                             normal : {  
                                 lineStyle:{  
@@ -1446,7 +1452,6 @@ th{
 			        {
 			            name:'EE分数',
 			            type:'line',
-			            stack: '总量',
 			            itemStyle:{  
                             normal : {  
                                 lineStyle:{  
