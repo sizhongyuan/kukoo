@@ -88,7 +88,7 @@ background-color: #f3f3f3;
 							<div class="logo-container-2">
 								<div class="logo-2">
 									<a href="/kukoo/homePage" class="clearfix"> <img
-										src="<%=basePath%>elementy/images/logo.png" class="logo-img"
+										src="<%=basePath%>elementy/images/logo.svg" class="logo-img"
 										alt="Logo">
 									</a>
 								</div>

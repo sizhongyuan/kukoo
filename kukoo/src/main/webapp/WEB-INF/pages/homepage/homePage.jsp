@@ -129,7 +129,7 @@ option {color:#333333}
 							<div class="logo-container-2">
 								<div class="logo-2">
 									<a href="/kukoo/homePage" class="clearfix">
-										<img src="<%=basePath %>elementy/images/logo-white.png" class="logo-img" alt="Logo">
+										<img src="<%=basePath %>elementy/images/logo-white.svg" class="logo-img" alt="Logo">
 									</a>
 								</div>
 							</div>

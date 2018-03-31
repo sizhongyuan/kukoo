@@ -5,7 +5,7 @@
 			<div class="col-md-3 col-sm-3 widget">
 				<div class="logo-footer-cont">
 					<a href="index.html"> <img class="logo-footer"
-						src="<%=basePath %>elementy/images/logo-footer-white.png"
+						src="<%=basePath %>elementy/images/logo-footer-white.svg"
 						alt="logo">
 					</a>
 				</div>
