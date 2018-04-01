@@ -349,7 +349,7 @@
 								<td>6~8周</td>
 								<td>获得永居签证，进行登录前辅导</td>
 							</tr>
-							<tr>
+							<tr style="border-bottom: 1px solid #ddd;">
 								<td>7</td>
 								<td>登陆</td>
 								<td>1年内</td>
@@ -499,7 +499,7 @@
 									<td></td>
 									<td></td>
 								</tr>
-								<tr>
+								<tr style="border-bottom: 1px solid #ddd;">
 									<td>5分</td>
 									<td>5分</td>
 									<td></td>
@@ -1121,7 +1121,7 @@
 								<td colspan=4  >50（获得
 									LMIA 或已经在加拿大工作一年以上）</td>
 							</tr>
-							<tr>
+							<tr style="border-bottom: 1px solid #ddd;">
 								<td
 									>EE 下省提名</td>
 								<td colspan=4  >600</td>
