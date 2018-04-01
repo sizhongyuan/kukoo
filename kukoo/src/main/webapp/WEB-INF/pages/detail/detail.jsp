@@ -382,7 +382,7 @@
 						<p class="font-bold">四 FSW打分超过67分（满分100分）</p>
 						<p>FSW评分标准如下所示：</p>
 						
-						<table class="table table-striped mb-40">
+						<table class="table table-striped mb-40" >
 							<thead>
 								<th>评分项</th>
 								<th colspan="5">加拿大技术移民评分因素及对应评分</th>
@@ -515,7 +515,7 @@
 						<p class="font-bold">下面标准适用于2016-11-19后新的 EE 评分标准。</p>
 						
 					
-						<table class="table table-striped mb-40">
+						<table class="table table-striped mb-40" cellspacing="0">
 							<tbody>
 							<tr class="font-bold">
 								<td >I. 核心评分要素</td>
@@ -1237,7 +1237,6 @@
 							<p class="font-bold" style="margin-top:-20px;">总共涉及的资金：一人办理约5.2万 人民币 三口之家办理约6万人民币，其中：</p>
 							<p class="font-bold">* 布谷服务费：4万人民币</p>
 							<p class="font-bold">* 官方及第三方费用：1.2-2万人民币</p>
-							<p class="font-bold">（备注：汇率按照1:5计算）</p>
 							
 							<table class="table table-striped mb-40" cellspacing="0">
 						<thead>
@@ -1382,8 +1381,12 @@
 			});
 
 			//SIDEBAR STICKY---------------------------------------------	  
-			var //offsetSb = $('.page-title-bg').height(),
-			offsetFooter = $('#footer-offset').height() + 30;
+			/* var //offsetSb = $('.page-title-bg').height(),
+			offsetFooter = $('#footer-offset').height() + 30; */
+			if(document.body.clientWidth>1024){
+				var offsetFooter = $('#footer-offset').height() + 30;
+			}
+			
 			// DM Menu
 			jQuery('#sidebar-stiky').affix({
 				offset : {
@@ -1422,7 +1425,7 @@
 			        feature: {
 			            saveAsImage: {}
 			        },
-			        x:'320'
+			        x:'700'
 			    },
 			    xAxis: {
 			    		splitLine:{show: false},
