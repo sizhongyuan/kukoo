@@ -273,7 +273,7 @@
 				<div id="project1" country="加拿大" project="加拿大联邦EE快速通道" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
-							<a href="/kukoo/detail/detail">
+							<a href="/kukoo/detail/detail_Canada_EE">
 								<img class="wow"
 									src="<%=basePath %>elementy/images/list/Canada.png"
 									alt="img">
@@ -281,7 +281,7 @@
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4><a href="/kukoo/detail/detail">加拿大联邦EE快速通道</a></h4>
+								<h4><a href="/kukoo/detail/detail_Canada_EE">加拿大联邦EE快速通道</a></h4>
 							</div>
 							<p class="demo-anim-text">加拿大联邦技术移民名额充沛，无职业限制，一人成功，全家均可同时获得加拿大永久居民身份。
 							获得永居后无工作要求，无加拿大境内居住地限制，目前采用EE快速通道筛选系统，审理快速，周期最快8个月登陆加拿大。
@@ -295,13 +295,15 @@
 				<div id="project2" country="加拿大" project="萨省提名技术移民SINP" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
-							<img class="wow"
-								src="<%=basePath %>elementy/images/list/Canada.png"
-								alt="img">
+							<a href="/kukoo/detail/detail_Canada_SINP">
+								<img class="wow"
+									src="<%=basePath %>elementy/images/list/Canada.png"
+									alt="img">
+							</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>萨省提名技术移民SINP</h4>
+								<h4><a href="/kukoo/detail/detail_Canada_SINP">萨省提名技术移民SINP</a></h4>
 							</div>
 							<p class="demo-anim-text">加拿大萨省省提名移民提名项目 Saskatchewan Immigrant Nominee Program ，简称
 								SINP，加拿大SINP里有EE类别和OID，紧缺职业列表是一样的，不需要雇主提供offer就可以申请，但两个类别对语言要求不同，
@@ -315,13 +317,15 @@
 				<div id="project3" country="加拿大" project="新斯科舍省提名技术移民NSNP" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
-							<img class="wow"
-								src="<%=basePath %>elementy/images/list/Canada.png"
-								alt="img">
+							<a href="/kukoo/detail/detail_Canada_NSNP">
+								<img class="wow"
+									src="<%=basePath %>elementy/images/list/Canada.png"
+									alt="img">
+							</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>新斯科舍省提名技术移民NSNP</h4>
+								<h4><a href="/kukoo/detail/detail_Canada_NSNP">新斯科舍省提名技术移民NSNP</a></h4>
 							</div>
 							<p class="demo-anim-text">加拿大新斯科舍省移民提名项目 Nova Scotia Nominee Program ，简称 NSNP，加拿大 NSNP 里有EE下有两类，
 							A类需要有雇主offer，随时可以申请；另一类是B类，属于紧缺职业类别，不需要雇主提供offer就可以申请，但需要抢配额。中国申请人一般选择B类别
@@ -334,13 +338,15 @@
 				<div id="project4" country="加拿大" project="魁北克省技术移民QSW" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
-							<img class="wow"
-								src="<%=basePath %>elementy/images/list/Canada.png"
-								alt="img">
+							<a href="/kukoo/detail/detail_Canada_QSW">
+								<img class="wow"
+									src="<%=basePath %>elementy/images/list/Canada.png"
+									alt="img">
+							</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>魁北克省技术移民QSW</h4>
+								<h4><a href="/kukoo/detail/detail_Canada_QSW">魁北克省技术移民QSW</a></h4>
 							</div>
 							<p class="demo-anim-text">魁北克技术移民的申请条件完全是魁省政府根据当地的实际情况和发展需要而定的，魁省有甄选权，签发CSQ Certificat
 							 de sélection du Québec (CSQ – Québec selection certificate)-魁北克移民甄选。魁北克常规技术移民Regular selection program 
@@ -353,13 +359,15 @@
 				<div id="project5" country="加拿大" project="安省提名技术移民OINP" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
-							<img class="wow"
-								src="<%=basePath %>elementy/images/list/Canada.png"
-								alt="img">
+							<a href="/kukoo/detail/detail_Canada_OINP">
+								<img class="wow"
+									src="<%=basePath %>elementy/images/list/Canada.png"
+									alt="img">
+							</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>安省提名技术移民OINP</h4>
+								<h4><a href="/kukoo/detail/detail_Canada_OINP">安省提名技术移民OINP</a></h4>
 							</div>
 							<p class="demo-anim-text">加拿大安大略省省提名项目 Ontario Immigrant Nominee Program，简称 OINP。安省省提名包含多个类别：商业类
 							，雇主类，非雇主类，中国申请人一般申请非雇主类，其中EE HCP技能优先类别（Human Capital Priorities Stream）是比较常见的一个类别。 HCP
@@ -371,13 +379,15 @@
 				<div id="project6" country="加拿大" project="新不伦瑞克省提名技术移民NBPNP" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
+						<a href="/kukoo/detail/detail_Canada_NBPNP">
 							<img class="wow"
 								src="<%=basePath %>elementy/images/list/Canada.png"
 								alt="img">
+						</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>新不伦瑞克省提名技术移民NBPNP</h4>
+								<h4><a href="/kukoo/detail/detail_Canada_NBPNP">新不伦瑞克省提名技术移民NBPNP</a></h4>
 							</div>
 							<p class="demo-anim-text">新不伦瑞克省提名项目 New Brunswick Provincial Nominee Program （简称 NBPNP）包含多个类别:NBEE技术
 							类别、NB雇主担保类别、NB家庭担保类别、NB企业家类别。其中NBPNP的EE类别只对当前在NB工作及法语是第一语言的申请人开放。NB省提名批准后向加拿
@@ -390,13 +400,15 @@
 				<div id="project7" country="澳大利亚" project="189独立技术移民" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
+						<a href="/kukoo/detail/detail_Australia_189">
 							<img class="wow"
 								src="<%=basePath %>elementy/images/list/Astralia.png"
 								alt="img">
+						</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>189独立技术移民</h4>
+								<h4><a href="/kukoo/detail/detail_Australia_189">189独立技术移民</a></h4>
 							</div>
 							<p class="demo-anim-text">澳大利亚Skilled Independent visa (subclass 189) (Points-tested) stream，俗称独立技术移民，不需要
 							州担保、雇主以及亲属担保就可以申请。申请189签证成功后可以无限期居住在澳洲，申请人及其家人可以在这里作为永久居民去工作、学习、加入医疗保险、
@@ -408,13 +420,15 @@
 				<div id="project8" country="澳大利亚" project="190州担保技术移民" class="haveproject">
 					<div class="row mt-50 mb-60">
 						<div class="col-md-3">
+						<a href="/kukoo/detail/detail_Australia_190">
 							<img class="wow"
 								src="<%=basePath %>elementy/images/list/Astralia.png"
 								alt="img">
+						</a>
 						</div>
 						<div class="col-md-9">
 							<div class="h4-line">
-								<h4>190州担保技术移民</h4>
+								<h4><a href="/kukoo/detail/detail_Australia_190">190州担保技术移民</a></h4>
 							</div>
 							<p class="demo-anim-text">澳大利亚Skilled Nominated visa (subclass 190)，俗称州担保技术移民，获得某个州的提名函可以
 							在EOI打分中获得5分加分，所以适合打分只有55分的申请人。至于能否申请到州担保，取决于申请人评估的职业是否在州担保的职业清单上以及是
