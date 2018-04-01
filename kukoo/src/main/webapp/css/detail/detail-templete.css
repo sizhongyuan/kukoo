@@ -86,9 +86,9 @@ td{
     border-top: 1px solid #ddd !importent;
 }
 .charts{
-	width:375px;
-	height:250px;
-	margin-left:230px;
+	width:750px;
+	height:500px;
+	margin-left:40px;
 	margin-top:35px;
 }
 @media (max-width: 1024px){
@@ -201,13 +201,87 @@ td{
 /* 右侧分享按钮 end*/
 
 #testimonials table tr td:first-child{
- width:250px;
+ 	width:250px;
+}
+@media (max-width: 1024px){
+	#testimonials table tr td:first-child{
+	 	width:150px;
+	}
 }
 #testimonials table tr td:last-child{
 	width:250px;
- text-align:center;
+ 	text-align:center;
+}
+@media (max-width: 1024px){
+	#testimonials table tr td:last-child{
+	 	width:80px;
+ 		text-align:center;
+	}
 }
 #testimonials table tr th:last-child{
 	width:250px;
- text-align:center;
+ 	text-align:center;
+}
+@media (max-width: 1024px){
+	#testimonials table tr th:last-child{
+	 	width:80px;
+ 		text-align:center
+	}
+}
+
+#dropcaps table tr td:nth-child(2){
+	width:250px;
+}
+@media (max-width: 1024px){
+	#dropcaps table tr td:nth-child(2){
+	 	width:100px;
+	}
+}
+
+#dropcaps table tr th:nth-child(2){
+	width:250px;
+}
+@media (max-width: 1024px){
+	#dropcaps table tr th:nth-child(2){
+	 	width:100px;
+	}
+}
+
+#blockquotes table tr td:first-child{
+	width:90px;
+}
+@media (max-width: 1024px){
+	#blockquotes table tr td:first-child{
+	 	width:60px;
+	}
+}
+
+#dropcaps table tr td:last-child{
+	width:380px;
+}
+@media (max-width: 1024px){
+	#dropcaps table tr td:last-child{
+	 	width:170px;
+	}
+}
+
+#dropcaps table tr th:last-child{
+	width:380px;
+}
+@media (max-width: 1024px){
+	#dropcaps table tr th:last-child{
+	 	width:170px;
+	}
+}
+
+#pricing-tables table tr th:nth-child(4){
+	width:288px;
+}
+@media (max-width: 1024px){
+	#pricing-tables table tr th:nth-child(4){
+	 	width:110px;
+	}
+}
+.mb-100{
+	margin-bottom:50px;
 }
