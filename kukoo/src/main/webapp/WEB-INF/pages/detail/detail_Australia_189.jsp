@@ -201,7 +201,7 @@
 					<div class="row" style="font-size: 13px;">
 					
 					<div class="col-md-6">
-						<h1 class="local-page-title" style="margin:0 0 0 0">190州担保技术移民</h1>
+						<h1 class="local-page-title" style="margin:0 0 0 0">189州担保技术移民</h1>
 								<div class="row" style="margin-top:30px">
 									<div class="col-xs-3 font-bold">项目简介</div>
 									<div class="col-xs-9 row-margin detail-width">

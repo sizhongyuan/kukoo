@@ -187,7 +187,7 @@
 					<div class="row" style="font-size: 13px;">
 					
 					<div class="col-md-6">
-						<h1 class="local-page-title" style="margin:0 0 0 0">加拿大新不伦瑞克省提名项目</h1>
+						<h1 class="local-page-title" style="margin:0 0 0 0">新不伦瑞克省提名项目</h1>
 								<div class="row" style="margin-top:30px">
 									<div class="col-xs-3 font-bold">项目简介</div>
 									<div class="col-xs-9 row-margin detail-width"><p style="margin: 0 0 -2px;">新不伦瑞克省提名项目 New Brunswick Provincial Nominee Program （简称 NBPNP）包含多个类别:NBEE技术类别、NB雇主担保类别、NB家庭担保类别、NB企业家类别。其中NBPNP的EE类别只对当前在NB工作及法语是第一语言的申请人开放。NB省提名批准后向加拿大联邦申请永居签证，通过EE在线申请，一般联邦审理周期6个月内签发签证。 </p></div>
