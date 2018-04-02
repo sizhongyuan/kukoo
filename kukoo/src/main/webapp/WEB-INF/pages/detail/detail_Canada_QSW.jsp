@@ -738,6 +738,9 @@
 							</tr>
 						</table>
 
+
+						<p class="font-bold">受训清单列表参考布谷网站：<a href="https://www.kukoo.org/qc">https://www.kukoo.org/qc</a>   培训加分</p>
+						<p class="font-bold">魁北克官网受训列表链接：<a href="http://www.immigration-quebec.gouv.qc.ca/publications/en/diverses/list-training.pdf">http://www.immigration-quebec.gouv.qc.ca/publications/en/diverses/list-training.pdf</a></p>
 					</div>
 					<!-- end section  -->
 
