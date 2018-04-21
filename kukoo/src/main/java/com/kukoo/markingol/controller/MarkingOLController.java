@@ -1,6 +1,7 @@
 package com.kukoo.markingol.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.kukoo.base.util.RedisUtil;
 import com.kukoo.base.util.StaticMethod;
+import com.kukoo.markingol.model.MarkingOL;
 import com.kukoo.markingol.service.MarkingOLService;
 
 import redis.clients.jedis.Jedis;
@@ -75,6 +77,12 @@ public class MarkingOLController {
 		String answer11 = StaticMethod.nullObject2String(request.getParameter("checked11"));
 		String answer12 = StaticMethod.nullObject2String(request.getParameter("checked12"));
 		
+		MarkingOL aa = new MarkingOL();
+		
+		aa.setAnswer_time(new Date());
+		aa.setQuestionone_assi("111");
+	
+		markingOLService.saveMarkingOL(aa);
 		JSONObject jsonObj = new JSONObject();
 		return jsonObj;
 	}
