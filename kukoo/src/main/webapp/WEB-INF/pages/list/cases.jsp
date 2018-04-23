@@ -9,8 +9,8 @@
       <html>
         <head>
           <!-- <link rel="icon" href="../../favicon.ico"> -->
-          <link rel="stylesheet" href="<%=basePath %>css/list/list2.css"/>
-          <title>布谷移民——项目列表</title>
+          <link rel="stylesheet" href="<%=basePath %>css/list/cases.css"/>
+          <title>布谷移民——案例列表</title>
         </head>
         <script type="text/javascript">
           $("document").ready(function () {
@@ -29,6 +29,7 @@
 	    var search ="<%=search %>"; --%>
 	    //alert(country +"=request="+project);
 		//alert(search+"==search");
+
 		if(!search==""){
 			$(".haveproject").each(function(i){
 				var countryAttr = $(this).attr("country");
@@ -55,6 +56,12 @@
 		 }
 
 	});
+	/* function mainQuery(){
+		var country = $("#country").val().trim();
+		var project = $("#project").val().trim();
+		//alert("submit"+country+"---"+project);
+		window.parent.setiframeSrc(country,project);
+	} */
         </script>
         <body>
 
@@ -123,7 +130,7 @@
 
                                 <!-- MENU ITEM -->
                                 <li class="parent megamenu">
-                                  <a href="/kukoo/list/cases" class="">
+                                  <a href="/kukoo/list/caseList" class="">
                                     <div class="main-menu-title">案例列表</div>
                                   </a>
                                 </li>
@@ -186,14 +193,14 @@
                       <div class="row">
 
                         <div class="col-md-8">
-                          <h1 class="page-title2">项目列表</h1>
+                          <h1 class="page-title2">案例列表</h1>
                         </div>
 
                         <div class="col-md-4">
                           <div class="breadcrumbs2 font-poppins">
                             <a class="a-inv" href="/kukoo/homePage/">Kukoo</a>
                             <span class="slash-divider">/</span>
-                            <span class="bread-current">项目列表</span>
+                            <span class="bread-current">案例列表</span>
                           </div>
                         </div>
 
@@ -248,7 +255,49 @@
                     </div>
                     <div class="btn-group">
                       <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        周期
+                        项目
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="#">Action</a>
+                        </li>
+                        <li>
+                          <a href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a href="#">Something else here</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                          <a href="#">Separated link</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        职业
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="#">Action</a>
+                        </li>
+                        <li>
+                          <a href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a href="#">Something else here</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                          <a href="#">Separated link</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        年龄
                         <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu">
@@ -268,43 +317,63 @@
                       </ul>
                     </div>
 
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 49%;margin-left: 62px;">
-                        <span class="sr-only">20% Complete</span>
-                      </div>
-                    </div>
-
                     <div class="result">
                       发现 2 个结果
                     </div>
                   </div>
+
+                  <div class="sort-c"></div>
 
                   <div class="list-c pb-50 plr-50">
 
                     <div class="ts-container mt-20" v-for="item in list">
                       <div class="ts-icon-container-bg">
                         <div class="ts-icon-container">
-                          {{item.name}}<br/>
-                          ({{item.code}})
+                          {{item.itemName}}<br/>
+                          ({{item.itemCode}})
                         </div>
                       </div>
                       <div class="ts-main-container-bg">
+                        <div class="head">
+                          <embed v-if="item.sex==1" src="<%=basePath %>elementy/svg/man.svg" width="70px" style="margin-top: 20px;" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                          <embed v-if="item.sex==0" src="<%=basePath %>elementy/svg/woman.svg" width="70px" style="margin-top: 20px;" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                          <div class="pinfo">
+                            <div class="">{{item.name}}</div>
+                            <div class="">{{item.occupName}}</div>
+                            <div class="">{{item.age}}岁</div>
+                          </div>
+                        </div>
                         <div class="ts-main-container clearfix">
                           <div class="ts-text-container font-poppins">
-                            <div class="mt-10 mb-10">
-                              <span class="label label-primary">{{item.country}}</span>
-                              <span class="label label-default">{{item.type}}</span>
+
+                            <div class="events">
+
+                              <div class="event" :style="'left:'+86/(item.events.length-1)*index+'%'" v-for="(marker,index) in item.events">
+                                <embed src="<%=basePath %>elementy/svg/event-djsq.svg" width="30px" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                                <div class="text mt-5">
+                                  <div class="evt">{{marker.event}}</div>
+                                  <div :class="marker.isProvince==1?'yellow':'blue'">{{marker.date}}</div>
+                                </div>
+                              </div>
+
+                              <div class="clear"></div>
                             </div>
-                            <div>
-                              <b>处理周期
-                              </b>{{item.timespan+item.timespanUnit}}</div>
-                            <div>
-                              <b>资金要求
-                              </b>{{item.cost+item.costUnit}}</div>
-                            <div class="mt-10 desc">{{item.desc}}</div>
-                            <div class="right-text t-a-container mt-10">
-                              <span class="quote-author-description" :pid="item.id">项目详情</span>
+
+                            <div class="line mt-20">
+                              <div class="circle" :class="{'bg-yellow':marker.isProvince==1,'bg-blue':marker.isProvince==0,'sm-circle':marker.normalPoint}" :style="'left:'+(86/(item.events.length-1)*index+6)+'%'" v-for="(marker,index) in item.events"></div>
                             </div>
+
+                            <div class="stage">
+                              <div class="province">
+                                处理周期共计6个月
+                              </div>
+
+                              <div class="unit">
+                                处理周期共计6个月
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+
                           </div>
                         </div>
                       </div>
@@ -321,7 +390,7 @@
                 </div>
                 <!-- End wrap -->
 
-                <script src="<%=basePath %>javascript/pages/list.js"></script>
+                <script src="<%=basePath %>javascript/pages/cases.js"></script>
               </body>
 
             </html>
