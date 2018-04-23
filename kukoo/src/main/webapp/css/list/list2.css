@@ -1,0 +1,87 @@
+/* 项目列表页 */
+.input_line {
+  font-family: 'Poppins','Open Sans',Arial, Helvetica, sans-serif;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  background: transparent;
+  color: #323336;
+  font-size: 14px;
+  margin: 0;
+  outline: medium none;
+  padding: 8px 20px 8px 0;
+  line-height: inherit;
+}
+
+/* ////// */
+
+.ts-icon-container-bg {
+  background-color: #F1F1F1;
+  color: #17A2D3;
+  font-size: 24px;
+  font-family: "PingFang-Ultralight";
+  width: 105px;
+  padding-bottom: 73px;
+  font-weight: 100;
+}
+.ts-icon-container {
+  background-color: #F1F1F1;
+  padding: 10px;
+  width: 105px;
+  margin-top: -20px;
+}
+.ts-main-container-bg {
+  background-color: #F7F7F7;
+  margin-left: 105px;
+}
+.ts-text-container {
+  padding-right: 40px;
+  padding-top: 10px;
+}
+.ts-text-container .label {
+  border-radius: 0;
+}
+.quote-author-description {
+  color: #17A2D3;
+  cursor: pointer;
+}
+
+.ts-text-container .desc {
+  max-height: 44px;
+  overflow: hidden;
+}
+
+.search-c {
+  height: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.search-c .btn-group {
+  margin-right: 10px;
+  width: 120px;
+}
+
+.search-c .btn {
+  width: 100%;
+  text-align: left;
+}
+
+.search-c .btn .caret {
+  margin-left: 0;
+  float: right;
+  margin-top: 8px;
+}
+
+.search-c .result {
+  float: right;
+}
+
+.progress {
+  width: 500px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: -5px;
+}
+.progress-bar-info {
+  background-color: #337ab7;
+}

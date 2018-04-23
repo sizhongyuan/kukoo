@@ -1,25 +1,29 @@
 @CHARSET "UTF-8";
+* {
+  background-repeat: no-repeat;
+}
 
-*{
-	background-repeat: no-repeat;
-}
 .title {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
+
 .inner {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 910px;
 }
+
 p {
-    padding: 0;
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+  padding: 0;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
 }
+
 }
+
 /* div dd {
     background: #F8F8F8;
     cursor: pointer;
@@ -33,186 +37,202 @@ p {
   background-color: #ffffff;
   -webkit-transform: scale(0.98, 1.05);
   transform: scale(0.98, 1.05);
-  -webkit-box-shadow: 3px 3px 3px#d3c998;  
-  -moz-box-shadow: 3px 3px 3px#d3c998;  
+  -webkit-box-shadow: 3px 3px 3px#d3c998;
+  -moz-box-shadow: 3px 3px 3px#d3c998;
   box-shadow: 3px 3px 3px#d3c998;
 } */
+
 .title_index {
-    float: left;
-	font-size: 24px;
-	
+  float: left;
+  font-size: 24px;
 }
-.title_text{
-    font-weight: normal;
-    margin: 0;
-    vertical-align: top;
+
+.title_text {
+  font-weight: normal;
+  margin: 0;
+  vertical-align: top;
 }
-.question {
-    padding: 15px 0;
+
+.title_text {
+  color: #333333;
+  vertical-align: middle;
 }
-.title_text{
-    color: #333333;
-    vertical-align: middle;
-}
+
 .inputs {
-    font-size: 0;
+  font-size: 0;
 }
+
 input[type="radio"] {
-    box-sizing: border-box;
-    padding: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
+
 input {
-    line-height: normal;
+  line-height: normal;
 }
+
 button, input, optgroup, select, textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
 }
+
 .survey_form_checkbox {
-    -webkit-appearance: none;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    border: none;
-    float: left;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  border: none;
+  float: left;
 }
+
 .option_item {
-    display: inline-block;
-    zoom: 1;
-    vertical-align: top;
-    position: relative;
-    margin-left: -10px;
-    margin-right: 10px;
-    margin-top: 2px;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+  position: relative;
+  margin-left: -10px;
+  margin-right: 10px;
+  margin-top: 2px;
 }
+
 .survey_wrap {
-    width: 100%;
-    max-width: 1000px;
-    min-width: 730px;
-    border: 0px solid #ffffff;
-    position: relative;
-    background-color: #ffffff;
-    font-size: 14px;
-    line-height: 1.8em;
-    margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 730px;
+  border: 0px solid #ffffff;
+  position: relative;
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 1.8em;
+  margin: auto;
 }
+
 .option_item label {
-    position: relative;
-    overflow: hidden;
-    zoom: 1;
-    min-height: 40px;
-    display: block;
-    padding-left: 10px;
+  position: relative;
+  overflow: hidden;
+  zoom: 1;
+  min-height: 40px;
+  display: block;
+  padding-left: 10px;
 }
+
 .inputs label {
-    cursor: pointer;
+  cursor: pointer;
 }
+
 .stat {
-    display: none;
-    text-align: right;
-    position: absolute;
-    top: 7px;
-    left: 30px;
-    right: 0;
-    height: 25px;
-    font-size: 14px;
+  display: none;
+  text-align: right;
+  position: absolute;
+  top: 7px;
+  left: 30px;
+  right: 0;
+  height: 25px;
+  font-size: 14px;
 }
 
 .survey_form_ui {
-    background-image: url(../../img/markingol/quan.png);
+  background-image: url(../../img/markingol/quan.png);
 }
 
-.survey_form_checkbox[type="radio"] + label .survey_form_ui{
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
+.survey_form_checkbox[type="radio"]+label .survey_form_ui {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
 }
+
 .survey_form_ui {
-    float: left;
-    margin-top: 12px;
-    margin-bottom: 4px;
+  float: left;
+  margin-top: 12px;
+  margin-bottom: 4px;
 }
+
 .survey_form_ui {
-    display: inline-block;
-    zoom: 1;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 16px;
-    height: 16px;
-    margin-top: 10px;
-    margin-right: 5px;
-    border: 1px solid #b8b8b8;
-    background-color: #fafafa;
-    vertical-align: top;
+  display: inline-block;
+  zoom: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border: 1px solid #b8b8b8;
+  background-color: #fafafa;
+  vertical-align: top;
 }
-.survey_form_checkbox:checked + label .survey_form_ui{
-    -webkit-background-size: 100%;
-    background-size: 100%;
-    background-color: #479de6;
-    border: none;
+
+.survey_form_checkbox:checked+label .survey_form_ui {
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  background-color: #479de6;
+  border: none;
 }
+
 i, cite, em, var, address, dfn {
-    font-style: italic;
-}
-.option_item .option_text {
-    display: block;
-    z-index: 1;
-    position: relative;
-    margin-top: 7px;
-    margin-right: 10px;
-}
-.question .option_text {
-    font-size: 14px;
-    color: #333333;
-    vertical-align: middle;
-}
-.question .option_text {
-    display: inline-block;
-    zoom: 1;
+  font-style: italic;
 }
 
-.option_text p{
-	margin:0px;
-}	
+.option_item .option_text {
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin-top: 7px;
+  margin-right: 10px;
+}
+
+.question .option_text {
+  font-size: 14px;
+  color: #333333;
+  vertical-align: middle;
+}
+
+.question .option_text {
+  display: inline-block;
+  zoom: 1;
+}
+
+.option_text p {
+  margin: 0px;
+}
 
 .description {
-    font-size: 12px;
-    padding-bottom: 10px;
-    margin-top: 5px;
-}
-.survey_control {
-    overflow: hidden;
-    text-align: center;
-    padding: 30px 0;
-}
-.survey_btn {
-    cursor: pointer;
-    display: inline-block;
-    zoom: 1;
-    background-color: #479de6;
-    border-radius: 3px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    margin: 0 10px;
-    width: 85px;
-    padding: 0 10px;
-    font-size: 16px;
-    color: #ffffff;
+  font-size: 12px;
+  padding-bottom: 10px;
+  margin-top: 5px;
 }
 
-.survey_form_checkbox + label:hover,.survey_form_checkbox + label:active {
+.survey_control {
+  overflow: hidden;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.survey_btn {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background-color: #479de6;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 10px;
+  width: 85px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.survey_form_checkbox+label:hover, .survey_form_checkbox+label:active {
   background-color: #f5f5f5;
 }
 
-
-.bs-docs-container{
-	padding:40px;
+.bs-docs-container {
+  padding: 40px;
 }
-
 
 .page_survey .tips_error {
   background-color: #d92424;
@@ -222,12 +242,89 @@ i, cite, em, var, address, dfn {
   border-radius: 11px;
   -webkit-border-radius: 11px;
 }
+
 .page_survey .tips_error:focus {
   outline: none;
 }
 
+.survey_form_checkbox i {
+  vertical-align: middle;
+}
 
+.main {
+  padding: 20px 5%;
+}
 
-.survey_form_checkbox i{
-	vertical-align: middle;
+.item1 {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.item1 .pen {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #F5F4F5;
+}
+
+.item1 .ti {
+  width: 80px;
+  height: 50px;
+  background-color: #39A4D1;
+  text-align: center;
+  float: left;
+  color: #fff;
+  font-size: 18px;
+}
+
+.item1 .question {
+  height: 50px;
+  float: left;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.item1 .content {
+  width: 100%;
+}
+
+.item1 .content .details {
+  width: 90%;
+  margin: 10px 5%;
+  font-size: 14px;
+}
+
+.item1 .details .subtitle {
+  width: 100%;
+}
+
+.item1 .details .qas {
+  width: 100%;
+}
+
+.item1 .select-style {
+  width: 44%;
+  margin-left: 3%;
+}
+
+.item1 .qas .q {
+  width: 70%;
+  float: left;
+  height: 42px;
+  line-height: 42px;
+}
+
+.item1 .qas .a {
+  width: 30%;
+  float: right;
+}
+
+.item1 .a div {
+  float: left;
+}
+
+.clear {
+  float: none !important;
+  clear: both !important;
 }

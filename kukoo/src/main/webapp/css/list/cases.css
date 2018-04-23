@@ -1,0 +1,187 @@
+.input_line {
+  font-family: 'Poppins','Open Sans',Arial, Helvetica, sans-serif;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  background: transparent;
+  color: #323336;
+  font-size: 14px;
+  margin: 0;
+  outline: medium none;
+  padding: 8px 20px 8px 0;
+  line-height: inherit;
+}
+
+/* ////// */
+.ts-icon-container-bg {
+  background-color: #F1F1F1;
+  color: #17A2D3;
+  font-size: 24px;
+  font-family: "PingFang-Ultralight";
+  width: 105px;
+  padding-bottom: 73px;
+  font-weight: 100;
+}
+.ts-icon-container {
+  background-color: #F1F1F1;
+  padding: 10px;
+  width: 105px;
+  margin-top: -20px;
+}
+.ts-main-container-bg {
+  background-color: #F7F7F7;
+  margin-left: 105px;
+}
+.ts-text-container {
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-left: 200px;
+}
+.ts-text-container .label {
+  border-radius: 0;
+}
+.quote-author-description {
+  color: #17A2D3;
+  cursor: pointer;
+}
+
+.ts-main-container-bg .head {
+  height: 190px;
+  width: 160px;
+  float: left;
+  text-align: center;
+}
+
+.ts-main-container-bg .pinfo {
+  font-size: 12px;
+  line-height: 20px;
+  padding-top: 5px;
+}
+
+.ts-text-container .events {
+  max-height: 70px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  height: 200px;
+}
+
+.ts-text-container .event {
+  /* width: 96px; */
+  width: 14%;
+  position: absolute;
+  top: 0;
+  font-weight: 300;
+}
+.ts-text-container .evt {
+  color: #A2B6BD;
+}
+
+.ts-text-container .yellow {
+  color: #F2BE69;
+}
+.ts-text-container .blue {
+  color: #17A2D3;
+}
+.ts-text-container .bg-yellow {
+  background-color: #F2BE69 !important;
+}
+.ts-text-container .bg-blue {
+  background-color: #17A2D3 !important;
+}
+
+.ts-text-container .text {
+  line-height: 16px;
+}
+
+.ts-text-container .line {
+  line-height: 16px;
+  width: 100%;
+  height: 6px;
+  position: relative;
+  background-color: #E6EDED;
+}
+
+.ts-text-container .circle {
+  background-color: #F2BE69;
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  position: absolute;
+  top: -6px;
+}
+
+.ts-text-container .sm-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  top: -4px;
+}
+
+.ts-text-container .stage {}
+
+.ts-text-container .stage .province {
+  background-color: #f5daad !important;
+  text-align: center;
+  float: left;
+  width: 239px;
+  height: 35px;
+  line-height: 40px;
+  font-size: 12px;
+  border-radius: 0 0 12px 12px;
+  margin-left: 55px;
+  font-weight: 300;
+}
+.ts-text-container .stage .unit {
+  background-color: #8ddbf7 !important;
+  text-align: center;
+  float: left;
+  width: 353px;
+  height: 35px;
+  line-height: 40px;
+  font-size: 12px;
+  border-radius: 0 0 12px 12px;
+  margin-left: 113px;
+  font-weight: 300;
+}
+
+.search-c {
+  height: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.search-c .btn-group {
+  margin-right: 10px;
+  width: 120px;
+}
+
+.search-c .btn {
+  width: 100%;
+  text-align: left;
+}
+
+.search-c .btn .caret {
+  margin-left: 0;
+  float: right;
+  margin-top: 8px;
+}
+
+.search-c .result {
+  float: right;
+}
+
+.progress {
+  width: 500px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: -5px;
+}
+.progress-bar-info {
+  background-color: #337ab7;
+}
+
+.clear {
+  float: none;
+  clear: both;
+}

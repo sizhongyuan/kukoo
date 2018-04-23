@@ -33,6 +33,20 @@ public class ListController {
 		model.addObject("country", StaticMethod.nullObject2String(request.getParameter("country")));
 		return model;
 	}
+	
+	/**
+	 * @see 案例列表
+	 * @param request
+	 * @return
+	 * @author linbin
+	 */
+	@RequestMapping(value = "/cases", method = RequestMethod.GET)
+	public ModelAndView cases(HttpServletRequest request) {
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"cases");
+		return model;
+	}
+	
 	/**
 	 * @see 查询项目列表
 	 * @param request
