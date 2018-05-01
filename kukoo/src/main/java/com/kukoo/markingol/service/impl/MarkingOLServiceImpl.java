@@ -14,6 +14,9 @@ import com.kukoo.base.util.StaticMethod;
 import com.kukoo.markingol.dao.MarkingOLMapper;
 import com.kukoo.markingol.model.MarkingOL;
 import com.kukoo.markingol.service.MarkingOLService;
+import com.kukoo.markingol.util.NSutil;
+import com.kukoo.markingol.util.QSWutil;
+import com.kukoo.markingol.util.SINPutil;
 
 
 
@@ -2321,6 +2324,30 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 			 }
 		 }
 		 return min;
+	}
+
+
+	/**
+	 * NS省
+	 */
+	public JSONObject NSProject(JSONArray jsonArray) throws Exception {
+		return NSutil.getNS(jsonArray);
+	}
+
+
+	/**
+	 * SINP省
+	 */
+	public JSONObject SINPProject(JSONArray jsonArray) throws Exception {
+		return SINPutil.getSPIN(jsonArray);
+	}
+
+
+	/**
+	 * QSW省
+	 */
+	public JSONObject QSWProject(JSONArray jsonArray) throws Exception {
+		return QSWutil.getQSW(jsonArray);
 	}
 	
 //	public static void main(String[] args) {

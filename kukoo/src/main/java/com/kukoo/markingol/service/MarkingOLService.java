@@ -98,4 +98,26 @@ public interface MarkingOLService{
 	 */
 	public JSONObject OAProject(JSONArray jsonArray) throws Exception;
 	
+	/**
+	 * NS省
+	 * @param jsonArray
+	 * @return JSONObject 
+	 * @throws Exception
+	 */
+	public JSONObject NSProject(JSONArray jsonArray) throws Exception;
+	/**
+	 * SPIN省
+	 * @param jsonArray
+	 * @return JSONObject 
+	 * @throws Exception
+	 */
+	public JSONObject SINPProject(JSONArray jsonArray) throws Exception;
+	/**
+	 * QSW省
+	 * @param jsonArray
+	 * @return JSONObject 
+	 * @throws Exception
+	 */
+	public JSONObject QSWProject(JSONArray jsonArray) throws Exception;
+	
 }
