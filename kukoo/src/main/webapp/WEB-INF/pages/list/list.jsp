@@ -202,114 +202,82 @@
                   </div>
 
                   <!-- COTENT CONTAINER -->
+                  <div class="main">
 
-                  <div class="search-c pb-50 plr-50">
-                    <div class="btn-group">
-                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        国家
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li>
-                          <a href="#">Action</a>
-                        </li>
-                        <li>
-                          <a href="#">Another action</a>
-                        </li>
-                        <li>
-                          <a href="#">Something else here</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                          <a href="#">Separated link</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="btn-group">
-                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        类别
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li>
-                          <a href="#">Action</a>
-                        </li>
-                        <li>
-                          <a href="#">Another action</a>
-                        </li>
-                        <li>
-                          <a href="#">Something else here</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                          <a href="#">Separated link</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="btn-group">
-                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        周期
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li>
-                          <a href="#">Action</a>
-                        </li>
-                        <li>
-                          <a href="#">Another action</a>
-                        </li>
-                        <li>
-                          <a href="#">Something else here</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                          <a href="#">Separated link</a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 49%;margin-left: 62px;">
-                        <span class="sr-only">20% Complete</span>
+                    <div class="search-c pb-50 plr-50">
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                          {{selected.country==0?"国家":country[selected.country].value}}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" t="country">
+                          <li v-for="(item,index) in country" @click="search" :id="item.key" :class="{'on':selected.country==index}">{{item.value}}</li>
+                        </ul>
                       </div>
-                    </div>
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                          {{selected.projectType==0?"类别":projectType[selected.projectType].value}}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" t="projectType">
+                          <li v-for="(item,index) in projectType" @click="search" :id="item.key" :class="{'on':selected.projectType==index}">{{item.value}}</li>
+                        </ul>
+                      </div>
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                          {{selected.timespan==0?"周期":timespan[selected.timespan].value}}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" t="timespan">
+                          <li v-for="(item,index) in timespan" @click="search" :id="item.key" :class="{'on':selected.timespan==index}">{{item.value}}</li>
+                        </ul>
+                      </div>
 
-                    <div class="result">
-                      发现 2 个结果
-                    </div>
-                  </div>
-
-                  <div class="list-c pb-50 plr-50">
-
-                    <div class="ts-container mt-20" v-for="item in list">
-                      <div class="ts-icon-container-bg">
-                        <div class="ts-icon-container">
-                          {{item.name}}<br/>
-                          ({{item.code}})
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 49%;margin-left: 62px;">
+                          <span class="sr-only">20% Complete</span>
                         </div>
                       </div>
-                      <div class="ts-main-container-bg">
-                        <div class="ts-main-container clearfix">
-                          <div class="ts-text-container font-poppins">
-                            <div class="mt-10 mb-10">
-                              <span class="label label-primary">{{item.country}}</span>
-                              <span class="label label-default">{{item.type}}</span>
-                            </div>
-                            <div>
-                              <b>处理周期
-                              </b>{{item.timespan+item.timespanUnit}}</div>
-                            <div>
-                              <b>资金要求
-                              </b>{{item.cost+item.costUnit}}</div>
-                            <div class="mt-10 desc">{{item.desc}}</div>
-                            <div class="right-text t-a-container mt-10">
-                              <span class="quote-author-description" :pid="item.id">项目详情</span>
+
+                      <div class="result">
+                        发现
+                        {{list.length}}
+                        个结果
+                      </div>
+                    </div>
+
+                    <transition-group name="staggered-fade" tag="div" class="list-c pb-50 plr-50" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+
+                      <div class="ts-container mt-20" v-bind:key="item.id" v-for="(item,index) in list" v-bind:data-index="index">
+                        <div class="ts-icon-container-bg">
+                          <div class="ts-icon-container">
+                            {{item.name}}<br/>
+                            ({{item.code}})
+                          </div>
+                        </div>
+                        <div class="ts-main-container-bg">
+                          <div class="ts-main-container clearfix">
+                            <div class="ts-text-container font-poppins">
+                              <div class="mt-10 mb-10">
+                                <span class="label label-primary">{{item.country}}</span>
+                                <span class="label label-default">{{item.type}}</span>
+                              </div>
+                              <div>
+                                <b>处理周期
+                                </b>{{item.timespan+item.timespanUnit}}</div>
+                              <div>
+                                <b>资金要求
+                                </b>{{item.cost+item.costUnit}}</div>
+                              <div class="mt-10 desc">{{item.desc}}</div>
+                              <div class="right-text t-a-container mt-10">
+                                <span class="quote-author-description" :pid="item.id">项目详情</span>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-
+                    </transition-group>
+                    
                   </div>
                   <!-- END container -->
 
@@ -321,7 +289,8 @@
                 </div>
                 <!-- End wrap -->
 
-                <script src="<%=basePath %>javascript/pages/list.js"></script>
-              </body>
+                <%-- <script src="<%=basePath %>elementy/js/velocity.min.js"></script> --%>
+                  <script src="<%=basePath %>javascript/pages/list.js"></script>
+                </body>
 
-            </html>
+              </html>

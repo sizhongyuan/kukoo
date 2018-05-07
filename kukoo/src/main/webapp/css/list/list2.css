@@ -1,6 +1,7 @@
 /* 项目列表页 */
+
 .input_line {
-  font-family: 'Poppins','Open Sans',Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', 'Open Sans', Arial, Helvetica, sans-serif;
   border: none;
   border-bottom: 1px solid #ccc;
   border-radius: 0;
@@ -24,23 +25,28 @@
   padding-bottom: 73px;
   font-weight: 100;
 }
+
 .ts-icon-container {
   background-color: #F1F1F1;
   padding: 10px;
   width: 105px;
   margin-top: -20px;
 }
+
 .ts-main-container-bg {
   background-color: #F7F7F7;
   margin-left: 105px;
 }
+
 .ts-text-container {
   padding-right: 40px;
   padding-top: 10px;
 }
+
 .ts-text-container .label {
   border-radius: 0;
 }
+
 .quote-author-description {
   color: #17A2D3;
   cursor: pointer;
@@ -56,6 +62,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
 .search-c .btn-group {
   margin-right: 10px;
   width: 120px;
@@ -76,12 +83,27 @@
   float: right;
 }
 
+.dropdown-menu .on {
+  background-color: #eee;
+}
+
+.dropdown-menu li {
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #eee;
+}
+
 .progress {
+  height: 10px;
   width: 500px;
   position: relative;
   display: inline-block;
   margin-bottom: -5px;
 }
+
 .progress-bar-info {
   background-color: #337ab7;
 }

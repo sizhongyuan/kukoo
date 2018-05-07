@@ -77,6 +77,10 @@ button, input, optgroup, select, textarea {
   margin: 0;
 }
 
+select {
+  padding-bottom: 0px;
+}
+
 .survey_form_checkbox {
   -webkit-appearance: none;
   width: 0;
@@ -308,6 +312,29 @@ i, cite, em, var, address, dfn {
   margin-left: 3%;
 }
 
+.item1 .oneline {
+  width: 92%;
+}
+
+.item1 .color0 {
+  color: #6b6d6f !important;
+}
+
+.item1 .color1 {
+  /* color: #7b48b7; */
+  color: #6b6d6f !important;
+}
+
+.item1 .color2 {
+  /* color: #c6295f; */
+  color: #6b6d6f !important;
+}
+
+.item1 .color3 {
+  /* color: #65D0B3 !important; */
+  color: #6b6d6f !important;
+}
+
 .item1 .qas .q {
   width: 70%;
   float: left;
@@ -327,4 +354,179 @@ i, cite, em, var, address, dfn {
 .clear {
   float: none !important;
   clear: both !important;
+}
+
+.timeline {
+  height: 200px;
+  position: relative;
+  padding: 20px 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.timeline .areas {}
+
+.timeline .spots {}
+
+.timeline .areas .on {
+  background-color: #dfc8a9;
+  color: #fff;
+  overflow: inherit;
+  z-index: 2;
+}
+
+.timeline .area {
+  position: absolute;
+  height: 35px;
+  background-color: #f9e9cf;
+  top: -35px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  line-height: 30px;
+  color: #d89640;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 0 6px;
+  z-index: 1;
+}
+
+.timeline .lbar {
+  height: 35px;
+  width: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: w-resize;
+}
+
+.timeline .rbar {
+  height: 35px;
+  width: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: w-resize;
+}
+
+.timeline .ctxt {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  line-height: 14px;
+  padding-top: 4px;
+  display: block;
+  white-space: nowrap;
+}
+
+.timeline .ltxt {
+  position: absolute;
+  left: -20px;
+  top: -25px;
+  color: #cc57b1;
+  font-size: 12px;
+}
+
+.timeline .rtxt {
+  position: absolute;
+  right: -20px;
+  top: -25px;
+  color: #cc57b1;
+  font-size: 12px;
+}
+
+.timeline .spot {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  background-color: #ECAA62;
+  border-radius: 8px;
+  top: -2px;
+  z-index: 3;
+}
+
+.timeline .spot span {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  left: -25px;
+  top: 10px;
+  color: #EFAC54;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.timeline .line {
+  height: 4px;
+  background-color: #EFAC54;
+}
+
+.timeline .ti {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #666;
+  z-index: 2;
+  color: #fff;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  left: -30px;
+  top: -30px;
+}
+
+.timeline .add {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #888;
+  z-index: 2;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50px;
+  right: -70px;
+  top: -15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.timeline .add:hover {
+  background-color: #444;
+}
+
+.timeline .c {
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  right: 0;
+}
+
+.myWife .ti {
+  line-height: 15px;
+  padding-top: 15px;
+}
+
+.mine {
+  height: 100px;
+  position: relative;
+}
+
+.myWife {
+  height: 100px;
+  position: relative;
+}
+
+.modal-body li:hover {
+  background-color: #eee;
+}
+
+.btns {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.btns span {
+  cursor: pointer;
 }

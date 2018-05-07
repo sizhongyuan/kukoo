@@ -214,7 +214,7 @@
 																	<!-- MENU ITEM -->
 																	<li class="parent megamenu">
 																		<a href="/kukoo/markingOLController/showMarkingOL" class="">
-																			<div class="main-menu-title">答题</div>
+																			<div class="main-menu-title">在线评估</div>
 																		</a>
 																	</li>
 																</ul>
@@ -445,7 +445,7 @@
 																		<br>3分钟 评估符合您的移民项目
 																		</p>
 																		<div class="fes12-btn-cont mt-30">
-																			<a class="button medium thin gray" href="#">
+																			<a class="button medium thin gray" href="javascript:void(0)">
 																				<strong>测一下可以申请哪些移民项目</strong>
 																			</a>
 																		</div>
@@ -529,7 +529,7 @@
 																				与新老移民及时分享海外生活信息
 																			</p>
 																			<div class="fes12-btn-cont mt-30">
-																				<a class="button medium thin gray pull-left" href="#">
+																				<a class="button medium thin gray pull-left" href="javascript:void(0)">
 																					<strong>看一下移友过往申请进程</strong>
 																				</a>
 
@@ -609,7 +609,7 @@
 																						有效保障移民申请过程的有序管理，以及移民申请状态的公开透明<br/>
 																					</p>
 																					<div class="fes12-btn-cont mt-30">
-																						<a class="button medium thin gray" href="#">
+																						<a class="button medium thin gray" href="javascript:void(0)">
 																							<strong>开发中</strong>
 																						</a>
 																					</div>
