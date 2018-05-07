@@ -27,9 +27,12 @@
 #lottery table td{text-align:center;vertical-align:middle;font-size:24px;color:#333;font-index:-999;}
 #lottery table td a{display:block;text-decoration:none;}
 #lottery table td.active{
-	/* background-color:#ea0000; */
-	background:url(<%=basePath %>img/luckdraw/bg-roll.jpg) no-repeat top;
-	/* z-index:99999; */
+	<%-- background:url(<%=basePath %>img/luckdraw/bg-roll.jpg) no-repeat; --%>
+	position:absolute;
+   /*  top:0%;
+    center:0% ;*/
+    width:15%;
+    height:0%; 
 }
 </style>
 <body>

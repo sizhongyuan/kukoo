@@ -88,7 +88,7 @@ public class LuckDrawController {
 					"			<td class=\"lottery-unit lottery-unit-9\" style=\"background:url(/kukoo/img/luckdraw/bg-9.jpg) no-repeat bottom;\"><img src="+Lottery9.getImgRoute()+"></td>\n" + 
 					"			<td class=\"lottery-unit lottery-unit-8\" style=\"background:url(/kukoo/img/luckdraw/bg-10.jpg) no-repeat bottom;\"><img src="+Lottery8.getImgRoute()+"></td>\n" + 
 					"			<td class=\"lottery-unit lottery-unit-7\" style=\"background:url(/kukoo/img/luckdraw/bg-11.jpg) no-repeat bottom;\"><img src="+Lottery7.getImgRoute()+"></td>\n" + 
-					"            <td class=\"lottery-unit lottery-unit-6\" style=\"background:url(/kukoo/img/luckdraw/bg-12.jpg) no-repeat bottom;\"><img src=\"/kukoo/img/luckdraw/7.png\"></td>\n" + 
+					"            <td class=\"lottery-unit lottery-unit-6\" style=\"background:url(/kukoo/img/luckdraw/bg-12.jpg) no-repeat bottom;\"><img src="+Lottery6.getImgRoute()+"></td>\n" + 
 					"		</tr>";
 		}
 		Map map = new HashMap();
