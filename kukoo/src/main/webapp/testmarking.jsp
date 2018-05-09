@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/pages/base/head.jsp"%>
-<html lang="zh-CN">
+<html>
 <script type="text/javascript">
 
 	function tijiao(){
@@ -8,13 +8,14 @@
 		var tijiao = document.getElementById("jianyikuang").value;
 		console.log(tijiao);
 		$.ajax({
-				url:"http://localhost:8088/kukoo/markingOLController/addMarkingOL",
+				url:"/kukoo/markingOLController/addMarkingOL",
 				type: "POST",
 				data:{
 					marking:tijiao
 				},
 				dataType:"json",
 				success: function (result) {
+					console.log(JSON.stringify(result));
 					document.getElementById("fanhuikuang").value=result;
 				}
 			});
