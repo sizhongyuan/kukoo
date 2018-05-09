@@ -1,5 +1,5 @@
 .input_line {
-  font-family: 'Poppins','Open Sans',Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', 'Open Sans', Arial, Helvetica, sans-serif;
   border: none;
   border-bottom: 1px solid #ccc;
   border-radius: 0;
@@ -13,6 +13,7 @@
 }
 
 /* ////// */
+
 .ts-icon-container-bg {
   background-color: #F1F1F1;
   color: #17A2D3;
@@ -22,24 +23,29 @@
   padding-bottom: 73px;
   font-weight: 100;
 }
+
 .ts-icon-container {
   background-color: #F1F1F1;
   padding: 10px;
   width: 105px;
   margin-top: -20px;
 }
+
 .ts-main-container-bg {
   background-color: #F7F7F7;
   margin-left: 105px;
 }
+
 .ts-text-container {
   padding-right: 60px;
   padding-top: 20px;
   padding-left: 200px;
 }
+
 .ts-text-container .label {
   border-radius: 0;
 }
+
 .quote-author-description {
   color: #17A2D3;
   cursor: pointer;
@@ -74,6 +80,7 @@
   top: 0;
   font-weight: 300;
 }
+
 .ts-text-container .evt {
   color: #A2B6BD;
 }
@@ -81,12 +88,15 @@
 .ts-text-container .yellow {
   color: #F2BE69;
 }
+
 .ts-text-container .blue {
   color: #17A2D3;
 }
+
 .ts-text-container .bg-yellow {
   background-color: #F2BE69 !important;
 }
+
 .ts-text-container .bg-blue {
   background-color: #17A2D3 !important;
 }
@@ -98,52 +108,77 @@
 .ts-text-container .line {
   line-height: 16px;
   width: 100%;
-  height: 6px;
+  height: 4px;
   position: relative;
   background-color: #E6EDED;
 }
 
+.ts-text-container .line .strip-p {
+  position: absolute;
+  height: 4px;
+  background-color: #F2BE69;
+  top: 0;
+  z-index: 1;
+}
+
+.ts-text-container .line .strip-u {
+  position: absolute;
+  height: 4px;
+  background-color: #17A2D3;
+  top: 0;
+  z-index: 1;
+}
+
 .ts-text-container .circle {
   background-color: #F2BE69;
-  width: 18px;
-  height: 18px;
-  border-radius: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
   position: absolute;
-  top: -6px;
+  top: -5px;
+  z-index: 2;
 }
 
 .ts-text-container .sm-circle {
-  width: 14px;
-  height: 14px;
-  border-radius: 14px;
-  top: -4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 9px;
+  top: -3px;
+  z-index: 2;
 }
 
-.ts-text-container .stage {}
-
-.ts-text-container .stage .province {
+.ts-text-container .line .province {
   background-color: #f5daad !important;
   text-align: center;
-  float: left;
-  width: 239px;
   height: 35px;
-  line-height: 40px;
   font-size: 12px;
   border-radius: 0 0 12px 12px;
-  margin-left: 55px;
   font-weight: 300;
+  position: absolute;
+  top: 0;
 }
-.ts-text-container .stage .unit {
+
+.ts-text-container .line .unit {
   background-color: #8ddbf7 !important;
   text-align: center;
-  float: left;
-  width: 353px;
   height: 35px;
-  line-height: 40px;
   font-size: 12px;
   border-radius: 0 0 12px 12px;
-  margin-left: 113px;
   font-weight: 300;
+  position: absolute;
+  top: 0;
+}
+
+.ts-text-container .line .sj1 {
+  color: #f5daad !important;
+  font-size: 30px;
+  margin-top: -2px;
+}
+
+.ts-text-container .line .sj2 {
+  color: #8ddbf7 !important;
+  font-size: 30px;
+  margin-top: -2px;
 }
 
 .search-c {
@@ -151,9 +186,10 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
 .search-c .btn-group {
   margin-right: 10px;
-  width: 120px;
+  width: 160px;
 }
 
 .search-c .btn {
@@ -169,6 +205,20 @@
 
 .search-c .result {
   float: right;
+  font-weight: bold;
+}
+
+.dropdown-menu .on {
+  background-color: #eee;
+}
+
+.dropdown-menu li {
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #eee;
 }
 
 .progress {
@@ -177,6 +227,7 @@
   display: inline-block;
   margin-bottom: -5px;
 }
+
 .progress-bar-info {
   background-color: #337ab7;
 }
