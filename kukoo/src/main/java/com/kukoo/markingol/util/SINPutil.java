@@ -422,10 +422,10 @@ public class SINPutil {
 		//第七题
 		JSONObject q7 = (JSONObject) questionMain.get("question7");
 		//法语成绩换算CLB
-		int listeningFrench = Util.getCLBtoListening(StaticMethod.nullObject2String(q7.get("listening")));
-		int speakingFrench = Util.getCLBtoSpeaking(StaticMethod.nullObject2String(q7.get("speaking")));
-		int readingFrench = Util.getCLBtoReading(StaticMethod.nullObject2String(q7.get("reading")));
-		int writingFrench = Util.getCLBtoWriting(StaticMethod.nullObject2String(q7.get("listewritingning")));
+		int listeningFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("listening")));
+		int speakingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("speaking")));
+		int readingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("reading")));
+		int writingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("listewritingning")));
 		//获取法语整体成绩
 		int frenchMinLanguage = getMinLanguage(listeningFrench,speakingFrench,readingFrench,writingFrench);
 		//法语得分
