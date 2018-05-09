@@ -69,23 +69,29 @@ public class Util {
 	 * @return  int		CLB得分
 	 */
 	public static int getCLBtoListening(String listening){
-		if("8.5".equals(listening)){
-			return 10;
-		}else if("8".equals(listening)){
-			return 9;
-		}else if("7.5".equals(listening)){
-			return 8;
-		}else if("6".equals(listening)){
-			return 7;
-		}else if("5.5".equals(listening)){
-			return 6;
-		}else if("5".equals(listening)){
-			return 5;
-		}else if("4.5".equals(listening)){
-			return 4;
+		if(!"".equals(listening)){
+			double sorce = Double.parseDouble(listening);
+			if(8.5<=sorce){
+				return 10;
+			}else if(8.0<=sorce){
+				return 9;
+			}else if(7.5<=sorce){
+				return 8;
+			}else if(6.0<=sorce){
+				return 7;
+			}else if(5.5<=sorce){
+				return 6;
+			}else if(5.0<=sorce){
+				return 5;
+			}else if(4.5<=sorce){
+				return 4;
+			}else{
+				return 0;
+			}
 		}else{
 			return 0;
 		}
+		
 	}
 	/**
 	 * 转换雅思说得分至CLB
@@ -94,20 +100,25 @@ public class Util {
 	 * @return  int		CLB得分
 	 */
 	public static int getCLBtoSpeaking(String speaking){
-		if("8".equals(speaking)){
-			return 10;
-		}else if("7".equals(speaking)){
-			return 9;
-		}else if("6.5".equals(speaking)){
-			return 8;
-		}else if("6".equals(speaking)){
-			return 7;
-		}else if("5.5".equals(speaking)){
-			return 6;
-		}else if("5".equals(speaking)){
-			return 5;
-		}else if("4".equals(speaking)){
-			return 4;
+		if(!"".equals(speaking)){
+			double sorce = Double.parseDouble(speaking);
+			if(8.0<=sorce){
+				return 10;
+			}else if(7.0<=sorce){
+				return 9;
+			}else if(6.5<=sorce){
+				return 8;
+			}else if(6.0<=sorce){
+				return 7;
+			}else if(5.5<=sorce){
+				return 6;
+			}else if(5.0<=sorce){
+				return 5;
+			}else if(4.0<=sorce){
+				return 4;
+			}else{
+				return 0;
+			}
 		}else{
 			return 0;
 		}
@@ -119,20 +130,25 @@ public class Util {
 	 * @return	int    CLB得分
 	 */
 	public static int getCLBtoReading(String reading){
-		if("7.5".equals(reading)){
-			return 10;
-		}else if("7".equals(reading)){
-			return 9;
-		}else if("6.5".equals(reading)){
-			return 8;
-		}else if("6".equals(reading)){
-			return 7;
-		}else if("5".equals(reading)){
-			return 6;
-		}else if("4".equals(reading)){
-			return 5;
-		}else if("3.5".equals(reading)){
-			return 4;
+		if(!"".equals(reading)){
+			double sorce = Double.parseDouble(reading);
+			if(7.5<=sorce){
+				return 10;
+			}else if(7.0<=sorce){
+				return 9;
+			}else if(6.5<=sorce){
+				return 8;
+			}else if(6.0<=sorce){
+				return 7;
+			}else if(5.5<=sorce){
+				return 6;
+			}else if(5.0<=sorce){
+				return 5;
+			}else if(4.0<=sorce){
+				return 4;
+			}else{
+				return 0;
+			}
 		}else{
 			return 0;
 		}
@@ -144,20 +160,25 @@ public class Util {
 	 * @return int  CLB得分
 	 */
 	public static int getCLBtoWriting(String writing){
-		if("7.5".equals(writing)){
-			return 10;
-		}else if("7".equals(writing)){
-			return 9;
-		}else if("6.5".equals(writing)){
-			return 8;
-		}else if("6".equals(writing)){
-			return 7;
-		}else if("5.5".equals(writing)){
-			return 6;
-		}else if("5".equals(writing)){
-			return 5;
-		}else if("4".equals(writing)){
-			return 4;
+		if(!"".equals(writing)){
+			double sorce = Double.parseDouble(writing);
+			if(7.5<=sorce){
+				return 10;
+			}else if(7.0<=sorce){
+				return 9;
+			}else if(6.5<=sorce){
+				return 8;
+			}else if(6.0<=sorce){
+				return 7;
+			}else if(5.0<=sorce){
+				return 6;
+			}else if(4.0<=sorce){
+				return 5;
+			}else if(3.5<=sorce){
+				return 4;
+			}else{
+				return 0;
+			}
 		}else{
 			return 0;
 		}

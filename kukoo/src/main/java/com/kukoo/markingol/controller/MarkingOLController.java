@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONArray;
@@ -26,7 +27,7 @@ import com.kukoo.markingol.service.MarkingOLService;
 
 import redis.clients.jedis.Jedis;
 
-@Controller
+@RestController
 @RequestMapping("/markingOLController")
 public class MarkingOLController {
 	
@@ -61,12 +62,42 @@ public class MarkingOLController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value="/addMarkingOL", method=RequestMethod.GET)
+	@RequestMapping(value="/addMarkingOL", method=RequestMethod.POST)
 	@ResponseBody
 	public Object addMarking(HttpServletRequest request) throws Exception{
+		System.out.println(request.getParameter("marking"));
+		//传入jsonarr
+		String input = StaticMethod.nullObject2String(request.getParameter("marking"));
+		JSONArray inputJsonarr = JSONArray.parseArray(input);
+		System.out.println(inputJsonarr);
+		
+		JSONObject applicant1 = inputJsonarr.getJSONObject(0);
+		System.out.println("--------");
+		System.out.println(applicant1.getString("question5"));
+		JSONArray question5 = JSONArray.parseArray(applicant1.getString("question5"));
+		applicant1.put("question5", question5);
+		JSONObject question6 = JSONObject.parseObject(applicant1.getString("question6"));
+		applicant1.put("question6", question6);
+		JSONObject question7 = JSONObject.parseObject(applicant1.getString("question7"));
+		applicant1.put("question7", question7);
+		JSONObject applicant2 = inputJsonarr.getJSONObject(1);
+		JSONArray question25 = JSONArray.parseArray(applicant2.getString("question5"));
+		applicant2.put("question5", question25);
+		JSONObject question26 = JSONObject.parseObject(applicant2.getString("question6"));
+		applicant2.put("question6", question26);
+		JSONObject question27 = JSONObject.parseObject(applicant2.getString("question7"));
+		applicant2.put("question7", question27);
+		
 		JSONArray inputJson = new JSONArray();
+		inputJson.add(applicant1);
+		inputJson.add(applicant2);
+		
+		
+		//返回jsonarr
 		JSONObject outPutJson = new JSONObject();
+		//绿手推荐
 		JSONArray recommend = new JSONArray();
+		//黄手推荐
 		JSONArray promote = new JSONArray();
 		outPutJson.put("input", "");
 		
@@ -148,7 +179,7 @@ public class MarkingOLController {
 		}else{
 			outPutJson.put("Quebec", "");
 		}
-	
+		System.out.println(outPutJson);
 		return outPutJson;
 	}
 	

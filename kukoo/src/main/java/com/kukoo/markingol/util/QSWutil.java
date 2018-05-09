@@ -338,7 +338,7 @@ public class QSWutil {
 		int listeningEnglish = Util.getCLBtoListening(StaticMethod.nullObject2String(q6.get("listening")));
 		int speakingEnglish = Util.getCLBtoSpeaking(StaticMethod.nullObject2String(q6.get("speaking")));
 		int readingEnglish = Util.getCLBtoReading(StaticMethod.nullObject2String(q6.get("reading")));
-		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("listewritingning")));
+		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("writing")));
 		
 		//第七题 计算法语得分
 		JSONObject q7 = (JSONObject) questionMain.get("question7");
@@ -351,7 +351,10 @@ public class QSWutil {
 		rescore.put("languageScore", languageScore);//
 		//魁省财力（每个人都有）
 		score += 1;
-		
+		//是否在魁北克学习三个月
+		if("是".equals(StaticMethod.nullObject2String(questionMain.get("learn")))){
+			score += 5;
+		}
 		
 		//当未通过时升档
 		
@@ -474,8 +477,8 @@ public class QSWutil {
 		if("B1及以下".equals(frenchlistening)||"B1及以下".equals(frenchspeaking)){
 		}else{
 			//升档
-			frenchlistening = getUpFrench(StaticMethod.nullObject2String(q7.get("listening")));
-			frenchspeaking = getUpFrench(StaticMethod.nullObject2String(q7.get("speaking")));
+			frenchlistening = Util.getBCtoFrench(getUpFrench(StaticMethod.nullObject2String(q7.get("listening"))));
+			frenchspeaking = Util.getBCtoFrench(getUpFrench(StaticMethod.nullObject2String(q7.get("speaking"))));
 		}
 		//升档后语言分
 		int languageScoreUp = 0;
