@@ -234,62 +234,6 @@ var list = [{
 }];
 
 
-var submitData = [{
-    "question1": "有",
-    "question2": "24",
-    "question3": "A,B",
-    "question4": "硕士",
-    "question5": [{
-      "profession": "制造业工程师、经理类",
-      "time": "2017-05至2018-04"
-    }, {
-      "profession": "维 修/操作技师、技工类",
-      "time": "2016-05至2017-04"
-    }],
-    "question6": {
-      "listening": 5,
-      "speaking": 6,
-      "reading": 7,
-      "writing": 8
-    },
-    "question7": {
-      "listening": "高",
-      "speaking": "中",
-      "reading": "低",
-      "writing": "不会"
-    },
-    "specialty": ["专业1", "专业2", "专业3"],
-    "learn": "是"
-  },
-  {
-    "question1": "有",
-    "question2": "24",
-    "question3": "A,B",
-    "question4": "硕士",
-    "question5": [{
-      "profession": "制造业工程师、经理类",
-      "time": "2017-05至2018-04"
-    }, {
-      "profession": "维 修/操作技师、技工类",
-      "time": "2016-05至2017-04"
-    }],
-    "question6": {
-      "listening": 5,
-      "speaking": 6,
-      "reading": 7,
-      "writing": 8
-    },
-    "question7": {
-      "listening": "高",
-      "speaking": "中",
-      "reading": "低",
-      "writing": "不会"
-    },
-    "specialty": ["专业1", "专业2", "专业3"],
-    "learn": "是"
-  }
-];
-
 var _verify = null;
 _app = new Vue({
   "el": '.list-c',
