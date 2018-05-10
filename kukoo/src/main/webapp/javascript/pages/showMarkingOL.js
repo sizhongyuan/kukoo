@@ -233,6 +233,63 @@ var list = [{
   }]
 }];
 
+
+var submitData = [{
+    "question1": "有",
+    "question2": "24",
+    "question3": "A,B",
+    "question4": "硕士",
+    "question5": [{
+      "profession": "制造业工程师、经理类",
+      "time": "2017-05至2018-04"
+    }, {
+      "profession": "维 修/操作技师、技工类",
+      "time": "2016-05至2017-04"
+    }],
+    "question6": {
+      "listening": 5,
+      "speaking": 6,
+      "reading": 7,
+      "writing": 8
+    },
+    "question7": {
+      "listening": "高",
+      "speaking": "中",
+      "reading": "低",
+      "writing": "不会"
+    },
+    "specialty": ["专业1", "专业2", "专业3"],
+    "learn": "是"
+  },
+  {
+    "question1": "有",
+    "question2": "24",
+    "question3": "A,B",
+    "question4": "硕士",
+    "question5": [{
+      "profession": "制造业工程师、经理类",
+      "time": "2017-05至2018-04"
+    }, {
+      "profession": "维 修/操作技师、技工类",
+      "time": "2016-05至2017-04"
+    }],
+    "question6": {
+      "listening": 5,
+      "speaking": 6,
+      "reading": 7,
+      "writing": 8
+    },
+    "question7": {
+      "listening": "高",
+      "speaking": "中",
+      "reading": "低",
+      "writing": "不会"
+    },
+    "specialty": ["专业1", "专业2", "专业3"],
+    "learn": "是"
+  }
+];
+
 var _verify = null;
 _app = new Vue({
   "el": '.list-c',
@@ -241,8 +298,21 @@ _app = new Vue({
     "change1": false
   },
   mounted: function() {
+    var _this = this;
     $(".btns span").on("click", function() {
-      //执行方法
+      $.ajax({
+        url: "/kukoo/markingOLController/addMarkingOL",
+        type: "POST",
+        data: {
+          marking: _this.val()
+        },
+        dataType: "json",
+        success: function(result) {
+          if (true) {
+            window.location.href = "/kukoo/markingOLController/resultOL";
+          }
+        }
+      });
     });
     this.handelVerify();
   },
@@ -280,9 +350,46 @@ _app = new Vue({
       this.list[3].details[0].oneline = flag;
       this.list[4].details[0].oneline = flag;
       this.list[4].details[1].oneline = flag;
+    },
+    val: function() {
+      var rv = [];
+      rv.push(_val(0));
+      if (rv[0].question1 == "有") rv.push(_val(1));
+      return rv;
     }
   }
 });
+
+function _val(i) {
+  var list = _app.$data.list;
+  var works = i == 0 ? _app2.$data.mine.works : _app2.$data.myWife.works;
+  var w = [];
+  for (var j = 0; j < works.length; j++) {
+    w.push({
+      "profession": works[j].name,
+      "time": works[j].start + "至" + works[j].end
+    })
+  }
+  return {
+    "question1": this.list[0].details[0].value[0][i],
+    "question2": this.list[1].details[0].value[0][i],
+    "question3": this.list[2].details[0].value[0][0] + "," + this.list[2].details[1].value[0][0],
+    "question4": this.list[3].details[0].value[0][i], //学历
+    "question5": {
+      "listening": this.list[4].details[0].value[0][i],
+      "speaking": this.list[4].details[0].value[1][i],
+      "reading": this.list[4].details[0].value[2][i],
+      "writing": this.list[4].details[0].value[3][i],
+    },
+    "question6": {
+      "listening": this.list[4].details[1].value[0][i],
+      "speaking": this.list[4].details[1].value[1][i],
+      "reading": this.list[4].details[1].value[2][i],
+      "writing": this.list[4].details[1].value[3][i],
+    },
+    "question7": w
+  }
+}
 
 var YEARS = [];
 var YMS = [];

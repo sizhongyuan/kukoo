@@ -56,6 +56,21 @@ public class MarkingOLController {
 	}
 	
 	/**
+	 * @see 展示在线答题结果
+	 * @param request
+	 * @return
+	 * @author 林彬
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/resultOL", method = RequestMethod.GET)
+	public ModelAndView resultOL(HttpServletRequest request) {
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName(modelPath+"resultOL");
+		return model;
+	}
+	
+	/**
 	 * 根据答题信息返回得分等信息
 	 * @param request
 	 * @return
