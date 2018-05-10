@@ -47,3 +47,8 @@
     font-size: 36px;
     line-height: 38px;
 }
+
+.clear{
+	float: none;
+	clear: both;
+}

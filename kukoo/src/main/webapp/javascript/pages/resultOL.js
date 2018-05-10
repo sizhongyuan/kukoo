@@ -65,8 +65,53 @@ var rv = {
     ],
     "learn": "不是",
     "score": 369,
-    "pass": 420
+    "pass": 420,
+    "index": 0 //我还是伴侣下标
   }]
+}
+
+var occup = [
+  "制造业工程师经理类",
+  "维修/操作技师、技工类",
+  "农业、园艺类",
+  "企业咨询类",
+  "土地测量类",
+  "医疗、生物类",
+  "幼教类",
+  "地质矿产类",
+  "计算机类",
+  "社会及社区工作",
+  "土木、建筑类",
+  "大专及职业院校教师",
+  "法律相关",
+  "广告市场",
+  "行政助理",
+  "护士",
+  "金融财会类",
+  "其他"
+];
+
+
+var __list = localStorage.getItem("__list");
+var list = __list ? JSON.parse(__list) : [];
+var answer = JSON.parse(localStorage.getItem("__answer"));
+
+function _g67(i, details) {
+
+  return {
+    "question6": {
+      "listening": details[0].value[0][i],
+      "speaking": details[0].value[1][i],
+      "reading": details[0].value[2][i],
+      "writing": details[0].value[3][i],
+    },
+    "question7": {
+      "listening": details[1].value[0][i],
+      "speaking": details[1].value[1][i],
+      "reading": details[1].value[2][i],
+      "writing": details[1].value[3][i],
+    }
+  }
 }
 
 function start(rv) {
@@ -81,32 +126,79 @@ function start(rv) {
   _app = new Vue({
     "el": '.main',
     "data": {
+      "answer": answer,
       "rv": rv,
+      "details": list.length > 0 ? list[4].details : [],
+      "change1": false
+    },
+    mounted: function() {
+      // $("#e1").select2({
+      //   placeholder: "您的专业",
+      //   tags: ["red", "green", "blue"]
+      // });
+
+      // if (list.length > 0) {
+      //   this.details = list[4].details;
+      // }
+    },
+    updated: function() {},
+    methods: {
+      js: function() {
+        answer.learn = rv.Quebec[0].learn;
+        answer.specialty = rv.Quebec[0].specialty;
+        doAjax(JSON.stringify(answer));
+      },
+      dogo: function() {
+        var r1 = _g67(0, this.details);
+        answer[0].question6 = r1.question6;
+        answer[0].question7 = r1.question7;
+        if (answer.length > 1) {
+          var r2 = _g67(1, this.details);
+          answer[1].question6 = r2.question6;
+          answer[1].question7 = r2.question7;
+        }
+        doAjax(JSON.stringify(answer));
+      }
+    }
+  });
+
+  _app2 = new Vue({
+    "el": '#bs-example-modal-sm',
+    "data": {
+      "occup": occup,
       "change1": false
     },
     mounted: function() {},
     updated: function() {},
     methods: {
-
+      sel_occup: function(e) {
+        var name = $(e.target).text();
+        var index = rv.Quebec[0].index;
+        rv.Quebec[0].specialty[index].push(name);
+        $(".modal-header .close").click();
+      }
     }
   });
 }
 
 
-  start(rv);
+start(rv);
 
-var answer = JSON.parse(localStorage.getItem("__answer"));
 
-$.ajax({
-  url: "/kukoo/markingOLController/addMarkingOL",
-  type: "POST",
-  data: {
-    marking: JSON.stringify(answer)
-  },
-  dataType: "json",
-  success: function(result) {
-    if (true) {
-      start(rv);
+//doAjax(JSON.stringify(answer));
+
+function doAjax(marking) {
+  $.ajax({
+    url: "/kukoo/markingOLController/addMarkingOL",
+    type: "POST",
+    data: {
+      marking: marking
+    },
+    dataType: "json",
+    success: function(result) {
+      if (true) {
+        start(rv);
+      }
     }
-  }
-});
+  });
+}

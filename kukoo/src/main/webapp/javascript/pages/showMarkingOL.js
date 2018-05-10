@@ -238,6 +238,10 @@ var __list = localStorage.getItem("__list");
 list = __list ? JSON.parse(__list) : list;
 
 
+var __answer = localStorage.getItem("__answer");
+__answer = __answer ? JSON.parse(__answer) : {};
+
+
 var _verify = null;
 _app = new Vue({
   "el": '.list-c',
@@ -299,12 +303,10 @@ _app = new Vue({
 function _val(i) {
   var list = _app.$data.list;
   var works = i == 0 ? _app2.$data.mine.works : _app2.$data.myWife.works;
-  var w = [];
+  //var w = [];
   for (var j = 0; j < works.length; j++) {
-    w.push({
-      "profession": works[j].name,
-      "time": works[j].start + "至" + works[j].end
-    })
+    works[j]["profession"] = works[j].name;
+    works[j]["time"] = works[j].start + "至" + works[j].end;
   }
   return {
     "question1": this.list[0].details[0].value[0][i],
@@ -323,7 +325,7 @@ function _val(i) {
       "reading": this.list[4].details[1].value[2][i],
       "writing": this.list[4].details[1].value[3][i],
     },
-    "question5": w,
+    "question5": works,
     "specialty": [],
     "learn": ""
   }
@@ -401,6 +403,13 @@ _app2 = new Vue({
     addI: 0
   },
   mounted: function() {
+    if (__answer[0] && __answer[0].question5) {
+      this.mine.works = __answer[0].question5 || [];
+    }
+    if (__answer[1] && __answer[1].question5) {
+      this.myWife.works = __answer[1].question5 || [];
+    }
+
     var _this = this;
     $(".btns span").on("click", function() {
       // $.ajax({
@@ -416,6 +425,8 @@ _app2 = new Vue({
       //     }
       //   }
       // });
+
+      localStorage.setItem("__list", JSON.stringify(list));
       localStorage.setItem("__answer", JSON.stringify(_app.val()));
       setTimeout(function() {
         window.location.href = "/kukoo/markingOLController/resultOL";

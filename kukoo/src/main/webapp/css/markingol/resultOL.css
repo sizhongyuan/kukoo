@@ -353,6 +353,7 @@ i, cite, em, var, address, dfn {
 
 .main .selector .M .col-md-1, .main .selector .W .col-md-1 {
   padding-left: 5px;
+  padding-right: 14px;
 }
 
 .main .alert {
@@ -365,6 +366,71 @@ i, cite, em, var, address, dfn {
   height: 180px;
   position: relative;
   margin-bottom: 20px;
+}
+
+.main .zy {
+  background-color: #F5F5F5;
+  height: 36px;
+  line-height: 36px;
+  float: none;
+  padding-left: 46px;
+}
+
+.main .zy select {
+  width: 260px;
+  border: none !important;
+  border-bottom: solid 1px #eee;
+  height: 22px !important;
+  min-height: 22px !important;
+}
+
+.modal-body li {
+  cursor: pointer;
+}
+
+.modal-body li:hover {
+  background-color: #eee;
+}
+
+.main .zy span {
+  display: inline-flex;
+}
+
+.main .zy .con1 {
+  border-bottom: solid 1px #ddd;
+  height: 30px;
+  margin-left: 20px;
+  position: relative;
+  cursor: pointer;
+  padding-right: 10px;
+  max-width: 30%;
+  overflow: hidden;
+}
+
+.main .zy .con1 i {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.main .zy button {
+  padding: 2px 20px;
+}
+
+.main .zy .zy1 {
+  margin-right: 10px;
+  /* border: solid 1px #eee; */
+  height: 28px;
+  padding: 0px;
+}
+
+.select2-container--default, .select2-selection--multiple, .select2-container--default.select2-container--focus, .select2-selection--multiple {
+  min-height: 18px;
+  height: 26px;
+  border: 0;
+  border-radius: 2px;
+  background-color: #F5F5F5;
+  border-bottom: solid 1px #ddd;
 }
 
 .pricing-horizontal-price-container {
