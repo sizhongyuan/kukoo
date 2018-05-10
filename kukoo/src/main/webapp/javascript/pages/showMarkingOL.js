@@ -234,62 +234,6 @@ var list = [{
 }];
 
 
-var submitData = [{
-    "question1": "有",
-    "question2": "24",
-    "question3": "A,B",
-    "question4": "硕士",
-    "question5": [{
-      "profession": "制造业工程师、经理类",
-      "time": "2017-05至2018-04"
-    }, {
-      "profession": "维 修/操作技师、技工类",
-      "time": "2016-05至2017-04"
-    }],
-    "question6": {
-      "listening": 5,
-      "speaking": 6,
-      "reading": 7,
-      "writing": 8
-    },
-    "question7": {
-      "listening": "高",
-      "speaking": "中",
-      "reading": "低",
-      "writing": "不会"
-    },
-    "specialty": ["专业1", "专业2", "专业3"],
-    "learn": "是"
-  },
-  {
-    "question1": "有",
-    "question2": "24",
-    "question3": "A,B",
-    "question4": "硕士",
-    "question5": [{
-      "profession": "制造业工程师、经理类",
-      "time": "2017-05至2018-04"
-    }, {
-      "profession": "维 修/操作技师、技工类",
-      "time": "2016-05至2017-04"
-    }],
-    "question6": {
-      "listening": 5,
-      "speaking": 6,
-      "reading": 7,
-      "writing": 8
-    },
-    "question7": {
-      "listening": "高",
-      "speaking": "中",
-      "reading": "低",
-      "writing": "不会"
-    },
-    "specialty": ["专业1", "专业2", "专业3"],
-    "learn": "是"
-  }
-];
-
 var _verify = null;
 _app = new Vue({
   "el": '.list-c',
@@ -390,6 +334,87 @@ function _val(i) {
     "question7": w
   }
 }
+
+var YEARS = [];
+var YMS = [];
+
+function yms(sy, sm) {
+  for (var i = 0; i < 121; i++, sm++) {
+    if (sm > 12) {
+      sy++;
+      sm = 1;
+    }
+    YMS.push(sy + "-" + sm);
+  }
+}
+
+function spot() {
+  var date = new Date;
+  var year = date.getFullYear();
+  var month = date.getMonth()
+  var rv = [];
+  for (var i = 10; i >= 0; i--) {
+    var l = i == 0 ? 99.9 : ((10 - i) * 10);
+    rv.push({
+      text: (year - i) + "年" + (month + 1) + "月",
+      left: "left: " + l + "%"
+    });
+    YEARS.push(year - i);
+  }
+  yms(year - 10, month + 1);
+  return rv;
+}
+
+_app2 = new Vue({
+  "el": '.timeline',
+  "el": '.list-c',
+  "data": {
+    "list": list,
+    "change1": false
+  },
+  mounted: function() {
+    $(".btns span").on("click", function() {
+      //执行方法
+    });
+    this.handelVerify();
+  },
+  updated: function() {
+    if (this.change1) {
+      this.handelVerify();
+      this.change1 = false;
+    }
+  },
+  methods: {
+    handelVerify: function() {
+      _verify = new Verify(".btns span", ".list-c", {
+        "tips_type": "dialog",
+        err_cb: function(tbx) {
+          var msg = tbx.parents(".item1").find(".pen").text();
+          $(".dialog-msg").text(msg);
+          $("#dialog_btn").trigger("click");
+        }
+      });
+    },
+    change: function(e) {
+      if ($(e.target).attr("q") == "情感状况") {
+        if ($(e.target).val() == "有") {
+          _app2.$data.myWife.display = "show";
+          this.setOnelie(false);
+        } else {
+          _app2.$data.myWife.display = "hide";
+          this.setOnelie(true);
+        }
+        this.change1 = true;
+      }
+    },
+    setOnelie: function(flag) {
+      this.list[1].details[0].oneline = flag;
+      this.list[3].details[0].oneline = flag;
+      this.list[4].details[0].oneline = flag;
+      this.list[4].details[1].oneline = flag;
+    }
+  }
+});
 
 var YEARS = [];
 var YMS = [];
