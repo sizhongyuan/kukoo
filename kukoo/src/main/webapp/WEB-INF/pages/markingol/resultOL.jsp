@@ -152,7 +152,8 @@
 										<div class="col-md-12">
 											<div class="name">预估语言成绩</div>
 											<div class="link-a">
-												<a href="showMarkingOL">查看修改其他评估信息<i class="fa fa-angle-double-right"></i></a>
+												<a href="showMarkingOL">查看修改其他评估信息<i class="fa fa-angle-double-right"></i>
+												</a>
 											</div>
 										</div>
 
@@ -185,7 +186,6 @@
 													<div class="col-md-1">
 														<select class="w-100" dtype="*">
 															<option value="-1"></option>
-
 														</select>
 													</div>
 													<div class="col-md-1">
@@ -377,6 +377,11 @@
 															<span>{{item.visaType}}</span>
 															<span>{{item.period}}</span>
 														</div>
+													</div>
+													<div class="col-md-12 mt-20 learn" v-if="item.projectName=='魁省'">
+														<i class="fa" :class="item.learn=='是'?'fa-dot-circle-o':'fa-circle-o'" @click="item.learn=item.learn=='是'?'不是':'是'">
+															<span>考虑去魁省学习三个月（可加5分）</span>
+														</i>
 													</div>
 												</div>
 												<div class="col-md-8">

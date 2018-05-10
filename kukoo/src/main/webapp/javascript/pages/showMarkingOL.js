@@ -234,6 +234,10 @@ var list = [{
 }];
 
 
+var __list = localStorage.getItem("__list");
+list = __list ? JSON.parse(__list) : list;
+
+
 var _verify = null;
 _app = new Vue({
   "el": '.list-c',
@@ -243,21 +247,9 @@ _app = new Vue({
   },
   mounted: function() {
     var _this = this;
-    $(".btns span").on("click", function() {
-      $.ajax({
-        url: "/kukoo/markingOLController/addMarkingOL",
-        type: "POST",
-        data: {
-          marking: _this.val()
-        },
-        dataType: "json",
-        success: function(result) {
-          if (true) {
-            window.location.href = "/kukoo/markingOLController/resultOL";
-          }
-        }
-      });
-    });
+    // $(".btns span").on("click", function() {
+    //
+    // });
     this.handelVerify();
   },
   updated: function() {
@@ -319,102 +311,23 @@ function _val(i) {
     "question2": this.list[1].details[0].value[0][i],
     "question3": this.list[2].details[0].value[0][0] + "," + this.list[2].details[1].value[0][0],
     "question4": this.list[3].details[0].value[0][i], //学历
-    "question5": {
+    "question6": {
       "listening": this.list[4].details[0].value[0][i],
       "speaking": this.list[4].details[0].value[1][i],
       "reading": this.list[4].details[0].value[2][i],
       "writing": this.list[4].details[0].value[3][i],
     },
-    "question6": {
+    "question7": {
       "listening": this.list[4].details[1].value[0][i],
       "speaking": this.list[4].details[1].value[1][i],
       "reading": this.list[4].details[1].value[2][i],
       "writing": this.list[4].details[1].value[3][i],
     },
-    "question7": w
+    "question5": w,
+    "specialty": [],
+    "learn": ""
   }
 }
-
-var YEARS = [];
-var YMS = [];
-
-function yms(sy, sm) {
-  for (var i = 0; i < 121; i++, sm++) {
-    if (sm > 12) {
-      sy++;
-      sm = 1;
-    }
-    YMS.push(sy + "-" + sm);
-  }
-}
-
-function spot() {
-  var date = new Date;
-  var year = date.getFullYear();
-  var month = date.getMonth()
-  var rv = [];
-  for (var i = 10; i >= 0; i--) {
-    var l = i == 0 ? 99.9 : ((10 - i) * 10);
-    rv.push({
-      text: (year - i) + "年" + (month + 1) + "月",
-      left: "left: " + l + "%"
-    });
-    YEARS.push(year - i);
-  }
-  yms(year - 10, month + 1);
-  return rv;
-}
-
-_app2 = new Vue({
-  "el": '.timeline',
-  "el": '.list-c',
-  "data": {
-    "list": list,
-    "change1": false
-  },
-  mounted: function() {
-    $(".btns span").on("click", function() {
-      //执行方法
-    });
-    this.handelVerify();
-  },
-  updated: function() {
-    if (this.change1) {
-      this.handelVerify();
-      this.change1 = false;
-    }
-  },
-  methods: {
-    handelVerify: function() {
-      _verify = new Verify(".btns span", ".list-c", {
-        "tips_type": "dialog",
-        err_cb: function(tbx) {
-          var msg = tbx.parents(".item1").find(".pen").text();
-          $(".dialog-msg").text(msg);
-          $("#dialog_btn").trigger("click");
-        }
-      });
-    },
-    change: function(e) {
-      if ($(e.target).attr("q") == "情感状况") {
-        if ($(e.target).val() == "有") {
-          _app2.$data.myWife.display = "show";
-          this.setOnelie(false);
-        } else {
-          _app2.$data.myWife.display = "hide";
-          this.setOnelie(true);
-        }
-        this.change1 = true;
-      }
-    },
-    setOnelie: function(flag) {
-      this.list[1].details[0].oneline = flag;
-      this.list[3].details[0].oneline = flag;
-      this.list[4].details[0].oneline = flag;
-      this.list[4].details[1].oneline = flag;
-    }
-  }
-});
 
 var YEARS = [];
 var YMS = [];
@@ -486,6 +399,28 @@ _app2 = new Vue({
     index: 0,
     isAddArea: false,
     addI: 0
+  },
+  mounted: function() {
+    var _this = this;
+    $(".btns span").on("click", function() {
+      // $.ajax({
+      //   url: "/kukoo/markingOLController/addMarkingOL",
+      //   type: "POST",
+      //   data: {
+      //     marking: _this.val()
+      //   },
+      //   dataType: "json",
+      //   success: function(result) {
+      //     if (true) {
+      //       window.location.href = "/kukoo/markingOLController/resultOL";
+      //     }
+      //   }
+      // });
+      localStorage.setItem("__answer", JSON.stringify(_app.val()));
+      setTimeout(function() {
+        window.location.href = "/kukoo/markingOLController/resultOL";
+      }, 500)
+    });
   },
   updated: function() {
     $('[data-toggle="tooltip"]').tooltip();

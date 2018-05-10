@@ -52,7 +52,7 @@ var rv = {
     "pass": 420
   }],
   "Quebec": [{
-    "projectName": "EE",
+    "projectName": "魁省",
     "country": "加拿大",
     "major": "您",
     "visaType": "PR",
@@ -63,43 +63,50 @@ var rv = {
       ["专业1", "专业2", "专业3"],
       ["专业1", "专业2", "专业3"]
     ],
-    "learn": "是",
+    "learn": "不是",
     "score": 369,
     "pass": 420
   }]
 }
 
-Vue.component('project-score', {
-  template: '#project-template',
-  props: ["msg", "type"],
-  data: function() {
-    return this.msg;
-  }
-});
+function start(rv) {
+  Vue.component('project-score', {
+    template: '#project-template',
+    props: ["msg", "type"],
+    data: function() {
+      return this.msg;
+    }
+  });
 
-_app = new Vue({
-  "el": '.main',
-  "data": {
-    "rv": rv,
-    "change1": false
-  },
-  mounted: function() {},
-  updated: function() {},
-  methods: {
+  _app = new Vue({
+    "el": '.main',
+    "data": {
+      "rv": rv,
+      "change1": false
+    },
+    mounted: function() {},
+    updated: function() {},
+    methods: {
 
-  }
-});
+    }
+  });
+}
 
+
+  start(rv);
+
+var answer = JSON.parse(localStorage.getItem("__answer"));
 
 $.ajax({
   url: "/kukoo/markingOLController/addMarkingOL",
-  type: "get",
+  type: "POST",
   data: {
-    marking: {}
+    marking: JSON.stringify(answer)
   },
   dataType: "json",
   success: function(result) {
-    // console.log(JSON.stringify(result));
-    // document.getElementById("fanhuikuang").value = JSON.stringify(result);
+    if (true) {
+      start(rv);
+    }
   }
 });
