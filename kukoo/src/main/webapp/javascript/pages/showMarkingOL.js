@@ -233,6 +233,12 @@ var list = [{
   }]
 }];
 
+var __list = localStorage.getItem("__list");
+list = __list ? JSON.parse(__list) : list;
+
+
+var __answer = localStorage.getItem("__answer");
+__answer = __answer ? JSON.parse(__answer) : {};
 
 var _verify = null;
 _app = new Vue({
@@ -243,21 +249,9 @@ _app = new Vue({
   },
   mounted: function() {
     var _this = this;
-    $(".btns span").on("click", function() {
-      $.ajax({
-        url: "/kukoo/markingOLController/addMarkingOL",
-        type: "POST",
-        data: {
-          marking: _this.val()
-        },
-        dataType: "json",
-        success: function(result) {
-          if (true) {
-            window.location.href = "/kukoo/markingOLController/resultOL";
-          }
-        }
-      });
-    });
+    // $(".btns span").on("click", function() {
+    //
+    // });
     this.handelVerify();
   },
   updated: function() {
@@ -307,31 +301,31 @@ _app = new Vue({
 function _val(i) {
   var list = _app.$data.list;
   var works = i == 0 ? _app2.$data.mine.works : _app2.$data.myWife.works;
-  var w = [];
+  //var w = [];
   for (var j = 0; j < works.length; j++) {
-    w.push({
-      "profession": works[j].name,
-      "time": works[j].start + "至" + works[j].end
-    })
+    works[j]["profession"] = works[j].name;
+    works[j]["time"] = works[j].start + "至" + works[j].end;
   }
   return {
     "question1": this.list[0].details[0].value[0][i],
     "question2": this.list[1].details[0].value[0][i],
     "question3": this.list[2].details[0].value[0][0] + "," + this.list[2].details[1].value[0][0],
     "question4": this.list[3].details[0].value[0][i], //学历
-    "question5": {
+    "question6": {
       "listening": this.list[4].details[0].value[0][i],
       "speaking": this.list[4].details[0].value[1][i],
       "reading": this.list[4].details[0].value[2][i],
       "writing": this.list[4].details[0].value[3][i],
     },
-    "question6": {
+    "question7": {
       "listening": this.list[4].details[1].value[0][i],
       "speaking": this.list[4].details[1].value[1][i],
       "reading": this.list[4].details[1].value[2][i],
       "writing": this.list[4].details[1].value[3][i],
     },
-    "question7": w
+    "question5": works,
+    "specialty": [],
+    "learn": ""
   }
 }
 
@@ -405,6 +399,38 @@ _app2 = new Vue({
     index: 0,
     isAddArea: false,
     addI: 0
+  },
+  mounted: function() {
+    if (__answer[0] && __answer[0].question5) {
+      this.mine.works = __answer[0].question5 || [];
+    }
+    if (__answer[1] && __answer[1].question5) {
+      this.myWife.works = __answer[1].question5 || [];
+      if (this.myWife.works.length > 0) this.myWife.display = "show";
+    }
+
+    var _this = this;
+    $(".btns span").on("click", function() {
+      // $.ajax({
+      //   url: "/kukoo/markingOLController/addMarkingOL",
+      //   type: "POST",
+      //   data: {
+      //     marking: _this.val()
+      //   },
+      //   dataType: "json",
+      //   success: function(result) {
+      //     if (true) {
+      //       window.location.href = "/kukoo/markingOLController/resultOL";
+      //     }
+      //   }
+      // });
+
+      localStorage.setItem("__list", JSON.stringify(list));
+      localStorage.setItem("__answer", JSON.stringify(_app.val()));
+      setTimeout(function() {
+        window.location.href = "/kukoo/markingOLController/resultOL";
+      }, 500)
+    });
   },
   updated: function() {
     $('[data-toggle="tooltip"]').tooltip();
