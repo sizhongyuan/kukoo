@@ -233,14 +233,12 @@ var list = [{
   }]
 }];
 
-
 var __list = localStorage.getItem("__list");
 list = __list ? JSON.parse(__list) : list;
 
 
 var __answer = localStorage.getItem("__answer");
 __answer = __answer ? JSON.parse(__answer) : {};
-
 
 var _verify = null;
 _app = new Vue({
@@ -408,6 +406,7 @@ _app2 = new Vue({
     }
     if (__answer[1] && __answer[1].question5) {
       this.myWife.works = __answer[1].question5 || [];
+      if (this.myWife.works.length > 0) this.myWife.display = "show";
     }
 
     var _this = this;

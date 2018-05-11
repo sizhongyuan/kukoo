@@ -79,7 +79,7 @@ public class MarkingOLController {
 	 */
 	@RequestMapping(value="/addMarkingOL", method=RequestMethod.POST)
 	@ResponseBody
-	public Object addMarking(HttpServletRequest request) throws Exception{
+	public JSONObject addMarking(HttpServletRequest request) throws Exception{
 		System.out.println(request.getParameter("marking"));
 		//传入jsonarr
 		String input = StaticMethod.nullObject2String(request.getParameter("marking"));
@@ -95,17 +95,19 @@ public class MarkingOLController {
 		applicant1.put("question6", question6);
 		JSONObject question7 = JSONObject.parseObject(applicant1.getString("question7"));
 		applicant1.put("question7", question7);
-		JSONObject applicant2 = inputJsonarr.getJSONObject(1);
-		JSONArray question25 = JSONArray.parseArray(applicant2.getString("question5"));
-		applicant2.put("question5", question25);
-		JSONObject question26 = JSONObject.parseObject(applicant2.getString("question6"));
-		applicant2.put("question6", question26);
-		JSONObject question27 = JSONObject.parseObject(applicant2.getString("question7"));
-		applicant2.put("question7", question27);
-		
+		String question1Value = applicant1.getString("question1");
 		JSONArray inputJson = new JSONArray();
 		inputJson.add(applicant1);
-		inputJson.add(applicant2);
+		if("有".equals(question1Value)) {
+			JSONObject applicant2 = inputJsonarr.getJSONObject(1);
+			JSONArray question25 = JSONArray.parseArray(applicant2.getString("question5"));
+			applicant2.put("question5", question25);
+			JSONObject question26 = JSONObject.parseObject(applicant2.getString("question6"));
+			applicant2.put("question6", question26);
+			JSONObject question27 = JSONObject.parseObject(applicant2.getString("question7"));
+			applicant2.put("question7", question27);
+			inputJson.add(applicant2);
+		}
 		
 		
 		//返回jsonarr
@@ -114,7 +116,7 @@ public class MarkingOLController {
 		JSONArray recommend = new JSONArray();
 		//黄手推荐
 		JSONArray promote = new JSONArray();
-		outPutJson.put("input", "");
+		outPutJson.put("input", inputJsonarr);
 		
 		//获取可以推荐项目
 		JSONObject extendProjectOne = markingOLService.extendProjectOne(inputJson);

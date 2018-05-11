@@ -313,7 +313,7 @@
 										若您希望申请如下项目，请进一步补充相关信息进行评估：
 									</div>
 
-									<div class="col-md-12 zy">
+									<div class="col-md-12 zy" v-if="rv.Quebec.length>0">
 										<span>补充您及您伴侣（如有）的专业（可多选）</span>
 										<span class="con1" @click="rv.Quebec[0].index=0" data-toggle="modal" data-target="#bs-example-modal-sm">
 											<span v-if="rv.Quebec[0].specialty[0].length==0">您的专业</span>
@@ -412,11 +412,11 @@
 											</div>
 											<div class="pricing-horizontal-price-container col-md-2">
 												<div class="price-container get-score">
-													<span>{{item.score}}</span>
+													<span>{{item.score||'-'}}</span>
 													得分
 												</div>
 												<div class="price-button-container pass-score">
-													<span>{{item.pass}}</span>
+													<span>{{item.pass||'-'}}</span>
 													通过分
 												</div>
 											</div>

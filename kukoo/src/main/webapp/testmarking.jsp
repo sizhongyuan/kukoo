@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/pages/base/head.jsp"%>
-<html>
+<html lang="zh-CN">
 <script type="text/javascript">
 
 	function tijiao(){
@@ -16,11 +16,14 @@
 				dataType:"json",
 				success: function (result) {
 					console.log(JSON.stringify(result));
-					document.getElementById("fanhuikuang").value=result;
+					document.getElementById("fanhuikuang").value=JSON.stringify(result);
 				}
 			});
 	}
 </script>
+<style>
+        table,table tr th, table tr td { border:1px solid #0094ff; }
+</style>
 <head>
 <title>布谷移民——移民解决方案专家</title>
 </head>
@@ -28,14 +31,14 @@
 <body>
 	
 	<button id="" onclick="tijiao()">提交</button>
-	<table class="table">
+	<table border="2">
 		<tr>
 			<td>输入参数</td>
-			<td><textarea id="jianyikuang" ></textarea></td>
+			<td><textarea id="jianyikuang" style="width:900px;height:200px;"></textarea></td>
 		</tr>
 		<tr>
 			<td>返回参数</td>
-			<td><textarea id="fanhuikuang" ></textarea></td>
+			<td><textarea id="fanhuikuang" style="width:900px;height:200px;"></textarea></td>
 		</tr>
 	</table>
   	<!-- <table>

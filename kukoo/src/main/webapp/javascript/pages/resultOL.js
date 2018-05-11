@@ -1,4 +1,4 @@
-var rv = {
+var rv1 = {
   "input": "",
   "recommend": [{
     "projectName": "EE",
@@ -126,7 +126,7 @@ function start(rv) {
   _app = new Vue({
     "el": '.main',
     "data": {
-      "answer": answer,
+      "answer": rv.input || answer,
       "rv": rv,
       "details": list.length > 0 ? list[4].details : [],
       "change1": false
@@ -144,20 +144,24 @@ function start(rv) {
     updated: function() {},
     methods: {
       js: function() {
-        answer.learn = rv.Quebec[0].learn;
-        answer.specialty = rv.Quebec[0].specialty;
-        doAjax(JSON.stringify(answer));
+        this.answer.learn = rv.Quebec[0].learn;
+        this.answer.specialty = rv.Quebec[0].specialty;
+        doAjax(JSON.stringify(this.answer));
       },
       dogo: function() {
         var r1 = _g67(0, this.details);
-        answer[0].question6 = r1.question6;
-        answer[0].question7 = r1.question7;
+        this.answer[0].question6 = r1.question6;
+        this.answer[0].question7 = r1.question7;
         if (answer.length > 1) {
           var r2 = _g67(1, this.details);
-          answer[1].question6 = r2.question6;
-          answer[1].question7 = r2.question7;
+          this.answer[1].question6 = r2.question6;
+          this.answer[1].question7 = r2.question7;
         }
-        doAjax(JSON.stringify(answer));
+        var _this = this;
+        doAjax(JSON.stringify(this.answer), function(result) {
+          _this.answer = result.input;
+          _this.rv = result;
+        });
       }
     }
   });
@@ -182,12 +186,11 @@ function start(rv) {
 }
 
 
-start(rv);
+//start(rv);
 
+doAjax(JSON.stringify(answer));
 
-//doAjax(JSON.stringify(answer));
-
-function doAjax(marking) {
+function doAjax(marking, cb) {
   $.ajax({
     url: "/kukoo/markingOLController/addMarkingOL",
     type: "POST",
@@ -196,8 +199,10 @@ function doAjax(marking) {
     },
     dataType: "json",
     success: function(result) {
-      if (true) {
-        start(rv);
+      if (cb) {
+        cb(result);
+      } else {
+        start(result);
       }
     }
   });
