@@ -257,6 +257,7 @@ i, cite, em, var, address, dfn {
 
 .main {
   padding: 20px 5%;
+  display: none;
 }
 
 .main .selector {

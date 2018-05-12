@@ -117,23 +117,23 @@
                                 <!-- MENU ITEM -->
                                 <li class="parent megamenu">
                                   <a href="/kukoo/list/lists" class="">
-                                    <div class="main-menu-title">项目列表</div>
+                                    <div class="main-menu-title">移民项目</div>
                                   </a>
                                 </li>
 
                                 <!-- MENU ITEM -->
                                 <li class="parent megamenu">
                                   <a href="/kukoo/list/cases" class="">
-                                    <div class="main-menu-title">案例列表</div>
+                                    <div class="main-menu-title">移友足迹</div>
                                   </a>
                                 </li>
 
                                 <!-- MENU ITEM -->
-                                <li class="parent megamenu">
+                                <%-- <li class="parent megamenu">
                                   <a href="/kukoo/timeline" class="">
                                     <div class="main-menu-title">申报移民流程</div>
                                   </a>
-                                </li>
+                                </li> --%>
 
                                 <!-- MENU ITEM -->
                                 <li class="parent megamenu">
@@ -202,9 +202,9 @@
                   </div>
 
                   <!-- COTENT CONTAINER -->
-                  <div class="main">
+                  <div class="main container">
 
-                    <div class="search-c pb-50 plr-50">
+                    <div class="search-c pb-50">
                       <div class="btn-group">
                         <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                           {{selected.country==0?"国家":country[selected.country].value}}
@@ -214,7 +214,7 @@
                           <li v-for="(item,index) in country" @click="search" :id="item.key" :class="{'on':selected.country==index}">{{item.value}}</li>
                         </ul>
                       </div>
-                      <div class="btn-group">
+                      <%-- <div class="btn-group">
                         <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                           {{selected.projectType==0?"类别":projectType[selected.projectType].value}}
                           <span class="caret"></span>
@@ -231,7 +231,7 @@
                         <ul class="dropdown-menu" role="menu" t="timespan">
                           <li v-for="(item,index) in timespan" @click="search" :id="item.key" :class="{'on':selected.timespan==index}">{{item.value}}</li>
                         </ul>
-                      </div>
+                      </div> --%>
 
                       <div class="progress">
                         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 49%;margin-left: 62px;">
@@ -246,38 +246,38 @@
                       </div>
                     </div>
 
-                    <transition-group name="staggered-fade" tag="div" class="list-c pb-50 plr-50" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+                    <transition-group name="staggered-fade" tag="div" class="list-c pb-50 mt-25" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
 
                       <div class="ts-container mt-20" v-bind:key="item.id" v-for="(item,index) in list" v-bind:data-index="index">
                         <div class="ts-icon-container-bg">
                           <div class="ts-icon-container">
                             {{item.name}}<br/>
-                            ({{item.code}})
+                            <%-- ({{item.code}}) --%>
                           </div>
                         </div>
                         <div class="ts-main-container-bg">
                           <div class="ts-main-container clearfix">
                             <div class="ts-text-container font-poppins">
-                              <div class="mt-10 mb-10">
-                                <span class="label label-primary">{{item.country}}</span>
+                              <div class="mt-10 mb-10 mylabel">
+                                <span class="label label-info">{{item.country}}</span>
                                 <span class="label label-default">{{item.type}}</span>
                               </div>
-                              <div>
+                              <div class="mt-15 tt">
                                 <b>处理周期
-                                </b>{{item.timespan+item.timespanUnit}}</div>
-                              <div>
+                                </b>  {{item.timespan+item.timespanUnit}}</div>
+                              <div class="mt-0 tt">
                                 <b>资金要求
-                                </b>{{item.cost+item.costUnit}}</div>
-                              <div class="mt-10 desc">{{item.desc}}</div>
-                              <div class="right-text t-a-container mt-10">
+                                </b>  {{item.cost+item.costUnit}}</div>
+                              <div class="mt-5 desc">{{item.desc}}<span pid="2-1" class="quote-author-description">项目详情</span></div>
+                              <%-- <div class="right-text t-a-container mt-10">
                                 <span class="quote-author-description" :pid="item.id">项目详情</span>
-                              </div>
+                              </div> --%>
                             </div>
                           </div>
                         </div>
                       </div>
                     </transition-group>
-                    
+
                   </div>
                   <!-- END container -->
 

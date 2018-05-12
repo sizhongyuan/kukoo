@@ -1,3 +1,4 @@
+
 var rv1 = {
   "input": "",
   "recommend": [{
@@ -91,7 +92,6 @@ var occup = [
   "其他"
 ];
 
-
 var __list = localStorage.getItem("__list");
 var list = __list ? JSON.parse(__list) : [];
 var answer = JSON.parse(localStorage.getItem("__answer"));
@@ -140,6 +140,7 @@ function start(rv) {
       // if (list.length > 0) {
       //   this.details = list[4].details;
       // }
+      $(".main").show();
     },
     updated: function() {},
     methods: {
@@ -184,7 +185,6 @@ function start(rv) {
     }
   });
 }
-
 
 //start(rv);
 

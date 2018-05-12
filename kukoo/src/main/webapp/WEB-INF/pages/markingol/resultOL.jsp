@@ -80,23 +80,23 @@
 																<!-- MENU ITEM -->
 																<li class="parent megamenu">
 																	<a href="/kukoo/list/lists" class="">
-																		<div class="main-menu-title">项目列表</div>
+																		<div class="main-menu-title">移民项目</div>
 																	</a>
 																</li>
 
 																<!-- MENU ITEM -->
 																<li class="parent megamenu">
 																	<a href="/kukoo/list/cases" class="">
-																		<div class="main-menu-title">案例列表</div>
+																		<div class="main-menu-title">移友足迹</div>
 																	</a>
 																</li>
 
 																<!-- MENU ITEM -->
-																<li class="parent megamenu">
+																<%-- <li class="parent megamenu">
 																	<a href="/kukoo/timeline" class="">
 																		<div class="main-menu-title">申报移民流程</div>
 																	</a>
-																</li>
+																</li> --%>
 
 																<!-- MENU ITEM -->
 																<li class="parent megamenu">
@@ -135,17 +135,20 @@
 											</div>
 
 											<div class="col-md-4">
+
 												<div class="breadcrumbs2 font-poppins">
-													<a class="a-inv" href="index.html">kukoo</a>
-													<span class="slash-divider"></span>
+													<a class="a-inv" href="/kukoo/homePage/">Kukoo</a>
+													<span class="slash-divider">/</span>
+													<span class="bread-current">评估结果</span>
 												</div>
+
 											</div>
 
 										</div>
 									</div>
 								</div>
 
-								<div class="main">
+								<div class="main container">
 
 									<div class="col-md-12 mb-20 pb-30 selector">
 										<div class="col-md-10">
@@ -185,43 +188,43 @@
 													<div class="col-md-12 mb-10 M">
 														<div class="col-md-2">您</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[0][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[0][0]">
 																<option v-for="item in details[0].a[0]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[1][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[1][0]">
 																<option v-for="item in details[0].a[1]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[2][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[2][0]">
 																<option v-for="item in details[0].a[2]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[3][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[3][0]">
 																<option v-for="item in details[0].a[3]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-2"></div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[0][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[0][0]">
 																<option v-for="item in details[1].a[0]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[1][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[1][0]">
 																<option v-for="item in details[1].a[1]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[2][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[2][0]">
 																<option v-for="item in details[1].a[2]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[3][0]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[3][0]">
 																<option v-for="item in details[1].a[3]">{{item}}</option>
 															</select>
 														</div>
@@ -229,43 +232,43 @@
 													<div class="col-md-12 mb-10 W" v-if="answer.length>1">
 														<div class="col-md-2">您的伴侣</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[0][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[0][1]">
 																<option v-for="item in details[0].a[0]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[1][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[1][1]">
 																<option v-for="item in details[0].a[1]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[2][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[2][1]">
 																<option v-for="item in details[0].a[2]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[0].value[3][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[0].value[3][1]">
 																<option v-for="item in details[0].a[3]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-2"></div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[0][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[0][1]">
 																<option v-for="item in details[1].a[0]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[1][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[1][1]">
 																<option v-for="item in details[1].a[1]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[2][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[2][1]">
 																<option v-for="item in details[1].a[2]">{{item}}</option>
 															</select>
 														</div>
 														<div class="col-md-1">
-															<select class="w-100" dtype="*" @change="dogo"  v-model="details[1].value[3][1]">
+															<select class="w-100" dtype="*" @change="dogo" v-model="details[1].value[3][1]">
 																<option v-for="item in details[1].a[3]">{{item}}</option>
 															</select>
 														</div>
