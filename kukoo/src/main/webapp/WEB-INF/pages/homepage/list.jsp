@@ -105,17 +105,17 @@
 											<li class="parent megamenu"><a href="/kukoo/homePage" class=""><div
 														class="main-menu-title">家</div></a>
 											</li>
-											
+
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/homePage/list" class=""><div
-														class="main-menu-title">项目列表</div></a>
+														class="main-menu-title">移民项目</div></a>
 											</li>
-											
+
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/timeline" class=""><div
 														class="main-menu-title">时间轴</div></a>
 											</li>
-											
+
 											<!-- MENU ITEM -->
 											<li class="parent megamenu"><a href="/kukoo/homePage/dati" class=""><div
 														class="main-menu-title">答题</div></a>

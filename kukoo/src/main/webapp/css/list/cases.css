@@ -14,13 +14,35 @@
 
 /* ////// */
 
+blockquote {
+  padding-left: 26px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.quote1 p {
+  margin-bottom: 0;
+  font-size: 14px
+}
+
+blockquote p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 200;
+  vertical-align: top;
+}
+
+.page-title2 {
+  font-size: 24px;
+}
+
 .ts-icon-container-bg {
   background-color: #F1F1F1;
   color: #17A2D3;
   font-size: 24px;
   font-family: "PingFang-Ultralight";
   width: 105px;
-  padding-bottom: 73px;
+  padding-bottom: 33px;
   font-weight: 100;
 }
 
@@ -29,6 +51,7 @@
   padding: 10px;
   width: 105px;
   margin-top: -20px;
+  font-size: 20px;
 }
 
 .ts-main-container-bg {
@@ -39,7 +62,9 @@
 .ts-text-container {
   padding-right: 60px;
   padding-top: 20px;
-  padding-left: 200px;
+  padding-left: 170px;
+  max-height: 150px;
+  min-height: 150px;
 }
 
 .ts-text-container .label {
@@ -52,7 +77,7 @@
 }
 
 .ts-main-container-bg .head {
-  height: 190px;
+  height: 150px;
   width: 160px;
   float: left;
   text-align: center;
@@ -62,10 +87,12 @@
   font-size: 12px;
   line-height: 20px;
   padding-top: 5px;
+  color: #5e6567;
+  font-weight: 300;
 }
 
 .ts-text-container .events {
-  max-height: 70px;
+  max-height: 40px;
   overflow: hidden;
   text-align: center;
   font-size: 12px;
@@ -82,7 +109,7 @@
 }
 
 .ts-text-container .evt {
-  color: #A2B6BD;
+  color: #5e6567;
 }
 
 .ts-text-container .yellow {
@@ -108,14 +135,14 @@
 .ts-text-container .line {
   line-height: 16px;
   width: 100%;
-  height: 4px;
+  height: 3px;
   position: relative;
   background-color: #E6EDED;
 }
 
 .ts-text-container .line .strip-p {
   position: absolute;
-  height: 4px;
+  height: 3px;
   background-color: #F2BE69;
   top: 0;
   z-index: 1;
@@ -123,7 +150,7 @@
 
 .ts-text-container .line .strip-u {
   position: absolute;
-  height: 4px;
+  height: 3px;
   background-color: #17A2D3;
   top: 0;
   z-index: 1;
@@ -131,26 +158,26 @@
 
 .ts-text-container .circle {
   background-color: #F2BE69;
-  width: 12px;
-  height: 12px;
-  border-radius: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
   position: absolute;
-  top: -5px;
+  top: -3px;
   z-index: 2;
 }
 
 .ts-text-container .sm-circle {
-  width: 9px;
-  height: 9px;
-  border-radius: 9px;
-  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  top: -1px;
   z-index: 2;
 }
 
 .ts-text-container .line .province {
   background-color: #f5daad !important;
   text-align: center;
-  height: 35px;
+  height: 32px;
   font-size: 12px;
   border-radius: 0 0 12px 12px;
   font-weight: 300;
@@ -161,7 +188,7 @@
 .ts-text-container .line .unit {
   background-color: #8ddbf7 !important;
   text-align: center;
-  height: 35px;
+  height: 32px;
   font-size: 12px;
   border-radius: 0 0 12px 12px;
   font-weight: 300;
@@ -189,7 +216,9 @@
 
 .search-c .btn-group {
   margin-right: 10px;
-  width: 160px;
+  /* width: 160px; */
+  width: auto;
+  min-width: 105px;
 }
 
 .search-c .btn {
@@ -198,14 +227,13 @@
 }
 
 .search-c .btn .caret {
-  margin-left: 0;
+  margin-left: 5px;
   float: right;
   margin-top: 8px;
 }
 
 .search-c .result {
   float: right;
-  font-weight: bold;
 }
 
 .dropdown-menu .on {
