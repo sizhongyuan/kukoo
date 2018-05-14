@@ -249,6 +249,7 @@ _app = new Vue({
   },
   mounted: function() {
     var _this = this;
+    console.log(_this);
     $(".btns span").on("click", function() {
       $.ajax({
         url: "/kukoo/markingOLController/addMarkingOL",
@@ -338,37 +339,6 @@ function _val(i) {
     "question5": works,
     "specialty": [],
     "learn": ""
-  }
-}
-
-function _val(i) {
-  var list = _app.$data.list;
-  var works = i == 0 ? _app2.$data.mine.works : _app2.$data.myWife.works;
-  var w = [];
-  for (var j = 0; j < works.length; j++) {
-    w.push({
-      "profession": works[j].name,
-      "time": works[j].start + "至" + works[j].end
-    })
-  }
-  return {
-    "question1": this.list[0].details[0].value[0][i],
-    "question2": this.list[1].details[0].value[0][i],
-    "question3": this.list[2].details[0].value[0][0] + "," + this.list[2].details[1].value[0][0],
-    "question4": this.list[3].details[0].value[0][i], //学历
-    "question5": {
-      "listening": this.list[4].details[0].value[0][i],
-      "speaking": this.list[4].details[0].value[1][i],
-      "reading": this.list[4].details[0].value[2][i],
-      "writing": this.list[4].details[0].value[3][i],
-    },
-    "question6": {
-      "listening": this.list[4].details[1].value[0][i],
-      "speaking": this.list[4].details[1].value[1][i],
-      "reading": this.list[4].details[1].value[2][i],
-      "writing": this.list[4].details[1].value[3][i],
-    },
-    "question7": w
   }
 }
 
