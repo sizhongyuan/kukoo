@@ -120,4 +120,10 @@ public interface MarkingOLService{
 	 */
 	public JSONObject QSWProject(JSONArray jsonArray) throws Exception;
 	
+	/**
+	 * 获取所有魁北克专业
+	 * 
+	 */
+	public List getAllProfession() throws Exception;
+	
 }

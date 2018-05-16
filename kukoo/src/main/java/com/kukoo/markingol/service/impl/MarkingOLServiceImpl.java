@@ -2369,6 +2369,12 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 	public JSONObject QSWProject(JSONArray jsonArray) throws Exception {
 		return QSWutil.getQSW(jsonArray);
 	}
+
+
+	@Override
+	public List getAllProfession() throws Exception {
+		return markingOLMapper.getAllProfession();
+	}
 	
 //	public static void main(String[] args) {
 //		String jsonStr = "[{'question1':'无',"

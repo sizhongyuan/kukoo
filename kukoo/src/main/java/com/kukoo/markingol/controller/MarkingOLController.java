@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.kukoo.base.util.RedisUtil;
@@ -210,6 +211,28 @@ public class MarkingOLController {
 		
 		System.out.println(outPutJson);
 		return outPutJson;
+	}
+	
+	/**
+	 * 获取全部魁北克专业
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/getAllProfession", method=RequestMethod.GET)
+	@ResponseBody
+	public JSONArray getAllProfession(HttpServletRequest request){
+		
+		JSONArray array = new JSONArray();
+		try {
+			List list = markingOLService.getAllProfession();
+			String aa = JSON.toJSONString(list);
+			array = JSON.parseArray(aa);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return array;
 	}
 	
 	

@@ -10,6 +10,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="queryQSWprofessionByName"  parameterType="java.lang.String" resultType="java.util.HashMap">
 		select * from qsw_profession where ${professionCnName} ORDER BY primary_score desc
 	</select>
+	<!-- 获取所有魁北克专业 -->
+	<select id="getAllProfession"  resultType="java.util.HashMap">
+		select 'id','cnName','enName' from qsw_profession ORDER BY id asc
+	</select>
+	
 
 	<insert id="addMarkingOL" parameterType="com.kukoo.markingol.model.MarkingOL">
 		<selectKey keyProperty="id" resultType="string" order="BEFORE">

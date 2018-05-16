@@ -20,6 +20,9 @@ public interface MarkingOLMapper {
 	 * 
 	 */
 	public void addMarkingOL(MarkingOL markingOL);
-	
-	
+	/**
+	 * 获取所有魁北克专业
+	 * 
+	 */
+	public List getAllProfession();
 }
