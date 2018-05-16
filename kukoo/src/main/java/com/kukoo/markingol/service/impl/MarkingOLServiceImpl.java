@@ -77,6 +77,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "阿省雇主担保（熟练）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -126,6 +127,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "阿省雇主担保（半熟练）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -142,6 +144,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "阿省雇主担保（半熟练）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("promote", jsonObj);
@@ -190,6 +193,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "安省雇主担保项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -242,6 +246,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "大西洋项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -258,6 +263,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "大西洋项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("promote", jsonObj);
@@ -314,6 +320,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "大西洋项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -331,6 +338,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "大西洋项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("promote", jsonObj);
@@ -382,6 +390,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "BC（B类）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -398,6 +407,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "BC（B类）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("promote", jsonObj);
@@ -452,6 +462,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "BC（B类）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("recommend", jsonObj);
@@ -470,6 +481,7 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				jsonObj.put("capital", "5万");
 				jsonObj.put("period", "3年");
 				jsonObj.put("intro", "BC（B类）项目简介");
+				jsonObj.put("projectType", "雇主担保移民");
 				//json.put("score", score);
 				//jsonObj.put("pass", 425);
 				jsonObject.put("promote", jsonObj);
@@ -513,16 +525,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				if(score >= 425) {
 					tips = notStandardLanguage(firstLanguage, englishCLB, frenchCLB);
 					JSONObject json = new JSONObject();
-					json.put("projectName", "EE");
+					json.put("projectName", "加拿大联邦技术移民");
 					json.put("country", "加拿大");
 					json.put("major", "您");
 					json.put("language", (firstLanguage == "french")?"法语":"英语");
 					json.put("visaType", "PR");
 					json.put("capital", "5万");
 					json.put("period", "3年");
-					json.put("intro", "EE项目简介");
+					json.put("intro", "加拿大联邦技术移民项目是由加拿大联邦移民局直接受理的移民项目，联邦技术移民采用快速通道（Express Entry, 'EE'）系统进行申请，具有名额充沛、无职业限制、无加拿大境内居住地要求、审理速度快等优点，最快可在8个月内办理成功并登陆加拿大。 同时，从申请条件上对语言水平等条件要求较高，通常适合学历高，年纪轻，英语好的申请人。");
 					json.put("score", score);
 					json.put("pass", 425);
+					json.put("projectType", "技术移民");
 					jsonObject.put("recommend", json);
 					return jsonObject;
 				}
@@ -533,16 +546,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 						//语言努力可达标
 						
 						JSONObject json = new JSONObject();
-						json.put("projectName", "EE");
+						json.put("projectName", "加拿大联邦技术移民");
 						json.put("country", "加拿大");
 						json.put("major", "您");
 						json.put("language", (firstLanguage == "french")?"法语":"英语");
 						json.put("visaType", "PR");
 						json.put("capital", "5万");
 						json.put("period", "3年");
-						json.put("intro", "EE项目简介");
+						json.put("intro", "加拿大联邦技术移民项目是由加拿大联邦移民局直接受理的移民项目，联邦技术移民采用快速通道（Express Entry, 'EE'）系统进行申请，具有名额充沛、无职业限制、无加拿大境内居住地要求、审理速度快等优点，最快可在8个月内办理成功并登陆加拿大。 同时，从申请条件上对语言水平等条件要求较高，通常适合学历高，年纪轻，英语好的申请人。");
 						json.put("score", score);
 						json.put("pass", 425);
+						json.put("projectType", "技术移民");
 						jsonObject.put("promote", json);
 						
 						return jsonObject;
@@ -602,16 +616,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 					tips = notStandardLanguage(firstLanguage, englishCLBMain, frenchCLBMain);
 					
 					JSONObject json = new JSONObject();
-					json.put("projectName", "EE");
+					json.put("projectName", "加拿大联邦技术移民");
 					json.put("country", "加拿大");
 					json.put("major", (isVerb)?"您伴侣":"您");
 					json.put("language", (firstLanguage == "french")?"法语":"英语");
 					json.put("visaType", "PR");
 					json.put("capital", "5万");
 					json.put("period", "3年");
-					json.put("intro", "EE项目简介");
+					json.put("intro", "加拿大联邦技术移民项目是由加拿大联邦移民局直接受理的移民项目，联邦技术移民采用快速通道（Express Entry, 'EE'）系统进行申请，具有名额充沛、无职业限制、无加拿大境内居住地要求、审理速度快等优点，最快可在8个月内办理成功并登陆加拿大。 同时，从申请条件上对语言水平等条件要求较高，通常适合学历高，年纪轻，英语好的申请人。");
 					json.put("score", score);
 					json.put("pass", 425);
+					json.put("projectType", "技术移民");
 					jsonObject.put("recommend", json);
 					
 					return jsonObject;
@@ -623,16 +638,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 						//语言努力可达标
 						
 						JSONObject json = new JSONObject();
-						json.put("projectName", "EE");
+						json.put("projectName", "加拿大联邦技术移民");
 						json.put("country", "加拿大");
 						json.put("major", (isVerb)?"您伴侣":"您");
 						json.put("language", (firstLanguage == "french")?"法语":"英语");
 						json.put("visaType", "PR");
 						json.put("capital", "5万");
 						json.put("period", "3年");
-						json.put("intro", "EE项目简介");
+						json.put("intro", "加拿大联邦技术移民项目是由加拿大联邦移民局直接受理的移民项目，联邦技术移民采用快速通道（Express Entry, 'EE'）系统进行申请，具有名额充沛、无职业限制、无加拿大境内居住地要求、审理速度快等优点，最快可在8个月内办理成功并登陆加拿大。 同时，从申请条件上对语言水平等条件要求较高，通常适合学历高，年纪轻，英语好的申请人。");
 						json.put("score", score);
 						json.put("pass", 425);
+						json.put("projectType", "技术移民");
 						jsonObject.put("promote", json);
 						
 						return jsonObject;
@@ -697,16 +713,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				if(score >= 400) {
 					tips = notStandardLanguage(firstLanguage, englishCLB, frenchCLB);
 					JSONObject json = new JSONObject();
-					json.put("projectName", "ON");
+					json.put("projectName", "安大略省技术移民");
 					json.put("country", "加拿大");
 					json.put("major", "您");
 					json.put("language", (firstLanguage == "french")?"法语":"英语");
 					json.put("visaType", "PR");
 					json.put("capital", "5万");
 					json.put("period", "3年");
-					json.put("intro", "ON项目简介");
+					json.put("intro", "该项目属于省提名移民项目；首先经安省移民局审批获得省提名，再经联邦移民局进行健康、安全等审核。申请人须表明有意向居住在提名省份，获得永居身份后通常可迁徙至加拿大任意地区居住。该项目采用快速通道（Express Entry, 'EE'）系统进行申请，需要被动接受邀请；审理速度相对较快，但通常不定期发邀请。同时要求申请人职业为安省非限制类职业。");
 					json.put("score", score);
 					json.put("pass", 425);
+					json.put("projectType", "技术移民");
 					jsonObject.put("recommend", json);
 					return jsonObject;
 				}
@@ -716,16 +733,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 					if((score+raiseScore) >= 400) {
 						//语言努力可达标
 						JSONObject json = new JSONObject();
-						json.put("projectName", "ON");
+						json.put("projectName", "安大略省技术移民");
 						json.put("country", "加拿大");
 						json.put("major", "您");
 						json.put("language", (firstLanguage == "french")?"法语":"英语");
 						json.put("visaType", "PR");
 						json.put("capital", "5万");
 						json.put("period", "3年");
-						json.put("intro", "ON项目简介");
+						json.put("intro", "该项目属于省提名移民项目；首先经安省移民局审批获得省提名，再经联邦移民局进行健康、安全等审核。申请人须表明有意向居住在提名省份，获得永居身份后通常可迁徙至加拿大任意地区居住。该项目采用快速通道（Express Entry, 'EE'）系统进行申请，需要被动接受邀请；审理速度相对较快，但通常不定期发邀请。同时要求申请人职业为安省非限制类职业。");
 						json.put("score", score);
 						json.put("pass", 425);
+						json.put("projectType", "技术移民");
 						jsonObject.put("promote", json);
 						return jsonObject;
 					}else {
@@ -781,16 +799,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 				if(score >= 400) {
 					tips = notStandardLanguage(firstLanguage, englishCLBMain, frenchCLBMain);
 					JSONObject json = new JSONObject();
-					json.put("projectName", "ON");
+					json.put("projectName", "安大略省技术移民");
 					json.put("country", "加拿大");
 					json.put("major", (isVerb)?"您伴侣":"您");
 					json.put("language", (firstLanguage == "french")?"法语":"英语");
 					json.put("visaType", "PR");
 					json.put("capital", "5万");
 					json.put("period", "3年");
-					json.put("intro", "ON项目简介");
+					json.put("intro", "该项目属于省提名移民项目；首先经安省移民局审批获得省提名，再经联邦移民局进行健康、安全等审核。申请人须表明有意向居住在提名省份，获得永居身份后通常可迁徙至加拿大任意地区居住。该项目采用快速通道（Express Entry, 'EE'）系统进行申请，需要被动接受邀请；审理速度相对较快，但通常不定期发邀请。同时要求申请人职业为安省非限制类职业。");
 					json.put("score", score);
 					json.put("pass", 425);
+					json.put("projectType", "技术移民");
 					jsonObject.put("recommend", json);
 					return jsonObject;
 				}
@@ -800,16 +819,17 @@ public class MarkingOLServiceImpl implements MarkingOLService{
 					if((scoreNor+rasieScore) >= 400) {
 						//语言努力可达标
 						JSONObject json = new JSONObject();
-						json.put("projectName", "ON");
+						json.put("projectName", "安大略省技术移民");
 						json.put("country", "加拿大");
 						json.put("major", (isVerb)?"您伴侣":"您");
 						json.put("language", (firstLanguage == "french")?"法语":"英语");
 						json.put("visaType", "PR");
 						json.put("capital", "5万");
 						json.put("period", "3年");
-						json.put("intro", "ON项目简介");
+						json.put("intro", "该项目属于省提名移民项目；首先经安省移民局审批获得省提名，再经联邦移民局进行健康、安全等审核。申请人须表明有意向居住在提名省份，获得永居身份后通常可迁徙至加拿大任意地区居住。该项目采用快速通道（Express Entry, 'EE'）系统进行申请，需要被动接受邀请；审理速度相对较快，但通常不定期发邀请。同时要求申请人职业为安省非限制类职业。");
 						json.put("score", score);
 						json.put("pass", 425);
+						json.put("projectType", "技术移民");
 						jsonObject.put("promote", json);
 						return jsonObject;
 					}else {

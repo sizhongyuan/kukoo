@@ -5,6 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 用户mybatis mapper 文件配置 -->
 <mapper namespace="com.kukoo.markingol.dao.MarkingOLMapper">
+	
+	<!-- 根据专业中文名称查询得分等信息 -->
+	<select id="queryQSWprofessionByName"  parameterType="java.lang.String" resultType="java.util.HashMap">
+		select * from qsw_profession where ${professionCnName} ORDER BY primary_score desc
+	</select>
+
 	<insert id="addMarkingOL" parameterType="com.kukoo.markingol.model.MarkingOL">
 		<selectKey keyProperty="id" resultType="string" order="BEFORE">
 			select REPLACE(UUID(),'-','')
