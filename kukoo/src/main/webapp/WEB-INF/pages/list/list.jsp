@@ -186,14 +186,14 @@
                       <div class="row">
 
                         <div class="col-md-8">
-                          <h1 class="page-title2">项目列表</h1>
+                          <h1 class="page-title2">移民项目</h1>
                         </div>
 
                         <div class="col-md-4">
                           <div class="breadcrumbs2 font-poppins">
-                            <a class="a-inv" href="/kukoo/homePage/">Kukoo</a>
+                            <a class="a-inv" href="/kukoo/homePage/">KUKOO</a>
                             <span class="slash-divider">/</span>
-                            <span class="bread-current">项目列表</span>
+                            <span class="bread-current">移民项目</span>
                           </div>
                         </div>
 
@@ -233,11 +233,11 @@
                         </ul>
                       </div> --%>
 
-                      <div class="progress">
+                      <%-- <div class="progress">
                         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 49%;margin-left: 62px;">
                           <span class="sr-only">20% Complete</span>
                         </div>
-                      </div>
+                      </div> --%>
 
                       <div class="result">
                         发现

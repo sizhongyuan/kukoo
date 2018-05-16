@@ -241,8 +241,11 @@ blockquote p {
 }
 
 .dropdown-menu li {
-  padding-left: 5px;
+  padding: 0 5px;
   cursor: pointer;
+  /* display: block; */
+  /* width: auto; */
+  word-break: keep-all;
 }
 
 .dropdown-menu li:hover {
