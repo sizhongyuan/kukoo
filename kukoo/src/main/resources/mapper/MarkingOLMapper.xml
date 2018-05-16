@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 获取所有魁北克专业 -->
 	<select id="getAllProfession"  resultType="java.util.HashMap">
-		select 'id','cnName','enName' from qsw_profession ORDER BY id asc
+		select * from qsw_profession ORDER BY id asc
 	</select>
 	
 

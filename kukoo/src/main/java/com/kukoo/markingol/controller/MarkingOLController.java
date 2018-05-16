@@ -226,8 +226,19 @@ public class MarkingOLController {
 		JSONArray array = new JSONArray();
 		try {
 			List list = markingOLService.getAllProfession();
-			String aa = JSON.toJSONString(list);
-			array = JSON.parseArray(aa);
+			for(int i = 0 ; i < list.size() ; i++) {
+				JSONObject obj = new JSONObject();
+				Map map = (Map)list.get(i);
+				String id = StaticMethod.nullObject2String(map.get("id"));
+				String cnName = StaticMethod.nullObject2String(map.get("profession_cn_name"));
+				String enName = StaticMethod.nullObject2String(map.get("profession_en_name"));
+				obj.put("id", id);
+				obj.put("cnName", cnName);
+				obj.put("enName", enName);
+				array.add(obj);
+			}
+//			String aa = JSON.toJSONString(list);
+//			array = JSON.parseArray(aa);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

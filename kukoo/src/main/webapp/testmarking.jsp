@@ -20,6 +20,17 @@
 				}
 			});
 	}
+	function zhuanye(){
+		$.ajax({
+			url:"/kukoo/markingOLController/getAllProfession",
+			type: "GET",
+			dataType:"json",
+			success: function (result) {
+				console.log(JSON.stringify(result));
+				document.getElementById("fanhuikuang").value=JSON.stringify(result);
+			}
+		});
+	}
 </script>
 <style>
         table,table tr th, table tr td { border:1px solid #0094ff; }
@@ -31,6 +42,7 @@
 <body>
 	
 	<button id="" onclick="tijiao()">提交</button>
+	<button id="aaa" onclick="zhuanye()">获取专业</button>
 	<table border="2">
 		<tr>
 			<td>输入参数</td>
