@@ -185,17 +185,29 @@ public class MarkingOLController {
 		}else if("yellow".equals(SINPProject.get("passType"))){
 			promote.add(SINPProject);
 		}
-		outPutJson.put("recommend", recommend);
-		outPutJson.put("promote", promote);
 		
 		JSONObject QSWProject = markingOLService.QSWProject(inputJson);
+		JSONArray sjsonarr = QSWProject.getJSONArray("specialty");
 		if("green".equals(QSWProject.get("passType"))){
-			outPutJson.put("Quebec", QSWProject);
+			
+			if(sjsonarr.size()>0){
+				recommend.add(QSWProject);
+			}else{
+				outPutJson.put("Quebec", QSWProject);
+			}
+				
 		}else if("yellow".equals(QSWProject.get("passType"))){
-			outPutJson.put("Quebec", QSWProject);
+			if(sjsonarr.size()>0){
+				promote.add(QSWProject);
+			}else{
+				outPutJson.put("Quebec", QSWProject);
+			}
 		}else{
 			outPutJson.put("Quebec", "");
 		}
+		outPutJson.put("recommend", recommend);
+		outPutJson.put("promote", promote);
+		
 		System.out.println(outPutJson);
 		return outPutJson;
 	}

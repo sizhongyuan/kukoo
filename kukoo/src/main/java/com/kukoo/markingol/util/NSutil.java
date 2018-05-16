@@ -20,13 +20,14 @@ public class NSutil {
 	 */
 	public static JSONObject getNS(JSONArray question) throws ParseException{
 		JSONObject reJson = new JSONObject();//返回json
-		reJson.put("projectName", "NS");
+		reJson.put("projectName", "新斯科舍省技术移民");
 		reJson.put("country", "加拿大");
 		reJson.put("pass", 67);
-		reJson.put("intro", "");
+		reJson.put("intro", "该项目属于省提名移民项目；首先经新省移民局审批获得省提名，再经联邦移民局进行健康及安全等审核。申请人须表明有意向居住在提名省份；获得永居身份后通常可迁徙至加拿大任意地区居住。该项目采用快速通道（Express Entry, 'EE'）系统进行申请，处理速度相对较快，但名额较少需要抢名额；同时，申请人职业须在新省紧缺职业列表上。");
 		reJson.put("capital", "5万");
 		reJson.put("period", "3年");
 		reJson.put("visaType", "PR");
+		reJson.put("projectType", "技术移民");
 		
 		JSONObject questionPrimary = question.getJSONObject(0);//获取主申请人答题
 		if("有".equals(StaticMethod.nullObject2String(questionPrimary.get("question1")))){//有配偶时才获取副申请
@@ -438,13 +439,13 @@ public class NSutil {
 		//对比分数
 		if(language1Score+language2Score>=relanguage1Score+relanguage2Score){
 			//英语作为主语言
-			rescore.put("language", "English");//
+			rescore.put("language", "英语");//
 			//用户选择的主语言作为主语言时分数
 			rescore.put("languageScore", language1Score+language2Score);//
 			
 		}else{
 			//法语作为主语言
-			rescore.put("language", "French");//
+			rescore.put("language", "法语");//
 			//用户选择的副语言作为主语言时分数
 			rescore.put("languageScore", relanguage1Score+relanguage2Score);//
 		}
@@ -751,13 +752,13 @@ public class NSutil {
 		//对比分数
 		if(language1Score+language2Score>=relanguage1Score+relanguage2Score){
 			//英语作为主语言
-			rescore.put("language", "English");//
+			rescore.put("language", "英语");//
 			//用户选择的主语言作为主语言时分数
 			rescore.put("languageScore", language1Score+language2Score);//
 			
 		}else{
 			//法语作为主语言
-			rescore.put("language", "French");//
+			rescore.put("language", "法语");//
 			//用户选择的副语言作为主语言时分数
 			rescore.put("languageScore", relanguage1Score+relanguage2Score);//
 		}
