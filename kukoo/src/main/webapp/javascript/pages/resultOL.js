@@ -1,4 +1,3 @@
-
 var rv1 = {
   "input": "",
   "recommend": [{
@@ -119,9 +118,19 @@ function start(rv) {
     template: '#project-template',
     props: ["msg", "type"],
     data: function() {
-      return this.msg;
+      //return this.msg;
     }
   });
+
+  var tmp = [];
+  if (!rv.Quebec.specialty || rv.Quebec.specialty.length == 0) {
+    rv.Quebec.specialty = [
+      [],
+      []
+    ];
+  }
+  tmp.push(rv.Quebec);
+  rv.Quebec = tmp;
 
   _app = new Vue({
     "el": '.main',
@@ -145,9 +154,12 @@ function start(rv) {
     updated: function() {},
     methods: {
       js: function() {
-        this.answer.learn = rv.Quebec[0].learn;
-        this.answer.specialty = rv.Quebec[0].specialty;
-        doAjax(JSON.stringify(this.answer));
+        this.answer[0].learn = rv.Quebec[0].learn;
+        this.answer[0].specialty = rv.Quebec[0].specialty[0];
+        if (this.answer.length > 1) {
+          this.answer[1].specialty = rv.Quebec[0].specialty[1];
+        }
+        doAjax(JSON.stringify(this.answer), this.resultSettle);
       },
       dogo: function() {
         var r1 = _g67(0, this.details);
@@ -158,11 +170,24 @@ function start(rv) {
           this.answer[1].question6 = r2.question6;
           this.answer[1].question7 = r2.question7;
         }
+
+        doAjax(JSON.stringify(this.answer), this.resultSettle);
+      },
+      resultSettle: function(result) {
         var _this = this;
-        doAjax(JSON.stringify(this.answer), function(result) {
-          _this.answer = result.input;
-          _this.rv = result;
-        });
+        _this.answer = result.input;
+        //
+        var tmp = [];
+        if (!result.Quebec.specialty || rv.Quebec.specialty.length == 0) {
+          result.Quebec.specialty = [
+            [],
+            []
+          ];
+        }
+        tmp.push(result.Quebec);
+        result.Quebec = tmp;
+        //
+        _this.rv = result;
       }
     }
   });

@@ -193,7 +193,7 @@
                         <div class="row">
 
                           <div class="col-md-8">
-                            <h1 class="page-title2">案例列表</h1>
+                            <h1 class="page-title2">移友足迹</h1>
                             <%-- <div class="page-sub-title font-poppins">
                               我们汇总了真实的移友案例以供参考申请周期，数据持续更新中
                             </div> --%>
@@ -201,9 +201,9 @@
 
                             <div class="col-md-4">
                               <div class="breadcrumbs2 font-poppins">
-                                <a class="a-inv" href="/kukoo/homePage/">Kukoo</a>
+                                <a class="a-inv" href="/kukoo/homePage/">KUKOO</a>
                                 <span class="slash-divider">/</span>
-                                <span class="bread-current">案例列表</span>
+                                <span class="bread-current">移友足迹</span>
                               </div>
                             </div>
 

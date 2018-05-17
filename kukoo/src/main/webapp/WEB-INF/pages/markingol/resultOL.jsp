@@ -137,7 +137,7 @@
 											<div class="col-md-4">
 
 												<div class="breadcrumbs2 font-poppins">
-													<a class="a-inv" href="/kukoo/homePage/">Kukoo</a>
+													<a class="a-inv" href="/kukoo/homePage/">KUKOO</a>
 													<span class="slash-divider">/</span>
 													<span class="bread-current">评估结果</span>
 												</div>
@@ -300,7 +300,7 @@
 										根据您提供的个人信息，您符合如下项目的申请条件：
 									</div>
 
-									<project-score :msg="rv.recommend" :type="'recommend'"></project-score>
+									<project-score :msg="rv.recommend" :type="'recommend'" v-if="rv.recommend.length>0"></project-score>
 
 									<div class="alert alert-warning" v-if="rv.promote.length>0">
 										<span aria-hidden="true" class="alert-icon icon_error-triangle_alt"></span>
@@ -308,7 +308,7 @@
 										若您及您伴侣（如有）能进一步提高语言成绩，可满足如下项目申请条件：（您可在本页顶部调整预估语言成绩，判断如下项目申请难度）
 									</div>
 
-									<project-score :msg="rv.promote" :type="'promote'"></project-score>
+									<project-score :msg="rv.promote" :type="'promote'" v-if="rv.promote.length>0"></project-score>
 
 									<div class="alert alert-info" v-if="rv.Quebec.length>0">
 										<span aria-hidden="true" class="alert-icon icon_error-triangle_alt"></span>
@@ -323,14 +323,14 @@
 											<span class="zy1" v-for="item in rv.Quebec[0].specialty[0]">{{item}}</span>
 											<i class="fa fa-caret-down"></i>
 										</span>
-										<span class="con1" @click="rv.Quebec[0].index=1" data-toggle="modal" data-target="#bs-example-modal-sm">
+										<span v-if="answer.length==2" class="con1" @click="rv.Quebec[0].index=1" data-toggle="modal" data-target="#bs-example-modal-sm">
 											<span v-if="rv.Quebec[0].specialty[1].length==0">您配偶的专业</span>
 											<span class="zy1" v-for="item in rv.Quebec[0].specialty[1]">{{item}}</span>
 											<i class="fa fa-caret-down"></i>
 										</span>
 										<button type="button" class="btn btn-default ml-20" @click="js">计算</button>
 									</div>
-									<project-score :msg="rv.Quebec" :type="'Quebec'"></project-score>
+									<project-score :msg="rv.Quebec" :type="'Quebec'" v-if="rv.Quebec.length>0"></project-score>
 
 								</div>
 
@@ -399,7 +399,7 @@
 																<span>{{item.period}}</span>
 															</div>
 														</div>
-														<div class="col-md-12 mt-20 learn" v-if="item.projectName=='魁省'">
+														<div class="col-md-12 mt-20 learn" v-if="item.projectName=='魁北克省技术移民'">
 															<i class="fa" :class="item.learn=='是'?'fa-dot-circle-o':'fa-circle-o'" @click="item.learn=item.learn=='是'?'不是':'是'">
 																<span>考虑去魁省学习三个月（可加5分）</span>
 															</i>
@@ -415,11 +415,11 @@
 											</div>
 											<div class="pricing-horizontal-price-container col-md-2">
 												<div class="price-container get-score">
-													<span>{{item.score||'-'}}</span>
+													<span>{{item.score==undefined?'-':item.score}}</span>
 													得分
 												</div>
 												<div class="price-button-container pass-score">
-													<span>{{item.pass||'-'}}</span>
+													<span>{{item.pass==undefined?'-':item.pass}}</span>
 													通过分
 												</div>
 											</div>
