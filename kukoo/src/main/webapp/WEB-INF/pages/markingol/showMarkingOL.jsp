@@ -126,17 +126,17 @@
 								</header>
 								<!-- PAGE TITLE LARGE 2 GRAY -->
 								<div class="page-title-cont page-title-large2-cont bg-gray" style="padding-top: 10px;">
-									<div class="relative container align-left pl-0">
+									<div class="relative container align-left">
 										<div class="row">
 
 											<div class="col-md-8">
-												<h1 class="page-title2">布谷移民在线评估</h1>
+												<h1 class="page-title2">在线评估</h1>
 											</div>
 
-											<div class="col-md-4 pr-0">
+											<div class="col-md-4">
 
 												<div class="breadcrumbs2 font-poppins">
-													<a class="a-inv" href="/kukoo/homePage/">Kukoo</a>
+													<a class="a-inv" href="/kukoo/homePage/">KUKOO</a>
 													<span class="slash-divider">/</span>
 													<span class="bread-current">在线评估</span>
 												</div>
@@ -151,7 +151,7 @@
 
 									<div class="main container">
 
-										<div class="col-md-12 text-right mb-20 pr-0">
+										<div class="col-md-12 text-right mb-20 mt-20 pr-0">
 											共6题，答题时间：3分钟
 										</div>
 
@@ -169,7 +169,7 @@
 													<div class="details" v-for="qa in item.details">
 														<div v-if="qa.subtitle" class="subtitle">{{qa.subtitle}}</div>
 														<div class="qas" v-for="(q,index) in qa.q">
-															<div class="q">{{q}}</div>
+															<div class="q" :class="item.question=='外语水平'?'pl-15':''">{{q}}</div>
 															<div class="a">
 
 																<div class="select-style" :class="{'oneline':qa.oneline}">

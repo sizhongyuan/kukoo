@@ -249,7 +249,6 @@ _app = new Vue({
   },
   mounted: function() {
     var _this = this;
-    console.log(_this);
     $(".btns span").on("click", function() {
       $.ajax({
         url: "/kukoo/markingOLController/addMarkingOL",
