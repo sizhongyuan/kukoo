@@ -28,16 +28,16 @@ public class SINPutil {
 			JSONObject scorePrimary2 = getSINPScoretoPrimary(questionSecondary);//主次交换主得分
 			//正常主次未通过申请
 			if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore")<60){
+				//主次调换
+				if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")<60){
 				//正常主次语言升档
 				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")<60){
-					//主次调换
-					if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")<60){
 						//主次调换语言升档
 						if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScoreUp")<60){
 							//主申请人
 							reJson.put("major", "配偶");
 							//成绩
-							reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScoreUp"));
+							reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore"));
 							//主申语言
 							reJson.put("language", scorePrimary.get("language"));
 							//通过方式（绿手green||黄手yellow||未通过none）
@@ -58,31 +58,32 @@ public class SINPutil {
 						}
 					}else{
 						//主申请人
-						reJson.put("major", "配偶");
+						reJson.put("major", "您");
 						//成绩
-						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore"));
+						reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp"));
 						//主申语言
 						reJson.put("language", scorePrimary.get("language"));
 						//是否升档 0：否
-						reJson.put("ifUp",0);
+						reJson.put("ifUp",1);
 						//是否交换主次 0：否
-						reJson.put("ifSwap",1);
+						reJson.put("ifSwap",0);
 						//通过方式（绿手green||黄手yellow||未通过none）
-						reJson.put("passType","green");
+						reJson.put("passType","yellow");
+						
 					}
 				}else{
 					//主申请人
-					reJson.put("major", "您");
+					reJson.put("major", "配偶");
 					//成绩
-					reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp"));
+					reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore"));
 					//主申语言
 					reJson.put("language", scorePrimary.get("language"));
 					//是否升档 0：否
-					reJson.put("ifUp",1);
+					reJson.put("ifUp",0);
 					//是否交换主次 0：否
-					reJson.put("ifSwap",0);
+					reJson.put("ifSwap",1);
 					//通过方式（绿手green||黄手yellow||未通过none）
-					reJson.put("passType","yellow");
+					reJson.put("passType","green");
 				}
 				
 			}else{//通过
@@ -415,7 +416,7 @@ public class SINPutil {
 		int listeningEnglish = Util.getCLBtoListening(StaticMethod.nullObject2String(q6.get("listening")));
 		int speakingEnglish = Util.getCLBtoSpeaking(StaticMethod.nullObject2String(q6.get("speaking")));
 		int readingEnglish = Util.getCLBtoReading(StaticMethod.nullObject2String(q6.get("reading")));
-		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("listewritingning")));
+		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("writing")));
 		//获取整体英语成绩
 		int englishMinLanguage = getMinLanguage(listeningEnglish,speakingEnglish,readingEnglish,writingEnglish);
 		//英语得分
@@ -426,7 +427,7 @@ public class SINPutil {
 		int listeningFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("listening")));
 		int speakingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("speaking")));
 		int readingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("reading")));
-		int writingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("listewritingning")));
+		int writingFrench = Util.getCLBtoFrench(StaticMethod.nullObject2String(q7.get("writing")));
 		//获取法语整体成绩
 		int frenchMinLanguage = getMinLanguage(listeningFrench,speakingFrench,readingFrench,writingFrench);
 		//法语得分
@@ -446,7 +447,7 @@ public class SINPutil {
 		}
 		
 		//升档算法
-		if("English".equals(rescore.get("language"))){
+		if("英语".equals(rescore.get("language"))){
 			//用户升档后得分      升档后的英语的分
 			rescore.put("languageScoreUp", language1Rule(englishMinLanguage+2));//
 		}else{
@@ -495,6 +496,15 @@ public class SINPutil {
 		//计算成绩
 		int score = 0;
 		switch (minScore) {
+		case 13:
+			score += 20;
+			break;
+		case 12:
+			score += 20;
+			break;
+		case 11:
+			score += 20;
+			break;
 		case 10:
 			score += 20;
 			break;

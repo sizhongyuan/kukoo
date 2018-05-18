@@ -38,13 +38,13 @@ public class NSutil {
 			JSONObject scoreSecondary2 = getNSScoretoSecondary(questionPrimary);//主次交换副得分
 			//正常主次未通过申请language
 			if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("languageScore")<67){
-				//升档后是否通过
-				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")<67){
-					//主次交换是否通过
-					if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore")<67){
+				//主次交换是否通过
+				if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore")<67){
+					//升档后是否通过
+					if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")<67){
 						//主次交换后升档是否通过
 						if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScoreUp")<67){
-							reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScoreUp"));
+							reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("languageScoreUp"));
 							//主申请人
 							reJson.put("major", "配偶");
 							//主申语言
@@ -67,37 +67,39 @@ public class NSutil {
 							//通过方式（绿手green||黄手yellow||未通过none）
 							reJson.put("passType","yellow");
 						}
-					}else{//通过
+					}else{
+						//通过
 						//通过方式（绿手green||黄手yellow||未通过none）
-						reJson.put("passType","green");
+						reJson.put("passType","yellow");
 						//主申请人
-						reJson.put("major", "配偶");
+						reJson.put("major", "您");
 						//成绩
-						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore"));
+						reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score"));
 						//主申语言
-						reJson.put("language", scorePrimary2.get("language"));
+						reJson.put("language", scorePrimary.get("language"));
 						//主申工作年限是否再0-1年  在为1 不在为0
-						reJson.put("workYearFlag", scorePrimary2.getIntValue("workYearFlag"));//
+						reJson.put("workYearFlag", scorePrimary.getIntValue("workYearFlag"));//
 						//是否升档 0：否
-						reJson.put("ifUp",0);
+						reJson.put("ifUp",1);
 						//是否交换主次 0：否
-						reJson.put("ifSwap",1);
+						reJson.put("ifSwap",0);
 					}
-				}else{//通过
+				}else{
+					//通过
 					//通过方式（绿手green||黄手yellow||未通过none）
-					reJson.put("passType","yellow");
+					reJson.put("passType","green");
 					//主申请人
-					reJson.put("major", "您");
+					reJson.put("major", "配偶");
 					//成绩
-					reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score"));
+					reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore"));
 					//主申语言
-					reJson.put("language", scorePrimary.get("language"));
+					reJson.put("language", scorePrimary2.get("language"));
 					//主申工作年限是否再0-1年  在为1 不在为0
-					reJson.put("workYearFlag", scorePrimary.getIntValue("workYearFlag"));//
+					reJson.put("workYearFlag", scorePrimary2.getIntValue("workYearFlag"));//
 					//是否升档 0：否
-					reJson.put("ifUp",1);
+					reJson.put("ifUp",0);
 					//是否交换主次 0：否
-					reJson.put("ifSwap",0);
+					reJson.put("ifSwap",1);
 				}
 			}else{//通过
 				//通过方式（绿手green||黄手yellow||未通过none）
@@ -123,7 +125,7 @@ public class NSutil {
 				//语言升档
 				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp")<67){
 					//通过方式（绿手green||黄手yellow||未通过none）
-					reJson.put("passType","yellow");
+					reJson.put("passType","none");
 					//主申请人
 					reJson.put("major", "您");
 					//通过成绩
@@ -138,13 +140,17 @@ public class NSutil {
 					reJson.put("ifSwap",0);
 				}else{
 					//通过方式（绿手green||黄手yellow||未通过none）
-					reJson.put("passType","none");
+					reJson.put("passType","yellow");
 					//主申请人
 					reJson.put("major", "您");
 					//成绩
-					reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore"));
+					reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScoreUp"));
 					//主申语言
 					reJson.put("language", scorePrimary.get("language"));
+					//是否升档 0：否
+					reJson.put("ifUp",1);
+					//是否交换主次 0：否
+					reJson.put("ifSwap",0);
 				}
 			}else{//通过
 				//通过方式（绿手green||黄手yellow||未通过none）
@@ -419,7 +425,7 @@ public class NSutil {
 		int listeningEnglish = Util.getCLBtoListening(StaticMethod.nullObject2String(q6.get("listening")));
 		int speakingEnglish = Util.getCLBtoSpeaking(StaticMethod.nullObject2String(q6.get("speaking")));
 		int readingEnglish = Util.getCLBtoReading(StaticMethod.nullObject2String(q6.get("reading")));
-		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("listewritingning")));
+		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("writing")));
 		
 		//第七题  用户法语水平
 		JSONObject q7 = (JSONObject) questionMain.get("question7");
@@ -454,7 +460,7 @@ public class NSutil {
 		
 		//未通过语言升档算法
 		//主申当第一语言为英语时
-		if("English".equals(rescore.get("language"))){
+		if("英语".equals(rescore.get("language"))){
 			//计算用户英语升档后Clb
 			int listeningEnglishUp = listeningEnglish+2>10?10:listeningEnglish+2;
 			int speakingEnglishUp = speakingEnglish+2>10?10:speakingEnglish+2;
@@ -729,7 +735,7 @@ public class NSutil {
 		int listeningEnglish = Util.getCLBtoListening(StaticMethod.nullObject2String(q6.get("listening")));
 		int speakingEnglish = Util.getCLBtoSpeaking(StaticMethod.nullObject2String(q6.get("speaking")));
 		int readingEnglish = Util.getCLBtoReading(StaticMethod.nullObject2String(q6.get("reading")));
-		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("listewritingning")));
+		int writingEnglish = Util.getCLBtoWriting(StaticMethod.nullObject2String(q6.get("writing")));
 		//第七题 
 		int frenchScore = 0;//法语部分得分
 		//获取副申法语CLB
@@ -774,7 +780,7 @@ public class NSutil {
 			int readingEnglishUp = readingEnglish+2>10?10:readingEnglish+2;
 			int writingEnglishUp =  writingEnglish+2>10?10:writingEnglish+2;
 			//计算升档后英语得分
-			languageEnglishUpScore = language1RulePrimary(listeningEnglishUp,speakingEnglishUp,readingEnglishUp,writingEnglishUp);
+			languageEnglishUpScore = language1RuleSecondary(listeningEnglishUp,speakingEnglishUp,readingEnglishUp,writingEnglishUp);
 			//用户升档后得分      升档后的英语的分+法语得分
 			rescore.put("languageScoreUp", languageEnglishUpScore+language2Score);//
 		}//判断是否语言都没填写 英语+2
@@ -785,7 +791,7 @@ public class NSutil {
 			int readingEnglishUp = readingEnglish+2>10?10:readingEnglish+2;
 			int writingEnglishUp =  writingEnglish+2>10?10:writingEnglish+2;
 			//计算升档后英语得分
-			languageEnglishUpScore = language1RulePrimary(listeningEnglishUp,speakingEnglishUp,readingEnglishUp,writingEnglishUp);
+			languageEnglishUpScore = language1RuleSecondary(listeningEnglishUp,speakingEnglishUp,readingEnglishUp,writingEnglishUp);
 			//用户升档后得分      升档后的英语的分+法语得分
 			rescore.put("languageScoreUp", languageEnglishUpScore+language2Score);//
 		}else{
@@ -794,14 +800,14 @@ public class NSutil {
 			int speakingEnglishUp = speakingEnglish+2>10?10:speakingEnglish+2;
 			int readingEnglishUp = readingEnglish+2>10?10:readingEnglish+2;
 			int writingEnglishUp =  writingEnglish+2>10?10:writingEnglish+2;
-			languageEnglishUpScore = language1RulePrimary(listeningEnglishUp,speakingEnglishUp,readingEnglishUp,writingEnglishUp);
+			languageEnglishUpScore = language1RuleSecondary(listeningEnglishUp,speakingEnglishUp,readingEnglishUp,writingEnglishUp);
 			//计算用户法语升档后Clb
 			int listeningFrenchUp = listeningFrench+1>10?10:listeningFrench+1;
 			int speakingFrenchUp = speakingFrench+1>10?10:speakingFrench+1;
 			int readingFrenchUp = readingFrench+1>10?10:readingFrench+1;
 			int writingFrenchUp =  writingFrench+1>10?10:writingFrench+1;
 			//计算升档后法语得分
-			int languageFrenchUpScore = language1RulePrimary(listeningFrenchUp,speakingFrenchUp,readingFrenchUp,writingFrenchUp);
+			int languageFrenchUpScore = language1RuleSecondary(listeningFrenchUp,speakingFrenchUp,readingFrenchUp,writingFrenchUp);
 			
 			//法语升档分不大于英语升档
 			if(languageEnglishUpScore>=languageFrenchUpScore){
@@ -809,7 +815,7 @@ public class NSutil {
 				rescore.put("languageScoreUp", languageEnglishUpScore+language2Score);//
 			}else{
 				//用户升档后得分      升档后的法语得分+英语的分
-				rescore.put("languageScoreUp", languageFrenchUpScore+language2Score);//
+				rescore.put("languageScoreUp", languageFrenchUpScore+relanguage2Score);//
 			}
 			
 		}

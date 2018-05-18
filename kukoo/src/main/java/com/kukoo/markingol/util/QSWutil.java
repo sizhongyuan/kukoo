@@ -54,36 +54,9 @@ public class QSWutil {
 			reJson.put("specialty", specialty);
 			//当第一次提交情况
 			if("[]".equals(StaticMethod.nullObject2String(questionPrimary.get("specialty")))&&"[]".equals(StaticMethod.nullObject2String(questionSecondary.get("specialty")))){
-				//正常主次未通过申请
-				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScore")-scorePrimary.getByteValue("childScore")-1<52&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("languageScore")<=59){
-					//主次交换是否通过
-					if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScore")-scorePrimary2.getByteValue("childScore")-1<52&&scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore")<=59){
-						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore"));
-						//主申请人
-						reJson.put("major", "配偶");
-						//子女得分
-						reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
-						//主申语言
-						reJson.put("language", scorePrimary2.get("language"));
-						//通过方式（绿手green||黄手yellow||未通过none）
-						reJson.put("passType","none");
-					}else{//通过
-						//主申请人
-						reJson.put("major", "配偶");
-						//成绩
-						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore"));
-						//主申语言
-						reJson.put("language", scorePrimary2.get("language"));
-						//子女得分
-						reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
-						//是否升档 0：否
-						reJson.put("ifUp",0);
-						//是否交换主次 0：否
-						reJson.put("ifSwap",1);
-						//通过方式（绿手green||黄手yellow||未通过none）
-						reJson.put("passType","green");
-					}
-				}else{//通过
+				//正常主次是否通过申请
+				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScore")-scorePrimary.getByteValue("childScore")-1>=52&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("languageScore")>59){
+					//通过
 					//主申请人
 					reJson.put("major", "您");
 					//通过成绩
@@ -98,62 +71,15 @@ public class QSWutil {
 					reJson.put("ifSwap",0);
 					//通过方式（绿手green||黄手yellow||未通过none）
 					reJson.put("passType","green");
-				}
-			}else{//第二次提交带专业
-				//正常主次未通过申请language
-				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScore")-scorePrimary.getByteValue("childScore")-1<52&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScore")<=59){
+				}else{
+					//未通过
 					//主次交换是否通过
-					if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScore")-scorePrimary2.getByteValue("childScore")-1<52&&scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScore")<=59){
-						//升档后是否通过
-						if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScoreUp")-scorePrimary.getByteValue("childScore")-1<52&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScoreUp")<=59){
-							//主次交换后升档是否通过
-							if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScoreUp")-scorePrimary2.getByteValue("childScore")-1<52&&scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScoreUp")<=59){
-								reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("specialtyScore"));
-								//主申请人
-								reJson.put("major", "配偶");
-								//子女得分
-								reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
-								//主申语言
-								reJson.put("language", scorePrimary2.get("language"));
-								//通过方式（绿手green||黄手yellow||未通过none）
-								reJson.put("passType","none");
-							}else{//通过
-								//主申请人
-								reJson.put("major", "配偶");
-								//成绩
-								reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("specialtyScore"));
-								//主申语言
-								reJson.put("language", scorePrimary2.get("language"));
-								//子女得分
-								reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
-								//是否升档 0：否
-								reJson.put("ifUp",1);
-								//是否交换主次 0：否
-								reJson.put("ifSwap",1);
-								//通过方式（绿手green||黄手yellow||未通过none）
-								reJson.put("passType","yellow");
-							}
-						}else{//通过
-							//主申请人
-							reJson.put("major", "您");
-							//成绩
-							reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore"));
-							//主申语言
-							reJson.put("language", scorePrimary.get("language"));
-							//子女得分
-							reJson.put("childScore", scorePrimary.getByteValue("childScore"));
-							//是否升档 0：否
-							reJson.put("ifUp",1);
-							//是否交换主次 0：否
-							reJson.put("ifSwap",0);
-							//通过方式（绿手green||黄手yellow||未通过none）
-							reJson.put("passType","yellow");
-						}
-					}else{//通过
+					if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScore")-scorePrimary2.getByteValue("childScore")-1>=52&&scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore")>59){
+						//通过
 						//主申请人
 						reJson.put("major", "配偶");
 						//成绩
-						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("specialtyScore"));
+						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore"));
 						//主申语言
 						reJson.put("language", scorePrimary2.get("language"));
 						//子女得分
@@ -164,8 +90,24 @@ public class QSWutil {
 						reJson.put("ifSwap",1);
 						//通过方式（绿手green||黄手yellow||未通过none）
 						reJson.put("passType","green");
+					}else{
+						//未通过
+						reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("languageScore"));
+						//主申请人
+						reJson.put("major", "配偶");
+						//子女得分
+						reJson.put("childScore", scorePrimary.getByteValue("childScore"));
+						//主申语言
+						reJson.put("language", scorePrimary.get("language"));
+						//通过方式（绿手green||黄手yellow||未通过none）
+						reJson.put("passType","none");
+						
 					}
-				}else{//通过
+				}
+			}else{//第二次提交带专业
+				//正常主次未通过申请language
+				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScore")-scorePrimary.getByteValue("childScore")-1>=52&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScore")>59){
+					//通过
 					//主申请人
 					reJson.put("major", "您");
 					//通过成绩
@@ -180,6 +122,79 @@ public class QSWutil {
 					reJson.put("ifSwap",0);
 					//通过方式（绿手green||黄手yellow||未通过none）
 					reJson.put("passType","green");
+				}else{
+					//未通过
+					//主次交换是否通过
+					if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScore")-scorePrimary2.getByteValue("childScore")-1>=52&&scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScore")>59){
+						//通过
+						//主申请人
+						reJson.put("major", "配偶");
+						//成绩
+						reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScore")+scoreSecondary2.getIntValue("specialtyScore"));
+						//主申语言
+						reJson.put("language", scorePrimary2.get("language"));
+						//子女得分
+						reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
+						//是否升档 0：否
+						reJson.put("ifUp",0);
+						//是否交换主次 0：否
+						reJson.put("ifSwap",1);
+						//通过方式（绿手green||黄手yellow||未通过none）
+						reJson.put("passType","green");
+					}else{
+						//未通过
+						//升档后是否通过
+						if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScoreUp")-scorePrimary.getByteValue("childScore")-1>=52&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore")+scoreSecondary.getIntValue("languageScoreUp")>59){
+							//通过
+							//主申请人
+							reJson.put("major", "您");
+							//成绩
+							reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("languageScoreUp")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("specialtyScore"));
+							//主申语言
+							reJson.put("language", scorePrimary.get("language"));
+							//子女得分
+							reJson.put("childScore", scorePrimary.getByteValue("childScore"));
+							//是否升档 0：否
+							reJson.put("ifUp",1);
+							//是否交换主次 0：否
+							reJson.put("ifSwap",0);
+							//通过方式（绿手green||黄手yellow||未通过none）
+							reJson.put("passType","yellow");
+						}else{
+							//未通过
+							//主次交换后升档是否通过
+							if(scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScoreUp")-scorePrimary2.getByteValue("childScore")-1>=52&&scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scoreSecondary2.getIntValue("languageScoreUp")>59){
+								//通过
+								//主申请人
+								reJson.put("major", "配偶");
+								//成绩
+								reJson.put("score", scorePrimary2.getIntValue("score")+scorePrimary2.getIntValue("specialtyScore")+scorePrimary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("score")+scoreSecondary2.getIntValue("languageScoreUp")+scoreSecondary2.getIntValue("specialtyScore"));
+								//主申语言
+								reJson.put("language", scorePrimary2.get("language"));
+								//子女得分
+								reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
+								//是否升档 0：否
+								reJson.put("ifUp",1);
+								//是否交换主次 0：否
+								reJson.put("ifSwap",1);
+								//通过方式（绿手green||黄手yellow||未通过none）
+								reJson.put("passType","yellow");
+							}else{
+								//未通过
+								reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")+scoreSecondary.getIntValue("score")+scoreSecondary.getIntValue("languageScore")+scoreSecondary.getIntValue("specialtyScore"));
+								//主申请人
+								reJson.put("major", "配偶");
+								//子女得分
+								reJson.put("childScore", scorePrimary2.getByteValue("childScore"));
+								//主申语言
+								reJson.put("language", scorePrimary2.get("language"));
+								//通过方式（绿手green||黄手yellow||未通过none）
+								reJson.put("passType","none");
+								
+							}
+							
+						}
+					}
 				}
 			}
 			
@@ -188,53 +203,56 @@ public class QSWutil {
 			if(!"[]".equals(StaticMethod.nullObject2String(questionPrimary.get("specialty")))){
 				specialty.add(JSONArray.parse(StaticMethod.nullObject2String(questionPrimary.get("specialty")))); 
 			}
+			reJson.put("pass", 50);
 			reJson.put("specialty", specialty);
 			JSONObject scorePrimary = getQSWScoretoPrimary(questionPrimary);//正常主次主得分
 			//正常主次未通过申请language
-			if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")-scorePrimary.getByteValue("childScore")-1<43&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")<=50){
-				//升档后是否通过
-				if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")-scorePrimary.getByteValue("childScore")-1<43&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")<=50){
-					//主申请人
-					reJson.put("major", "您");
-					//通过成绩
-					reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp"));
-					//主申语言
-					reJson.put("language", scorePrimary.get("language"));
-					//子女得分
-					reJson.put("childScore", scorePrimary.getByteValue("childScore"));
-					//通过方式（绿手green||黄手yellow||未通过none）
-					reJson.put("passType","none");
-				}else{
-					//主申请人
-					reJson.put("major", "您");
-					//通过成绩
-					reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp"));
-					//主申语言
-					reJson.put("language", scorePrimary.get("language"));
-					//子女得分
-					reJson.put("childScore", scorePrimary.getByteValue("childScore"));
-					//是否升档 0：否
-					reJson.put("ifUp",1);
-					//是否交换主次 0：否
-					reJson.put("ifSwap",0);
-					//通过方式（绿手green||黄手yellow||未通过none）
-					reJson.put("passType","yellow");
-				}
-		}else{
-			//主申请人
-			reJson.put("major", "您");
-			//通过成绩
-			reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore"));
-			//主申语言
-			reJson.put("language", scorePrimary.get("language"));
-			//子女得分
-			reJson.put("childScore", scorePrimary.getByteValue("childScore"));
-			//是否升档 0：否
-			reJson.put("ifUp",0);
-			//是否交换主次 0：否
-			reJson.put("ifSwap",0);
-			//通过方式（绿手green||黄手yellow||未通过none）
-			reJson.put("passType","green");
+			if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")-scorePrimary.getByteValue("childScore")-1>=43&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore")>50){
+				//通过
+				//主申请人
+				reJson.put("major", "您");
+				//通过成绩
+				reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore"));
+				//主申语言
+				reJson.put("language", scorePrimary.get("language"));
+				//子女得分
+				reJson.put("childScore", scorePrimary.getByteValue("childScore"));
+				//是否升档 0：否
+				reJson.put("ifUp",0);
+				//是否交换主次 0：否
+				reJson.put("ifSwap",0);
+				//通过方式（绿手green||黄手yellow||未通过none）
+				reJson.put("passType","green");
+			}else{//未通过
+			//升档后是否通过
+			if(scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")-scorePrimary.getByteValue("childScore")-1>=43&&scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp")>50){
+				//通过
+				//主申请人
+				reJson.put("major", "您");
+				//通过成绩
+				reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScoreUp"));
+				//主申语言
+				reJson.put("language", scorePrimary.get("language"));
+				//子女得分
+				reJson.put("childScore", scorePrimary.getByteValue("childScore"));
+				//是否升档 0：否
+				reJson.put("ifUp",1);
+				//是否交换主次 0：否
+				reJson.put("ifSwap",0);
+				//通过方式（绿手green||黄手yellow||未通过none）
+				reJson.put("passType","yellow");
+			}else{//未通过
+				//主申请人
+				reJson.put("major", "您");
+				//通过成绩
+				reJson.put("score", scorePrimary.getIntValue("score")+scorePrimary.getIntValue("specialtyScore")+scorePrimary.getIntValue("languageScore"));
+				//主申语言
+				reJson.put("language", scorePrimary.get("language"));
+				//子女得分
+				reJson.put("childScore", scorePrimary.getByteValue("childScore"));
+				//通过方式（绿手green||黄手yellow||未通过none）
+				reJson.put("passType","none");
+			}
 		}
 		}
 		return reJson;
@@ -674,6 +692,15 @@ public class QSWutil {
 		case 10:
 			englishScore += 2;
 			break;
+		case 11:
+			englishScore += 2;
+			break;
+		case 12:
+			englishScore += 2;
+			break;
+		case 13:
+			englishScore += 2;
+			break;
 		default:
 			break;
 		}
@@ -695,6 +722,15 @@ public class QSWutil {
 			englishScore += 2;
 			break;
 		case 10:
+			englishScore += 2;
+			break;
+		case 11:
+			englishScore += 2;
+			break;
+		case 12:
+			englishScore += 2;
+			break;
+		case 13:
 			englishScore += 2;
 			break;
 		default:

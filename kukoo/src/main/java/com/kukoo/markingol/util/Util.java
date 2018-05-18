@@ -192,12 +192,12 @@ public class Util {
 	 */
 	public static int getTime6year(String[] times) throws ParseException{
 		Calendar calendar = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
 		//开始时间
 		Date date1 = sdf.parse(times[0]);
 		//结束时间
 		Date date2 = sdf.parse(times[1]);
-		calendar.setTime(new Date());
+		calendar.setTime(sdf.parse(sdf.format(new Date())));
 		calendar.add(Calendar.YEAR,-6);
 		//六年前时间
 		Date now6 = calendar.getTime();
@@ -218,7 +218,7 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}//开始时间在近6年中   
 		else if(!date1.before(now6)){
 			Calendar c = Calendar.getInstance();
@@ -234,7 +234,7 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}else{
 			return 0;
 		}
@@ -250,12 +250,12 @@ public class Util {
 	 */
 	public static int getTime5year(String[] times) throws ParseException{
 		Calendar calendar = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
 		//开始时间
 		Date date1 = sdf.parse(times[0]);
 		//结束时间
 		Date date2 = sdf.parse(times[1]);
-		calendar.setTime(new Date());
+		calendar.setTime(sdf.parse(sdf.format(new Date())));
 		calendar.add(Calendar.YEAR,-5);
 		//五年前时间
 		Date year5 = calendar.getTime();
@@ -274,9 +274,9 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}//开始时间在近五年中   
-		else if(!year5.before(date1)){
+		else if(year5.before(date1)){
 			Calendar c = Calendar.getInstance();
 	        c.setTime(date2);
 	        int year1 = c.get(Calendar.YEAR);
@@ -290,7 +290,7 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}else{
 			return 0;
 		}
@@ -306,12 +306,12 @@ public class Util {
 	 */
 	public static int getTimeBefore5year(String[] times) throws ParseException{
 		Calendar calendar = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
 		//开始时间
 		Date date1 = sdf.parse(times[0]);
 		//结束时间
 		Date date2 = sdf.parse(times[1]);
-		calendar.setTime(new Date());
+		calendar.setTime(sdf.parse(sdf.format(new Date())));
 		calendar.add(Calendar.YEAR,-10);
 		//十年前时间
 		Date year10 = calendar.getTime();
@@ -333,7 +333,7 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}//开始时间在前五年中  且结束时间也在前五年中
 		else if(!date1.before(year10)&&!year5.before(date2)){
 			Calendar c = Calendar.getInstance();
@@ -349,11 +349,11 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}//开始时间在前五年中 结束时间在近五年中
-		else if(!date1.before(year10)&&!year5.before(date2)){ 
+		else if(!date1.before(year10)&&date1.before(year5)&&year5.before(date2)){ 
 			Calendar c = Calendar.getInstance();
-	        c.setTime(date2);
+	        c.setTime(year5);
 	        int year1 = c.get(Calendar.YEAR);
 	        int month1 = c.get(Calendar.MONTH);
 	        c.setTime(date1);
@@ -365,7 +365,7 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}//开始时间在十年前  结束时间在近五年
 		else if(!year10.before(date1)&&!date2.before(year5)){ 
 			Calendar c = Calendar.getInstance();
@@ -381,7 +381,7 @@ public class Util {
 	        } else {
 	            result = 12*(year1 - year2) + month1 - month2;
 	        }
-	        return result;
+	        return result+1;
 		}else{
 			return 0;
 		}

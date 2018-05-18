@@ -8,6 +8,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +38,8 @@ public class MarkingOLController {
 	
 	@Autowired
 	public MarkingOLService markingOLService;
+	
+	private Logger logger = LoggerFactory.getLogger(MarkingOLController.class);
 	
 	/**
 	 * @see 展示在线答题
@@ -110,7 +114,7 @@ public class MarkingOLController {
 			inputJson.add(applicant2);
 		}
 		
-		
+		logger.info("答题传入json==================="+inputJson.toJSONString());
 		//返回jsonarr
 		JSONObject outPutJson = new JSONObject();
 		//绿手推荐
@@ -189,26 +193,20 @@ public class MarkingOLController {
 		
 		JSONObject QSWProject = markingOLService.QSWProject(inputJson);
 		JSONArray sjsonarr = QSWProject.getJSONArray("specialty");
-		if("green".equals(QSWProject.get("passType"))){
-			
-			if(sjsonarr.size()>0){
+		if(sjsonarr.size()>0){
+			if("green".equals(QSWProject.get("passType"))){
 				recommend.add(QSWProject);
-			}else{
-				outPutJson.put("Quebec", QSWProject);
-			}
-				
-		}else if("yellow".equals(QSWProject.get("passType"))){
-			if(sjsonarr.size()>0){
+			}else if("yellow".equals(QSWProject.get("passType"))){
 				promote.add(QSWProject);
 			}else{
 				outPutJson.put("Quebec", QSWProject);
 			}
 		}else{
-			outPutJson.put("Quebec", "");
+			outPutJson.put("Quebec", QSWProject);
 		}
 		outPutJson.put("recommend", recommend);
 		outPutJson.put("promote", promote);
-		
+		logger.info("答题返回json==================="+outPutJson.toJSONString());
 		System.out.println(outPutJson);
 		return outPutJson;
 	}
