@@ -85,12 +85,12 @@ var list = [{
         "博士",
         "硕士",
         "双学历",
-        "本科(4 年制）",
-        "本科(3 年制）",
-        "本科(2 年制）",
-        "本科(1 年制）",
-        "专科(文科）",
-        "专科(理科）",
+        "本科（4年制）",
+        "本科（3年制）",
+        "本科（2年制）",
+        "本科（1年制）",
+        "专科（文科）",
+        "专科（理科）",
         "普通高中",
         "职业高中",
         "初中及以下"
@@ -525,7 +525,7 @@ _app2 = new Vue({
       work.ei = ei;
       work.start = YMS[si]
       work.end = YMS[ei];
-      work.span = ei - si;
+      work.span = ei - si + 1;
     },
     move_bar_down: function(e) {
       var $area = $(e.target).parent();
