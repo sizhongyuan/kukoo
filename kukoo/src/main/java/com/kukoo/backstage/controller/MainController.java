@@ -1,12 +1,16 @@
 package com.kukoo.backstage.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.awt.Image;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -141,6 +145,7 @@ public class MainController {
 	public Object editLottery(Model model,@RequestParam("imgRoute") MultipartFile file, HttpServletRequest request) { 
 		String filePath = request.getSession().getServletContext().getRealPath("/")+"img/luckdraw/";
 		String id = StaticMethod.nullObject2String(request.getParameter("id"));
+		String type = StaticMethod.nullObject2String(request.getParameter("type"));
 		Integer lno = StaticMethod.nullObject2int(request.getParameter("lno"));
 		String name = StaticMethod.nullObject2String(request.getParameter("name"));
 		Integer rate = StaticMethod.nullObject2int(request.getParameter("rate"));
@@ -157,7 +162,12 @@ public class MainController {
 		lottery.setName(name);
 		lottery.setRate(rate);
 		lottery.setNum(num);
-		lottery.setImgRoute("/kukoo/img/luckdraw/"+lno+"."+extensionName);
+		lottery.setImgRoute("/kukoo/img/luckdraw/"+type+lno+"."+extensionName);
+		try {
+			this.zoomImage("/kukoo/img/luckdraw/"+lno+"."+extensionName, "/kukoo/img/luckdraw/"+type+lno+"."+extensionName, 142, 142);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		lotteryService.updateLottery(lottery);
 		
 		Map m = new HashMap();
@@ -224,4 +234,29 @@ public class MainController {
 		model.setViewName(modelPath+"Food");
 		return model;
 	}
+	
+	/*
+     * 图片缩放,w，h为缩放的目标宽度和高度
+     * src为源文件目录，dest为缩放后保存目录
+     */
+    public static void zoomImage(String src,String dest,int w,int h) throws Exception {
+        
+        double wr=0,hr=0;
+        File srcFile = new File(src);
+        File destFile = new File(dest);
+
+        BufferedImage bufImg = ImageIO.read(srcFile); //读取图片
+        Image Itemp = bufImg.getScaledInstance(w, h, bufImg.SCALE_SMOOTH);//设置缩放目标图片模板
+        
+        wr=w*1.0/bufImg.getWidth();     //获取缩放比例
+        hr=h*1.0 / bufImg.getHeight();
+
+        AffineTransformOp ato = new AffineTransformOp(AffineTransform.getScaleInstance(wr, hr), null);
+        Itemp = ato.filter(bufImg, null);
+        try {
+            ImageIO.write((BufferedImage) Itemp,dest.substring(dest.lastIndexOf(".")+1), destFile); //写入缩减后的图片
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

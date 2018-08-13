@@ -205,6 +205,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="control-group">
+                                                            <label class="control-label" for="inputAuto">奖品类型</label>
+                                                            <div class="controls">
+                                                                <select name="type">
+                                                                	<option value ="recommend">推荐人</option>
+                                                                	<option value ="recommended">被推荐人</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="control-group">
                                                             <label class="control-label" for="inputAuto">奖品名称</label>
                                                             <div class="controls">
                                                                 <input type="text" id="name" name="name" class="grd-white" />

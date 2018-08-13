@@ -36,5 +36,5 @@ public interface ILotteryService {
 	 * 查询奖品 初始化转盘的奖品
 	 * @return
 	 */
-	public List<Lottery> queryLottery();
+	public List<Lottery> queryLottery(String type);
 }
