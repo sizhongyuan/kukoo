@@ -64,7 +64,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <span class="sidebar-text">权限管理</span>
                 </a>
             </li>
-           
+           <li>
+                <a href="#" title="more">
+                    <!-- <div class="badge badge-important">5</div> -->
+                    <div class="helper-font-24">
+                        <i class="icofont-th-large"></i>
+                    </div>
+                    <span class="sidebar-text">抽奖配置</span>
+                </a>
+                <ul class="sub-sidebar corner-top shadow-silver-dark">
+                    <li>
+                        <a href="<%=basePath %>main/showLotteryPage" title="not found">
+                            <span class="sidebar-text">奖品管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%=basePath %>main/showLotteryOpportunityPage" title="login">
+                            <span class="sidebar-text">抽奖机会</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%=basePath %>main/showWinLotteryPage" title="invoice">
+                            <span class="sidebar-text">中奖记录</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li>
                 <a href="#" title="more">
                     <div class="badge badge-important">5</div>

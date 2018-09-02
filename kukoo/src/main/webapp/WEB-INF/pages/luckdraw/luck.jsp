@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript">
 var wINDEX=-1;
-
+var lottery_type=$("#lottery_type").val();
 var lottery={
 	index:-1,	//当前转动到哪个位置，起点位置
 	count:0,	//总共有多少个位置
@@ -163,7 +163,7 @@ function roll(){
 		$('#Win_Modal').modal({
 			keyboard: true
 		});
-		var url = "/kukoo/luck/winLottery/"+lottery.index+"/${lotterys.lotterysId}/${lotterys.lotterysUserId}";
+		var url = "/kukoo/luck/winLottery/"+lottery_type+"/"+lottery.index+"/${lotterys.lotterysId}/${lotterys.lotterysUserId}";
 		$.ajax({ 
 			type: 'POST',
 			url: url,

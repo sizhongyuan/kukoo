@@ -42,8 +42,8 @@ public class LotteryServiceImpl implements ILotteryService {
 	}
 
 	@Override
-	public List<Lottery> queryLottery() {
-		return lotteryMapper.queryLottery();
+	public List<Lottery> queryLottery(String type) {
+		return lotteryMapper.queryLottery(type);
 	}
 
 }

@@ -48,9 +48,9 @@ public class LuckDrawController {
 	 * @return
 	 * @author gang
 	 */
-	@RequestMapping(value = "/luckDraw/{uId}/{userId}", method = RequestMethod.GET)
-	public ModelAndView luckDraw(@PathVariable("uId")String id, @PathVariable("userId")String userId,HttpServletRequest request) {
-		List<Lottery> list = lotteryService.queryLottery();
+	@RequestMapping(value = "/luckDraw/{userType}/{uId}/{userId}", method = RequestMethod.GET)
+	public ModelAndView luckDraw(@PathVariable("userType")String userType, @PathVariable("uId")String id,@PathVariable("userId")String userId,HttpServletRequest request) {
+		List<Lottery> list = lotteryService.queryLottery(userType);
 		String lotterysTr = "";
 		if(list!=null && list.size()>0) {
 			Lottery Lottery0 = (Lottery)list.get(0);
@@ -65,31 +65,62 @@ public class LuckDrawController {
 			Lottery Lottery9 = (Lottery)list.get(9);
 			Lottery Lottery10 = (Lottery)list.get(10);
 			Lottery Lottery11 = (Lottery)list.get(11);
-			lotterysTr = "<tr>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-0\" style=\"background:url(/kukoo/img/luckdraw/bg-1.jpg) no-repeat bottom;\"><img src="+Lottery0.getImgRoute()+"></td>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-1\" style=\"background:url(/kukoo/img/luckdraw/bg-2.jpg) no-repeat bottom;\"><img src="+Lottery1.getImgRoute()+"></td>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-2\" style=\"background:url(/kukoo/img/luckdraw/bg-4.jpg) no-repeat bottom;\"><img src="+Lottery2.getImgRoute()+"></td>\n" + 
-					"            <td class=\"lottery-unit lottery-unit-3\" style=\"background:url(/kukoo/img/luckdraw/bg-3.jpg) no-repeat bottom;\"><img src="+Lottery3.getImgRoute()+"></td>\n" + 
-					"		</tr>\n" + 
-					"		<tr>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-11\" style=\"background:url(/kukoo/img/luckdraw/bg-5.jpg) no-repeat bottom;\"><img src="+Lottery11.getImgRoute()+"></td>\n" + 
-					"			<td style=\"width:100px;height:100px;\" colspan=\"2\" rowspan=\"2\">"+
-								 "<a style=\"width:100%;height:100%;\" href=\"#\">"+
-								 	"<img src=\"/kukoo/img/luckdraw/bg-0.jpg\">"+
-								 "</a>"+
-							"</td>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-4\" style=\"background:url(/kukoo/img/luckdraw/bg-6.jpg) no-repeat bottom;\"><img src="+Lottery4.getImgRoute()+"></td>\n" + 
-					"		</tr>\n" + 
-					"		<tr>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-10\" style=\"background:url(/kukoo/img/luckdraw/bg-7.jpg) no-repeat bottom;\"><img src="+Lottery10.getImgRoute()+"></td>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-5\" style=\"background:url(/kukoo/img/luckdraw/bg-8.jpg) no-repeat bottom;\"><img src="+Lottery5.getImgRoute()+"></td>\n" + 
-					"		</tr>\n" + 
-					"        <tr>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-9\" style=\"background:url(/kukoo/img/luckdraw/bg-9.jpg) no-repeat bottom;\"><img src="+Lottery9.getImgRoute()+"></td>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-8\" style=\"background:url(/kukoo/img/luckdraw/bg-10.jpg) no-repeat bottom;\"><img src="+Lottery8.getImgRoute()+"></td>\n" + 
-					"			<td class=\"lottery-unit lottery-unit-7\" style=\"background:url(/kukoo/img/luckdraw/bg-11.jpg) no-repeat bottom;\"><img src="+Lottery7.getImgRoute()+"></td>\n" + 
-					"            <td class=\"lottery-unit lottery-unit-6\" style=\"background:url(/kukoo/img/luckdraw/bg-12.jpg) no-repeat bottom;\"><img src="+Lottery6.getImgRoute()+"></td>\n" + 
-					"		</tr>";
+			//if("recommend".equals(userType)) {//推荐人
+				lotterysTr = "<tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-0\" style=\"background:url(/kukoo/img/luckdraw/bg-1.jpg) no-repeat bottom;\"><img src="+Lottery0.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-1\" style=\"background:url(/kukoo/img/luckdraw/bg-2.jpg) no-repeat bottom;\"><img src="+Lottery1.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-2\" style=\"background:url(/kukoo/img/luckdraw/bg-4.jpg) no-repeat bottom;\"><img src="+Lottery2.getImgRoute()+"></td>\n" + 
+						"            <td class=\"lottery-unit lottery-unit-3\" style=\"background:url(/kukoo/img/luckdraw/bg-3.jpg) no-repeat bottom;\"><img src="+Lottery3.getImgRoute()+"></td>\n" + 
+						"		</tr>\n" + 
+						"		<tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-11\" style=\"background:url(/kukoo/img/luckdraw/bg-5.jpg) no-repeat bottom;\"><img src="+Lottery11.getImgRoute()+"></td>\n" + 
+						"			<td style=\"width:100px;height:100px;\" colspan=\"2\" rowspan=\"2\">"+
+									 "<a style=\"width:100%;height:100%;\" href=\"#\">"+
+									 	"<img src=\"/kukoo/img/luckdraw/bg-0.jpg\">"+
+									 "</a>"+
+								"</td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-4\" style=\"background:url(/kukoo/img/luckdraw/bg-6.jpg) no-repeat bottom;\"><img src="+Lottery4.getImgRoute()+"></td>\n" + 
+						"		</tr>\n" + 
+						"		<tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-10\" style=\"background:url(/kukoo/img/luckdraw/bg-7.jpg) no-repeat bottom;\"><img src="+Lottery10.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-5\" style=\"background:url(/kukoo/img/luckdraw/bg-8.jpg) no-repeat bottom;\"><img src="+Lottery5.getImgRoute()+"></td>\n" + 
+						"		</tr>\n" + 
+						"        <tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-9\" style=\"background:url(/kukoo/img/luckdraw/bg-9.jpg) no-repeat bottom;\"><img src="+Lottery9.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-8\" style=\"background:url(/kukoo/img/luckdraw/bg-10.jpg) no-repeat bottom;\"><img src="+Lottery8.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-7\" style=\"background:url(/kukoo/img/luckdraw/bg-11.jpg) no-repeat bottom;\"><img src="+Lottery7.getImgRoute()+"></td>\n" + 
+						"            <td class=\"lottery-unit lottery-unit-6\" style=\"background:url(/kukoo/img/luckdraw/bg-12.jpg) no-repeat bottom;\"><img src="+Lottery6.getImgRoute()+"></td>\n" + 
+						"		</tr>"+
+						"<tr><input id=\"lottery_type\" type=\"hidden\" value="+userType+"></tr>";
+			//}
+			/*else if("recommended".equals(userType)){//被推荐人
+				lotterysTr = "<tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-0\" style=\"background:url(/kukoo/img/luckdraw/bg-1.jpg) no-repeat bottom;\"><img src="+Lottery0.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-1\" style=\"background:url(/kukoo/img/luckdraw/bg-2.jpg) no-repeat bottom;\"><img src="+Lottery1.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-2\" style=\"background:url(/kukoo/img/luckdraw/bg-4.jpg) no-repeat bottom;\"><img src="+Lottery2.getImgRoute()+"></td>\n" + 
+						"            <td class=\"lottery-unit lottery-unit-3\" style=\"background:url(/kukoo/img/luckdraw/bg-3.jpg) no-repeat bottom;\"><img src="+Lottery3.getImgRoute()+"></td>\n" + 
+						"		</tr>\n" + 
+						"		<tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-11\" style=\"background:url(/kukoo/img/luckdraw/bg-5.jpg) no-repeat bottom;\"><img src="+Lottery11.getImgRoute()+"></td>\n" + 
+						"			<td style=\"width:100px;height:100px;\" colspan=\"2\" rowspan=\"2\">"+
+									 "<a style=\"width:100%;height:100%;\" href=\"#\">"+
+									 	"<img src=\"/kukoo/img/luckdraw/bg-0.jpg\">"+
+									 "</a>"+
+								"</td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-4\" style=\"background:url(/kukoo/img/luckdraw/bg-6.jpg) no-repeat bottom;\"><img src="+Lottery4.getImgRoute()+"></td>\n" + 
+						"		</tr>\n" + 
+						"		<tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-10\" style=\"background:url(/kukoo/img/luckdraw/bg-7.jpg) no-repeat bottom;\"><img src="+Lottery10.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-5\" style=\"background:url(/kukoo/img/luckdraw/bg-8.jpg) no-repeat bottom;\"><img src="+Lottery5.getImgRoute()+"></td>\n" + 
+						"		</tr>\n" + 
+						"        <tr>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-9\" style=\"background:url(/kukoo/img/luckdraw/bg-9.jpg) no-repeat bottom;\"><img src="+Lottery9.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-8\" style=\"background:url(/kukoo/img/luckdraw/bg-10.jpg) no-repeat bottom;\"><img src="+Lottery8.getImgRoute()+"></td>\n" + 
+						"			<td class=\"lottery-unit lottery-unit-7\" style=\"background:url(/kukoo/img/luckdraw/bg-11.jpg) no-repeat bottom;\"><img src="+Lottery7.getImgRoute()+"></td>\n" + 
+						"            <td class=\"lottery-unit lottery-unit-6\" style=\"background:url(/kukoo/img/luckdraw/bg-12.jpg) no-repeat bottom;\"><img src="+Lottery6.getImgRoute()+"></td>\n" + 
+						"		</tr>";
+			}*/
+			
 		}
 		Map map = new HashMap();
 		map.put("lotterysTr", lotterysTr);
@@ -97,7 +128,7 @@ public class LuckDrawController {
 		map.put("lotterysDesc", "中奖描述");
 		map.put("lotterysUserId", userId);
 		map.put("lotterysId", id);
-		map.put("lotteryUrl", "/kukoo/luck/markLuckDraw/"+id+"/"+userId);
+		map.put("lotteryUrl", "/kukoo/luck/markLuckDraw/"+userType+"/"+id+"/"+userId);
 		
 		return new ModelAndView(modelPath+"list", "lotterys", map);
 	}
@@ -108,21 +139,33 @@ public class LuckDrawController {
 	 * @param lotteryNum 抽奖次数
 	 * @return
 	 */
-	@RequestMapping(value = "/shareLotteryUrl/{lotteryNum}/{userId}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
+	@RequestMapping(value = "/shareLotteryUrl/{lotteryNum}/{recommend}/{recommended}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public Object shareLotteryUrl(@PathVariable("userId")String userId,@PathVariable("lotteryNum")Integer lotteryNum) {
+	public Object shareLotteryUrl(@PathVariable("recommend")String recommend,@PathVariable("recommended")String recommended,@PathVariable("lotteryNum")Integer lotteryNum) {
 		LotteryOpportunity lottery = new LotteryOpportunity();
+		Map<String,Object> m = new HashMap<>();
 		String uId = StaticMethod.nullObject2String(UUID.randomUUID()).replace("-", "");
 		lottery.setId(uId);
-		lottery.setLotteryUserId(userId);
+		lottery.setLotteryUserId(recommend);
 		lottery.setLotteryNum(lotteryNum);
 		SimpleDateFormat sdf = new SimpleDateFormat();
 		lottery.setCreateTime(sdf.format(new Date()));
-		lottery.setLotteryUrl("luck/markLuckDraw/"+uId+"/"+userId);
+		lottery.setLotteryUrl("luck/markLuckDraw/"+"01/"+uId+"/"+recommend);
+		lottery.setType("01");
+		m.put("recommendUrl", "luck/luckDraw/01/"+uId+"/"+recommend);
+		
 		lotteryOpportunityService.saveLotteryOpportunity(lottery);
-		Map m = new HashMap();
-		m.put("url", "luck/luckDraw/"+uId+"/"+userId);
-		m.put("uId", uId);
+		
+		uId = StaticMethod.nullObject2String(UUID.randomUUID()).replace("-", "");
+		lottery.setId(uId);
+		lottery.setLotteryUserId(recommended);
+		lottery.setLotteryUrl("luck/markLuckDraw/"+"02/"+uId+"/"+recommended);
+		lottery.setType("02");
+		lotteryOpportunityService.saveLotteryOpportunity(lottery);
+		
+		m.put("lotteryNum", lotteryNum);
+		m.put("recommendedUrl", "luck/luckDraw/02/"+uId+"/"+recommended);
+		//m.put("uId", uId);
 		return m;
 	}
 	
@@ -132,17 +175,17 @@ public class LuckDrawController {
 	 * @param userId
 	 * @return
 	 */
-	@RequestMapping(value = "/markLuckDraw/{uId}/{userId}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
+	@RequestMapping(value = "/markLuckDraw/{userType}/{uId}/{userId}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public Object markLuckDraw(@PathVariable("uId")String id, @PathVariable("userId")String userId) { 
+	public Object markLuckDraw(@PathVariable("userType")String userType,@PathVariable("uId")String id, @PathVariable("userId")String userId) { 
 		Map info = new HashMap();
 		if(id == null || userId == null) {
 			info.put("mes", "您不具备抽奖条件！");
 			info.put("data", "");
 		}
-		LotteryOpportunity lotteryOpportunity = lotteryOpportunityService.queryLotteryOpportunity(id,userId);
+		LotteryOpportunity lotteryOpportunity = lotteryOpportunityService.queryLotteryOpportunity(id,userType,userId);
 		
-		List<Lottery> initData = lotteryService.queryLottery();
+		List<Lottery> initData = lotteryService.queryLottery(userType);
 		Lottery lottery = new Lottery();
 		if(lotteryOpportunity!=null && !lotteryOpportunity.equals("")) {
 			lottery = BigWheelDrawUtil.generateAward(initData);
@@ -162,19 +205,19 @@ public class LuckDrawController {
 	 * @param userId
 	 * @return
 	 */
-	@RequestMapping(value = "/winLottery/{lotteryId}/{loppId}/{userId}", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@RequestMapping(value = "/winLottery/{type}/{lotteryId}/{loppId}/{userId}", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public Object winLottery(@PathVariable("lotteryId")String lotteryId, @PathVariable("loppId")String loppId, @PathVariable("userId")String userId) { 
+	public Object winLottery(@PathVariable("type")String type,@PathVariable("lotteryId")String lotteryId, @PathVariable("loppId")String loppId, @PathVariable("userId")String userId) { 
 		WinLottery winLottery = new WinLottery();
 		winLottery.setLotteryId(lotteryId);
 		winLottery.setWinUserId(userId);
 		winLottery.setWinPhone("");
-		SimpleDateFormat sdf = new SimpleDateFormat();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
 		winLottery.setWinTime(sdf.format(new Date()));
 		winLottery.setIsGiveOut("0");
+		winLottery.setType(type);
 		winLotteryService.saveWinLottery(winLottery);
-		
-		LotteryOpportunity lotteryOpportunity = lotteryOpportunityService.queryLotteryOpportunity(loppId,userId);
+		LotteryOpportunity lotteryOpportunity = lotteryOpportunityService.queryLotteryOpportunity(loppId,null,userId);
 		lotteryOpportunity.setLotteryNum(lotteryOpportunity.getLotteryNum()-1);
 		lotteryOpportunityService.updateLotteryOpportunity(lotteryOpportunity);
 		

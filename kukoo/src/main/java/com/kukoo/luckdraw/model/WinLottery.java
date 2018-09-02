@@ -35,10 +35,11 @@ public class WinLottery implements Serializable{
 	 */
 	private String isGiveOut;
 	
+	private String type;
 	
 	public WinLottery() {
 	}
-	public WinLottery(String id, String lotteryId, String winUserId, String winPhone, String winTime, String isGiveOut) {
+	public WinLottery(String id, String lotteryId, String winUserId, String winPhone, String winTime, String isGiveOut, String type) {
 		super();
 		this.id = id;
 		this.lotteryId = lotteryId;
@@ -46,6 +47,7 @@ public class WinLottery implements Serializable{
 		this.winPhone = winPhone;
 		this.winTime = winTime;
 		this.isGiveOut = isGiveOut;
+		this.type=type;
 	}
 	public String getId() {
 		return id;
@@ -84,6 +86,12 @@ public class WinLottery implements Serializable{
 		this.isGiveOut = isGiveOut;
 	}
 	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	@Override
 	public String toString() {
 		return "WinLottery [id=" + id + ", lotteryId=" + lotteryId + ", winUserId=" + winUserId + ", winPhone="

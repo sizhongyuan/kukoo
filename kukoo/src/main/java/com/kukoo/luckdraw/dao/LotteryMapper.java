@@ -41,7 +41,7 @@ public interface LotteryMapper {
 	 * 查询奖品
 	 * @return
 	 */
-	public List<Lottery> queryLottery();
+	public List<Lottery> queryLottery(String type);
 	
 	
 }

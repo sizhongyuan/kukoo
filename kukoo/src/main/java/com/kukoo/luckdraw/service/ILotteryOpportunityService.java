@@ -27,5 +27,5 @@ public interface ILotteryOpportunityService {
 	 * @param id
 	 * @return
 	 */
-	public LotteryOpportunity queryLotteryOpportunity(String id,String userId);
+	public LotteryOpportunity queryLotteryOpportunity(String id,String userType,String userId);
 }
