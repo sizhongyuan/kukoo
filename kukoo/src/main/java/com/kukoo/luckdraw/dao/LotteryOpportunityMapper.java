@@ -35,5 +35,5 @@ public interface LotteryOpportunityMapper {
 	 * @param id
 	 * @return
 	 */
-	public LotteryOpportunity queryLotteryOpportunity(@Param("id")String id,@Param("userId")String userId);
+	public LotteryOpportunity queryLotteryOpportunity(@Param("id")String id,@Param("userType")String userType,@Param("userId")String userId);
 }

@@ -33,8 +33,8 @@ public class LotteryOpportunityServiceImpl implements ILotteryOpportunityService
 	}
 
 	@Override
-	public LotteryOpportunity queryLotteryOpportunity(String id,String userId) {
-		return lotteryOpportunityMapper.queryLotteryOpportunity(id,userId);
+	public LotteryOpportunity queryLotteryOpportunity(String id,String userType,String userId) {
+		return lotteryOpportunityMapper.queryLotteryOpportunity(id,userType,userId);
 	}
 	
 }

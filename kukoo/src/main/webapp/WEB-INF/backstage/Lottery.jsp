@@ -102,6 +102,7 @@
                                                     <tr>
                                                     	   <th>奖品编号</th>
                                                         <th>奖品名称</th>
+                                                        <th>奖品类型</th>
                                                         <th>中奖率</th>
                                                         <th>奖品图片路径</th>
                                                         <th>奖品数量</th>
@@ -113,6 +114,10 @@
                                                     	   <tr class="gradeA">
 	                                                        <td>${index.lno }</td>
 	                                                        <td>${index.name}</td>
+	                                                        <td>
+	                                                        	<c:if test="${index.type=='01'}">推荐人</c:if>
+	                                                        	<c:if test="${index.type=='02'}">被推荐人</c:if>
+	                                                        </td>
 	                                                        <td>${index.rate }</td>
 	                                                        <td class="center">${index.img_route }</td>
 	                                                        <td class="center">${index.num }</td>
@@ -204,7 +209,7 @@
                                                                 <input type="text" id="lno" name="lno" class="grd-white" readonly="readonly"/>
                                                             </div>
                                                         </div>
-                                                        <div class="control-group">
+                                                        <!-- <div class="control-group">
                                                             <label class="control-label" for="inputAuto">奖品类型</label>
                                                             <div class="controls">
                                                                 <select name="type">
@@ -212,7 +217,7 @@
                                                                 	<option value ="recommended">被推荐人</option>
                                                                 </select>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="control-group">
                                                             <label class="control-label" for="inputAuto">奖品名称</label>
                                                             <div class="controls">

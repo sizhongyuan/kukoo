@@ -30,6 +30,10 @@ public class Lottery implements Serializable{
 	 * 奖品数量
 	 */
 	private String num;
+	/**
+	 * 推荐人和被推荐人
+	 */
+	private String type;
 	
 	
 	public Lottery(Integer lno, String name, Integer rate) {
@@ -111,6 +115,12 @@ public class Lottery implements Serializable{
 	}
 
 
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	@Override
 	public String toString() {
 		return "Lottery [ lno=" + lno + ", name=" + name + ", imgRoute=" + imgRoute

@@ -45,7 +45,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <select id="queryLotteryOpportunity" parameterType="String"  resultMap="BaseResultMap" >
         select id,type,lottery_Url,lottery_Num,create_Time,lottery_User_Id from tt_lottery_opportunity 
-        	where id = #{id} and lottery_User_Id = #{userId} and lottery_num &gt; 0
+        	where 
+        	id = #{id} 
+        	and lottery_User_Id = #{userId} 
+        	and lottery_num &gt; 0
+        	<if test="userType != null">
+        and type = #{userType}
+        </if>
     </select>
     
     <update id="updateLotteryOpportunity" parameterType="com.kukoo.luckdraw.model.LotteryOpportunity">

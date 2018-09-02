@@ -5,6 +5,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -143,9 +144,9 @@ public class MainController {
 	@RequestMapping(value = "/editLottery", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object editLottery(Model model,@RequestParam("imgRoute") MultipartFile file, HttpServletRequest request) { 
-		String filePath = request.getSession().getServletContext().getRealPath("/")+"img/luckdraw/";
-		String id = StaticMethod.nullObject2String(request.getParameter("id"));
 		String type = StaticMethod.nullObject2String(request.getParameter("type"));
+		String filePath = request.getSession().getServletContext().getRealPath("/")+"img/luckdraw/"+type+"/";
+		String id = StaticMethod.nullObject2String(request.getParameter("id"));
 		Integer lno = StaticMethod.nullObject2int(request.getParameter("lno"));
 		String name = StaticMethod.nullObject2String(request.getParameter("name"));
 		Integer rate = StaticMethod.nullObject2int(request.getParameter("rate"));
@@ -162,9 +163,9 @@ public class MainController {
 		lottery.setName(name);
 		lottery.setRate(rate);
 		lottery.setNum(num);
-		lottery.setImgRoute("/kukoo/img/luckdraw/"+type+lno+"."+extensionName);
+		lottery.setImgRoute("/kukoo/img/luckdraw/"+type+"/"+lno+"."+extensionName);
 		try {
-			this.zoomImage("/kukoo/img/luckdraw/"+lno+"."+extensionName, "/kukoo/img/luckdraw/"+type+lno+"."+extensionName, 142, 142);
+			this.zoomImage(fileUrl, fileUrl, 142, 142);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -240,7 +241,6 @@ public class MainController {
      * src为源文件目录，dest为缩放后保存目录
      */
     public static void zoomImage(String src,String dest,int w,int h) throws Exception {
-        
         double wr=0,hr=0;
         File srcFile = new File(src);
         File destFile = new File(dest);

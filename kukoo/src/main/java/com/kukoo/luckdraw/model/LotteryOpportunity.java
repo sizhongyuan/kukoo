@@ -31,6 +31,7 @@ public class LotteryOpportunity implements Serializable{
 	 */
 	private String lotteryUserId;
 	
+	private String type;
 	
 	public LotteryOpportunity() {
 	}
@@ -76,6 +77,14 @@ public class LotteryOpportunity implements Serializable{
 		this.lotteryUserId = lotteryUserId;
 	}
 	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	@Override
 	public String toString() {
 		return "LotteryOpportunity [id=" + id + ", lotteryUrl=" + lotteryUrl + ", lotteryNum=" + lotteryNum

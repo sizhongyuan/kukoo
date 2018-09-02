@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="win_phone" property="winPhone" />
         <result column="win_time" property="winTime" />
         <result column="is_give_out" property="isGiveOut" />
+        <result column="type" property="type" />
     </resultMap>
     
 	<insert id="saveWinLottery" parameterType="com.kukoo.luckdraw.model.WinLottery">
@@ -26,7 +27,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			win_user_id,
 			win_phone,
 			win_time,
-			is_give_out
+			is_give_out,
+			type
 		)
 		values
 		(
@@ -35,21 +37,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{winUserId,jdbcType=VARCHAR},
 			#{winPhone,jdbcType=VARCHAR},
 			#{winTime,jdbcType=VARCHAR},
-			#{isGiveOut,jdbcType=VARCHAR}
+			#{isGiveOut,jdbcType=VARCHAR},
+			#{type,jdbcType=VARCHAR}
 		)
 	</insert>
 	
 	<select id="queryWinLotteryList"  resultType="java.util.Map" >
-        select w.win_user_id,w.win_phone,w.win_time,w.lottery_id,l.name,w.is_give_out 
+        select w.win_user_id,w.win_phone,w.win_time,w.lottery_id,l.name,w.is_give_out,w.type 
         		from tt_winlottery w left join tt_lottery l 
         		on w.lottery_id=l.lno
-        	 where win_user_id = #{userId}
+        	 where win_user_id = #{userId} AND w.TYPE=l.TYPE
     </select>
     
     <select id="queryAllWinLotteryList"  resultType="java.util.Map" >
-        select w.win_user_id,w.win_phone,w.win_time,w.lottery_id,l.name,w.is_give_out 
+        select w.win_user_id,w.win_phone,w.win_time,w.lottery_id,l.name,w.is_give_out ,w.type
         		from tt_winlottery w left join tt_lottery l 
         		on w.lottery_id=l.lno
+        		AND w.TYPE=l.TYPE
     </select>
     
     <update id="updateWinLottery" parameterType="com.kukoo.luckdraw.model.WinLottery">
